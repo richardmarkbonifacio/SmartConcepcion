@@ -125,6 +125,12 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="images\template_newspaper.png" />
+    <Content Include="images\template_share.png" />
+    <Content Include="images\template_engr.png" />
+    <Content Include="images\signin_bg.jpg" />
+    <Content Include="images\signup_backgroud.jpg" />
+    <Content Include="images\testingfinal.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
