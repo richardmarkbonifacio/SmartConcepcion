@@ -71,44 +71,44 @@
                     
                     <div class="form-group">
                         <div class="col-md-4">
-                            <asp:TextBox runat="server" placeholder="Firstname" CssClass="form-control sign-up-ctrl" />
+                            <asp:TextBox runat="server" ID="txtFnam" placeholder="Firstname" CssClass="form-control sign-up-ctrl" />
                         </div>
                         <div class="col-md-4">
-                            <asp:TextBox runat="server" placeholder="Middlename" CssClass="form-control sign-up-ctrl" />
+                            <asp:TextBox runat="server" ID="txtMnam" placeholder="Middlename" CssClass="form-control sign-up-ctrl" />
                         </div>
                         <div class="col-md-4">
-                            <asp:TextBox runat="server" placeholder="Lastname" CssClass="form-control sign-up-ctrl" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <asp:TextBox runat="server" placeholder="Email" CssClass="form-control sign-up-ctrl" TextMode="Email" />
-                        </div>
-                        <div class="col-md-4">
-                            <asp:TextBox runat="server" placeholder="Contact No." CssClass="form-control sign-up-ctrl" />
-                        </div>
-                        <div class="col-md-4">
-                            <asp:DropDownList runat="server" placeholder="Barangay" CssClass="form-control sign-up-ctrl" />
+                            <asp:TextBox runat="server" ID="txtLnam" placeholder="Lastname" CssClass="form-control sign-up-ctrl" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-4">
-                            <asp:TextBox runat="server" placeholder="Birthdate" CssClass="form-control sign-up-ctrl" TextMode="Date" />
+                            <asp:TextBox runat="server" ID="txtEmail" placeholder="Email" CssClass="form-control sign-up-ctrl" TextMode="Email" />
+                        </div>
+                        <div class="col-md-4">
+                            <asp:TextBox runat="server" ID="txtContact" placeholder="Contact No." CssClass="form-control sign-up-ctrl" />
+                        </div>
+                        <div class="col-md-4">
+                            <asp:DropDownList runat="server" ID="ddBrgy" placeholder="Barangay" CssClass="form-control sign-up-ctrl" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-4">
+                            <asp:TextBox runat="server" ID="txtBday" placeholder="Birthdate" CssClass="form-control sign-up-ctrl" TextMode="Date" />
                         </div>
                         <div class="col-md-3">
-                            <asp:DropDownList runat="server" placeholder="Gender" CssClass="form-control sign-up-ctrl">
+                            <asp:DropDownList runat="server" ID="ddGender" placeholder="Gender" CssClass="form-control sign-up-ctrl">
                                 <asp:ListItem Text="Male" />
                                 <asp:ListItem Text="Female" />
                                 <asp:ListItem Text="Alien" />
                             </asp:DropDownList>
                         </div>
                         <div class="col-md-4">
-                            <asp:TextBox runat="server" placeholder="Password" CssClass="form-control sign-up-ctrl" TextMode="Password" />
+                            <asp:TextBox runat="server" ID="txtRUserpass" placeholder="Password" CssClass="form-control sign-up-ctrl" TextMode="Password" />
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-12 text-center">
-                          <asp:Button runat="server" CssClass="btn btn-acct" Text="Sign Up" />
+                          <asp:Button runat="server" CssClass="btn btn-acct" Text="Sign Up" OnClick="btnSignUp" />
                         </div>
                         
                     </div>
@@ -144,7 +144,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4" style="height: 100vh">
+                <div class="col-md-4 text-center" style="height: 40vh;margin-top:30vh">
+                    <div class="container-fluid">
+                        <h1>Sign in to your account</h1>
+                        <asp:TextBox runat="server" ID="txtUserid" placeholder="User ID" CssClass="form-control sign-up-ctrl" />
+                        <asp:TextBox runat="server" ID="txtUserpass"  placeholder="Password" TextMode="Password" CssClass="form-control sign-up-ctrl" />
+                        <div class="col-md-12 text-left">
+                            <asp:CheckBox runat="server" Text="Remember me" />
+                        </div>
+                        <div class="col-md-12 text-left">
+                            <asp:Label runat="server" ID="lblErr" Font-Size="12px" Font-Italic="true" ForeColor="Red" />
+                        </div>
+
+                        <asp:Button runat="server" CssClass="btn btn-acct" Text="Sign in" OnClick="btnSignIn" />
+                    </div>
                 </div>
             </div>
             
