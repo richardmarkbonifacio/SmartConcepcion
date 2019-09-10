@@ -41,7 +41,7 @@
             height:30vh;
             width: 30%;
             margin: 1.665%;
-            margin-top:50px;
+            margin-top:60px;
         }
         .features-icon{
             width: 100px;
@@ -108,18 +108,18 @@
                     </div>
                     <div class="container-fluid">
                         <div class="row text-center">
-                            <div class="col-md-4 ">
+                            <div class="col-md-4 features">
                                 <span>
-                                    <img src="images/template_share.png" />
+                                    <img src="images/eng.png" class="features-icon"/>
                                     <br />
                                     Lorem ipsum dolor 
                                     amet, consectetur 
                                     adipiscing elit.
                                 </span>
                             </div>
-                            <div class="col-md-4 ">
+                            <div class="col-md-4 features ">
                                  <span>
-                                     <img src="images/template_newspaper.png" />
+                                     <img src="images/newsfinal.png" class="features-icon" />
                                      <br />
                                     Lorem ipsum dolor 
                                     amet, consectetur 
