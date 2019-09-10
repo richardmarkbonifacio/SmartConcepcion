@@ -50,6 +50,12 @@
             background-color: #25685e;
             border-radius: 50%;
         }
+        .logo{
+             display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
     </style>
 </head>
 <body>
@@ -58,7 +64,7 @@
             <div class="container-fluid">
                 <div class="col-md-8 signup">
                     <div class="container-fluid">
-                        <h1 class="text-center">Smart Concepcion</h1>
+                    <img src="images/logo_smart_pinakafi.png" class="logo"/>
                         <h1><b>SIGN UP</b></h1>
                         <label><i>Its quick and easy</i></label>
                     </div>
@@ -102,7 +108,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-12 text-center">
-                            <asp:Button runat="server" CssClass="btn btn-acct" Text="Sign Up" />
+                          <asp:Button runat="server" CssClass="btn btn-acct" Text="Sign Up" />
                         </div>
                         
                     </div>

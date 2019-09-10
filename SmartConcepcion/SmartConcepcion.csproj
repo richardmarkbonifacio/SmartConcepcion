@@ -126,7 +126,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="images\eng.png" />
-    <Content Include="images\logo_smart.png" />
+    <Content Include="images\logo_smart_pinakafi.png" />
     <Content Include="images\newsfinal.png" />
     <Content Include="images\template_share.png" />
     <Content Include="images\signin_bg.jpg" />
