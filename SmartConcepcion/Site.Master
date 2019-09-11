@@ -38,18 +38,50 @@
             </Scripts>
         </asp:ScriptManager>
                                                              <%--NAVBAR--%>
+        <style>
+            .logo{
+             display: block;
+             margin-left: 80px;    
+             margin-top: 10px;
+             height: 11vh;
+                   }
+            .navbar{
+                height: 13vh; 
+                background-color: #383a33;
+                border-radius: 0px;
+                margin-top:-50px;
+            }
+            .navbar-nav{
+                margin-top:40px;
+                color: #fff;
+                margin-left:180px;
+         
+            }
+            .navbar-nav > li {
+                position: relative;
+                display: block;
+                padding: 10px 30px;
+                font-weight:bold;
+                }
+               
+        </style>
          <nav class="navbar">
-             <div class="container-fluid">
+             
                    <div class="navbar-header">
-                         <div class="col-md-4">
-                        <img src="images/final_logo.png"/>
-
-                        </div>
+                              <img src="../images/final_logo.png" class="logo"/>
                     </div>
-             </div>
-        </nav>
+
+                               <ul class="nav navbar-nav ">
+                               <li class="active">HOME</li>
+                               <li>RESIDENCE</li>
+                               <li>BUSINESS</li>
+                               <li>HEALTHCARE</li>
+                               <li>BARANGAY</li>
+    </ul>
 
 
+</nav>
+                     
 
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -58,9 +90,6 @@
 
 
 
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>
         </div>
 
     </form>

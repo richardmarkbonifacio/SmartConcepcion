@@ -56,6 +56,8 @@
              display: block;
             margin-left: auto;
             margin-right: auto;
+            margin-top: 10px;
+              height: 15vh;
 
         }
     </style>
