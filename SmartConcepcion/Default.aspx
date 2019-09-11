@@ -154,7 +154,7 @@
                         <asp:TextBox runat="server" ID="txtUserid" placeholder="User ID" CssClass="form-control sign-up-ctrl" />
                         <asp:TextBox runat="server" ID="txtUserpass"  placeholder="Password" TextMode="Password" CssClass="form-control sign-up-ctrl" />
                         <div class="col-md-12 text-left">
-                            <asp:CheckBox runat="server" Text="Remember me" />
+                            <asp:CheckBox runat="server" Text="Remember me" id="RememberMe" />
                         </div>
                         <div class="col-md-12 text-left">
                             <asp:Label runat="server" ID="lblErr" Font-Size="0.75em" Font-Italic="true" ForeColor="Red" />

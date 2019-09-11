@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.Security;
+using System.Web.UI.WebControls;
+using System.Data;
 
 namespace SmartConcepcion.Class
 {
@@ -31,6 +33,58 @@ namespace SmartConcepcion.Class
             catch (Exception ex)
             {
                 res = "";
+            }
+        }
+        public bool b_hasrow(DataTable dt)
+        {
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+        public void loadDropDown(DropDownList ddl, DataTable dt, bool hasPrefixValue)
+        {
+            int temp_selindx = ddl.SelectedIndex;
+            ddl.SelectedIndex = -1;
+
+            ddl.Items.Clear();
+
+            if (b_hasrow(dt))
+            {
+                ddl.DataSource = dt;
+                ddl.DataBind();
+            }
+
+            if (hasPrefixValue)
+            {
+                ddl.Items.Insert(0, new ListItem("-Select one-", "-1"));
+                ddl.Items.Insert(1, new ListItem("N/A", "-2"));
+            }
+
+            try
+            {
+                ddl.SelectedIndex = temp_selindx;
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        public void loadGridView(GridView gv, DataTable dt)
+        {
+            try
+            {
+
+                gv.DataSource = dt;
+                gv.DataBind();
+
+            }
+
+            catch (Exception e)
+            {
+                throw e;
             }
         }
     }

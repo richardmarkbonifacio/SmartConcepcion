@@ -95,7 +95,7 @@ namespace SmartConcepcion.Class
                 cmd = new SqlCommand("[SignIn]", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@userid", SqlDbType.BigInt).Value = userid;
-                cmd.Parameters.Add("@userpass", SqlDbType.BigInt).Value = userpass;
+                cmd.Parameters.Add("@userpass", SqlDbType.VarChar).Value = userpass;
 
                 da = new SqlDataAdapter(cmd);
                 using (cn)
@@ -138,6 +138,41 @@ namespace SmartConcepcion.Class
                 cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
                 cmd.Parameters.Add("@userpass", SqlDbType.BigInt).Value = userpass;
                 
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
+        #endregion
+
+        #region Announcements
+        public DataTable getAnnouncements(string cnstr, int pagesize, int pageno)
+        {
+            try
+            {
+                result_Dt = new DataTable("Account Profile");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Announce_paging_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@PageSize", SqlDbType.Int).Value = pagesize;
+                cmd.Parameters.Add("@PageNumber", SqlDbType.Int).Value = pageno;
 
                 da = new SqlDataAdapter(cmd);
                 using (cn)
