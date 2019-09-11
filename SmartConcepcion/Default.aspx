@@ -23,30 +23,32 @@
             color:#fff;
         }
         .sign-up-ctrl{
-            margin:10px 0px 10px 0px;
+            margin: 0.625em 0em 0.625em 0em;
         }
         .form-control{
-            border-radius:10px;
+            border-radius: 0.625em;
             height:5vh;
         }
         .btn-acct{
             background-color:#06d96b;
-            width: 150px;
+            width: 9.375em;
             height: 5vh;
-            border-radius: 10px;
-            margin-top: 15px;
+            border-radius: 0.625em;
+            margin-top: 0.9375em;
+            font-weight: bold;
+            color: #fff;
         }
         .features{
-            border: 5px solid #fff;
-            height:30vh;
+            border: 0.3125em solid #fff;
+            height:27vh;
             width: 30%;
             margin: 1.665%;
-            margin-top:60px;
+            margin-top: 3.75em;
         }
         .features-icon{
-            width: 100px;
-            height: 100px;
-            margin-top: -50px;
+            width: 6.25em;
+            height: 6.25em;
+            margin-top: -3.125em;
             background-color: #25685e;
             border-radius: 50%;
         }
@@ -153,7 +155,7 @@
                             <asp:CheckBox runat="server" Text="Remember me" />
                         </div>
                         <div class="col-md-12 text-left">
-                            <asp:Label runat="server" ID="lblErr" Font-Size="12px" Font-Italic="true" ForeColor="Red" />
+                            <asp:Label runat="server" ID="lblErr" Font-Size="0.75em" Font-Italic="true" ForeColor="Red" />
                         </div>
 
                         <asp:Button runat="server" CssClass="btn btn-acct" Text="Sign in" OnClick="btnSignIn" />

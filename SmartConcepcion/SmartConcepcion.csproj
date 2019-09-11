@@ -126,12 +126,14 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="images\eng.png" />
+    <Content Include="images\final_logo.png" />
     <Content Include="images\logo_smart_pinakafi.png" />
     <Content Include="images\newsfinal.png" />
     <Content Include="images\template_share.png" />
     <Content Include="images\signin_bg.jpg" />
     <Content Include="images\signup_backgroud.jpg" />
     <Content Include="images\testingfinal.png" />
+    <Content Include="Portal\Default.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -196,6 +198,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
