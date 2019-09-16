@@ -4,8 +4,10 @@ using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Newtonsoft.Json;
 using SmartConcepcion.Class;
 
 namespace SmartConcepcion
@@ -25,7 +27,32 @@ namespace SmartConcepcion
             {
                 if(Convert.ToBoolean(_dt.Rows[0]["verified"].ToString()))
                 {
+                    string[] userdata;
 
+                    string userName = (string)_dt.Rows[0]["fullname"];
+                    string email = (string)_dt.Rows[0]["email"];
+                    string brgyid = (string)_dt.Rows[0]["brgyid"].ToString();
+                    userdata = new string[] { txtUserid.Text, userName, email, brgyid };
+                    
+
+                    FormsAuthenticationTicket fTicket = new FormsAuthenticationTicket(1, userName,
+                        DateTime.Now, DateTime.Now.AddMinutes(1), RememberMe.Checked, JsonConvert.SerializeObject(userdata),
+                        FormsAuthentication.FormsCookiePath); //new ticket
+
+                    string encTicket = FormsAuthentication.Encrypt(fTicket);
+
+                    // write ticket to cookie collection
+                    Response.Cookies.Add(new HttpCookie(FormsAuthentication.FormsCookieName, encTicket)); //new login
+
+                    if (Request.QueryString["ReturnUrl"] == null)
+                    {
+                        Response.Redirect("Portal");
+                    }
+                    else
+                    {
+                        Response.Redirect(FormsAuthentication.GetRedirectUrl(userName, RememberMe.Checked));
+                        //RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                    }
                 }
                 else
                 {
