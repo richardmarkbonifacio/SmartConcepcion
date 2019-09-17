@@ -375,7 +375,7 @@
 				<li><a href="#">HEALTH CARE</a></li>
 			</ul>
 		</li>
-		<li><a href="#">About</a></li>
+		
 		<li><a href="#">Contact</a></li>
         <li>
 			<a href="#">BARANGAY</a>
@@ -387,8 +387,10 @@
 				<li><a href="#">OFFICIAL</a></li>
 				<li><a href="#">PROJECTS</a></li>
                 <li><a href="#">MISSION & VISIONS</a></li>
+
 			</ul>
 		</li>
+        <li><a href="#">About</a></li>
         <li>
 		
           
