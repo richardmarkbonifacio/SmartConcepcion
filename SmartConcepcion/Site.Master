@@ -201,7 +201,7 @@
 }
 #cssmenu.small-screen ul ul li a {
   color: #dddddd;
-  background: none;
+ 
 }
 #cssmenu.small-screen ul ul li:hover > a,
 #cssmenu.small-screen ul ul li.active > a {
