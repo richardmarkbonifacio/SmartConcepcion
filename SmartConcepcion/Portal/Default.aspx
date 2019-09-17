@@ -20,7 +20,7 @@
                                     <asp:TextBox runat="server" CssClass="form-control" TextMode="Date" ID="txtDate" />
 
                                     <asp:TextBox runat="server" TextMode="MultiLine" Rows="5" CssClass="form-control" placeholder="Write something" ID="txtContent" />
-                                    <asp:FileUpload runat="server" accept="image/*" multiple="false" ID="fuBanner"  ClientIDMode="Static" />
+                                    <asp:FileUpload runat="server" accept="image/*" multiple="false" ID="fuBanner" ClientIDMode="Static" />
                                 </div>
                             </div>
                             <div class="modal-footer">
