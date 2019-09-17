@@ -195,6 +195,48 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
+
+        public DataTable setAnnouncements(string cnstr, string title, string subtitle, string content, DateTime publisheddate, 
+            long? typeID, Byte[] banner, string banner_ext, long createdby)
+        {
+            try
+            {
+                result_Dt = new DataTable("Announcement Set");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Announcement_Set]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@title", SqlDbType.VarChar).Value = title;
+                cmd.Parameters.Add("@subtitle", SqlDbType.VarChar).Value = subtitle;
+                cmd.Parameters.Add("@content", SqlDbType.VarChar).Value = content;
+                cmd.Parameters.Add("@publisheddate", SqlDbType.Date).Value = publisheddate;
+                cmd.Parameters.Add("@typeID", SqlDbType.BigInt).Value = typeID;
+                cmd.Parameters.Add("@banner_file", SqlDbType.VarBinary).Value = banner;
+                cmd.Parameters.Add("@content", SqlDbType.VarChar).Value = content;
+                cmd.Parameters.Add("@banner_extension", SqlDbType.VarChar).Value = banner_ext;
+                cmd.Parameters.Add("@createdby", SqlDbType.BigInt).Value = createdby;
+
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
         #endregion
     }
 }
