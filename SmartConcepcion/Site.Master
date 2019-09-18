@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - Smart Concepcion</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -27,6 +27,9 @@
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="bootstrap" />
+                <%--<script src="~/Scripts/menumaker.js" runat="server"></script>--%>
+                <%--<asp:ScriptReference Name="menumaker.js" Assembly="System.Web" Path="~/Scripts/menumaker.js" />--%>
+                <asp:ScriptReference Path="~/Scripts/menumaker.js" />
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
                 <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
                 <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
@@ -39,6 +42,7 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
+        <%--<script src="~/Scripts/menumaker.js" runat="server"></script>--%>
                                                              <%--NAVBAR--%>
         <meta name="viewport" content="width=device-width, user-scalable=no" /> 
         <style>
@@ -370,7 +374,7 @@ a .logo {
 	<ul>
         <li>
          <div class="logo" >
-      <a class="logo" href="#"><img src="../images/logo3.png" class="logo"/></a></div></li>
+      <a class="logo" href="#"><img src="~/images/logo3.png" class="logo" runat="server"/></a></div></li>
  
 		<li><a href="#">HOME</a></li>
      
@@ -413,8 +417,8 @@ a .logo {
         </div>
         
         
-  <script src="../Scripts/jquery-3.3.1.min.js"></script>
-<script src="../Scripts/menumaker.js"></script>
+  <%--<script src="../Scripts/jquery-3.3.1.min.js"></script>--%>
+
 <script type="text/javascript">
 	$("#cssmenu").menumaker({
 		title: "Menu",
