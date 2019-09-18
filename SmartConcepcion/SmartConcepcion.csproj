@@ -128,6 +128,7 @@
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="images\arrow-down.png" />
     <Content Include="images\arrow-down.svg" />
+    <Content Include="images\homie.png" />
     <Content Include="images\down-arrow.png" />
     <Content Include="images\eng.png" />
     <Content Include="images\final_logo.png" />
