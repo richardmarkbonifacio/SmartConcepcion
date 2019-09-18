@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SmartConcepcion.Portal {
+namespace SmartConcepcion.Portal.Announcements {
     
     
-    public partial class WebForm1 {
+    public partial class Create {
         
         /// <summary>
         /// upPostAnnouncement control.
@@ -29,6 +29,24 @@ namespace SmartConcepcion.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl imgbanner;
+        
+        /// <summary>
+        /// fuBanner control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fuBanner;
+        
+        /// <summary>
+        /// btnRefresh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnRefresh;
         
         /// <summary>
         /// txtTitle control.
@@ -65,41 +83,5 @@ namespace SmartConcepcion.Portal {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtContent;
-        
-        /// <summary>
-        /// imgPreview control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgPreview;
-        
-        /// <summary>
-        /// fuBanner control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuBanner;
-        
-        /// <summary>
-        /// btnPost control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPost;
-        
-        /// <summary>
-        /// gvAnnouncements control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvAnnouncements;
     }
 }

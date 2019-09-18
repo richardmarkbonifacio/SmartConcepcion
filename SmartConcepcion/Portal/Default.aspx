@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Portal.WebForm1" %>
 <asp:Content ID="main" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:UpdatePanel runat="server" ID="upPostAnnouncement">
+    <asp:UpdatePanel runat="server" ID="upPostAnnouncement" >
         <ContentTemplate>
             <div class="container-fluid">
                 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Large Modal</button>
@@ -15,12 +15,16 @@
                             </div>
                             <div class="modal-body">
                                 <div class="container-fluid">
+                                    <div class="img-banner" runat="server" id="imgbanner">
+
+                                    </div>
                                     <asp:TextBox runat="server" CssClass="form-control" placeholder="Title" ID="txtTitle" />
                                     <asp:TextBox runat="server" CssClass="form-control" placeholder="Subtitle" ID="txtSubtitle"/>
                                     <asp:TextBox runat="server" CssClass="form-control" TextMode="Date" ID="txtDate" />
 
                                     <asp:TextBox runat="server" TextMode="MultiLine" Rows="5" CssClass="form-control" placeholder="Write something" ID="txtContent" />
-                                    <asp:FileUpload runat="server" accept="image/*" multiple="false" ID="fuBanner" ClientIDMode="Static" />
+                                    <asp:Image runat="server" ID="imgPreview" Height="300px" Width="100%"/>
+                                    <asp:FileUpload runat="server" accept="image/*" multiple="false" ID="fuBanner" ClientIDMode="Static"  />
                                 </div>
                             </div>
                             <div class="modal-footer">

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Drawing;
 using System.Web.UI.WebControls;
 using SmartConcepcion.Class;
 
@@ -27,6 +28,17 @@ namespace SmartConcepcion.Portal
                 imgByte = new Byte[File.ContentLength];
                 File.InputStream.Read(imgByte, 0, File.ContentLength);
             }
+            imgbanner.Attributes["style"] = "background: lightblue url('data:image;base64," + Convert.ToBase64String(imgByte) + "') no-repeat fixed center;background-size:cover; ";
+            //imgPreview.ImageUrl = "data:image;base64," + Convert.ToBase64String(imgByte);
+            //upPostAnnouncement.Update();
+        }
+        public System.Drawing.Image ByteArrayToImage(byte[] byteArrayIn)
+        {
+            using (var ms = new MemoryStream(byteArrayIn))
+            {
+                return System.Drawing.Image.FromStream(ms);
+            }
         }
     }
+    
 }
