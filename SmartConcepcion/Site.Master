@@ -57,7 +57,6 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-
 }
 #cssmenu:after,
 #cssmenu > ul:after {
@@ -74,8 +73,6 @@
 #cssmenu {
     margin-top:-50px;
   background: #333333;
-
-
 }
 #cssmenu > ul > li {
   float: left;
@@ -110,9 +107,6 @@
 #cssmenu > ul > li.has-sub > a {
   padding-right: 30px;
 }
-
-
-
 #cssmenu ul ul {
   position: absolute;
   left: -9999px;
@@ -154,7 +148,6 @@
   text-decoration: none;
   color: #dddddd;
   font-weight: 400;
-
   background: #333333;
 }
 #cssmenu ul ul li:last-child > a,
@@ -234,7 +227,6 @@
   height: 4px;
   width: 20px;
   border-top: 2px solid #dddddd;
-  /*border-bottom: 2px solid #dddddd;*/
   content: '';
 }
 #cssmenu.small-screen #menu-button:before {
@@ -325,29 +317,29 @@
   padding: 5px;
 }
 .btn{
-        margin-top: 45px;
-            background: transparent;
-            padding: 8px 10px;
-            border-color: transparent;
+  margin-top: 45px;
+  background: transparent;
+  padding: 8px 10px;
+  border-color: transparent;
 }
 .btn:hover{
-     background:#00ff00;
-     border-color:transparent;
-}
+  background:transparent;
+  border-color:transparent;
+  color: #00ff00;
 }
 .dropdown-menu{
-    background-color: #333;
-        border-radius: 0px;
+  background-color: #333;
+  border-radius: 0px;
         
 }
 .dropdown-menu a{
-    color:#fff;
+  color:#fff;
 
 }
 .dropdown-menu >  a:hover {
   color: #00ff00;
-      text-decoration:none;
-      margin-right:2px;
+  text-decoration:none;
+  margin-right:2px;
 }
 
 .dropdown-menu ul ul li a {
@@ -366,12 +358,12 @@
   font-weight: bold;
   transition: 0.4s;
 }
-      a .logo {
-              margin-left: 40px;
-              margin-right: 80px;
-              height: 14vh;
+a .logo {
+  margin-left: 40px;
+  margin-right: 160px;
+  height: 14vh;
           }
-       </style>
+      </style>
         
    <div id="cssmenu">
      
@@ -379,14 +371,14 @@
         <li>
          <div class="logo" >
       <a class="logo" href="#"><img src="../images/logo3.png" class="logo"/></a></div></li>
+ 
 		<li><a href="#">HOME</a></li>
+     
 		<li>
 			<a href="#">RESIDENCE</a>
 			<ul>
 				<li><a href="#">NEWS & ANNOUNCEMENTS</a></li>
-				<li>
-					<a href="#">INCIDENT REPORT</a>			
-				</li>
+				<li><a href="#">INCIDENT REPORT</a></li>
 				<li><a href="#">BUSINESS</a></li>
 				<li><a href="#">HEALTH CARE</a></li>
 			</ul>
@@ -397,42 +389,20 @@
 			<a href="#">BARANGAY</a>
 			<ul>
 				<li><a href="#">NEWS & ANNOUNCEMENTS</a></li>
-				<li>
-					<a href="#">BUDGET</a>			
-				</li>
+				<li><a href="#">BUDGET</a></li>
 				<li><a href="#">OFFICIAL</a></li>
 				<li><a href="#">PROJECTS</a></li>
                 <li><a href="#">MISSION & VISIONS</a></li>
-
 			</ul>
 		</li>
         <li><a href="#">About</a></li>
-        <li>
-		
-          
-
-
-           <%-- <div class="dropdown">--%>
-  <%--<button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<img src="../images/arrow-down.png" class="logout-logo"/>
-  </button>
-  <div class="dropdown-menu">
-      
-   <ul>
-		<li><a class="dropdown-item" href="#">MY PROFILE</a>
-    	<li><a class="dropdown-item" href="#">LOG OUT</a></li></ul>
-         
-  </div>--%>
-          
+          <li>
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
           <li><a href="#">MY PROFILE</a></li>
-    <li><a href="#">LOG OUT</a></li>
-
-
+          <li><a href="#">LOG OUT</a></li>
   </ul>
-  
              </ul>
 </div>
     
@@ -441,20 +411,7 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-        <script>
-// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("navbar").style.padding = "30px 10px";
-    document.getElementById("logo").style.fontSize = "25px";
-  } else {
-    document.getElementById("navbar").style.padding = "80px 10px";
-    document.getElementById("logo").style.fontSize = "35px";
-  }
-}
-</script>
+        
         
   <script src="../Scripts/jquery-3.3.1.min.js"></script>
 <script src="../Scripts/menumaker.js"></script>
