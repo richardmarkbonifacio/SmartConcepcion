@@ -71,16 +71,12 @@
   line-height: 0;
   height: 0;
 }
-#cssmenu #menu-button {
-  display: none;
-}
+#cssmenu #menu-button {display: none;}
 #cssmenu {
-    margin-top:-50px;
+  margin-top:-50px;
   background: #333333;
 }
-#cssmenu > ul > li {
-  float: left;
-}
+#cssmenu > ul > li { float: left;}
 #cssmenu.align-center > ul {
   font-size: 0;
   text-align: center;
@@ -89,12 +85,8 @@
   display: inline-block;
   float: none;
 }
-#cssmenu.align-center ul ul {
-  text-align: left;
-}
-#cssmenu.align-right > ul > li {
-  float: right;
-}
+#cssmenu.align-center ul ul {text-align: left;}
+#cssmenu.align-right > ul > li { float: right;}
 #cssmenu > ul > li > a {
   padding: 17px;
   font-size: 12px;
@@ -105,24 +97,17 @@
   text-transform: uppercase;
   margin-top: 40px;
 }
-#cssmenu > ul > li:hover > a {
-  color: #00ff00;
-}
-#cssmenu > ul > li.has-sub > a {
-  padding-right: 30px;
-}
+#cssmenu > ul > li:hover > a {color: #00ff00;}
+#cssmenu > ul > li.has-sub > a {padding-right: 30px;}
 #cssmenu ul ul {
   position: absolute;
   left: -9999px;
 }
-#cssmenu.align-right ul ul {
-  text-align: right;
-}
+#cssmenu.align-right ul ul { text-align: right;}
 #cssmenu ul ul li {
   height: 0;
   -webkit-transition: all .25s ease;
   -moz-transition: all .25s ease;
- 
   -o-transition: all .25s ease;
   transition: all .25s ease;
 }
@@ -133,9 +118,7 @@
   left: auto;
   right: 0;
 }
-#cssmenu li:hover > ul > li {
-  height: 35px;
-}
+#cssmenu li:hover > ul > li {height: 35px;}
 #cssmenu ul ul ul {
   margin-left: 100%;
   top: 0;
@@ -154,56 +137,29 @@
   font-weight: 400;
   background: #333333;
 }
-#cssmenu ul ul li:last-child > a,
-#cssmenu ul ul li.last-item > a {
-  border-bottom: 0;
-}
-#cssmenu ul ul li:hover > a,
-#cssmenu ul ul li a:hover {
-  color:  #00ff00;
-}
-
-
-#cssmenu.small-screen {
-  width: 100%;
-}
+#cssmenu ul ul li:last-child > a, #cssmenu ul ul li.last-item > a {border-bottom: 0;}
+#cssmenu ul ul li:hover > a,#cssmenu ul ul li a:hover {color:  #00ff00;}
+#cssmenu.small-screen { width: 100%;}
 #cssmenu.small-screen ul {
   width: 100%;
   display: none;
 }
-#cssmenu.small-screen.align-center > ul {
-  text-align: left;
-}
+#cssmenu.small-screen.align-center > ul { text-align: left;}
 #cssmenu.small-screen ul li {
   width: 100%;
   border-top: 1px solid rgba(120, 120, 120, 0.2);
 }
-#cssmenu.small-screen ul ul li,
-#cssmenu.small-screen li:hover > ul > li {
-  height: auto;
-}
+#cssmenu.small-screen ul ul li, #cssmenu.small-screen li:hover > ul > li {height: auto;}
 #cssmenu.small-screen ul li a,
 #cssmenu.small-screen ul ul li a {
   width: 100%;
   border-bottom: 0;
 }
-#cssmenu.small-screen > ul > li {
-  float: none;
-}
-#cssmenu.small-screen ul ul li a {
-  padding-left: 25px;
-}
-#cssmenu.small-screen ul ul ul li a {
-  padding-left: 35px;
-}
-#cssmenu.small-screen ul ul li a {
-  color: #dddddd;
- 
-}
-#cssmenu.small-screen ul ul li:hover > a,
-#cssmenu.small-screen ul ul li.active > a {
-  color: #ffffff;
-}
+#cssmenu.small-screen > ul > li { float: none;}
+#cssmenu.small-screen ul ul li a {  padding-left: 25px;}
+#cssmenu.small-screen ul ul ul li a {padding-left: 35px;}
+#cssmenu.small-screen ul ul li a {color: #dddddd;}
+#cssmenu.small-screen ul ul li:hover > a, #cssmenu.small-screen ul ul li.active > a { color: #ffffff;}
 #cssmenu.small-screen ul ul,
 #cssmenu.small-screen ul ul ul,
 #cssmenu.small-screen.align-right ul ul {
@@ -276,9 +232,7 @@
   width: 46px;
   cursor: pointer;
 }
-#cssmenu.small-screen .submenu-button.submenu-opened {
-  background: #262626;
-}
+#cssmenu.small-screen .submenu-button.submenu-opened {  background: #262626;}
 #cssmenu.small-screen ul ul .submenu-button {
   height: 34px;
   width: 34px;
@@ -297,9 +251,7 @@
   top: 15px;
   right: 13px;
 }
-#cssmenu.small-screen .submenu-button.submenu-opened:after {
-  background: #ffffff;
-}
+#cssmenu.small-screen .submenu-button.submenu-opened:after { background: #ffffff;}
 #cssmenu.small-screen .submenu-button:before {
   position: absolute;
   top: 19px;
@@ -314,12 +266,8 @@
   top: 12px;
   right: 16px;
 }
-#cssmenu.small-screen .submenu-button.submenu-opened:before {
-  display: none;
-}
-#cssmenu.small-screen.select-list {
-  padding: 5px;
-}
+#cssmenu.small-screen .submenu-button.submenu-opened:before {display: none;}
+#cssmenu.small-screen.select-list { padding: 5px;}
 .btn{
   margin-top: 45px;
   background: transparent;
@@ -333,13 +281,9 @@
 }
 .dropdown-menu{
   background-color: #333;
-  border-radius: 0px;
-        
+  border-radius: 0px;        
 }
-.dropdown-menu a{
-  color:#fff;
-
-}
+.dropdown-menu a{ color:#fff;}
 .dropdown-menu >  a:hover {
   color: #00ff00;
   text-decoration:none;
@@ -347,7 +291,7 @@
 }
 
 .dropdown-menu ul ul li a {
-  border-bottom: 1px solid rgba(150, 150, 150, 0.15);
+ border-bottom: 1px solid rgba(150, 150, 150, 0.15);
   padding: 11px 15px;
   width: 170px;
   font-size: 12px;
@@ -367,6 +311,62 @@ a .logo {
   margin-right: 160px;
   height: 14vh;
           }
+
+/*footer CSS*/
+.logofoot{
+    height:12vh;
+}
+.puuter {
+    background-color: #333333;
+	padding: 60px 40px;
+	color: #DDDDDD;
+	margin-bottom: 20px;
+	border-bottom-right-radius: 6px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 6px;
+}
+.puuter .footer-brand, .puuter .footer-nav, .puuter .footer-social, .puuter .footer-ns { padding:10px 25px; }
+.puuter .footer-nav, .puuter .footer-social, .puuter .footer-ns { border-color: transparent; }
+.puuter .footer-brand h2 { margin:0px 0px 10px; }
+.puuter .footer-brand p { font-size:12px; color:rgba(255,255,255,0.70); }
+
+.puuter .footer-nav ul.pages { list-style:none; padding:0px; }
+.puuter .footer-nav ul.pages li { padding:5px 0px;}
+.puuter .footer-nav ul.pages a { color:#DDDDDD; font-weight:bold; text-transform:uppercase; }
+.puuter .footer-nav ul.pages a:hover { color:#00ff00; text-decoration:none; }
+.puuter .footer-nav h4 {
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom:10px;
+}
+
+.puuter .footer-nav ul.list { list-style:none; padding:0px; }
+.puuter .footer-nav ul.list li { padding:5px 0px;}
+.puuter .footer-nav ul.list a { color:#DDDDDD; }
+.puuter .footer-nav ul.list a:hover { color:#00ff00; text-decoration:none; }
+
+.puuter .footer-social ul { list-style:none; padding:0px; }
+.puuter .footer-social h4 {
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+.puuter .footer-social li { padding:5px 4px;}
+
+
+.puuter .footer-ns h4 {
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	margin-bottom:10px;
+}
+.puuter .footer-ns p { font-size:12px; color:#DDDDDD; }
+.fbico , .ytico , .gmailico {height:4vh;}
+@media (min-width: 768px) {
+	.puuter.footer-nav, .puuter .footer-social, .puuter .footer-ns { border-left:solid 1px #dcdcdc; }
+}
+
       </style>
         
    <div id="cssmenu">
@@ -400,13 +400,14 @@ a .logo {
 			</ul>
 		</li>
         <li><a href="#">About</a></li>
-          <li>
+        <li>
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
           <li><a href="#">MY PROFILE</a></li>
           <li><a href="#">LOG OUT</a></li>
   </ul>
+            </li>
              </ul>
 </div>
     
@@ -415,8 +416,50 @@ a .logo {
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-        
-        
+
+      <%--  FOOTER--%>
+  <footer class="puuter">
+        <div class="row">
+        	<div class="col-md-3 footer-brand">
+            	<h2><img class="logofoot" src="../images/logo3.png" /></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse semper sollicitudin ipsum, eget ultrices dolor elementum ut. Cras cursus elit a ultricies volutpat. </p>
+                <p>© 2020 Smart Concepcion, All rights reserved</p>
+            </div>
+        	<div class="col-md-4 footer-nav">
+            	<h4>Menu —</h4>
+            	<div class="col-md-6">
+                    <ul class="pages">
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">RESIDENCE</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                        <li><a href="#">BARANGAY</a></li>
+                        <li><a href="#">ABOUT</a></li>
+                    </ul>
+                </div>
+            	<div class="col-md-6">
+                    <ul class="list">
+                        <li><a href="#">Terms & Condition</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        	<div class="col-md-2 footer-social animated fadeInDown">
+            	<h4>Follow Us</h4>
+            	<ul>
+                	<li><a href="#"><img class="fbico" src="../images/facebook.svg" /></a></li>
+                	<li><a href="#"><img class="ytico" src="../images/youtube.svg" /></a></li>
+                	<li><a href="#"><img class="gmailico" src="../images/gmail.svg" /></a></li>
+                </ul>
+            </div>
+        	<div class="col-md-3 footer-ns ">
+            	<h4>Message Us</h4>
+             
+              
+                
+                 
+            </div>
+        </div>
+    </footer>
   <%--<script src="../Scripts/jquery-3.3.1.min.js"></script>--%>
 
 <script type="text/javascript">
@@ -430,8 +473,5 @@ a .logo {
         
     
     </form>
-    
-
-
 </body>
 </html>
