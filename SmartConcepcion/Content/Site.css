@@ -1,7 +1,6 @@
 ﻿/* Move down content because we have a fixed navbar that is 50px tall */
 body {
     padding-top: 50px;
-    padding-bottom: 20px;
 }
 
 /* Wrapping element */
@@ -9,6 +8,7 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    min-height:100%;
 }
 
 .announce-header {
@@ -302,11 +302,7 @@ a .logo {
     background-color: #333333;
     padding: 60px 40px;
     color: #DDDDDD;
-    margin-bottom: 20px;
-    border-bottom-right-radius: 6px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 6px;
-}
+        }
 .puuter .footer-brand, .puuter .footer-nav, .puuter .footer-social, .puuter .footer-ns {padding: 10px 25px;}
 .puuter .footer-nav, .puuter .footer-social, .puuter .footer-ns { border-color: transparent;}
 .puuter .footer-brand h2 { margin: 0px 0px 10px; }
@@ -436,10 +432,8 @@ a .logo {
   -webkit-transition: 0.2s all;
    transition: 0.2s all;
             }
- .notfound a:hover { opacity: 0.8;}
+.notfound a:hover { opacity: 0.8;}
 .notfound-404 h1 > span {
   width: 86px;
   height: 86px;
             }
-
-
