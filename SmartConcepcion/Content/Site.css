@@ -364,10 +364,9 @@ a .logo {
         color: #DDDDDD;
     }
 .fbico, .ytico, .gmailico { height: 4vh; }
-@media (min-width: 768px) {
-    .puuter.footer-nav, .puuter .footer-social, .puuter .footer-ns { border-left: solid 1px #dcdcdc; }
-                          }
 
+
+/* Change to desired color
 /*===============================================================================ERROR-404===================================================================================*/
 
   #notfound {

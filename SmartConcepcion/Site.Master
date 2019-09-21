@@ -126,9 +126,9 @@
         	<div class="col-md-2 footer-social animated fadeInDown">
             	<h4>Follow Us</h4>
             	<ul>
-                	<li><a href="#"><img class="fbico" src="~/images/facebook.svg" runat="server"/></a></li>
-                	<li><a href="#"><img class="ytico" src="~/images/youtube.svg" runat="server"/></a></li>
-                	<li><a href="#"><img class="gmailico" src="~/images/gmail.svg" runat="server"/></a></li>
+                	<li><a href="#" data-toggle="tooltip" title="Facebook"><img class="fbico" src="~/images/facebook.svg" runat="server"/></a></li>
+                	<li><a href="#" data-toggle="tooltip" title="Youtube"><img class="ytico" src="~/images/youtube.svg" runat="server"/></a></li>
+                	<li><a href="#" data-toggle="tooltip" title="Gmail"><img class="gmailico" src="~/images/gmail.svg" runat="server"/></a></li>
                 </ul>
             </div>
         	<div class="col-md-3 footer-ns ">
@@ -146,12 +146,17 @@
 	$("#cssmenu").menumaker({
 		title: "Menu",
 		format: "multitoggle"
-	});
+    });
+
+    $(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
 </script>
 
        
         
     
+
     </form>
 </body>
 </html>
