@@ -375,11 +375,11 @@ a .logo {
 /*===============================================================================ERROR-404===================================================================================*/
 
   #notfound {
-     position: relative;
+     /*position: relative;*/
      height: 100vh;
             }
   #notfound .notfound {
-     position: absolute;
+     position: relative;
      left: 50%;
      top: 50%;
      -webkit-transform: translate(-50%, -50%);
