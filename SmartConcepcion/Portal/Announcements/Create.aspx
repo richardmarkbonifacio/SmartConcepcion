@@ -14,11 +14,12 @@
 
                 <asp:TextBox runat="server" TextMode="MultiLine" Rows="5" CssClass="form-control" placeholder="Write something" ID="txtContent" />
 
-                
+                <asp:Button runat="server" Text="POST" ID="btnPost" OnClick="btnPost_Click" CssClass="btn btn-default" />
             </div>
         </ContentTemplate>
         <Triggers>
             <asp:PostBackTrigger ControlID="btnRefresh" />
+            <asp:PostBackTrigger ControlID="btnPost" />
         </Triggers>
     </asp:UpdatePanel>
     

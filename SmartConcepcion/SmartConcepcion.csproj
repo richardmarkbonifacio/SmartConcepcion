@@ -158,6 +158,7 @@
     <Content Include="images\testingfinal.png" />
     <Content Include="images\youtube.svg" />
     <Content Include="Portal\Announcements\Create.aspx" />
+    <Content Include="Portal\Announcements\Default.aspx" />
     <Content Include="Portal\Default.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -240,6 +241,13 @@
     <Compile Include="Portal\Announcements\Create.aspx.designer.cs">
       <DependentUpon>Create.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Portal\Announcements\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Announcements\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Portal\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -272,6 +280,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Portal\Announcements\Banner\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

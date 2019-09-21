@@ -63,9 +63,12 @@ textarea {
                                      }
  #cssmenu #menu-button { display: none;}
  #cssmenu {
-    margin-top: -50px;
+    top:0;
+    min-width:100%;
+    z-index:9999999;
     background: #333333;
-          }
+    position:fixed;
+}
  #cssmenu > ul > li { float: left; }
  #cssmenu.align-center > ul {
         font-size: 0;
@@ -303,6 +306,7 @@ a .logo {
     background-color: #333333;
     padding: 60px 40px;
     color: #DDDDDD;
+    bottom:0;
         }
 .puuter .footer-brand, .puuter .footer-nav, .puuter .footer-social, .puuter .footer-ns {padding: 10px 25px;}
 .puuter .footer-nav, .puuter .footer-social, .puuter .footer-ns { border-color: transparent;}
