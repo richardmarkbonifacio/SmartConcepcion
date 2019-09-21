@@ -101,7 +101,7 @@
   <footer class="puuter">
         <div class="row">
         	<div class="col-md-3 footer-brand">
-            	<h2><img class="logofoot" src="../images/logo3.png" /></h2>
+            	<h2><img class="logofoot" src="~/images/logo3.png" runat="server"/></h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse semper sollicitudin ipsum, eget ultrices dolor elementum ut. Cras cursus elit a ultricies volutpat. </p>
                 <p>© 2020 Smart Concepcion, All rights reserved</p>
             </div>
@@ -126,9 +126,9 @@
         	<div class="col-md-2 footer-social animated fadeInDown">
             	<h4>Follow Us</h4>
             	<ul>
-                	<li><a href="#"><img class="fbico" src="../images/facebook.svg" /></a></li>
-                	<li><a href="#"><img class="ytico" src="../images/youtube.svg" /></a></li>
-                	<li><a href="#"><img class="gmailico" src="../images/gmail.svg" /></a></li>
+                	<li><a href="#"><img class="fbico" src="~/images/facebook.svg" runat="server"/></a></li>
+                	<li><a href="#"><img class="ytico" src="~/images/youtube.svg" runat="server"/></a></li>
+                	<li><a href="#"><img class="gmailico" src="~/images/gmail.svg" runat="server"/></a></li>
                 </ul>
             </div>
         	<div class="col-md-3 footer-ns ">

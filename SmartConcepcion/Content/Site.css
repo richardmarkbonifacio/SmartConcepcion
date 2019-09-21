@@ -53,12 +53,12 @@ textarea {
     box-sizing: border-box;
                     }
  #cssmenu:after,#cssmenu > ul:after {
-        content: ".";
-        display: block;
-        clear: both;
-        visibility: hidden;
-        line-height: 0;
-        height: 0;
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
                                      }
  #cssmenu #menu-button { display: none;}
  #cssmenu {
