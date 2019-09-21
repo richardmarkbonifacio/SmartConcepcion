@@ -35,7 +35,7 @@ namespace SmartConcepcion.Portal.Announcements
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", 1, 0);
+            p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", 3, 0);
             loadGridView(gvAnnouncements, p_dtAnnouncement);
         }
 
