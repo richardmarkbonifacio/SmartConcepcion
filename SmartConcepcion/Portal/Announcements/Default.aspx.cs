@@ -67,19 +67,33 @@ namespace SmartConcepcion.Portal.Announcements
                 DataView _dv = p_dtAnnouncement.AsDataView();
                 _dv.RowFilter = "ID=" + _img.ToolTip;
                 DataTable _dttemp = _dv.ToTable();
-                _panel.CssClass = "row";
+                _panel.CssClass = "row announcement-row";
                 string _filepath = "~\\Portal\\Announcements\\Banner\\" + _dttemp.Rows[0]["ID"].ToString()+ p_dtAnnouncement.Rows[0]["banner_extension"].ToString();
                 //if (Directory.Exists(_filepath))
                 //    _panel.BackImageUrl = _filepath ;
                 //else
                 //    _panel.BackImageUrl = "https://dummyimage.com/400x400";
                 //_img.ImageUrl = 
-                _panel.BackImageUrl = _filepath;
+                _img.ImageUrl = _filepath;
             }
         }
         protected void GetImageData()
         {
 
+        }
+
+        protected void lnkAnnouncement_Click(object sender, EventArgs e)
+        {
+            LinkButton _lnkbtn = (LinkButton)sender;
+
+            DataView _dv = p_dtAnnouncement.AsDataView();
+            _dv.RowFilter = "ID=" + _lnkbtn.ToolTip;
+            DataTable _dttemp = _dv.ToTable();
+
+            lblModalTitle.Text = _dttemp.Rows[0]["title"].ToString();
+            lblModalBody.Text = _dttemp.Rows[0]["body_content"].ToString();
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+            upModal.Update();
         }
     }
 }

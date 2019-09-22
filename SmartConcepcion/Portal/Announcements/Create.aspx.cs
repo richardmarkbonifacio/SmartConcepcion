@@ -26,8 +26,9 @@ namespace SmartConcepcion.Portal.Announcements
                 HttpPostedFile File = fuBanner.PostedFile;
                 imgByte = new Byte[File.ContentLength];
                 File.InputStream.Read(imgByte, 0, File.ContentLength);
+                //imgbanner.Attributes["style"] = "background: lightblue url('data:image;base64," + Convert.ToBase64String(imgByte) + "') no-repeat fixed center;background-size:cover; ";
             }
-            imgbanner.Attributes["style"] = "background: lightblue url('data:image;base64," + Convert.ToBase64String(imgByte) + "') no-repeat fixed center;background-size:cover; ";
+            
         }
 
         protected void btnPost_Click(object sender, EventArgs e)
@@ -36,8 +37,7 @@ namespace SmartConcepcion.Portal.Announcements
             {
                 Byte[] imgByte = null;
 
-                if (fuBanner.HasFile && fuBanner.PostedFile != null)
-                {
+                
                     //HttpPostedFile File = fuBanner.PostedFile;
                     //imgByte = new Byte[File.ContentLength];
                     //File.InputStream.Read(imgByte, 0, File.ContentLength);
@@ -45,11 +45,9 @@ namespace SmartConcepcion.Portal.Announcements
                     DataTable _dttemp = csql.setAnnouncements("SmartConcepcion", txtTitle.Text, txtSubtitle.Text, txtContent.Text,
                         Convert.ToDateTime(txtDate.Text), 0, _file_ext, 12345);
 
-
+                if (fuBanner.HasFile && fuBanner.PostedFile != null)
+                {
                     fuBanner.SaveAs(Server.MapPath("Banner//" + _dttemp.Rows[0]["ID"].ToString() + _file_ext ));
-                    
-
-
                 }
             }
             catch (Exception)

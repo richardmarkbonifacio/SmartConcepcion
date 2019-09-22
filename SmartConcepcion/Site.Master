@@ -13,7 +13,8 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-
+    <link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
@@ -61,7 +62,7 @@
 		<li>
 			<a href="#">RESIDENCE</a>
 			<ul>
-				<li><a href="#">NEWS & ANNOUNCEMENTS</a></li>
+				<li><a href="~/Portal/Announcements/" runat="server">NEWS & ANNOUNCEMENTS</a></li>
 				<li><a href="#">INCIDENT REPORT</a></li>
 				<li><a href="#">BUSINESS</a></li>
 				<li><a href="#">HEALTH CARE</a></li>
@@ -81,7 +82,7 @@
 		</li>
         <li><a href="#">About</a></li>
         <li>
-  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+  <button class="btn btn-navbar btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
           <li><a href="#">MY PROFILE</a></li>
