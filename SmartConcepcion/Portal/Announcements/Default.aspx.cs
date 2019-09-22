@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -31,6 +32,23 @@ namespace SmartConcepcion.Portal.Announcements
                 ViewState["dtAnnouncement"] = value;
             }
         }
+        public int? p_BannerIndex {
+            get
+            {
+                if (ViewState["BannerIndex"] != null)
+                {
+                    return Convert.ToInt32( ViewState["BannerIndex"]) ;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            set
+            {
+                ViewState["BannerIndex"] = value;
+            }
+        }
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
@@ -44,8 +62,19 @@ namespace SmartConcepcion.Portal.Announcements
             if ((e.Row.RowType & DataControlRowType.DataRow) != 0)
             {
                 Image _img = (Image)e.Row.FindControl("imgbanner");
-                //Byte[] imgbyte = (Byte[])p_dtAnnouncement.Rows[0]["banner_file"];
-                _img.ImageUrl = "~\\Portal\\Announcements\\Banner\\"+ p_dtAnnouncement.Rows[0]["ID"].ToString() + p_dtAnnouncement.Rows[0]["banner_extension"].ToString();
+                Panel _panel = (Panel)e.Row.FindControl("panelRow");
+
+                DataView _dv = p_dtAnnouncement.AsDataView();
+                _dv.RowFilter = "ID=" + _img.ToolTip;
+                DataTable _dttemp = _dv.ToTable();
+                _panel.CssClass = "row";
+                string _filepath = "~\\Portal\\Announcements\\Banner\\" + _dttemp.Rows[0]["ID"].ToString()+ p_dtAnnouncement.Rows[0]["banner_extension"].ToString();
+                //if (Directory.Exists(_filepath))
+                //    _panel.BackImageUrl = _filepath ;
+                //else
+                //    _panel.BackImageUrl = "https://dummyimage.com/400x400";
+                //_img.ImageUrl = 
+                _panel.BackImageUrl = _filepath;
             }
         }
         protected void GetImageData()
