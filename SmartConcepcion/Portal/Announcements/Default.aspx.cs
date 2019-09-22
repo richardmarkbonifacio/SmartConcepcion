@@ -53,8 +53,14 @@ namespace SmartConcepcion.Portal.Announcements
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", 3, 0);
-            loadGridView(gvAnnouncements, p_dtAnnouncement);
+            
+            long _id = p_UserID;
+            if (!IsPostBack)
+            {
+                p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", 15, 0);
+                loadGridView(gvAnnouncements, p_dtAnnouncement);
+            }
+            
         }
 
         protected void gvAnnouncements_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -69,12 +75,14 @@ namespace SmartConcepcion.Portal.Announcements
                 DataTable _dttemp = _dv.ToTable();
                 _panel.CssClass = "row announcement-row";
                 string _filepath = "~\\Portal\\Announcements\\Banner\\" + _dttemp.Rows[0]["ID"].ToString()+ p_dtAnnouncement.Rows[0]["banner_extension"].ToString();
-                //if (Directory.Exists(_filepath))
-                //    _panel.BackImageUrl = _filepath ;
-                //else
-                //    _panel.BackImageUrl = "https://dummyimage.com/400x400";
+
+                
+                if (System.IO.File.Exists(Server.MapPath(_filepath)))
+                    _img.ImageUrl = _filepath;
+                else
+                    _img.ImageUrl = "https://dummyimage.com/400x400";
                 //_img.ImageUrl = 
-                _img.ImageUrl = _filepath;
+                
             }
         }
         protected void GetImageData()
