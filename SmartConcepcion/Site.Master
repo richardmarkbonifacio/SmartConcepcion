@@ -64,12 +64,12 @@
 			<ul>
 				<li><a href="~/Portal/Announcements/" runat="server">NEWS & ANNOUNCEMENTS</a></li>
 				<li><a href="#">INCIDENT REPORT</a></li>
-				<li><a href="#">BUSINESS</a></li>
-				<li><a href="#">HEALTH CARE</a></li>
+				
 			</ul>
 		</li>
 		
-		<li><a href="#">Contact</a></li>
+		<li><a href="#">BUSINESS</a></li>
+        		<li><a href="#">HEALTHCARE</a></li>
         <li>
 			<a href="#">BARANGAY</a>
 			<ul>
@@ -85,8 +85,11 @@
   <button class="btn btn-navbar btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
   <span class="caret"></span></button>
   <ul class="dropdown-menu">
+
           <li><a href="#">MY PROFILE</a></li>
+      <li><a href="#">MY NOTIFICATION</a></li>
           <li><a href="#">LOG OUT</a></li>
+
   </ul>
             </li>
              </ul>
