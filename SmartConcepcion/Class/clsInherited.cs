@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.Security;
 using System.Web.UI.WebControls;
 using System.Data;
+using Newtonsoft.Json.Linq;
 
 namespace SmartConcepcion.Class
 {
@@ -35,6 +36,62 @@ namespace SmartConcepcion.Class
                 res = "";
             }
         }
+        #region Properties
+        public string p_roleID
+        {
+            get
+            {
+                JArray jUserData;
+                string userdata = "", result = "";
+                getTickUserData(ref userdata);
+
+                if (!userdata.Equals(""))
+                {
+                    jUserData = JArray.Parse(userdata);
+                    result = (string)jUserData[4];
+                }
+                return result;
+            }
+        }
+        public long p_UserID
+        {
+            get
+            {
+                JArray jUserData;
+                string userdata = "", result = "";
+                getTickUserData(ref userdata);
+
+                if (!userdata.Equals(""))
+                {
+                    jUserData = JArray.Parse(userdata);
+                    result = (string)jUserData[0];
+                }
+                else
+                {
+                    Response.Redirect("~/?ReturnURL=" + HttpContext.Current.Request.Url.AbsolutePath);
+                }
+                return Convert.ToInt64( result);
+            }
+        }
+        public string p_BrgyID
+        {
+            get
+            {
+                JArray jUserData;
+                string userdata = "", result = "";
+                getTickUserData(ref userdata);
+
+                if (!userdata.Equals(""))
+                {
+                    jUserData = JArray.Parse(userdata);
+                    result = (string)jUserData[3];
+                }
+                return result;
+            }
+        }
+        
+        #endregion
+
         public bool b_hasrow(DataTable dt)
         {
             if (dt.Rows.Count > 0)
@@ -87,5 +144,7 @@ namespace SmartConcepcion.Class
                 throw e;
             }
         }
+
+
     }
 }

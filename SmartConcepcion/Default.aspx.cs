@@ -32,7 +32,8 @@ namespace SmartConcepcion
                     string userName = (string)_dt.Rows[0]["fullname"];
                     string email = (string)_dt.Rows[0]["email"];
                     string brgyid = (string)_dt.Rows[0]["brgyid"].ToString();
-                    userdata = new string[] { txtUserid.Text, userName, email, brgyid };
+                    string roleID = (string)_dt.Rows[0]["roleID"].ToString();
+                    userdata = new string[] { txtUserid.Text, userName, email, brgyid,roleID };
                     
 
                     FormsAuthenticationTicket fTicket = new FormsAuthenticationTicket(1, userName,
