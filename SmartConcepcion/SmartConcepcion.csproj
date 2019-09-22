@@ -126,6 +126,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="images\bglogin.jpg" />
+    <Content Include="logintesting.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="images\arrow-down.png" />
     <Content Include="images\arrow-down.svg" />
@@ -276,6 +278,13 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="logintesting.aspx.cs">
+      <DependentUpon>logintesting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logintesting.aspx.designer.cs">
+      <DependentUpon>logintesting.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
