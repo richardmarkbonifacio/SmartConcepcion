@@ -127,6 +127,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="images\bglogin.jpg" />
+    <Content Include="images\loginbgbg.jpg" />
     <Content Include="logintesting.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="images\arrow-down.png" />
