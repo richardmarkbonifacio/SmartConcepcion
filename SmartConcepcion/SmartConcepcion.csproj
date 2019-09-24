@@ -126,8 +126,10 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="images\BANNER.jpg" />
     <Content Include="images\bglogin.jpg" />
     <Content Include="images\loginbgbg.jpg" />
+    <Content Include="images\noimage.jpg" />
     <Content Include="logintesting.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="images\arrow-down.png" />
@@ -162,6 +164,7 @@
     <Content Include="images\youtube.svg" />
     <Content Include="Portal\Announcements\Create.aspx" />
     <Content Include="Portal\Announcements\Default.aspx" />
+    <Content Include="Portal\Barangay\Missionvission.aspx" />
     <Content Include="Portal\Incidents\Default.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -248,6 +251,13 @@
     </Compile>
     <Compile Include="Portal\Announcements\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Barangay\Missionvission.aspx.cs">
+      <DependentUpon>Missionvission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Barangay\Missionvission.aspx.designer.cs">
+      <DependentUpon>Missionvission.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Incidents\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

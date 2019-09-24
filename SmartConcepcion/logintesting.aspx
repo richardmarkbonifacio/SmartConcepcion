@@ -43,7 +43,7 @@
                     <asp:ScriptReference Name="WebFormsBundle" />
                     <%--Site Scripts--%>
                 </Scripts>
-            </asp:ScriptManager>
+           
             <div class="container">
                 <div class="col-md-6 col-md-offset-3">
                     <img src="../images/logo3.png" style="width: 100%" />
