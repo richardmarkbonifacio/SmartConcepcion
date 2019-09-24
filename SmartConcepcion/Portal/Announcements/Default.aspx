@@ -1,4 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Portal.Announcements.Default" %>
+﻿
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Portal.Announcements.Default" %>
+<%@ Register
+            Assembly="AjaxControlToolkit"
+            Namespace="AjaxControlToolkit"
+            TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel ID="upGvAnnouncements" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
@@ -41,7 +46,9 @@
     </asp:UpdatePanel>
 
     <div class="container-fluid">
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalPostAnnouncement">Open Large Modal</button>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalPostAnnouncement" runat="server" id="btnOpenAnnouncementDlg">
+            Open Large Modal
+        </button>
 
         <!-- Modal -->
         <div class="modal fade" id="modalPostAnnouncement" role="dialog">
@@ -53,15 +60,16 @@
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">
-
+                            
+                            <img id="imgpreview" class="img-responsive" src="http://placehold.it/180" alt="your image"  Height="300"  />
+                            
+                            <asp:FileUpload runat="server" accept="image/*" multiple="false" ID="fuBanner" ClientIDMode="Static" onchange="readURL(this);" />
                             <asp:TextBox runat="server" CssClass="form-control" placeholder="Title" ID="txtTitle" />
                             <asp:TextBox runat="server" CssClass="form-control" placeholder="Subtitle" ID="txtSubtitle" />
                             <asp:TextBox runat="server" CssClass="form-control" TextMode="Date" ID="txtDate" />
-
-                            <asp:TextBox runat="server" TextMode="MultiLine" Rows="5" CssClass="form-control" placeholder="Write something" ID="txtContent" />
-                            <img id="imgpreview" class="img-responsive" src="http://placehold.it/180" alt="your image"  Height="300"  />
-                            <%--<asp:Image runat="server" ID="imgPreview" Height="300px" Width="100%" />--%>
-                            <asp:FileUpload runat="server" accept="image/*" multiple="false" ID="fuBanner" ClientIDMode="Static" onchange="readURL(this);" />
+                            <asp:TextBox runat="server" TextMode="MultiLine" Rows="5" CssClass="form-control" placeholder="Write something" ID="txtContent" Width="100%" />
+                            <asp:HtmlEditorExtender runat="server" EnableSanitization="false" BehaviorID="editor_txtContent" TargetControlID="txtContent" id="editor_txtContent" ></asp:HtmlEditorExtender>
+                            
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -95,7 +103,7 @@
             </asp:UpdatePanel>
         </div>
     </div>
-
+    
     <script>
         function readURL(input) {
             if (input.files && input.files[0]) {

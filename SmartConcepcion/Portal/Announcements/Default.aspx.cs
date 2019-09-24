@@ -53,8 +53,11 @@ namespace SmartConcepcion.Portal.Announcements
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            long _id = p_UserID;
+
+            if (!isAdmin())
+            {
+                btnOpenAnnouncementDlg.Attributes["disabled"] = "disabled";
+            }
             if (!IsPostBack)
             {
                 initData();
