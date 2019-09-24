@@ -57,12 +57,17 @@ namespace SmartConcepcion.Portal.Announcements
             long _id = p_UserID;
             if (!IsPostBack)
             {
-                p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", 15, 0);
-                loadGridView(gvAnnouncements, p_dtAnnouncement);
+                initData();
             }
             
         }
 
+        private void initData()
+        {
+            p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", 15, 0);
+            loadGridView(gvAnnouncements, p_dtAnnouncement);
+            upGvAnnouncements.Update();
+        }
         protected void gvAnnouncements_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if ((e.Row.RowType & DataControlRowType.DataRow) != 0)
@@ -102,6 +107,32 @@ namespace SmartConcepcion.Portal.Announcements
             lblModalBody.Text = _dttemp.Rows[0]["body_content"].ToString();
             ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
             upModal.Update();
+        }
+        protected void btnPost_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Byte[] imgByte = null;
+
+
+                //HttpPostedFile File = fuBanner.PostedFile;
+                //imgByte = new Byte[File.ContentLength];
+                //File.InputStream.Read(imgByte, 0, File.ContentLength);
+                string _file_ext = Path.GetExtension(fuBanner.PostedFile.FileName);
+                DataTable _dttemp = csql.setAnnouncements("SmartConcepcion", txtTitle.Text, txtSubtitle.Text, txtContent.Text,
+                    Convert.ToDateTime(txtDate.Text), 0, _file_ext, p_UserID);
+
+                if (fuBanner.HasFile && fuBanner.PostedFile != null)
+                {
+                    fuBanner.SaveAs(Server.MapPath("Banner//" + _dttemp.Rows[0]["ID"].ToString() + _file_ext));
+                }
+                initData();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

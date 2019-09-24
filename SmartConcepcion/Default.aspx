@@ -1,174 +1,175 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Default" %>
 
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    
-    
-
-    <style>
-        html, 
-        body {
-            height: 100%;
-            overflow:hidden;
-            font-family:Lato;
-        }
-        .signup{
-            background: lightblue url("/images/signup_backgroud.jpg") no-repeat fixed center;
-            background-size:cover;
-            height:100vh;
-            color:#fff;
-        }
-        .sign-up-ctrl{
-            margin: 0.625em 0em 0.625em 0em;
-        }
-        .form-control{
-            border-radius: 0.625em;
-            height:5vh;
-        }
-        .btn-acct{
-            background-color:#06d96b;
-            width: 9.375em;
-            height: 5vh;
-            border-radius: 0.625em;
-            margin-top: 0.9375em;
-            font-weight: bold;
-            color: #fff;
-        }
-        .features{
-            border: 0.3125em solid #fff;
-            height:27vh;
-            width: 30%;
-            margin: 1.665%;
-            margin-top: 3.75em;
-        }
-        .features-icon{
-            width: 6.25em;
-            height: 6.25em;
-            margin-top: -3.125em;
-            background-color: #25685e;
-            border-radius: 50%;
-        }
-        .logo{
-             display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-top: 10px;
-              height: 15vh;
-
-        }
-    </style>
 </head>
-<body>
-    <form id="main" runat="server">
-        <div class="row">
-            <div class="container-fluid">
-                <div class="col-md-8 signup">
-                    <div class="container-fluid">
-                    <img src="images/logo_smart_pinakafi.png" class="logo"/>
-                        <h1><b>SIGN UP</b></h1>
-                        <label><i>Its quick and easy</i></label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <asp:TextBox runat="server" ID="txtFnam" placeholder="Firstname" CssClass="form-control sign-up-ctrl" />
-                        </div>
-                        <div class="col-md-4">
-                            <asp:TextBox runat="server" ID="txtMnam" placeholder="Middlename" CssClass="form-control sign-up-ctrl" />
-                        </div>
-                        <div class="col-md-4">
-                            <asp:TextBox runat="server" ID="txtLnam" placeholder="Lastname" CssClass="form-control sign-up-ctrl" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <asp:TextBox runat="server" ID="txtEmail" placeholder="Email" CssClass="form-control sign-up-ctrl" TextMode="Email" />
-                        </div>
-                        <div class="col-md-4">
-                            <asp:TextBox runat="server" ID="txtContact" placeholder="Contact No." CssClass="form-control sign-up-ctrl" />
-                        </div>
-                        <div class="col-md-4">
-                            <asp:DropDownList runat="server" ID="ddBrgy" placeholder="Barangay" CssClass="form-control sign-up-ctrl" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <asp:TextBox runat="server" ID="txtBday" placeholder="Birthdate" CssClass="form-control sign-up-ctrl" TextMode="Date" />
-                        </div>
-                        <div class="col-md-3">
-                            <asp:DropDownList runat="server" ID="ddGender" placeholder="Gender" CssClass="form-control sign-up-ctrl">
-                                <asp:ListItem Text="Male" />
-                                <asp:ListItem Text="Female" />
-                                <asp:ListItem Text="Alien" />
-                            </asp:DropDownList>
-                        </div>
-                        <div class="col-md-4">
-                            <asp:TextBox runat="server" ID="txtRUserpass" placeholder="Password" CssClass="form-control sign-up-ctrl" TextMode="Password" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-12 text-center">
-                          <asp:Button runat="server" CssClass="btn btn-acct" Text="Sign Up" OnClick="btnSignUp" />
-                        </div>
-                        
-                    </div>
-                    <div class="container-fluid">
-                        <div class="row text-center">
-                            <div class="col-md-4 features">
-                                <span>
-                                    <img src="images/eng.png" class="features-icon"/>
-                                    <br />
-                                    Lorem ipsum dolor 
-                                    amet, consectetur 
-                                    adipiscing elit.
-                                </span>
+    
+    <body>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+           <link href="Content/Site.css" rel="stylesheet" />
+        <link href="Content/bootstrap.css" rel="stylesheet" />
+        <style>
+
+            body {
+                background: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('../images/bglogin.jpg') no-repeat center center fixed;
+                background-size: cover;
+            }
+      
+        </style>
+     
+        <form id="form1" runat="server">
+            <asp:ScriptManager runat="server">
+                <Scripts>
+
+                    <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                    <%--Framework Scripts--%>
+                    <asp:ScriptReference Name="MsAjaxBundle" />
+                    <asp:ScriptReference Name="jquery" />
+                    <asp:ScriptReference Name="bootstrap" />
+                    <%--<script src="~/Scripts/menumaker.js" runat="server"></script>--%>
+                    <%--<asp:ScriptReference Name="menumaker.js" Assembly="System.Web" Path="~/Scripts/menumaker.js" />--%>
+                    <asp:ScriptReference Path="~/Scripts/menumaker.js" />
+                    <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                    <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                    <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                    <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                    <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                    <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                    <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                    <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                    <asp:ScriptReference Name="WebFormsBundle" />
+                    <%--Site Scripts--%>
+                </Scripts>
+            </asp:ScriptManager>
+            <div class="container">
+                <div class="col-md-6 col-md-offset-3">
+                    <img src="../images/logo3.png" style="width: 100%" />
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="row">
+                            <div class="inputWithIcon">
+                                <%--       <input type="text" placeholder="Username" />--%>
+                                <asp:TextBox runat="server" ID="txtUserid" placeholder="Username" CssClass="btnsign" />
+                                <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
                             </div>
-                            <div class="col-md-4 features ">
-                                 <span>
-                                     <img src="images/newsfinal.png" class="features-icon" />
-                                     <br />
-                                    Lorem ipsum dolor 
-                                    amet, consectetur 
-                                    adipiscing elit.
-                                </span>
+
+                            <div class="inputWithIcon">
+                                <%--<input type="text" placeholder="Password" />--%>
+                                <asp:TextBox runat="server" ID="txtUserpass" placeholder="Password" TextMode="Password" CssClass="btnsign" />
+                                <i class="fa fa-key fa-lg fa-fw" aria-hidden="true"></i>
                             </div>
-                            <div class="col-md-4 features">
-                                 <span>
-                                    <img src="images/testingfinal.png" class="features-icon" />
-                                     <br />
-                                    Lorem ipsum dolor 
-                                    amet, consectetur 
-                                    adipiscing elit.
-                                </span>
+
+                            <div class="text-center">
+                                <asp:Button runat="server" CssClass="btn btn-signin" Text="GET STARTED" OnClick="btnSignIn" />
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 text-center" style="height: 40vh;margin-top:30vh">
-                    <div class="container-fluid">
-                        <h1>Sign in to your account</h1>
-                        <asp:TextBox runat="server" ID="txtUserid" placeholder="User ID" CssClass="form-control sign-up-ctrl" />
-                        <asp:TextBox runat="server" ID="txtUserpass"  placeholder="Password" TextMode="Password" CssClass="form-control sign-up-ctrl" />
-                        <div class="col-md-12 text-left">
-                            <asp:CheckBox runat="server" Text="Remember me" id="RememberMe" />
-                        </div>
-                        <div class="col-md-12 text-left">
-                            <asp:Label runat="server" ID="lblErr" Font-Size="0.75em" Font-Italic="true" ForeColor="Red" />
+
+                            <div class="row text-left">
+                                <asp:Label runat="server" ID="lblErr" Font-Size="0.75em" Font-Italic="true" ForeColor="Red" />
+                            </div>
+
+                            <div class="row" style="vertical-align: middle">
+                                <div class="col-md-6">
+                                    <label class="switch">
+                                        <%--   <input type="checkbox" />--%>
+                                        <asp:CheckBox runat="server" ID="RememberMe" />
+                                        <span class="slider round"></span>
+
+                                    </label>
+
+                                    <div class="labeltoggle">Keep Logged In</div>
+                                </div>
+                                <div class="col-md-6 text-right">
+                                    <a class="forgot" href="#">Forgot Password?</a>
+                                </div>
+                            </div>
                         </div>
 
-                        <asp:Button runat="server" CssClass="btn btn-acct" Text="Sign in" OnClick="btnSignIn" />
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a class="forgot" href="#" data-toggle="modal" data-target="#myModal">CREATE ACCOUNT</a>
+                            </div>
+
+                            <div class="col-md-6 text-right">
+                                <a class="forgot" href="#">NEED HELP?</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Sign Up</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <asp:TextBox runat="server" ID="txtFnam" placeholder="Firstname" CssClass="form-control sign-up-ctrl" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <asp:TextBox runat="server" ID="txtMnam" placeholder="Middlename" CssClass="form-control sign-up-ctrl" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <asp:TextBox runat="server" ID="txtLnam" placeholder="Lastname" CssClass="form-control sign-up-ctrl" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <asp:TextBox runat="server" ID="txtEmail" placeholder="Email" CssClass="form-control sign-up-ctrl" TextMode="Email" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <asp:TextBox runat="server" ID="txtContact" placeholder="Contact No." CssClass="form-control sign-up-ctrl" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <asp:DropDownList runat="server" ID="ddBrgy" placeholder="Barangay" CssClass="form-control sign-up-ctrl" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <asp:TextBox runat="server" ID="txtBday" placeholder="Birthdate" CssClass="form-control sign-up-ctrl" TextMode="Date" />
+                                    </div>
+                                    <div class="col-md-3">
+                                        <asp:DropDownList runat="server" ID="ddGender" placeholder="Gender" CssClass="form-control sign-up-ctrl">
+                                            <asp:ListItem Text="Male" />
+                                            <asp:ListItem Text="Female" />
+                                            <asp:ListItem Text="Alien" />
+                                        </asp:DropDownList>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <asp:TextBox runat="server" ID="txtRUserpass" placeholder="Password" CssClass="form-control sign-up-ctrl" TextMode="Password" />
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <div class="form-group">
+                                <div class="col-md-12 text-center">
+                                    <asp:Button runat="server" CssClass="btn btn-acct" Text="Sign Up" OnClick="btnSignUp" />
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
-            
-        </div>
-    </form>
-    <script src="Scripts/jquery-3.3.1.min.js"></script>
-    <script src="Scripts/bootstrap.js"></script>
+        </form>
+      
 </body>
 </html>
 

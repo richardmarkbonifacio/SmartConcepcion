@@ -3,10 +3,10 @@
     <asp:UpdatePanel runat="server" ID="upPostAnnouncement" >
         <ContentTemplate>
             <div class="container-fluid">
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Large Modal</button>
+                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalPostAnnouncement">Open Large Modal</button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal fade" id="modalPostAnnouncement" role="dialog">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
