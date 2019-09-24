@@ -1,4 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Create.aspx.cs" Inherits="SmartConcepcion.Portal.Announcements.Create" %>
+<%@ Register
+            Assembly="AjaxControlToolkit"
+            Namespace="AjaxControlToolkit"
+            TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel runat="server" ID="upPostAnnouncement">
         <ContentTemplate>
@@ -7,7 +11,9 @@
                 <asp:TextBox runat="server" CssClass="form-control" placeholder="Title" ID="txtTitle" />
                 <asp:TextBox runat="server" CssClass="form-control" placeholder="Subtitle" ID="txtSubtitle" />
                 <asp:TextBox runat="server" CssClass="form-control" TextMode="Date" ID="txtDate" />
-
+                <asp:HtmlEditorExtender runat="server" EnableSanitization="false" BehaviorID="editor_txtContent" TargetControlID="txtContent" id="editor_txtContent" ></asp:HtmlEditorExtender>
+                            
+                            
                 <asp:TextBox runat="server" TextMode="MultiLine" Rows="10" CssClass="form-control" placeholder="Write something" ID="txtContent" />
                 <asp:FileUpload runat="server" accept="image/*" multiple="false" ID="fuBanner" ClientIDMode="Static" />
                 <hr />

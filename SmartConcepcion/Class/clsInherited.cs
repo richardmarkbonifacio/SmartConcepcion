@@ -37,7 +37,7 @@ namespace SmartConcepcion.Class
             }
         }
         #region Properties
-        public string p_roleID
+        public Int32? p_roleLevel
         {
             get
             {
@@ -50,7 +50,11 @@ namespace SmartConcepcion.Class
                     jUserData = JArray.Parse(userdata);
                     result = (string)jUserData[4];
                 }
-                return result;
+                else
+                {
+                    Response.Redirect("~/?ReturnURL=" + HttpUtility.UrlEncode(Request.RawUrl));
+                }
+                return Convert.ToInt32(result);
             }
         }
         public long p_UserID
@@ -99,6 +103,14 @@ namespace SmartConcepcion.Class
                 return true;
             }
             return false;
+        }
+
+        public bool isAdmin()
+        {
+            if (p_roleLevel == 0)
+                return true;
+            else
+                return false;
         }
         public void loadDropDown(DropDownList ddl, DataTable dt, bool hasPrefixValue)
         {

@@ -44,7 +44,7 @@
             </Scripts>
         </asp:ScriptManager>
         <%--<script src="~/Scripts/menumaker.js" runat="server"></script>--%>
-                                                             <%--NAVBAR--%>
+        <%--NAVBAR--%>
         <meta name="viewport" content="width=device-width, user-scalable=no" /> 
         <style>
 

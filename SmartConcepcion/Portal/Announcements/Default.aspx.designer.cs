@@ -31,6 +31,24 @@ namespace SmartConcepcion.Portal.Announcements {
         protected global::System.Web.UI.WebControls.GridView gvAnnouncements;
         
         /// <summary>
+        /// btnOpenAnnouncementDlg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btnOpenAnnouncementDlg;
+        
+        /// <summary>
+        /// fuBanner control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fuBanner;
+        
+        /// <summary>
         /// txtTitle control.
         /// </summary>
         /// <remarks>
@@ -67,13 +85,13 @@ namespace SmartConcepcion.Portal.Announcements {
         protected global::System.Web.UI.WebControls.TextBox txtContent;
         
         /// <summary>
-        /// fuBanner control.
+        /// editor_txtContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuBanner;
+        protected global::AjaxControlToolkit.HtmlEditorExtender editor_txtContent;
         
         /// <summary>
         /// btnPost control.
