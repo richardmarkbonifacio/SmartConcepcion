@@ -421,7 +421,7 @@ a .logo {
     padding: 60px 40px;
     color: #DDDDDD;
     bottom:0;
-    position:fixed;
+ 
         }
 .puuter .footer-brand, .puuter .footer-nav, .puuter .footer-social, .puuter .footer-ns {padding: 10px 25px;}
 .puuter .footer-nav, .puuter .footer-social, .puuter .footer-ns { border-color: transparent;}
@@ -558,12 +558,10 @@ a .logo {
   height: 86px;
             }
 /*===========================================================================LOGIN============================================================================*/
-.logologin {
-}
 
-/*Don't forget to add Font Awesome CSS : "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"*/
 
-.sign-in-ctrl {
+
+.btnsign {
     width: 100%;
     border: none;
     border-radius: 25px;
@@ -577,58 +575,50 @@ a .logo {
     height: 50px;
 }
 
-    .sign-in-ctrl:focus {
+    /*.sign-in-ctrl:focus {
         border-color: floralwhite;
         box-shadow: 0 0 8px 0 floralwhite;
-    }
+    }*/
 
-.sign-in-ctrl {
+.btnsign {
     padding-left: 40px;
 }
-
-
 .inputWithIcon {
     position: relative;
 }
-
-    .inputWithIcon i {
+.inputWithIcon i {
         position: absolute;
         left: 0;
         top: 8px;
-        padding: 13px 12px;
+        padding: 13px 13px;
         color: #fff !important;
         transition: 0.3s;
     }
 
-.sign-in-ctrl:focus + i {
+/*.sign-in-ctrl:focus + i {
     color: floralwhite;
-}
-   
-    .inputWithIcon.inputIconBg i {
+}*/
+
+/*.inputWithIcon.inputIconBg i {
         background-color: #aaa;
         color: #fff;
         padding: 9px 4px;
         border-radius: 4px 0 0 4px;
-    }
+}*/
 
-.inputWithIcon.inputIconBg , .sign-in-ctrl:focus + i {
+/*.inputWithIcon.inputIconBg , .sign-in-ctrl:focus + i {
     color: #fff;
     background-color: dodgerBlue;
 }
 .inputWithIcon.inputIconBg , .sign-in-ctrl:focus + i {
     color: #fff;
     background-color: dodgerBlue;
-}
+}*/
 
-input[type=text]::-ms-input-placeholder { /* Internet Explorer 10-11 */
+/*input[type=text]::-ms-input-placeholder { 
     color: #fff;
     opacity: 1;
-}
-
-input[type=text]::-ms-input-placeholder { /* Microsoft Edge */
-    color: #fff;
-    opacity: 1;
-}
+}*/
 
 .btn-signin {
     width: 100%;

@@ -23,6 +23,7 @@
         <form id="form1" runat="server">
             <asp:ScriptManager runat="server">
                 <Scripts>
+
                     <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
                     <%--Framework Scripts--%>
                     <asp:ScriptReference Name="MsAjaxBundle" />
@@ -50,7 +51,7 @@
                         <div class="row">
                             <div class="inputWithIcon">
                          <%--       <input type="text" placeholder="Username" />--%>
-                                   <asp:TextBox runat="server" ID="txtUserid" placeholder="Username" CssClass=" sign-in-ctrl" />
+                                   <asp:TextBox runat="server" ID="txtUserid" placeholder="Username" CssClass="btnsign" />
                                 <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
                                           
                             </div>
@@ -58,7 +59,7 @@
                             <div class="inputWithIcon">
 
                                 <%--<input type="text" placeholder="Password" />--%>
-                                    <asp:TextBox runat="server" ID="txtUserpass"  placeholder="Password" TextMode="Password" CssClass=" sign-in-ctrl" />
+                                    <asp:TextBox runat="server" ID="txtUserpass"  placeholder="Password" TextMode="Password" CssClass="btnsign" />
                                 <i class="fa fa-key fa-lg fa-fw" aria-hidden="true"></i>
                       
                     
@@ -166,5 +167,6 @@
                 </div>
             </div>
         </form>
+      
 </body>
 </html>
