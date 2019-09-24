@@ -68,7 +68,7 @@ namespace SmartConcepcion.Class
                 }
                 else
                 {
-                    Response.Redirect("~/?ReturnURL=" + HttpContext.Current.Request.Url.AbsolutePath);
+                    Response.Redirect("~/?ReturnURL=" +HttpUtility.UrlEncode(Request.RawUrl));
                 }
                 return Convert.ToInt64( result);
             }

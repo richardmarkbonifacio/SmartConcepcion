@@ -37,7 +37,7 @@ namespace SmartConcepcion
                     
 
                     FormsAuthenticationTicket fTicket = new FormsAuthenticationTicket(1, userName,
-                        DateTime.Now, DateTime.Now.AddMinutes(1), RememberMe.Checked, JsonConvert.SerializeObject(userdata),
+                        DateTime.Now, DateTime.Now.AddMinutes(10), RememberMe.Checked, JsonConvert.SerializeObject(userdata),
                         FormsAuthentication.FormsCookiePath); //new ticket
 
                     string encTicket = FormsAuthentication.Encrypt(fTicket);
@@ -47,7 +47,7 @@ namespace SmartConcepcion
 
                     if (Request.QueryString["ReturnUrl"] == null)
                     {
-                        Response.Redirect("Portal");
+                        Response.Redirect("~/Portal/Announcements");
                     }
                     else
                     {
