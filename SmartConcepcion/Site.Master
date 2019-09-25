@@ -139,11 +139,15 @@
             	<h4>Message Us</h4>
              
               
-                
+               
+    <%--<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">--%>
                  
             </div>
+             </footer>
         </div>
-    </footer>
+  
   <%--<script src="../Scripts/jquery-3.3.1.min.js"></script>--%>
 
 <script type="text/javascript">

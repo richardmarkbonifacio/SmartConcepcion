@@ -10,7 +10,7 @@
 .tab-nav > li > a::after { background: ##5a4080 none repeat scroll 0% 0%; color: #fff; }
 .tab-pane { padding: 15px 0; }
 .tab-content{padding:20px}
-.nav-tabs > li  {width:20%; text-align:center;}
+.nav-tabs > li  {width:25%; text-align:center;}
 .card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
 
 
@@ -18,7 +18,85 @@
 .tab-tabs > li > a > span {display:none;}	
 .tab-tabs > li > a {padding: 5px 5px;}
 }
+#bannermission {
+  height: 100px;
+  background-color: red; /* For browsers that do not support gradients */
+  background:  linear-gradient(90deg, rgba(0,255,127), rgba(107,142,35) 70.71%);
+  margin-bottom:20px;
+}
+#bannermission h1{
+    color:white;
+    padding-top:30px;
+    font-weight:600;
+           }
+#bannerabout {
+  height: 100px;
+  background-color: red; /* For browsers that do not support gradients */
+  background:  linear-gradient(90deg, rgba(0,255,127), rgba(107,142,35) 70.71%);
+  margin-bottom:20px;
+}
+#bannerabout h1{
+    color:white;
+    font-weight:600;
+    padding-top:30px;
+           }
+.aboutbox {
+  margin-right: 20px;
+  background-color: #ffffff;
+     border: 1px solid darkgray;
+  padding-top: 3px;
+    padding-bottom: 3px;
+    height:60vh;
+    
+}
+.aboutbox h1{
+       padding-left: 38px;
+       font-weight:600;
+}
+
+.aboutbox p {
+  margin: 5%;
+
+}
+.aboutboxright {
+    height:20vh;
+     background-color: #ffffff;
+     border: 1px solid darkgray;
+  padding-top: 3px;
+    padding-bottom: 3px;
+        width: 52vh;
+}
+.aboutboxrightr {
+    height:37vh;
+        width: 52vh;
+     background-color: #ffffff;
+    border: 1px solid darkgray;
+  padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top:20px;
+}
 </style>
+    <div class="row">
+        
+        <div id="bannerabout" style="text-align:center;"><h1>ABOUT US</h1></div>
+    <div class="aboutbox col-md-8">
+        <h1>What is Smart Concepcion?</h1>
+    <p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ac nulla at ex mattis molestie eu sit amet ante. Cras scelerisque turpis non imperdiet convallis. Pellentesque venenatis ligula felis, ut laoreet dolor eleifend eu. Etiam viverra aliquam lorem et eleifend. Vivamus non elit est. Nullam magna dui, bibendum eu sapien in, suscipit auctor lectus. Aliquam posuere varius auctor. Duis bibendum, nunc in fringilla finibus, justo nibh consectetur libero, vel convallis augue mi a orci. Donec imperdiet diam id arcu mollis, a dapibus tortor bibendum. Praesent at leo accumsan, suscipit neque non, vulputate quam. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+In hac habitasse platea dictumst. Nunc ac cursus nisi, sed facilisis ligula. Quisque tortor justo, congue id dapibus et, rutrum ut neque. Quisque sit amet odio erat. Morbi lacinia tristique sapien, ut porta mauris euismod at. Duis vestibulum ullamcorper ex nec aliquam. Curabitur neque magna, accumsan vitae eleifend eget, dapibus et orci. Morbi dignissim leo velit, eu tristique risus varius vestibulum. Curabitur est libero, ultricies ac magna eget, tempor dignissim metus. Ut vehicula justo et accumsan pharetra. Phasellus sit amet vulputate arcu, et suscipit velit. Aliquam sodales tincidunt ullamcorper. Sed eleifend odio arcu, volutpat tincidunt orci vehicula a. Vestibulum convallis dui eget diam fringilla sollicitudin vitae at nulla. Donec pharetra tristique tempus. Aliquam vulputate magna eget dolor euismod iaculis.
+
+    </p>
+  </div>
+        <div class="aboutboxright col-md-3">
+
+        </div>
+        <div class="aboutboxrightr col-md-3">
+
+        </div>
+</div>
+
+
+    <div id="bannermission" style="text-align:center;"><h1>OUR MISSION & VISION</h1></div>
 <div class="container">
   <div class="row">
     <div class="col-md-12"> 
