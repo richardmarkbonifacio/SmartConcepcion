@@ -156,7 +156,21 @@ namespace SmartConcepcion.Class
                 throw e;
             }
         }
+        public void loadListview(ListView lv, DataTable dt)
+        {
+            try
+            {
 
+                lv.DataSource = dt;
+                lv.DataBind();
+
+            }
+
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
 
     }
 }

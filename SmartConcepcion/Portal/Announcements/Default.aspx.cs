@@ -68,7 +68,9 @@ namespace SmartConcepcion.Portal.Announcements
         private void initData()
         {
             p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", 15, 0);
-            loadGridView(gvAnnouncements, p_dtAnnouncement);
+            //loadGridView(gvAnnouncements, p_dtAnnouncement);
+
+            loadListview(lvAnnouncement, p_dtAnnouncement);
             upGvAnnouncements.Update();
         }
         protected void gvAnnouncements_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -136,6 +138,26 @@ namespace SmartConcepcion.Portal.Announcements
 
                 throw;
             }
+        }
+
+        protected void lvAnnouncement_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+                Image _img = (Image)e.Item.FindControl("imgbanner");
+                Panel _panel = (Panel)e.Item.FindControl("panelRow");
+
+                DataView _dv = p_dtAnnouncement.AsDataView();
+                _dv.RowFilter = "ID=" + _img.ToolTip;
+                DataTable _dttemp = _dv.ToTable();
+                _panel.CssClass = "col-md-4";
+                string _filepath = "~\\Portal\\Announcements\\Banner\\" + _dttemp.Rows[0]["ID"].ToString() + p_dtAnnouncement.Rows[0]["banner_extension"].ToString();
+
+
+                if (System.IO.File.Exists(Server.MapPath(_filepath)))
+                    _img.ImageUrl = _filepath;
+                else
+                    _img.ImageUrl = "https://dummyimage.com/400x300";
+                //_img.ImageUrl = 
+
         }
     }
 }

@@ -7,15 +7,25 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel ID="upGvAnnouncements" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
-            <div class="container-fluid">
+            <div class="container-fluid hidden">
                 <asp:GridView runat="server" AutoGenerateColumns="false" OnRowDataBound="gvAnnouncements_RowDataBound" ID="gvAnnouncements" CssClass="table gvAnnouncements">
                     <Columns>
                         <asp:TemplateField HeaderStyle-CssClass="hidden">
                             <ItemTemplate>
-                                <asp:Panel runat="server" ID="panelRow" CssClass="panelRow">
-                                    <div class="col-md-4">
+                                
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                    </Columns>
+                </asp:GridView>
+            </div>
+            <div class="container-fluid">
+                <asp:ListView runat="server" ID="lvAnnouncement" OnItemDataBound="lvAnnouncement_ItemDataBound">
+                    <ItemTemplate>
+                        <asp:Panel runat="server" ID="panelRow" CssClass="col-md-4">
+                                    <div class="col-md-12 announcement-row">
                                         <div class="hovereffect">
-                                            <asp:Image runat="server" ID="imgbanner" ToolTip='<%#Eval("ID") %>' CssClass="img-responsive" />
+                                            <asp:Image runat="server" ID="imgbanner" ToolTip='<%#Eval("ID") %>' CssClass="img-responsive" Height="300px"/>
                                             <div class="overlay">
                                                 <h2><%# Eval("title") %></h2>
                                                 <asp:LinkButton runat="server" CssClass="info" OnClick="lnkAnnouncement_Click" ToolTip='<%#Eval("ID") %>'> Read More</asp:LinkButton>
@@ -23,24 +33,20 @@
                                         </div>
 
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-12 hidden">
                                         <div class="row">
                                             <div class="col-md-6"><b>by </b><%# Eval("createdByName") %></div>
                                             <div class="col-md-6 text-center"><i class="fa fa-calendar" aria-hidden="true"></i><%# Eval("datecreated") %></div>
                                         </div>
                                         <h3>
-                                            <asp:LinkButton runat="server" ID="lnkAnnouncement" OnClick="lnkAnnouncement_Click" ToolTip='<%#Eval("ID") %>'> <%# Eval("title") %></asp:LinkButton></h3>
-                                        <span>
-                                            <%# Eval("body_content") %>
-                                        </span>
+                                            <asp:LinkButton runat="server" ID="lnkAnnouncement" OnClick="lnkAnnouncement_Click" ToolTip='<%#Eval("ID") %>'> <%# Eval("title") %></asp:LinkButton>
+
+                                        </h3>
                                     </div>
 
                                 </asp:Panel>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-
-                    </Columns>
-                </asp:GridView>
+                    </ItemTemplate>
+                </asp:ListView>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>
@@ -67,8 +73,10 @@
                             <asp:TextBox runat="server" CssClass="form-control" placeholder="Title" ID="txtTitle" />
                             <asp:TextBox runat="server" CssClass="form-control" placeholder="Subtitle" ID="txtSubtitle" />
                             <asp:TextBox runat="server" CssClass="form-control" TextMode="Date" ID="txtDate" />
-                            <asp:TextBox runat="server" TextMode="MultiLine" Rows="5" CssClass="form-control" placeholder="Write something" ID="txtContent" Width="100%" />
-                            <asp:HtmlEditorExtender runat="server" EnableSanitization="false" BehaviorID="editor_txtContent" TargetControlID="txtContent" id="editor_txtContent" ></asp:HtmlEditorExtender>
+                            <div class="container">
+                                <asp:HtmlEditorExtender runat="server" EnableSanitization="false" BehaviorID="editor_txtContent" TargetControlID="txtContent" id="editor_txtContent" ></asp:HtmlEditorExtender>
+                            <asp:TextBox runat="server" TextMode="MultiLine" Rows="5" CssClass="form-control" placeholder="Write something" ID="txtContent" Width="500px" />
+                            </div>
                             
                         </div>
                     </div>

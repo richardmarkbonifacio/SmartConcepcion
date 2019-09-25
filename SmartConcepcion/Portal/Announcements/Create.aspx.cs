@@ -35,23 +35,23 @@ namespace SmartConcepcion.Portal.Announcements
         {
             try
             {
-                Byte[] imgByte = null;
+                //Byte[] imgByte = null;
 
                 
                     //HttpPostedFile File = fuBanner.PostedFile;
                     //imgByte = new Byte[File.ContentLength];
                     //File.InputStream.Read(imgByte, 0, File.ContentLength);
-                    string _file_ext = Path.GetExtension(fuBanner.PostedFile.FileName);
-                    DataTable _dttemp = csql.setAnnouncements("SmartConcepcion", txtTitle.Text, txtSubtitle.Text, txtContent.Text,
-                        Convert.ToDateTime(txtDate.Text), 0, _file_ext, p_UserID);
+                string _file_ext = Path.GetExtension(fuBanner.PostedFile.FileName);
+                DataTable _dttemp = csql.setAnnouncements("SmartConcepcion", txtTitle.Text, txtSubtitle.Text, txtContent.Text,
+                    Convert.ToDateTime(txtDate.Text), 0, _file_ext, p_UserID);
 
                 if (fuBanner.HasFile && fuBanner.PostedFile != null)
                 {
                     fuBanner.SaveAs(Server.MapPath("Banner//" + _dttemp.Rows[0]["ID"].ToString() + _file_ext ));
                 }
-                Response.Redirect("");
+                Response.Redirect("~/Portal/Announcements/",false);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;
