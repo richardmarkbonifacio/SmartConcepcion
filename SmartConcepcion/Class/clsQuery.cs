@@ -163,6 +163,37 @@ namespace SmartConcepcion.Class
         #endregion
 
         #region Announcements
+        public DataTable getTopAnnoucements(string cnstr)
+        {
+            try
+            {
+                result_Dt = new DataTable("Top Announcement");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Announce_top_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
+
         public DataTable getAnnouncements(string cnstr, int pagesize, int pageno)
         {
             try

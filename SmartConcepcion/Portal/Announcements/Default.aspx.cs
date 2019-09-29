@@ -14,6 +14,25 @@ namespace SmartConcepcion.Portal.Announcements
     {
         clsQuery csql = new clsQuery();
         #region Properties
+        private DataTable p_dtTopAnnouncement
+        {
+            get
+            {
+                if (ViewState["dtTopAnnouncement"] != null)
+                {
+                    return ViewState["dtTopAnnouncement"] as DataTable;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                ViewState["dtTopAnnouncement"] = value;
+            }
+        }
+
         private DataTable p_dtAnnouncement
         {
             get
@@ -49,6 +68,24 @@ namespace SmartConcepcion.Portal.Announcements
                 ViewState["BannerIndex"] = value;
             }
         }
+        public int p_PageSize
+        {
+            get
+            {
+                if (ViewState["PageSize"] != null)
+                {
+                    return Convert.ToInt32(ViewState["PageSize"]);
+                }
+                else
+                {
+                    return 2;
+                }
+            }
+            set
+            {
+                ViewState["PageSize"] = value;
+            }
+        }
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
@@ -67,11 +104,12 @@ namespace SmartConcepcion.Portal.Announcements
 
         private void initData()
         {
-            p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", 4, 0);
-            //loadGridView(gvAnnouncements, p_dtAnnouncement);
-
-            loadListview(lvAnnouncement, p_dtAnnouncement);
-            upGvAnnouncements.Update();
+            p_BannerIndex = 0;//reset even after postbacks
+            p_dtTopAnnouncement = csql.getTopAnnoucements("SmartConcepcion");
+            p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", p_PageSize, 0);
+            loadGridView(gvAnnouncements, p_dtAnnouncement);
+            loadListview(lvAnnouncement, p_dtTopAnnouncement);
+            upAnnouncements.Update();
         }
         protected void gvAnnouncements_RowDataBound(object sender, GridViewRowEventArgs e)
         {
@@ -83,7 +121,7 @@ namespace SmartConcepcion.Portal.Announcements
                 DataView _dv = p_dtAnnouncement.AsDataView();
                 _dv.RowFilter = "ID=" + _img.ToolTip;
                 DataTable _dttemp = _dv.ToTable();
-                _panel.CssClass = "row announcement-row";
+                _panel.CssClass = "container-fluid announcement-row";
                 string _filepath = "~\\Portal\\Announcements\\Banner\\" + _dttemp.Rows[0]["ID"].ToString()+ p_dtAnnouncement.Rows[0]["banner_extension"].ToString();
 
                 
@@ -94,10 +132,6 @@ namespace SmartConcepcion.Portal.Announcements
                 //_img.ImageUrl = 
                 
             }
-        }
-        protected void GetImageData()
-        {
-
         }
 
         protected void lnkAnnouncement_Click(object sender, EventArgs e)
@@ -146,39 +180,50 @@ namespace SmartConcepcion.Portal.Announcements
             Panel _panelbg = (Panel)e.Item.FindControl("panelbgContainer");
             Panel _panelitem = (Panel)e.Item.FindControl("panelItem");
 
-            DataView _dv = p_dtAnnouncement.AsDataView();
+            DataView _dv = p_dtTopAnnouncement.AsDataView();
             _dv.RowFilter = "ID=" + _img.ToolTip;
             DataTable _dttemp = _dv.ToTable();
 
             switch (p_BannerIndex)
             {
                 case 0:
-                    _panelitem.CssClass = "col-md-6 pinned-container";
+                    _panelitem.CssClass = "col-md-6 col-ms-12 pinned-container-one";
                     _panelbg.CssClass = "annoucement-pinned top-one";
                     break;
                 case 1:
-                    _panelitem.CssClass = "col-md-3 pinned-container";
+                    _panelitem.CssClass = "col-md-3 col-ms-12 pinned-container-two";
                     _panelbg.CssClass = "annoucement-pinned top-two";
                     break;
                 case 2:
-                    _panelitem.CssClass = "col-md-3 pinned-container";
+                    _panelitem.CssClass = "col-md-3 col-ms-12 pinned-container-two";
                     _panelbg.CssClass = "annoucement-pinned top-two";
                     break;
                 case 3:
-                    _panelitem.CssClass = "col-md-6 pinned-container";
+                    _panelitem.CssClass = "col-md-6 col-ms-12 pinned-container-three";
+                    _panelbg.CssClass = "annoucement-pinned top-two";
+                    break;
+                default:
+                    _panelitem.CssClass = "col-md-3 col-ms-12 pinned-container-four";
                     _panelbg.CssClass = "annoucement-pinned top-two";
                     break;
             }
 
             p_BannerIndex++;
-            string _filepath = "~\\Portal\\Announcements\\Banner\\" + _dttemp.Rows[0]["ID"].ToString() + p_dtAnnouncement.Rows[0]["banner_extension"].ToString();
+            string _filepath = "~\\Portal\\Announcements\\Banner\\" + _dttemp.Rows[0]["ID"].ToString() + _dttemp.Rows[0]["banner_extension"].ToString();
 
             if (System.IO.File.Exists(Server.MapPath(_filepath)))
                 _panelbg.BackImageUrl = _filepath;
+            //_panelbg.Attributes["style"] = "background:linear-gradient(0deg,rgba(255,0,150,0.3),rgba(255,0,150,0.3)),url(" + _filepath + ")";
             else
-            _panelbg.BackImageUrl = "https://dummyimage.com/400x300";
+                _panelbg.BackImageUrl = "https://dummyimage.com/400x300";
                 //_img.ImageUrl = 
 
+        }
+
+        protected void LoadMore_Click(object sender, EventArgs e)
+        {
+            p_PageSize = p_PageSize * 2;
+            initData();
         }
     }
 }

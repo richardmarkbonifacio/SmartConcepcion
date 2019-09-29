@@ -13,22 +13,13 @@ namespace SmartConcepcion.Portal.Announcements {
     public partial class Default {
         
         /// <summary>
-        /// upGvAnnouncements control.
+        /// upAnnouncements control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upGvAnnouncements;
-        
-        /// <summary>
-        /// gvAnnouncements control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvAnnouncements;
+        protected global::System.Web.UI.UpdatePanel upAnnouncements;
         
         /// <summary>
         /// lvAnnouncement control.
@@ -38,6 +29,15 @@ namespace SmartConcepcion.Portal.Announcements {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView lvAnnouncement;
+        
+        /// <summary>
+        /// gvAnnouncements control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvAnnouncements;
         
         /// <summary>
         /// btnOpenAnnouncementDlg control.

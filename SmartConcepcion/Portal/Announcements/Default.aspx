@@ -5,20 +5,9 @@
             Namespace="AjaxControlToolkit"
             TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:UpdatePanel ID="upGvAnnouncements" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
+    <asp:UpdatePanel ID="upAnnouncements" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
-            <div class="container-fluid hidden">
-                <asp:GridView runat="server" AutoGenerateColumns="false" OnRowDataBound="gvAnnouncements_RowDataBound" ID="gvAnnouncements" CssClass="table gvAnnouncements">
-                    <Columns>
-                        <asp:TemplateField HeaderStyle-CssClass="hidden">
-                            <ItemTemplate>
-                                
-                            </ItemTemplate>
-                        </asp:TemplateField>
-
-                    </Columns>
-                </asp:GridView>
-            </div>
+            
             <div class="container-fluid">
                 <asp:ListView runat="server" ID="lvAnnouncement" OnItemDataBound="lvAnnouncement_ItemDataBound">
                     <ItemTemplate>
@@ -50,10 +39,40 @@
                     </ItemTemplate>
                 </asp:ListView>
             </div>
+            
+            <hr />
+
+            <div class="container-fluid">
+                <asp:GridView runat="server" AutoGenerateColumns="false" OnRowDataBound="gvAnnouncements_RowDataBound" ID="gvAnnouncements" CssClass="gvAnnouncements">
+                    <Columns>
+                        <asp:TemplateField>
+                            <ItemTemplate>
+                                <asp:Panel runat="server" ID="panelRow" CssClass="panelRow">
+                                    <div class="col-md-4">
+                                        <asp:Image runat="server" ID="imgbanner" ToolTip='<%#Eval("ID") %>' CssClass="img-responsive" Width="460" />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h3><%# Eval("title") %></h3>
+                                        <p class="mb-0"><%# Eval("subtitle") %></p>
+                                        Published by <cite title="Source Title"><%# Eval("createdByName") %>
+                                        <span>
+                                            <%# Eval("body_content") %>
+                                        </span>
+                                    </div>
+
+                                </asp:Panel>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
+                    </Columns>
+                </asp:GridView>
+            </div>
+            <asp:LinkButton runat="server" OnClick="LoadMore_Click" Text="Load More" />
+
         </ContentTemplate>
     </asp:UpdatePanel>
 
-    <div class="container-fluid">
+    <div class="container-fluid hidden">
         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalPostAnnouncement" runat="server" id="btnOpenAnnouncementDlg">
             Open Large Modal
         </button>

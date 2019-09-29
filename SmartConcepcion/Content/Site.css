@@ -45,10 +45,18 @@ body {
     height: 25vh;
     max-height: 25vh;
 }
-.pinned-container .top-one {
-    
+.pinned-container-one {
+    padding: 5px 5px;
 }
-
+.pinned-container-two {
+    padding: 0px 5px 5px 5px;
+}
+.pinned-container-three {
+    padding: 0px 5px 5px 5px;
+}
+.pinned-container-four {
+    padding: 0px 5px 5px 5px;
+}
 textarea {
     resize: none;
 }
@@ -343,6 +351,7 @@ a .logo {
     .announcement-row {
         background: #fff;
         padding: 2rem 0.3rem;
+        margin-bottom:10px;
     }
 
     .hovereffect {
