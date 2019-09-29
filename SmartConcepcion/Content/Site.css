@@ -768,7 +768,7 @@ input:checked + .slider:before {
     background-color: rgba(0,0,0,.8);
     overflow-x: hidden;
     transition: 0.3s;
-    padding-top: 60px;
+    padding: 60px 0;
 }
 
     .sidenav a {

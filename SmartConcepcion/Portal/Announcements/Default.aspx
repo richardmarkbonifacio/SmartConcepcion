@@ -7,7 +7,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel ID="upAnnouncements" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
-            
+            <script src="../../Scripts/custom/sidenav.js"></script>
             <div class="container-fluid">
                 <asp:ListView runat="server" ID="lvAnnouncement" OnItemDataBound="lvAnnouncement_ItemDataBound">
                     <ItemTemplate>
@@ -72,44 +72,7 @@
         </ContentTemplate>
     </asp:UpdatePanel>
 
-    <div class="container-fluid hidden">
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalPostAnnouncement" runat="server" id="btnOpenAnnouncementDlg">
-            Open Large Modal
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="modalPostAnnouncement" role="dialog">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Create Announcement</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            
-                            <img id="imgpreview" class="img-responsive" src="http://placehold.it/180" alt="your image"  Height="300"  />
-                            
-                            <asp:FileUpload runat="server" accept="image/*" multiple="false" ID="fuBanner" ClientIDMode="Static" onchange="readURL(this);" />
-                            <asp:TextBox runat="server" CssClass="form-control" placeholder="Title" ID="txtTitle" />
-                            <asp:TextBox runat="server" CssClass="form-control" placeholder="Subtitle" ID="txtSubtitle" />
-                            <asp:TextBox runat="server" CssClass="form-control" TextMode="Date" ID="txtDate" />
-                            <div class="container">
-                                <asp:HtmlEditorExtender runat="server" EnableSanitization="false" BehaviorID="editor_txtContent" TargetControlID="txtContent" id="editor_txtContent" ></asp:HtmlEditorExtender>
-                            <asp:TextBox runat="server" TextMode="MultiLine" Rows="5" CssClass="form-control" placeholder="Write something" ID="txtContent" Width="500px" />
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <asp:Button runat="server" CssClass="btn btn-default" Text="POST" ID="btnPost" OnClick="btnPost_Click" />
-                        <%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
+    
 
     <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -133,6 +96,57 @@
         </div>
     </div>
     
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="container" style="height: 80vh; background: white;">
+            <asp:UpdatePanel runat="server" ID="upPostAnnouncement">
+                <ContentTemplate>
+                    <div class="create-announcement">
+                        <h2>Announcement</h2>
+                        <div class="container-fluid">
+                            <label class="col-md-2 text-right">Title</label>
+                            <div class="col-md-10">
+                                <asp:TextBox runat="server" CssClass="form-control" placeholder="Title" ID="txtTitle" />
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <label class="col-md-2 text-right">Subtitle</label>
+                            <div class="col-md-10">
+                                <asp:TextBox runat="server" CssClass="form-control" placeholder="Subtitle" ID="txtSubtitle" />
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <label class="col-md-2 text-right">Event Date</label>
+                            <div class="col-md-10">
+                                <asp:TextBox runat="server" CssClass="form-control" TextMode="DateTimeLocal" ID="txtDate" />
+                            </div>
+                        </div>
+                        
+                        <div class="container-fluid">
+                            <asp:HtmlEditorExtender runat="server" EnableSanitization="false" BehaviorID="editor_txtContent" 
+                            TargetControlID="txtContent" ID="editor_txtContent" />
+
+                            <asp:TextBox runat="server" TextMode="MultiLine" Rows="10" CssClass="form-control" placeholder="Write something" ID="txtContent" />
+                        </div>
+
+                        <hr />
+                        <div class="container-fluid">
+                            <%--<img id="imgpreview" class="img-responsive" src="http://placehold.it/180" alt="your image" height="300" />--%>
+                            <asp:FileUpload runat="server" accept="image/*" multiple="false" ID="fuBanner" ClientIDMode="Static" onchange="readURL(this);" />
+                        </div>
+
+                        <hr />
+
+                        <asp:Button runat="server" Text="P O S T" ID="btnPost" OnClick="btnPost_Click" CssClass="btn btn-danger pull-right" />
+                    </div>
+                </ContentTemplate>
+                <Triggers>
+                    <asp:PostBackTrigger ControlID="btnPost" />
+                </Triggers>
+            </asp:UpdatePanel>
+        </div>
+    </div>
+
     <script>
         function readURL(input) {
             if (input.files && input.files[0]) {

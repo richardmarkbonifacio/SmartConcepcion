@@ -40,22 +40,40 @@ namespace SmartConcepcion.Portal.Announcements {
         protected global::System.Web.UI.WebControls.GridView gvAnnouncements;
         
         /// <summary>
-        /// btnOpenAnnouncementDlg control.
+        /// upModal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnOpenAnnouncementDlg;
+        protected global::System.Web.UI.UpdatePanel upModal;
         
         /// <summary>
-        /// fuBanner control.
+        /// lblModalTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuBanner;
+        protected global::System.Web.UI.WebControls.Label lblModalTitle;
+        
+        /// <summary>
+        /// lblModalBody control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblModalBody;
+        
+        /// <summary>
+        /// upPostAnnouncement control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upPostAnnouncement;
         
         /// <summary>
         /// txtTitle control.
@@ -103,6 +121,15 @@ namespace SmartConcepcion.Portal.Announcements {
         protected global::System.Web.UI.WebControls.TextBox txtContent;
         
         /// <summary>
+        /// fuBanner control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fuBanner;
+        
+        /// <summary>
         /// btnPost control.
         /// </summary>
         /// <remarks>
@@ -110,32 +137,5 @@ namespace SmartConcepcion.Portal.Announcements {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnPost;
-        
-        /// <summary>
-        /// upModal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upModal;
-        
-        /// <summary>
-        /// lblModalTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblModalTitle;
-        
-        /// <summary>
-        /// lblModalBody control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblModalBody;
     }
 }

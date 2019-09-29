@@ -303,6 +303,45 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
+        public DataTable setIncidentReport(string cnstr,long? ID, string title, string incident_details, string letter_content, 
+            long? complainant,long? accused, DateTime incident_date,
+            DateTime confrontaion_date, string remarks, string status, long createdby)
+        {
+            try
+            {
+                result_Dt = new DataTable("Announcement Set");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Announcement_Set]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@title", SqlDbType.VarChar).Value = title;
+                cmd.Parameters.Add("@subtitle", SqlDbType.VarChar).Value = incident_details;
+                cmd.Parameters.Add("@body_content", SqlDbType.VarChar).Value = letter_content;
+                cmd.Parameters.Add("@publisheddate", SqlDbType.Date).Value = confrontaion_date;
+                cmd.Parameters.Add("@createdby", SqlDbType.BigInt).Value = createdby;
+
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
+
 
         #endregion
     }

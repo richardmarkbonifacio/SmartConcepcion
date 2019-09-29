@@ -93,7 +93,7 @@ namespace SmartConcepcion.Portal.Announcements
 
             if (!isAdmin())
             {
-                btnOpenAnnouncementDlg.Attributes["disabled"] = "disabled";
+                //btnOpenAnnouncementDlg.Attributes["disabled"] = "disabled";
             }
             if (!IsPostBack)
             {

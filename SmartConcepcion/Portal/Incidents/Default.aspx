@@ -26,7 +26,7 @@
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="col-md-6 col-md-offset-3" style="height:100vh; background:white;">
-
+            
         </div>
     </div>
 
