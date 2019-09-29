@@ -137,6 +137,11 @@
             </div>
         	<div class="col-md-3 footer-ns ">
             	<h4>Message Us</h4>
+                <ul>
+
+                    <li>Phone: +63999999999999</li>
+                     <li>Landline:+ 204606</li>
+                </ul>
              
               
                
@@ -146,7 +151,7 @@
                  
             </div>
              </footer>
-        </div>
+        
   
   <%--<script src="../Scripts/jquery-3.3.1.min.js"></script>--%>
 

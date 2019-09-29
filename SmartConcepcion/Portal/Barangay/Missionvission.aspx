@@ -7,11 +7,11 @@
 .tab-tabs > li.active > a, .tab-tabs > li > a:hover { border: none;  color: #5a4080 !important; background: #fff; }
 .tab-tabs > li > a::after { content: ""; background: #5a4080; height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
 .tab-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
-.tab-nav > li > a::after { background: ##5a4080 none repeat scroll 0% 0%; color: #fff; }
+.tab-nav > li > a::after { background: #5a4080 none repeat scroll 0% 0%; color: #fff; }
 .tab-pane { padding: 15px 0; }
 .tab-content{padding:20px}
 .nav-tabs > li  {width:25%; text-align:center;}
-.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px; }
+.card {background: #FFF none repeat scroll 0% 0%;  margin-bottom: 30px; }
 
 
 @media all and (max-width:724px){
@@ -21,7 +21,7 @@
 #bannermission {
   height: 100px;
   background-color: red; /* For browsers that do not support gradients */
-  background:  linear-gradient(90deg, rgba(0,255,127), rgba(107,142,35) 70.71%);
+ background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
   margin-bottom:20px;
 }
 #bannermission h1{
@@ -32,7 +32,7 @@
 #bannerabout {
   height: 100px;
   background-color: red; /* For browsers that do not support gradients */
-  background:  linear-gradient(90deg, rgba(0,255,127), rgba(107,142,35) 70.71%);
+background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
   margin-bottom:20px;
 }
 #bannerabout h1{
@@ -43,7 +43,7 @@
 .aboutbox {
   margin-right: 20px;
   background-color: #ffffff;
-     border: 1px solid darkgray;
+     
   padding-top: 3px;
     padding-bottom: 3px;
     height:60vh;
@@ -61,7 +61,7 @@
 .aboutboxright {
     height:20vh;
      background-color: #ffffff;
-     border: 1px solid darkgray;
+ 
   padding-top: 3px;
     padding-bottom: 3px;
         width: 52vh;
@@ -70,11 +70,12 @@
     height:37vh;
         width: 52vh;
      background-color: #ffffff;
-    border: 1px solid darkgray;
+
   padding-top: 3px;
     padding-bottom: 3px;
     margin-top:20px;
 }
+
 </style>
     <div class="row">
         

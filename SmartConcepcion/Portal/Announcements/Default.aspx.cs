@@ -78,7 +78,7 @@ namespace SmartConcepcion.Portal.Announcements
                 }
                 else
                 {
-                    return 2;
+                    return 5;
                 }
             }
             set
