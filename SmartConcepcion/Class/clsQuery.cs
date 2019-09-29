@@ -268,5 +268,42 @@ namespace SmartConcepcion.Class
             return result_Dt;
         }
         #endregion
+
+        #region Incident Report
+
+        public DataTable getIncidentReport(string cnstr, int pagesize, int pageno)
+        {
+            try
+            {
+                result_Dt = new DataTable("Incident Report");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Incident_Report_paging_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@PageSize", SqlDbType.Int).Value = pagesize;
+                cmd.Parameters.Add("@PageNumber", SqlDbType.Int).Value = pageno;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
+
+        #endregion
     }
 }
