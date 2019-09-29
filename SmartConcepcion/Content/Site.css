@@ -2,7 +2,7 @@
 body {
     padding-top: 50px;
     font-family: Lato;
-    background:#e0e0e0;
+    background:#f0f0f0;
 }
 
 /* Wrapping element */
@@ -20,6 +20,35 @@ body {
 .announce-details{
 
 }
+.annoucement-pinned {
+    background: #fff;
+    background-size: cover;
+    height: 50vh;
+    background-position: center;
+    position: relative;
+    
+    
+}
+.pinned-container {
+    /*To cancel out padding from BS*/
+    padding:5px;
+}
+.annoucement-pinned-items {
+    position: absolute;
+    bottom: 1px;
+}
+.top-one {
+    height: 50vh;
+    max-height: 50vh;
+}
+.top-two {
+    height: 25vh;
+    max-height: 25vh;
+}
+.pinned-container .top-one {
+    
+}
+
 textarea {
     resize: none;
 }

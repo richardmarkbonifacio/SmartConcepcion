@@ -22,8 +22,9 @@
             <div class="container-fluid">
                 <asp:ListView runat="server" ID="lvAnnouncement" OnItemDataBound="lvAnnouncement_ItemDataBound">
                     <ItemTemplate>
-                        <asp:Panel runat="server" ID="panelRow" CssClass="col-md-4">
-                                    <div class="col-md-12 announcement-row">
+                        <asp:Panel runat="server" ID="panelItem" >
+                        <asp:Panel runat="server" ID="panelbgContainer">
+                                    <div class="col-md-12 announcement-row hidden" >
                                         <div class="hovereffect">
                                             <asp:Image runat="server" ID="imgbanner" ToolTip='<%#Eval("ID") %>' CssClass="img-responsive" Height="300px"/>
                                             <div class="overlay">
@@ -33,18 +34,19 @@
                                         </div>
 
                                     </div>
-                                    <div class="col-md-12 hidden">
+                                    <div class="col-md-12 annoucement-pinned-items">
                                         <div class="row">
                                             <div class="col-md-6"><b>by </b><%# Eval("createdByName") %></div>
                                             <div class="col-md-6 text-center"><i class="fa fa-calendar" aria-hidden="true"></i><%# Eval("datecreated") %></div>
                                         </div>
-                                        <h3>
+                                        <h5>
                                             <asp:LinkButton runat="server" ID="lnkAnnouncement" OnClick="lnkAnnouncement_Click" ToolTip='<%#Eval("ID") %>'> <%# Eval("title") %></asp:LinkButton>
 
-                                        </h3>
+                                        </h5>
                                     </div>
 
                                 </asp:Panel>
+                        </asp:Panel>
                     </ItemTemplate>
                 </asp:ListView>
             </div>

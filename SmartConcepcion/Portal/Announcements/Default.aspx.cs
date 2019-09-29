@@ -67,7 +67,7 @@ namespace SmartConcepcion.Portal.Announcements
 
         private void initData()
         {
-            p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", 15, 0);
+            p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", 4, 0);
             //loadGridView(gvAnnouncements, p_dtAnnouncement);
 
             loadListview(lvAnnouncement, p_dtAnnouncement);
@@ -142,20 +142,41 @@ namespace SmartConcepcion.Portal.Announcements
 
         protected void lvAnnouncement_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
-                Image _img = (Image)e.Item.FindControl("imgbanner");
-                Panel _panel = (Panel)e.Item.FindControl("panelRow");
+            Image _img = (Image)e.Item.FindControl("imgbanner");
+            Panel _panelbg = (Panel)e.Item.FindControl("panelbgContainer");
+            Panel _panelitem = (Panel)e.Item.FindControl("panelItem");
 
-                DataView _dv = p_dtAnnouncement.AsDataView();
-                _dv.RowFilter = "ID=" + _img.ToolTip;
-                DataTable _dttemp = _dv.ToTable();
-                _panel.CssClass = "col-md-4";
-                string _filepath = "~\\Portal\\Announcements\\Banner\\" + _dttemp.Rows[0]["ID"].ToString() + p_dtAnnouncement.Rows[0]["banner_extension"].ToString();
+            DataView _dv = p_dtAnnouncement.AsDataView();
+            _dv.RowFilter = "ID=" + _img.ToolTip;
+            DataTable _dttemp = _dv.ToTable();
 
+            switch (p_BannerIndex)
+            {
+                case 0:
+                    _panelitem.CssClass = "col-md-6 pinned-container";
+                    _panelbg.CssClass = "annoucement-pinned top-one";
+                    break;
+                case 1:
+                    _panelitem.CssClass = "col-md-3 pinned-container";
+                    _panelbg.CssClass = "annoucement-pinned top-two";
+                    break;
+                case 2:
+                    _panelitem.CssClass = "col-md-3 pinned-container";
+                    _panelbg.CssClass = "annoucement-pinned top-two";
+                    break;
+                case 3:
+                    _panelitem.CssClass = "col-md-6 pinned-container";
+                    _panelbg.CssClass = "annoucement-pinned top-two";
+                    break;
+            }
 
-                if (System.IO.File.Exists(Server.MapPath(_filepath)))
-                    _img.ImageUrl = _filepath;
-                else
-                    _img.ImageUrl = "https://dummyimage.com/400x300";
+            p_BannerIndex++;
+            string _filepath = "~\\Portal\\Announcements\\Banner\\" + _dttemp.Rows[0]["ID"].ToString() + p_dtAnnouncement.Rows[0]["banner_extension"].ToString();
+
+            if (System.IO.File.Exists(Server.MapPath(_filepath)))
+                _panelbg.BackImageUrl = _filepath;
+            else
+            _panelbg.BackImageUrl = "https://dummyimage.com/400x300";
                 //_img.ImageUrl = 
 
         }
