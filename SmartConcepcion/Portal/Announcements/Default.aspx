@@ -5,6 +5,11 @@
             Namespace="AjaxControlToolkit"
             TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <style>
+        .ajax__html_editor_extender_popupDiv {
+                display:none;
+            }
+    </style>
     <asp:UpdatePanel ID="upAnnouncements" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
             <script src="../../Scripts/custom/sidenav.js"></script>
@@ -124,7 +129,7 @@
                         
                         <div class="container-fluid">
                             <asp:HtmlEditorExtender runat="server" EnableSanitization="false" BehaviorID="editor_txtContent" 
-                            TargetControlID="txtContent" ID="editor_txtContent" />
+                            TargetControlID="txtContent" ID="editor_txtContent"  />
 
                             <asp:TextBox runat="server" TextMode="MultiLine" Rows="10" CssClass="form-control" placeholder="Write something" ID="txtContent" />
                         </div>
