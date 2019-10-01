@@ -30,5 +30,11 @@ namespace SmartConcepcion.Portal.Incidents
         {
 
         }
+
+        protected void btnPostIR_Click(object sender, EventArgs e)
+        {
+            csql.setIncidentReport("SmartConcepcion", null, txtTitle.Text, txtDetails.Text, "", null, null,
+                Convert.ToDateTime(txtIncidentDate.Text), Convert.ToDateTime(txtConfrontation.Text),txtRemarks.Text,"ptd",p_UserID);
+        }
     }
 }

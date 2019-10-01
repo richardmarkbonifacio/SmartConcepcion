@@ -25,47 +25,51 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="col-md-6 col-md-offset-3" style="height: 100vh; background: white;">
+        <div class="col-md-6 col-md-offset-3" style="min-height: 100vh; background: white;">
             <div class="container-fluid">
                 <h2>Create Incident Report</h2>
                 <div class="form-row">
                     <div class="form-group col-md-12">
                         <label>Incident</label>
-                        <asp:TextBox runat="server" placeholder="Incident Title" CssClass="form-control" />
+                        <asp:TextBox ID="txtTitle" runat="server" placeholder="Incident Title" CssClass="form-control" autocomplete="off" />
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="txtTitle" SetFocusOnError="true" ErrorMessage="Title must not be blank" ForeColor="Red" />
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Accused</label>
-                        <asp:DropDownList runat="server" CssClass="form-control" />
+                        <asp:DropDownList ID="ddAccused" runat="server" CssClass="form-control" />
                     </div>
                     <div class="form-group col-md-6">
                         <label>Complainant</label>
-                        <asp:DropDownList runat="server" CssClass="form-control" />
+                        <asp:DropDownList ID="ddComplainant" runat="server" CssClass="form-control" />
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label>Incident Date</label>
-                    <asp:TextBox runat="server" TextMode="DateTimeLocal" CssClass="form-control"/>
+                    <asp:TextBox ID="txtIncidentDate" runat="server" TextMode="DateTimeLocal" CssClass="form-control"/>
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txtIncidentDate" SetFocusOnError="true" ErrorMessage="Incident date must not be blank" ForeColor="Red"/>
                 </div>
 
                 <div class="form-group">
-                    <label >Details</label>
-                    <asp:TextBox runat="server" TextMode="MultiLine" Rows="10" placeholder="Write the details of the incident" CssClass="form-control" />
+                    <label>Details</label>
+                    <asp:TextBox ID="txtDetails" runat="server" TextMode="MultiLine" Rows="10" placeholder="Write the details of the incident" CssClass="form-control" autocomplete="off" />
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txtDetails" SetFocusOnError="true" ErrorMessage="Details must not be blank" ForeColor="Red" />
                 </div>
                 
                 <div class="form-group">
                     <label>Confrontation Date</label>
-                    <asp:TextBox runat="server" TextMode="DateTimeLocal" CssClass="form-control"/>
+                    <asp:TextBox ID="txtConfrontation" runat="server" TextMode="DateTimeLocal" CssClass="form-control"/>
+                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txtConfrontation" SetFocusOnError="true" ErrorMessage="Confrontation must not be blank" ForeColor="Red"/>
                 </div>
 
                 <div class="form-group">
                     <label>Remarks</label>
-                    <asp:TextBox runat="server" placeholder="Remarks" CssClass="form-control" />
+                    <asp:TextBox ID="txtRemarks" runat="server" placeholder="Remarks" CssClass="form-control" />
                 </div>
                 
-                <asp:Button runat="server" CssClass="btn btn-danger" Text="POST" />
+                <asp:Button runat="server" CssClass="btn btn-danger" Text="POST" ID="btnPostIR" OnClick="btnPostIR_Click" />
             </div>
         </div>
     </div>
