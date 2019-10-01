@@ -93,6 +93,11 @@ hr {
 .pinned-container-four {
     padding: 0px 5px 5px 5px;
 }
+.top-news-overlay{
+    background:rgba(0,0,0,0.5);
+    height:100%;
+}
+
 textarea {
     resize: none;
 }

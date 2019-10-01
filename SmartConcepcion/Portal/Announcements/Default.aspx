@@ -17,31 +17,21 @@
             <div class="container-fluid">
                 <asp:ListView runat="server" ID="lvAnnouncement" OnItemDataBound="lvAnnouncement_ItemDataBound">
                     <ItemTemplate>
-                        <asp:Panel runat="server" ID="panelItem" >
-                        <asp:Panel runat="server" ID="panelbgContainer">
-                                    <div class="col-md-12 announcement-row hidden" >
-                                        <div class="hovereffect">
-                                            <asp:Image runat="server" ID="imgbanner" ToolTip='<%#Eval("ID") %>' CssClass="img-responsive" Height="300px"/>
-                                            <div class="overlay">
-                                                <h2><%# Eval("title") %></h2>
-                                                <asp:LinkButton runat="server" CssClass="info" OnClick="lnkAnnouncement_Click" ToolTip='<%#Eval("ID") %>'> Read More</asp:LinkButton>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                          
+                        <asp:Image runat="server" ID="imgbanner" ToolTip='<%#Eval("ID") %>' CssClass="img-responsive hidden" Height="300px"/>
+                        <asp:Panel runat="server" ID="panelItem">
+                            <asp:Panel runat="server" ID="panelbgContainer">
+                                <div class="container-fluid top-news-overlay">
                                     <div class="col-md-12 annoucement-pinned-items">
-                                         <h5>
+                                        <h5>
                                             <asp:LinkButton runat="server" ID="lnkAnnouncement" OnClick="lnkAnnouncement_Click" ToolTip='<%#Eval("ID") %>'> <%# Eval("title") %></asp:LinkButton>
                                         </h5>
                                         <div class="row">
                                             <div class="col-md-6"><b>by </b><%# Eval("createdByName") %></div>
                                             <div class="col-md-6 text-center"><i class="fa fa-calendar" aria-hidden="true"></i><%# Eval("datecreated") %></div>
                                         </div>
-                                       
                                     </div>
-
-                                </asp:Panel>
+                                </div>
+                            </asp:Panel>
                         </asp:Panel>
                     </ItemTemplate>
                 </asp:ListView>
