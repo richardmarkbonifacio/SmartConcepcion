@@ -27,7 +27,7 @@
                                         </h5>
                                         <div class="row">
                                             <div class="col-md-6"><b>by </b><%# Eval("createdByName") %></div>
-                                            <div class="col-md-6 text-center"><i class="fa fa-calendar" aria-hidden="true"></i><%# Eval("datecreated") %></div>
+                                            <div class="col-md-6 text-center"><%# Eval("datecreated") %></div>
                                         </div>
                                     </div>
                                 </div>
