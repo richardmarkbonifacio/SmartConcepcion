@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Missionvission.aspx.cs" Inherits="SmartConcepcion.Portal.Barangay.Missionvission" %>
+﻿<%@ Page Title="Mission & Vision" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Missionvission.aspx.cs" Inherits="SmartConcepcion.Portal.Barangay.Missionvission" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <style>
 .tab-tabs { border-bottom: 2px solid #DDD; }

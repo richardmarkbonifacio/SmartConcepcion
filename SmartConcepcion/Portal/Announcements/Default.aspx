@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Portal.Announcements.Default" %>
+<%@ Page Title="Announcements" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Portal.Announcements.Default" %>
 <%@ Register
             Assembly="AjaxControlToolkit"
             Namespace="AjaxControlToolkit"
@@ -13,6 +13,7 @@
     <asp:UpdatePanel ID="upAnnouncements" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
             <script src="../../Scripts/custom/sidenav.js"></script>
+            <div id="bannernews" style="text-align:center;"><h1>NEWS</h1></div>
             <div class="container-fluid">
                 <asp:ListView runat="server" ID="lvAnnouncement" OnItemDataBound="lvAnnouncement_ItemDataBound">
                     <ItemTemplate>
@@ -28,15 +29,16 @@
                                         </div>
 
                                     </div>
+                          
                                     <div class="col-md-12 annoucement-pinned-items">
+                                         <h5>
+                                            <asp:LinkButton runat="server" ID="lnkAnnouncement" OnClick="lnkAnnouncement_Click" ToolTip='<%#Eval("ID") %>'> <%# Eval("title") %></asp:LinkButton>
+                                        </h5>
                                         <div class="row">
                                             <div class="col-md-6"><b>by </b><%# Eval("createdByName") %></div>
                                             <div class="col-md-6 text-center"><i class="fa fa-calendar" aria-hidden="true"></i><%# Eval("datecreated") %></div>
                                         </div>
-                                        <h5>
-                                            <asp:LinkButton runat="server" ID="lnkAnnouncement" OnClick="lnkAnnouncement_Click" ToolTip='<%#Eval("ID") %>'> <%# Eval("title") %></asp:LinkButton>
-
-                                        </h5>
+                                       
                                     </div>
 
                                 </asp:Panel>
@@ -44,7 +46,7 @@
                     </ItemTemplate>
                 </asp:ListView>
             </div>
-            
+           
             <hr />
 
             <div class="container-fluid">
