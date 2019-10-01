@@ -4,7 +4,12 @@ body {
     font-family: Lato;
     background:#f0f0f0;
 }
-
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 2px solid darkgray;
+}
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
@@ -13,7 +18,7 @@ body {
     min-height:100vh;
     margin-top:80px;
 }
-
+/*===========================ANNOUNCEMENTS======================================*/
 .announce-header {
     background: #e5e5e5;
 }
@@ -29,24 +34,55 @@ body {
     
     
 }
+
 .pinned-container {
     /*To cancel out padding from BS*/
-    padding:5px;
+    padding: 5px;
 }
 .annoucement-pinned-items {
     position: absolute;
     bottom: 1px;
 }
-.top-one {
-    height: 50vh;
-    max-height: 50vh;
-}
+
+   
+    .top-one {
+        height: 50vh;
+        max-height: 50vh;
+    }
 .top-two {
     height: 25vh;
     max-height: 25vh;
+  
 }
 .pinned-container-one {
     padding: 5px 5px;
+
+
+}
+.top-one a{
+    font-size:35px;
+    font-weight:600;
+}
+.top-one a:hover {
+        text-decoration: none
+    }
+.top-two a {
+    font-size: 20px;
+    font-weight: 600;
+}
+    .top-two a:hover {
+        text-decoration: none
+    }
+#bannernews {
+    height: 100px;
+    background-color: red; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+    margin-bottom: 20px;
+}
+#bannernews h1 {
+    color: white;
+    font-weight: 600;
+    padding-top: 30px;
 }
 .pinned-container-two {
     padding: 0px 5px 5px 5px;
