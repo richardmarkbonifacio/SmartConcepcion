@@ -137,7 +137,7 @@
                         <hr />
                         <div class="container-fluid">
                             <%--<img id="imgpreview" class="img-responsive" src="http://placehold.it/180" alt="your image" height="300" />--%>
-                            <asp:FileUpload runat="server" accept="image/*" multiple="false" ID="fuBanner" ClientIDMode="Static" onchange="readURL(this);" />
+                            <asp:FileUpload runat="server" accept="image/*" multiple="false" ID="fuBanner" ClientIDMode="Static"  CssClass="form-control-file" />
                         </div>
 
                         <hr />
