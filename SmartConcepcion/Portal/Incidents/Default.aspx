@@ -7,15 +7,15 @@
                 <a onclick="openNav()">New Incident Report</a>
                 <%--<asp:LinkButton runat="server" Text="New Incident Report" ID="lnkCreate" OnClick="lnkCreate_Click"/>--%>
                 <asp:GridView runat="server" AutoGenerateColumns="false" 
-                    ID="gvIncidentReport" CssClass="table" PageSize="20" 
+                    ID="gvIncidentReport" CssClass="table table-hover table-responsive table-dark" PageSize="20" 
                     AllowPaging="true" OnPageIndexChanging="gvIncidentReport_PageIndexChanging">
 
                     <Columns>
-                        <asp:BoundField HeaderStyle-CssClass="hidden" DataField="ID" />
-                        <asp:BoundField HeaderStyle-CssClass="thead-dark" DataField="accusedByName" />
-                        <asp:BoundField HeaderStyle-CssClass="thead-dark" DataField="complainantByName" />
-                        <asp:BoundField HeaderStyle-CssClass="thead-dark" DataField="complainantByName" />
-                        <asp:BoundField HeaderStyle-CssClass="thead-dark" DataField="incident_details" />
+                        <asp:BoundField HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden" DataField="ID" />
+                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Accused" DataField="accusedByName" />
+                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Complainant" DataField="complainantByName" />
+                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Accused" DataField="complainantByName" />
+                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Details" DataField="incident_details" />
                     </Columns>
 
                 </asp:GridView>

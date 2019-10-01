@@ -303,22 +303,29 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
-        public DataTable setIncidentReport(string cnstr,long? ID, string title, string incident_details, string letter_content, 
-            long? complainant,long? accused, DateTime incident_date,
+        public DataTable setIncidentReport(string cnstr,long? ID, string title,
+            string incident_details, string letter_content, 
+            long? complainant, long? accused, DateTime incident_date,
             DateTime confrontaion_date, string remarks, string status, long createdby)
         {
             try
             {
-                result_Dt = new DataTable("Announcement Set");
+                result_Dt = new DataTable("Incident Report Set");
                 OpenCn(ref cn, cnstr);
-                cmd = new SqlCommand("[Announcement_Set]", cn);
+                cmd = new SqlCommand("[Incident_Report_set]", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID", SqlDbType.VarChar).Value = ID;
                 cmd.Parameters.Add("@title", SqlDbType.VarChar).Value = title;
-                cmd.Parameters.Add("@subtitle", SqlDbType.VarChar).Value = incident_details;
-                cmd.Parameters.Add("@body_content", SqlDbType.VarChar).Value = letter_content;
-                cmd.Parameters.Add("@publisheddate", SqlDbType.Date).Value = confrontaion_date;
-                cmd.Parameters.Add("@createdby", SqlDbType.BigInt).Value = createdby;
+                cmd.Parameters.Add("@incident_details", SqlDbType.VarChar).Value = incident_details;
+                cmd.Parameters.Add("@letter_content", SqlDbType.VarChar).Value = letter_content;
+                cmd.Parameters.Add("@incidentdate", SqlDbType.Date).Value = incident_date;
+                cmd.Parameters.Add("@confrontation_date", SqlDbType.Date).Value = confrontaion_date;
 
+                cmd.Parameters.Add("@remarks", SqlDbType.VarChar).Value = remarks;
+                cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
+                cmd.Parameters.Add("@complainant", SqlDbType.VarChar).Value = complainant;
+                cmd.Parameters.Add("@accused", SqlDbType.VarChar).Value = accused;
+                cmd.Parameters.Add("@createdby", SqlDbType.BigInt).Value = createdby;
 
                 da = new SqlDataAdapter(cmd);
                 using (cn)

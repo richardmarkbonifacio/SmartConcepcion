@@ -15,9 +15,10 @@
     </asp:PlaceHolder>
     <link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    <meta name="viewport" content="width=device-width, user-scalable=no" /> 
 </head>
 <body>
     <form runat="server">
@@ -28,8 +29,6 @@
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
                 <asp:ScriptReference Name="bootstrap" />
-                <%--<script src="~/Scripts/menumaker.js" runat="server"></script>--%>
-                <%--<asp:ScriptReference Name="menumaker.js" Assembly="System.Web" Path="~/Scripts/menumaker.js" />--%>
                 <asp:ScriptReference Path="~/Scripts/menumaker.js" />
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
                 <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
@@ -45,135 +44,142 @@
         </asp:ScriptManager>
         <%--<script src="~/Scripts/menumaker.js" runat="server"></script>--%>
         <%--NAVBAR--%>
-        <meta name="viewport" content="width=device-width, user-scalable=no" /> 
+
         <style>
-
       </style>
-        
-   <div id="cssmenu">
-  
-	<ul>
-        <li>
-         <div class="logo" >
-      <a class="logo" href="#"><img src="~/images/logo3.png" class="logo" runat="server"/></a></div></li>
- 
-		<li><a href="#">HOME</a></li>
-     
-		<li>
-			<a href="#">RESIDENCE</a>
-			<ul>
-				<li><a href="~/Portal/Announcements/" runat="server">NEWS & ANNOUNCEMENTS</a></li>
-				<li><a href="#">INCIDENT REPORT</a></li>
-				
-			</ul>
-		</li>
-		
-		<li><a href="#">BUSINESS</a></li>
-        		<li><a href="#">HEALTHCARE</a></li>
-        <li>
-			<a href="#">BARANGAY</a>
-			<ul>
-				<li><a href="#">NEWS & ANNOUNCEMENTS</a></li>
-				<li><a href="#">BUDGET</a></li>
-                <li><a href="#">DASHBOARD</a></li>
-				<li><a href="#">OFFICIAL</a></li>
-				<li><a href="#">PROJECTS</a></li>
-                <li><a href="#">MISSION & VISIONS</a></li>
-			</ul>
-		</li>
-        <li><a href="#">About</a></li>
-        <li>
-  <button class="btn btn-navbar btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
 
-          <li><a href="#">MY PROFILE</a></li>
-      <li><a href="#">MY NOTIFICATION</a></li>
-          <li><a href="#">LOG OUT</a></li>
+        <div id="cssmenu">
 
-  </ul>
-            </li>
-             </ul>
-</div>
-    
-    
-    <div class="container body-content">
+            <ul>
+                <li>
+                    <div class="logo">
+                        <a class="logo" href="#">
+                            <img src="~/images/logo3.png" class="logo" runat="server" /></a>
+                    </div>
+                </li>
+
+                <li><a href="#">HOME</a></li>
+
+                <li>
+                    <a href="#">RESIDENCE</a>
+                    <ul>
+                        <li><a href="~/Portal/Announcements/" runat="server">NEWS & ANNOUNCEMENTS</a></li>
+                        <li><a href="~/Portal/Incidents/" runat="server">INCIDENT REPORT</a></li>
+
+                    </ul>
+                </li>
+
+                <li><a href="#">BUSINESS</a></li>
+                <li><a href="#">HEALTHCARE</a></li>
+                <li>
+                    <a href="#">BARANGAY</a>
+                    <ul>
+                        <li><a href="#">NEWS & ANNOUNCEMENTS</a></li>
+                        <li><a href="#">BUDGET</a></li>
+                        <li><a href="#">DASHBOARD</a></li>
+                        <li><a href="#">OFFICIAL</a></li>
+                        <li><a href="#">PROJECTS</a></li>
+                        <li><a href="#">MISSION & VISIONS</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About</a></li>
+                <li>
+                    <button class="btn btn-navbar btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+
+                        <li><a href="#">MY PROFILE</a></li>
+                        <li><a href="#">MY NOTIFICATION</a></li>
+                        <li><a href="#">LOG OUT</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
 
-      <%--  FOOTER--%>
-  <footer class="puuter">
-        <div class="row">
-        	<div class="col-md-3 footer-brand">
-            	<h2><img class="logofoot" src="~/images/logo3.png" runat="server"/></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse semper sollicitudin ipsum, eget ultrices dolor elementum ut. Cras cursus elit a ultricies volutpat. </p>
-                <p>© 2020 Smart Concepcion, All rights reserved</p>
-            </div>
-        	<div class="col-md-4 footer-nav">
-            	<h4>Menu —</h4>
-            	<div class="col-md-6">
-                    <ul class="pages">
-                        <li><a href="#">HOME</a></li>
-                        <li><a href="#">RESIDENCE</a></li>
-                        <li><a href="#">CONTACT</a></li>
-                        <li><a href="#">BARANGAY</a></li>
-                        <li><a href="#">ABOUT</a></li>
+        <%--  FOOTER--%>
+        <footer class="puuter">
+            <div class="row">
+                <div class="col-md-3 footer-brand">
+                    <h2>
+                        <img class="logofoot" src="~/images/logo3.png" runat="server" /></h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse semper sollicitudin ipsum, eget ultrices dolor elementum ut. Cras cursus elit a ultricies volutpat. </p>
+                    <p>© 2020 Smart Concepcion, All rights reserved</p>
+                </div>
+                <div class="col-md-4 footer-nav">
+                    <h4>Menu —</h4>
+                    <div class="col-md-6">
+                        <ul class="pages">
+                            <li><a href="#">HOME</a></li>
+                            <li><a href="#">RESIDENCE</a></li>
+                            <li><a href="#">CONTACT</a></li>
+                            <li><a href="#">BARANGAY</a></li>
+                            <li><a href="#">ABOUT</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list">
+                            <li><a href="#">Terms & Condition</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2 footer-social animated fadeInDown">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="#" data-toggle="tooltip" title="Facebook">
+                            <img class="fbico" src="~/images/facebook.svg" runat="server" /></a></li>
+                        <li><a href="#" data-toggle="tooltip" title="Youtube">
+                            <img class="ytico" src="~/images/youtube.svg" runat="server" /></a></li>
+                        <li><a href="#" data-toggle="tooltip" title="Gmail">
+                            <img class="gmailico" src="~/images/gmail.svg" runat="server" /></a></li>
                     </ul>
                 </div>
-            	<div class="col-md-6">
-                    <ul class="list">
-                        <li><a href="#">Terms & Condition</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-        	<div class="col-md-2 footer-social animated fadeInDown">
-            	<h4>Follow Us</h4>
-            	<ul>
-                	<li><a href="#" data-toggle="tooltip" title="Facebook"><img class="fbico" src="~/images/facebook.svg" runat="server"/></a></li>
-                	<li><a href="#" data-toggle="tooltip" title="Youtube"><img class="ytico" src="~/images/youtube.svg" runat="server"/></a></li>
-                	<li><a href="#" data-toggle="tooltip" title="Gmail"><img class="gmailico" src="~/images/gmail.svg" runat="server"/></a></li>
-                </ul>
-            </div>
-        	<div class="col-md-3 footer-ns ">
-            	<h4>Message Us</h4>
-                <ul>
+                <div class="col-md-3 footer-ns ">
+                    <h4>Message Us</h4>
+                    <ul>
 
-                    <li>Phone: +63999999999999</li>
-                     <li>Landline:+ 204606</li>
-                </ul>
-             
-              
-               
-    <%--<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                        <li>Phone: +63999999999999</li>
+                        <li>Landline:+ 204606</li>
+                    </ul>
+
+
+
+                    <%--<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
     <input type="submit" value="Submit">--%>
-                 
+                </div>
             </div>
-             </footer>
-        
-  
-  <%--<script src="../Scripts/jquery-3.3.1.min.js"></script>--%>
-
-<script type="text/javascript">
-	$("#cssmenu").menumaker({
-		title: "Menu",
-		format: "multitoggle"
-    });
-
-    $(document).ready(function(){
-  $('[data-toggle="tooltip"]').tooltip();   
-    });
+        </footer>
 
 
+        <%--<script src="../Scripts/jquery-3.3.1.min.js"></script>--%>
+
+        <script type="text/javascript">
+            $("#cssmenu").menumaker({
+                title: "Menu",
+                format: "multitoggle"
+            });
+
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip();
+            });
 
 
-</script>
 
-       
-        
-    
+
+        </script>
+
+
+
+
 
     </form>
 </body>
