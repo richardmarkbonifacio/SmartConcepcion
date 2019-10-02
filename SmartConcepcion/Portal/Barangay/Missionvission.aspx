@@ -29,24 +29,14 @@
     padding-top:30px;
     font-weight:600;
            }
-#bannerabout {
-  height: 100px;
-  background-color: red; /* For browsers that do not support gradients */
-background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
-  margin-bottom:20px;
-}
-#bannerabout h1{
-    color:white;
-    font-weight:600;
-    padding-top:30px;
-           }
+
 .aboutbox {
   margin-right: 20px;
   background-color: #ffffff;
      
   padding-top: 3px;
     padding-bottom: 3px;
-    height:60vh;
+    min-height:60vh;
     
 }
 .aboutbox h1{
@@ -79,7 +69,7 @@ background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
 </style>
     <div class="row">
         
-        <div id="bannerabout" style="text-align:center;"><h1>ABOUT US</h1></div>
+ 
     <div class="aboutbox col-md-8">
         <h1>What is Smart Concepcion?</h1>
     <p>
@@ -104,8 +94,8 @@ In hac habitasse platea dictumst. Nunc ac cursus nisi, sed facilisis ligula. Qui
       <!-- Nav tabs -->
       <div class="card">
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-home"></i><span>MISSION</span></a></li>
-          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-user"></i>  <span>VISION</span></a></li>
+          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-blackboard">&nbsp</i><span>MISSION</span></a></li>
+          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-eye-open">&nbsp</i>  <span>VISION</span></a></li>
 
         </ul>
         

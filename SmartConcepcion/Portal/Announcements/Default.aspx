@@ -64,7 +64,10 @@
                     </Columns>
                 </asp:GridView>
             </div>
-            <asp:LinkButton runat="server" OnClick="LoadMore_Click" Text="Load More" />
+            <div class="container text-center ">
+           <%-- <asp:LinkButton runat="server" OnClick="LoadMore_Click" Text="Load More" Cssclass="btnload" />--%>
+                <asp:button runat="server" id="btnLoadmore" Text="Load More" CssClass="btn btnload"/>
+                </div>
 
         </ContentTemplate>
     </asp:UpdatePanel>
