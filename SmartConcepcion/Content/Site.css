@@ -80,17 +80,7 @@ hr {
         color: #00ff00;
         transition: 0.3s;
     }
-#bannernews {
-    height: 100px;
-    background-color: red; /* For browsers that do not support gradients */
-    background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
-    margin-bottom: 20px;
-}
-#bannernews h1 {
-    color: white;
-    font-weight: 600;
-    padding-top: 30px;
-}
+
 .pinned-container-two {
     padding: 5px 5px 1px 2px;
 }

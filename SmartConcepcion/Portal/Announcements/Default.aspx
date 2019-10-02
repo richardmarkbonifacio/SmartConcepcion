@@ -13,7 +13,7 @@
     <asp:UpdatePanel ID="upAnnouncements" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
             <script src="../../Scripts/custom/sidenav.js"></script>
-            <div id="bannernews" style="text-align:center;"><h1>NEWS</h1></div>
+           
             <div class="container-fluid">
                 <asp:ListView runat="server" ID="lvAnnouncement" OnItemDataBound="lvAnnouncement_ItemDataBound">
                     <ItemTemplate>
