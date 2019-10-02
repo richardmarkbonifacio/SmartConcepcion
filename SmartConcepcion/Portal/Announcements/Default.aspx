@@ -27,7 +27,7 @@
                                         </h5>
                                         <div class="row">
                                             <div class="col-md-6"><b>by </b><%# Eval("createdByName") %></div>
-                                            <div class="col-md-6 text-center"><%# Eval("datecreated") %></div>
+                                            <div class="col-md-6 text-center"><%# Eval("datecreated", "{0:MMMM dd yyyy}") %></div>
                                         </div>
                                     </div>
                                 </div>
@@ -95,7 +95,7 @@
     
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="container" style="height: 80vh; background: white;">
+        <div class="container" style="min-height: 100vh; background: white;">
             <asp:UpdatePanel runat="server" ID="upPostAnnouncement">
                 <ContentTemplate>
                     <div class="create-announcement">
