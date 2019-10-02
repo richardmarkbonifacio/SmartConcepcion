@@ -318,8 +318,8 @@ namespace SmartConcepcion.Class
                 cmd.Parameters.Add("@title", SqlDbType.VarChar).Value = title;
                 cmd.Parameters.Add("@incident_details", SqlDbType.VarChar).Value = incident_details;
                 cmd.Parameters.Add("@letter_content", SqlDbType.VarChar).Value = letter_content;
-                cmd.Parameters.Add("@incidentdate", SqlDbType.Date).Value = incident_date;
-                cmd.Parameters.Add("@confrontation_date", SqlDbType.Date).Value = confrontaion_date;
+                cmd.Parameters.Add("@incidentdate", SqlDbType.DateTime).Value = incident_date;
+                cmd.Parameters.Add("@confrontation_date", SqlDbType.DateTime).Value = confrontaion_date;
 
                 cmd.Parameters.Add("@remarks", SqlDbType.VarChar).Value = remarks;
                 cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
@@ -349,6 +349,37 @@ namespace SmartConcepcion.Class
             return result_Dt;
         }
 
+        public DataTable getIncidentReport_Details(string cnstr, long ID)
+        {
+            try
+            {
+                result_Dt = new DataTable("Incident Report Details");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Incident_Report_details_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID", SqlDbType.BigInt).Value = ID;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
 
         #endregion
     }
