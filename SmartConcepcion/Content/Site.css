@@ -8,7 +8,7 @@ hr {
     margin-top: 20px;
     margin-bottom: 20px;
     border: 0;
-    border-top: 2px solid darkgray;
+    border-top: 1px solid darkgray;
 }
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
@@ -17,6 +17,59 @@ hr {
     padding-right: 15px;
     min-height:100vh;
     margin-top:80px;
+}
+.btn-post {
+    border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: #f99827;
+    color: #ecf0f1;
+    transition: background-color .3s;
+    padding-right: 35px;
+    padding-left: 35px;
+    font-weight:600;
+}
+    .btn-post:hover, .btn-post:focus {
+        background-color: #f19429;
+        color: #ecf0f1;
+    }
+
+.btn-post > * {
+    position: relative;
+}
+
+.btn-post span {
+    display: block;
+    padding: 12px 24px;
+}
+
+.btn-post:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0;
+    padding-top: 0;
+    border-radius: 100%;
+    background-color: rgba(236, 240, 241, .3);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.btn-post:active:before {
+    width: 120%;
+    padding-top: 120%;
+    transition: width .2s ease-out, padding-top .2s ease-out;
+}
+
+/* Styles, not important */
+*, *:before, *:after {
+    box-sizing: border-box;
 }
 /*===========================ANNOUNCEMENTS======================================*/
 .announce-header {
