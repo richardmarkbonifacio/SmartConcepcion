@@ -64,7 +64,10 @@
                     </Columns>
                 </asp:GridView>
             </div>
-            <asp:LinkButton runat="server" OnClick="LoadMore_Click" Text="Load More" />
+            <div class="container text-center ">
+           <%-- <asp:LinkButton runat="server" OnClick="LoadMore_Click" Text="Load More" Cssclass="btnload" />--%>
+                <asp:button runat="server" id="btnLoadmore" Text="Load More" CssClass="btn btnload"/>
+                </div>
 
         </ContentTemplate>
     </asp:UpdatePanel>
@@ -99,7 +102,7 @@
             <asp:UpdatePanel runat="server" ID="upPostAnnouncement">
                 <ContentTemplate>
                     <div class="create-announcement">
-                        <h2>Announcement</h2>
+                        <h2>Create Announcement</h2>
                         <div class="container-fluid">
                             <label class="col-md-2 text-right">Title</label>
                             <div class="col-md-10">
@@ -116,6 +119,7 @@
                             <label class="col-md-2 text-right">Event Date</label>
                             <div class="col-md-10">
                                 <asp:TextBox runat="server" CssClass="form-control" TextMode="DateTimeLocal" ID="txtDate" />
+                                <asp:RequiredFieldValidator runat="server" ControlToValidate="txtDate" SetFocusOnError="true" ErrorMessage="Input some Details" ForeColor="Red" />
                             </div>
                         </div>
                         
@@ -124,6 +128,7 @@
                             TargetControlID="txtContent" ID="editor_txtContent"  />
 
                             <asp:TextBox runat="server" TextMode="MultiLine" Rows="10" CssClass="form-control" placeholder="Write something" ID="txtContent" />
+                             <asp:RequiredFieldValidator runat="server" ControlToValidate="txtContent" SetFocusOnError="true" ErrorMessage="Input some Details" ForeColor="Red" />
                         </div>
 
                         <hr />
@@ -133,8 +138,8 @@
                         </div>
 
                         <hr />
-
-                        <asp:Button runat="server" Text="P O S T" ID="btnPost" OnClick="btnPost_Click" CssClass="btn btn-danger pull-right" />
+                        
+                        <asp:Button runat="server" Text="P O S T" ID="btnPost" OnClick="btnPost_Click" CssClass="btn btn-post pull-right" />
                     </div>
                 </ContentTemplate>
                 <Triggers>
