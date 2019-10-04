@@ -58,12 +58,12 @@
                     </div>
                 </li>
 
-                <li><a href="#">HOME</a></li>
+                	<li class="active"><a href="#">HOME</a></li>
 
-                <li>
+              	<li class="active">
                     <a href="#">RESIDENCE</a>
                     <ul>
-                        <li><a href="~/Portal/Announcements/" runat="server">NEWS & ANNOUNCEMENTS</a></li>
+                        	<li><a href="~/Portal/Announcements/" runat="server">NEWS & ANNOUNCEMENTS</a></li>
                         <li><a href="~/Portal/Incidents/" runat="server">INCIDENT REPORT</a></li>
 
                     </ul>
@@ -115,13 +115,16 @@
                 </div>
                 <div class="col-md-4 footer-nav">
                     <h4>Menu —</h4>
+
                     <div class="col-md-6">
                         <ul class="pages">
+                           
                             <li><a href="#">HOME</a></li>
                             <li><a href="#">RESIDENCE</a></li>
                             <li><a href="#">CONTACT</a></li>
                             <li><a href="#">BARANGAY</a></li>
                             <li><a href="#">ABOUT</a></li>
+                            
                         </ul>
                     </div>
                     <div class="col-md-6">
@@ -197,7 +200,12 @@ $('#return-to-top').click(function() {      // When arrow is clicked
 
 
         </script>
-
+        <script>
+            $( '#cssmenu .btn-navbar ' ).on( 'click', function () {
+	$( '#cssmenu .btn-navbar' ).find( 'li.active' ).removeClass( 'active' );
+	$( this ).parent( 'li' ).addClass( 'active' );
+});
+        </script>
 
 
 

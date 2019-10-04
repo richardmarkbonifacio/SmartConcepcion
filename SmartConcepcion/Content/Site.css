@@ -484,7 +484,11 @@ textarea {
                                                    }
 #cssmenu.small-screen .submenu-button.submenu-opened:before {display: none;}
 #cssmenu.small-screen.select-list {padding: 5px;}
-.btn-navbar {
+
+
+
+
+    .btn-navbar {
     margin-top: 45px;
     background: transparent;
     padding: 8px 10px;
@@ -494,7 +498,8 @@ textarea {
     background: transparent;
     border-color: transparent;
     color: #00ff00;
-           }
+ }
+    
 .dropdown-menu {
     background-color: #333;
     border-radius: 0px;
