@@ -49,13 +49,13 @@ namespace SmartConcepcion.Portal.Incidents {
         protected global::System.Web.UI.WebControls.TextBox txtTitle;
         
         /// <summary>
-        /// ddAccused control.
+        /// txtAccused control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddAccused;
+        protected global::System.Web.UI.WebControls.TextBox txtAccused;
         
         /// <summary>
         /// ddComplainant control.
@@ -110,5 +110,41 @@ namespace SmartConcepcion.Portal.Incidents {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnPostIR;
+        
+        /// <summary>
+        /// upNameSuggestion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upNameSuggestion;
+        
+        /// <summary>
+        /// txtUserSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtUserSearch;
+        
+        /// <summary>
+        /// btnSearchUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearchUser;
+        
+        /// <summary>
+        /// gvTemplateError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvTemplateError;
     }
 }

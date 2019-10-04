@@ -292,7 +292,7 @@ textarea {
  #cssmenu {
     top:0;
     min-width:100%;
-    z-index:999;
+    z-index:2;
     background: #333333;
     position:fixed;
 }
@@ -439,7 +439,7 @@ textarea {
                                                       }
 #cssmenu.small-screen .submenu-button {
             position: absolute;
-            z-index: 99;
+            z-index: 1;
             right: 0;
             top: 0;
             display: block;
@@ -949,7 +949,7 @@ input:checked + .slider:before {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 9999;
+    z-index: 3;
     top: 0;
     right: 0;
     background-color: rgba(0,0,0,.8);

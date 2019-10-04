@@ -77,7 +77,7 @@ namespace SmartConcepcion.Class
                 return Convert.ToInt64( result);
             }
         }
-        public string p_BrgyID
+        public long p_BrgyID
         {
             get
             {
@@ -90,7 +90,7 @@ namespace SmartConcepcion.Class
                     jUserData = JArray.Parse(userdata);
                     result = (string)jUserData[3];
                 }
-                return result;
+                return Convert.ToInt64( result);
             }
         }
         

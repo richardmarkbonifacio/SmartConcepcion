@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Incident Report" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Portal.Incidents.Default" %>
 <asp:Content ID="content_report" ContentPlaceHolderID="MainContent" runat="server">
-    <script src="../../Scripts/custom/sidenav.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <style>
         table{
             background:#fff;
@@ -10,6 +10,10 @@
             color:white;
             font-weight:500;
             text-align:center;
+        }
+        .ui-effects-wrapper{
+            /*cnflict on dialog box*/
+            display:none;
         }
     </style>
     <asp:UpdatePanel ID="upIncidentReport" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
@@ -60,7 +64,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>Accused</label>
-                                <asp:DropDownList ID="ddAccused" runat="server" CssClass="form-control" />
+                                <asp:TextBox runat="server" ID="txtAccused" CssClass="form-control" onclick="openNameSuggestion()"/>
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Complainant</label>
@@ -99,4 +103,33 @@
         
     </div>
 
+
+    <div id="dlgNameSuggestion" title="Residences" class="" style="display:none;">
+        <asp:UpdatePanel runat="server" ID="upNameSuggestion" UpdateMode="Conditional">
+            <ContentTemplate>
+                <div class="container-fluid">
+                    <div class="col-md-8">
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" />
+                    </div>
+                    <div class="col-md-4">
+                        <asp:Button runat="server" CssClass="btn btn-warning" Text="search" ID="btnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false"/>
+                    </div>
+                </div>
+                <hr />
+                <asp:GridView ID="gvTemplateError" runat="server"
+                    CssClass="table table-striped table-bordered table-hover"
+                    AutoGenerateColumns="false"
+                    AllowPaging="true" PageSize="10">
+                    <Columns>
+                        <asp:BoundField DataField="Fullname" HeaderText="Fullname" />
+                    </Columns>
+                </asp:GridView>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+    <script src="../../Scripts/custom/sidenav.js"></script>
+    <script src="../../Scripts/custom/jquery-dialog.js"></script>
 </asp:Content>
