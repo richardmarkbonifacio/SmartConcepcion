@@ -12,8 +12,10 @@ namespace SmartConcepcion.Portal.Incidents
     public partial class Default : clsInherited
     {
         clsQuery csql = new clsQuery();
+        DataTable dttemp;
         protected void Page_Load(object sender, EventArgs e)
         {
+            isAdmin();
             if (!IsPostBack)
                 loadIncidentReport();
         }
@@ -43,9 +45,22 @@ namespace SmartConcepcion.Portal.Incidents
             LinkButton _lnk = (LinkButton)sender;
             DataTable _dttemp = csql.getIncidentReport_Details("SmartConcepcion", Convert.ToInt64(_lnk.ToolTip));
             txtTitle.Text = _dttemp.Rows[0]["title"].ToString();
-            txtIncidentDate.Text = Convert.ToDateTime(_dttemp.Rows[0]["incidentdate"].ToString()).ToLocalTime().ToString("yyyy-MM-ddTHH:mm:ss"); 
+            txtIncidentDate.Text = Convert.ToDateTime(_dttemp.Rows[0]["incidentdate"].ToString()).ToLocalTime().ToString("yyyy-MM-ddTHH:mm:ss");
+            txtConfrontation.Text = Convert.ToDateTime(_dttemp.Rows[0]["confrontation_date"].ToString()).ToLocalTime().ToString("yyyy-MM-ddTHH:mm:ss");
+            txtDetails.Text = _dttemp.Rows[0]["incident_details"].ToString();
+            txtRemarks.Text = _dttemp.Rows[0]["remarks"].ToString();
 
             upIncidentInfo.Update();
+        }
+
+        protected void btnSearchUser_Click(object sender, EventArgs e)
+        {
+            dttemp = csql.getUserPaging("SmartConcepcion", 5, 0, txtUserSearch.Text, p_BrgyID);
+            if(dttemp.Rows.Count >0)
+            {
+                loadGridView(gvTemplateError, dttemp);
+                upNameSuggestion.Update();
+            }
         }
     }
 }

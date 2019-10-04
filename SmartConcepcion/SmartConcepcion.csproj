@@ -180,6 +180,7 @@
     <Content Include="Portal\Incidents\Default.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\custom\jquery-dialog.js" />
     <Content Include="Scripts\custom\sidenav.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
