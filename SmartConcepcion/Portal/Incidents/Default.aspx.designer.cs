@@ -40,6 +40,24 @@ namespace SmartConcepcion.Portal.Incidents {
         protected global::System.Web.UI.UpdatePanel upIncidentInfo;
         
         /// <summary>
+        /// header control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl header;
+        
+        /// <summary>
+        /// hfFrom control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfFrom;
+        
+        /// <summary>
         /// txtTitle control.
         /// </summary>
         /// <remarks>
@@ -58,13 +76,13 @@ namespace SmartConcepcion.Portal.Incidents {
         protected global::System.Web.UI.WebControls.TextBox txtAccused;
         
         /// <summary>
-        /// ddComplainant control.
+        /// txtComplainant control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddComplainant;
+        protected global::System.Web.UI.WebControls.TextBox txtComplainant;
         
         /// <summary>
         /// txtIncidentDate control.

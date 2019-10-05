@@ -14,18 +14,22 @@
         .ui-effects-wrapper{
             /*cnflict on dialog box*/
             display:none;
+            height:0px !important;
         }
+        
     </style>
+    
     <asp:UpdatePanel ID="upIncidentReport" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
             <div class="container-fluid">
+                <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New Incident Report" CausesValidation="false" />
                 <a onclick="openNav()" class="pull-right" style="cursor:pointer">New Incident Report</a>
                 <hr />
                 <%--<asp:LinkButton runat="server" Text="New Incident Report" ID="lnkCreate" OnClick="lnkCreate_Click"/>--%>
                 <asp:GridView runat="server" AutoGenerateColumns="false" 
-                    ID="gvIncidentReport" CssClass="table table-hover table-responsive table-dark" PageSize="20" 
-                    AllowPaging="true" OnPageIndexChanging="gvIncidentReport_PageIndexChanging">
-
+                    ID="gvIncidentReport" CssClass="table table-hover table-responsive table-dark" PageSize="10" 
+                    AllowPaging="true"  OnPageIndexChanging="gvIncidentReport_PageIndexChanging">
+                    <PagerSettings Position="Bottom" Visible="true" />
                     <Columns>
                         <asp:BoundField HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden" DataField="ID" />
                         <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Title" DataField="title" />
@@ -53,7 +57,8 @@
             <ContentTemplate>
                 <div class="col-md-6 col-md-offset-3" style="min-height: 100vh; background: white;">
                     <div class="container-fluid">
-                        <h2>Create Incident Report</h2>
+                        <h2 runat="server" id="header">Create Incident Report</h2>
+                        <asp:HiddenField runat="server" ID="hfFrom" />
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label>Incident</label>
@@ -64,11 +69,11 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>Accused</label>
-                                <asp:TextBox runat="server" ID="txtAccused" CssClass="form-control" onclick="openNameSuggestion()"/>
+                                <asp:TextBox runat="server" ID="txtAccused" CssClass="form-control" onclick="openNameSuggestion('accsd')" ReadOnly="true"/>
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Complainant</label>
-                                <asp:DropDownList ID="ddComplainant" runat="server" CssClass="form-control" />
+                                <asp:TextBox runat="server" ID="txtComplainant" CssClass="form-control" onclick="openNameSuggestion('cmplnnt')" ReadOnly="true"/>
                             </div>
                         </div>
 
@@ -121,9 +126,16 @@
                     AutoGenerateColumns="false"
                     AllowPaging="true" PageSize="10">
                     <Columns>
-                        <asp:BoundField DataField="Fullname" HeaderText="Fullname" />
+                        
+                        <asp:TemplateField HeaderText="Fullname" >
+                            <ItemTemplate>
+                                <asp:LinkButton runat="server" Text='<%# Eval("Fullname") %>' ToolTip='<%# Eval("ID") %>' OnClick="lnkSelectResident_Click" CausesValidation="false"/>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+
                     </Columns>
                 </asp:GridView>
+                <asp:LinkButton runat="server" Text="Not a resident" OnClick="lnkNotAResident_Click" CausesValidation="false" />
             </ContentTemplate>
         </asp:UpdatePanel>
         

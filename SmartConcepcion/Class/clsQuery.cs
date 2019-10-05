@@ -340,7 +340,8 @@ namespace SmartConcepcion.Class
         }
         public DataTable setIncidentReport(string cnstr,long? ID, string title,
             string incident_details, string letter_content, 
-            long? complainant, long? accused, DateTime incident_date,
+            long? complainant, long? accused, 
+            string complainantName, string accusedName, DateTime incident_date,
             DateTime confrontaion_date, string remarks, string status, long createdby)
         {
             try
@@ -358,8 +359,10 @@ namespace SmartConcepcion.Class
 
                 cmd.Parameters.Add("@remarks", SqlDbType.VarChar).Value = remarks;
                 cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
-                cmd.Parameters.Add("@complainant", SqlDbType.VarChar).Value = complainant;
-                cmd.Parameters.Add("@accused", SqlDbType.VarChar).Value = accused;
+                cmd.Parameters.Add("@complainantID", SqlDbType.BigInt).Value = complainant;
+                cmd.Parameters.Add("@accusedID", SqlDbType.BigInt).Value = accused;
+                cmd.Parameters.Add("@complainantName", SqlDbType.VarChar).Value = complainantName;
+                cmd.Parameters.Add("@accusedName", SqlDbType.VarChar).Value = accusedName;
                 cmd.Parameters.Add("@createdby", SqlDbType.BigInt).Value = createdby;
 
                 da = new SqlDataAdapter(cmd);

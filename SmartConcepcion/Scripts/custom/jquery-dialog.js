@@ -1,4 +1,4 @@
-﻿function openNameSuggestion() {
+﻿function openNameSuggestion(from) {
     $("#dlgNameSuggestion").dialog({
         height: "auto",
         width:"400px",
@@ -13,4 +13,5 @@
         }
     });
     $("#dlgNameSuggestion").parent().appendTo($("form:first"));
+    $("#MainContent_hfFrom").val(from);
 }
