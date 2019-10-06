@@ -141,6 +141,7 @@
     <Content Include="images\bglogin.jpg" />
     <Content Include="images\loginbgbg.jpg" />
     <Content Include="images\noimage.jpg" />
+    <Content Include="images\user.png" />
     <Content Include="logintesting.aspx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="images\arrow-down.png" />
@@ -178,6 +179,7 @@
     <Content Include="Portal\Barangay\Missionvission.aspx" />
     <Content Include="Portal\Default.aspx" />
     <Content Include="Portal\Incidents\Default.aspx" />
+    <Content Include="Portal\Officials\Official.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\custom\jquery-dialog.js" />
@@ -286,6 +288,13 @@
     </Compile>
     <Compile Include="Portal\Incidents\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Officials\Official.aspx.cs">
+      <DependentUpon>Official.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Officials\Official.aspx.designer.cs">
+      <DependentUpon>Official.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Reports\IRLetterOfInvitation.cs">
       <AutoGen>True</AutoGen>

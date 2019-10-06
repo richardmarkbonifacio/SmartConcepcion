@@ -58,13 +58,15 @@
                     </div>
                 </li>
 
-                	<li class="active"><a href="#">HOME</a></li>
+              
+                <li><a href="~/Portal/" runat="server">HOME</a></li>
 
               	<li class="active">
                     <a href="#">RESIDENCE</a>
                     <ul>
                         	<li><a href="~/Portal/Announcements/" runat="server">NEWS & ANNOUNCEMENTS</a></li>
-                        <li><a href="~/Portal/Incidents/" runat="server">INCIDENT REPORT</a></li>
+                       
+                                <li><a href="#">HOUSEHOLD</a></li>
 
                     </ul>
                 </li>
@@ -74,15 +76,19 @@
                 <li>
                     <a href="#">BARANGAY</a>
                     <ul>
-                        <li><a href="#">NEWS & ANNOUNCEMENTS</a></li>
-                        <li><a href="#">BUDGET</a></li>
                         <li><a href="#">DASHBOARD</a></li>
-                        <li><a href="#">OFFICIALS</a></li>
+                         <li><a href="~/Portal/Incidents/" runat="server">INCIDENT REPORT</a></li>
+                        <li><a href="#">COMMUNITY</a></li>
+                  
+                        <li><a href="#">BUDGET</a></li>
+                        
+                       
+                        <li><a href="~/Portal/Officials/Official" runat="server">OFFICIALS</a></li>
                         <li><a href="#">PROJECTS</a></li>
                         
                     </ul>
                 </li>
-                <li><a href="#">About</a></li>
+                
                 <li>
                     <button class="btn btn-navbar btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                         <span class="caret"></span>
