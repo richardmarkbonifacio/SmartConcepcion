@@ -176,6 +176,7 @@
     <Content Include="images\youtube.svg" />
     <Content Include="Portal\Announcements\Create.aspx" />
     <Content Include="Portal\Announcements\Default.aspx" />
+    <Content Include="Portal\Announcements\view.aspx" />
     <Content Include="Portal\Barangay\Missionvission.aspx" />
     <Content Include="Portal\Default.aspx" />
     <Content Include="Portal\Incidents\Default.aspx" />
@@ -267,6 +268,13 @@
     </Compile>
     <Compile Include="Portal\Announcements\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Announcements\view.aspx.cs">
+      <DependentUpon>view.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Announcements\view.aspx.designer.cs">
+      <DependentUpon>view.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Barangay\Missionvission.aspx.cs">
       <DependentUpon>Missionvission.aspx</DependentUpon>
