@@ -98,8 +98,15 @@ namespace SmartConcepcion.Portal.Incidents
         }
         void loadIncidentReport()
         {
-            loadGridView(gvIncidentReport, csql.getIncidentReport("SmartConcepcion", gvIncidentReport.PageSize,p_PageIndex));
-            upIncidentReport.Update();
+            dttemp = csql.getIncidentReport("SmartConcepcion", gvIncidentReport.PageSize, p_PageIndex);
+            gvIncidentReport.PageIndex = p_PageIndex;
+            if(dttemp.Rows.Count > 0)
+            {
+                gvIncidentReport.VirtualItemCount = (int)dttemp.Rows[0]["reccount"];
+                loadGridView(gvIncidentReport, dttemp);
+                upIncidentReport.Update();
+            }
+            
         }
         void clearIncidentInfo()
         {
@@ -109,7 +116,10 @@ namespace SmartConcepcion.Portal.Incidents
             txtTitle.Text = "";
             txtIncidentDate.Text = "";
             txtAccused.Text = "";
+            txtComplainant.Text = "";
             txtDetails.Text = "";
+            txtConfrontation.Text = "";
+            txtRemarks.Text = "";
             header.InnerText = "Create new Incident";
             upIncidentInfo.Update();
         }
@@ -139,7 +149,7 @@ namespace SmartConcepcion.Portal.Incidents
         protected void btnPostIR_Click(object sender, EventArgs e)
         {
             csql.setIncidentReport("SmartConcepcion", p_IncidentID, txtTitle.Text, txtDetails.Text, "", p_ComplainantID, p_AccusedID, 
-                txtComplainant.Text, txtAccused.Text,Convert.ToDateTime(txtIncidentDate.Text), Convert.ToDateTime(txtConfrontation.Text),
+                txtComplainant.Text, txtAccused.Text,Convert.ToDateTime(txtIncidentDate.Text), Convert.ToDateTime(txtConfrontation.Text),txtLocation.Text,
                 txtRemarks.Text,"ptd",p_UserID);
 
             loadIncidentReport();
@@ -154,8 +164,21 @@ namespace SmartConcepcion.Portal.Incidents
             txtTitle.Text = _dttemp.Rows[0]["title"].ToString();
             txtIncidentDate.Text = Convert.ToDateTime(_dttemp.Rows[0]["incidentdate"].ToString()).ToLocalTime().ToString("yyyy-MM-ddTHH:mm:ss");
             txtConfrontation.Text = Convert.ToDateTime(_dttemp.Rows[0]["confrontation_date"].ToString()).ToLocalTime().ToString("yyyy-MM-ddTHH:mm:ss");
+            txtAccused.Text = _dttemp.Rows[0]["accusedName"].ToString();
+            txtComplainant.Text = _dttemp.Rows[0]["complainantName"].ToString();
             txtDetails.Text = _dttemp.Rows[0]["incident_details"].ToString();
             txtRemarks.Text = _dttemp.Rows[0]["remarks"].ToString();
+
+            if (_dttemp.Rows[0]["complainantID"].ToString() != "")
+                p_ComplainantID = Convert.ToInt64(_dttemp.Rows[0]["complainantID"].ToString());
+            else
+                p_ComplainantID = null;
+
+            if (_dttemp.Rows[0]["accusedID"].ToString() != "")
+                p_AccusedID = Convert.ToInt64(_dttemp.Rows[0]["accusedID"].ToString());
+            else
+                p_AccusedID = null;
+
             p_IncidentID = Convert.ToInt64(_dttemp.Rows[0]["ID"].ToString());
             upIncidentInfo.Update();
         }

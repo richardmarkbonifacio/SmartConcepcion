@@ -332,7 +332,7 @@ namespace SmartConcepcion.Class
             catch (Exception)
             {
 
-                throw;
+                
             }
 
 
@@ -340,9 +340,9 @@ namespace SmartConcepcion.Class
         }
         public DataTable setIncidentReport(string cnstr,long? ID, string title,
             string incident_details, string letter_content, 
-            long? complainant, long? accused, 
-            string complainantName, string accusedName, DateTime incident_date,
-            DateTime confrontaion_date, string remarks, string status, long createdby)
+            long? complainant, long? accused, string complainantName, string accusedName,
+            DateTime incident_date, DateTime confrontaion_date, string incident_location,
+            string remarks, string status, long createdby)
         {
             try
             {
@@ -353,6 +353,7 @@ namespace SmartConcepcion.Class
                 cmd.Parameters.Add("@ID", SqlDbType.VarChar).Value = ID;
                 cmd.Parameters.Add("@title", SqlDbType.VarChar).Value = title;
                 cmd.Parameters.Add("@incident_details", SqlDbType.VarChar).Value = incident_details;
+                cmd.Parameters.Add("@incident_location", SqlDbType.VarChar).Value = incident_location;
                 cmd.Parameters.Add("@letter_content", SqlDbType.VarChar).Value = letter_content;
                 cmd.Parameters.Add("@incidentdate", SqlDbType.DateTime).Value = incident_date;
                 cmd.Parameters.Add("@confrontation_date", SqlDbType.DateTime).Value = confrontaion_date;
