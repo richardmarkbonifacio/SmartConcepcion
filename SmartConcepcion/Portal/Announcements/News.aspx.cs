@@ -113,18 +113,20 @@ namespace SmartConcepcion.Portal.Announcements
             {
                 Image _img = (Image)e.Row.FindControl("imgbanner");
                 Panel _panel = (Panel)e.Row.FindControl("panelRow");
+                Panel _panelbg = (Panel)e.Row.FindControl("panelbgContainer");
 
                 DataView _dv = p_dtAnnouncement.AsDataView();
                 _dv.RowFilter = "ID=" + _img.ToolTip;
                 DataTable _dttemp = _dv.ToTable();
                 _panel.CssClass = "container-fluid announcement-row";
+                _panelbg.CssClass = "annoucement-pinned";
                 string _filepath = "~\\Portal\\Announcements\\Banner\\" + _dttemp.Rows[0]["ID"].ToString() + p_dtAnnouncement.Rows[0]["banner_extension"].ToString();
 
 
                 if (System.IO.File.Exists(Server.MapPath(_filepath)))
-                    _img.ImageUrl = _filepath;
+                    _panelbg.BackImageUrl = _filepath;
                 else
-                    _img.ImageUrl = "https://dummyimage.com/400x400";
+                    _panelbg.BackImageUrl = "https://dummyimage.com/400x400";
                 //_img.ImageUrl = 
 
             }
