@@ -677,12 +677,13 @@ a .logo {
         color: #00ff00;
         text-decoration: none;
                                      }
-.puuter .footer-nav h4 {
+    .puuter .footer-nav h4 {
         font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 3px;
         margin-bottom: 10px;
-                       }
+        color: #fff !important;
+    }
 .puuter .footer-nav ul.list {
         list-style: none;
         padding: 0px;
@@ -701,19 +702,26 @@ a .logo {
         font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 3px;
+        color:#fff !important;
                            }
 .puuter .footer-social li {padding: 5px 4px;}
-.puuter .footer-ns h4 {
+    .puuter .footer-ns h4 {
         font-size: 11px;
         text-transform: uppercase;
         letter-spacing: 3px;
         margin-bottom: 10px;
+        color: #fff !important;
+
     }
 
 .puuter .footer-ns p {
         font-size: 12px;
         color: #DDDDDD;
+      
     }
+.footer-ns ul {
+    list-style: none;
+}
 .fbico, .ytico, .gmailico { height: 4vh; }
 @media (min-width: 768px) {
     .puuter.footer-nav, .puuter .footer-social, .puuter .footer-ns { border-left: solid 1px #dcdcdc; }
