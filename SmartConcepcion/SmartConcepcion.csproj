@@ -312,6 +312,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Portal\Announcements\Banner\" />
+    <Folder Include="Portal\Beta\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

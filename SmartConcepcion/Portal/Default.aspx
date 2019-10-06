@@ -1,237 +1,148 @@
 ﻿<%@ Page Title="Home" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Portal.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
-    <style>
-
-        body {
-            overflow:hidden;
-            }
-            .body-content{
-          margin-top: 80px;
-        
-         
-        }
-   .puuter{
-       display:none;
-   }
-.cb-slideshow,
-.cb-slideshow:after { 
- 
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    /*z-index: 0;*/ 
-}
-.cb-slideshow:after { 
-    content:'';
-}
-.cb-slideshow li span { 
-    width: 100%;
-    height: 120vh;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    color: transparent;
-    background-size: cover;
-    background-position: 50% 50%;
-    opacity: 0;
-
-    /*z-index: 0;*/
-	-webkit-backface-visibility: hidden;
-    -webkit-animation: imageAnimation 36s linear infinite 0s;
-    -moz-animation: imageAnimation 36s linear infinite 0s;
-    -o-animation: imageAnimation 36s linear infinite 0s;
-
-    animation: imageAnimation 36s linear infinite 0s; 
-}
-.cb-slideshow li div { 
-    /*z-index: 2;*/
-    position: absolute;
-    bottom: 30vh;
-    left: 0px;
-    width: 100%;
-
-    text-align: center;
-    opacity: 0;
+<style>
+ h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    background-color: #f4511e;
     color: #fff;
-    -webkit-animation: titleAnimation 36s linear infinite;
-    -moz-animation: titleAnimation 36s linear infinite;
-    -o-animation: titleAnimation 36s linear infinite;
-
-    animation: titleAnimation 36s linear infinite; 
-}
-.cb-slideshow li div h3 { 
-    
-    font-size: 90px;
-    padding: 0;
-    line-height: 200px; 
-     color:#ffd800;
-   
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-}
-.cb-slideshow li:nth-child(1) span { 
-    background-image: url(../images/1.jpg) ;
-    
-     
-}
-.cb-slideshow li:nth-child(2) span { 
-    background-image: url(../images/2.jpg);
-    -webkit-animation-delay: 6s;
-      list-style-type: none;
-    -moz-animation-delay: 6s;
-    -o-animation-delay: 6s;
-    
-    animation-delay: 6s; 
-}
-.cb-slideshow li:nth-child(3) span { 
-    background-image: url(../images/3.jpg);
-    -webkit-animation-delay: 12s;
-    -moz-animation-delay: 12s;
-    -o-animation-delay: 12s;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .icoabout-small {
+    color: green;
+    font-size: 50px;
+  }
+  .icoabout {
+    color: green;
+    font-size: 200px;
+  }
+  .btn-default{
+      border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: #f99827;
+    color: #ecf0f1;
+    transition: background-color .3s;
+    padding-right: 35px;
+    padding-left: 35px;
+    font-weight: 600;
+    margin: 10px;
+  }
+  .btn-default:hover, .btn-default:active{
+      border-width: 0;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: #f19429;
+    color: #ecf0f1;
+    transition: background-color .3s;
+    padding-right: 35px;
+    padding-left: 35px;
+    font-weight: 600;
+    margin: 10px;
+  }
   
-    animation-delay: 12s; 
-}
-.cb-slideshow li:nth-child(4) span { 
-    background-image: url(../images/4.jpg);
-    -webkit-animation-delay: 6s;
-    -moz-animation-delay: 6s;
-    -o-animation-delay: 6s;
-
-    animation-delay: 6s; 
-}
-
-.cb-slideshow li:nth-child(2) div { 
-    -webkit-animation-delay: 6s;
-    -moz-animation-delay: 6s;
-    -o-animation-delay: 6s;
  
-    animation-delay: 6s; 
-}
-.cb-slideshow li:nth-child(3) div { 
-    -webkit-animation-delay: 12s;
-    -moz-animation-delay: 12s;
-    -o-animation-delay: 12s;
-      list-style-type: none;
- 
-    animation-delay: 12s; 
-}
-.cb-slideshow li:nth-child(4) div { 
-    -webkit-animation-delay: 6s;
-    -moz-animation-delay: 6s;
-    -o-animation-delay: 6s;
-    
-    animation-delay: 6s; 
-}
-
-/* Animation for the slideshow images */
-@-webkit-keyframes imageAnimation { 
-    0% { opacity: 0;
-    -webkit-animation-timing-function: ease-in; }
-    8% { opacity: 1;
-         -webkit-animation-timing-function: ease-out; }
-    17% { opacity: 1 }
-    25% { opacity: 0 }
-    100% { opacity: 0 }
-}
-@-moz-keyframes imageAnimation { 
-    0% { opacity: 0;
-    -moz-animation-timing-function: ease-in; }
-    8% { opacity: 1;
-         -moz-animation-timing-function: ease-out; }
-    17% { opacity: 1 }
-    25% { opacity: 0 }
-    100% { opacity: 0 }
-}
-@-o-keyframes imageAnimation { 
-    0% { opacity: 0;
-    -o-animation-timing-function: ease-in; }
-    8% { opacity: 1;
-         -o-animation-timing-function: ease-out; }
-    17% { opacity: 1 }
-    25% { opacity: 0 }
-    100% { opacity: 0 }
-}
-@-ms-keyframes imageAnimation { 
-    0% { opacity: 0;
- }
-    8% { opacity: 1;
-       }
-    17% { opacity: 1 }
-    25% { opacity: 0 }
-    100% { opacity: 0 }
-}
-@keyframes imageAnimation { 
-    0% { opacity: 0;
-    animation-timing-function: ease-in; }
-    8% { opacity: 1;
-         animation-timing-function: ease-out; }
-    17% { opacity: 1 }
-    25% { opacity: 0 }
-    100% { opacity: 0 }
-}
-/* Animation for the title */
-@-webkit-keyframes titleAnimation { 
-    0% { opacity: 0 }
-    8% { opacity: 1 }
-    17% { opacity: 1 }
-    19% { opacity: 0 }
-    100% { opacity: 0 }
-}
-@-moz-keyframes titleAnimation { 
-    0% { opacity: 0 }
-    8% { opacity: 1 }
-    17% { opacity: 1 }
-    19% { opacity: 0 }
-    100% { opacity: 0 }
-}
-@-o-keyframes titleAnimation { 
-    0% { opacity: 0 }
-    8% { opacity: 1 }
-    17% { opacity: 1 }
-    19% { opacity: 0 }
-    100% { opacity: 0 }
-}
-@-ms-keyframes titleAnimation { 
-    0% { opacity: 0 }
-    8% { opacity: 1 }
-    17% { opacity: 1 }
-    19% { opacity: 0 }
-    100% { opacity: 0 }
-}
-@keyframes titleAnimation { 
-    0% { opacity: 0 }
-    8% { opacity: 1 }
-    17% { opacity: 1 }
-    19% { opacity: 0 }
-    100% { opacity: 0 }
-}
-/* Show at least something when animations not supported */
-.no-cssanimations .cb-slideshow li span{
-	opacity: 1;
-}
-.buttonslider{
- background-color:#00ff00;
-
-  color: #fff;
-  padding: 10px 40px;
-  text-align: center;
-  text-decoration: none;
-  font-weight:700;
-  margin: 4px 2px;
-  cursor: pointer;
-
-}
 </style>
+  <div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>About Company Page</h2><br>
+      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <br><%--<button class="btn btn-default btn-lg">Get in Touch</button>--%>
+    <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Email Us: Loremipsum@gmail.com">
+Get In Touch
+</button>
 
-        <ul style="list-style: none;" class="cb-slideshow">
-            <li><span>Image 01</span><div><h3>News & Events</h3><button class="buttonslider">VIEW</button></div></li>
-            <li><span>Image 02</span><div><h3>Incident Report</h3><button class="buttonslider">VIEW</button></div></li>
-            <li><span>Image 03</span><div><h3>Dashboard</h3><button class="buttonslider">VIEW</button></div></li>
-            <li><span>Image 04</span><div><h3>Officials</h3><button class="buttonslider">VIEW</button></div></li>
-        </ul>
- 
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-dashboard icoabout"></span>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe icoabout slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Our Values</h2><br>
+      <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
+      <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-list-alt icoabout-small"></span>
+      <h4>NEWS</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart icoabout-small"></span>
+      <h4>HEALTHCARE</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-lock icoabout-small"></span>
+      <h4>BUSINESS</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+  <br><br>
+  <div class="row slideanim">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-exclamation-sign icoabout-small"></span>
+      <h4>INFORMATION</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate icoabout-small"></span>
+      <h4>CERTIFICATE</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-wrench icoabout-small"></span>
+      <h4 style="color:#303030;">HARD WORK</h4>
+      <p>Lorem ipsum dolor sit amet..</p>
+    </div>
+  </div>
+</div>
+    <script>
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+    </script>
 
 
 </asp:Content>
