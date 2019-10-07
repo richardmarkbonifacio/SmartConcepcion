@@ -57,8 +57,12 @@ hr{
                                     <asp:Panel runat="server" ID="panelbgContainer" />
                                     <article>
                                         <h2><%# Eval("title") %></h2>
-                                        <h5><%# Eval("subtitle") %></h5>
-                                        <h5><%# Eval("createdByName") %></h5>
+                                        
+                                        <div class="container-fluid">
+                                            <h5><%# Eval("subtitle") %>,
+                                            <i><%# Eval("datecreated", "{0:MMMM dd yyyy}") %></i></h5>
+
+                                        </div>
 
                                         <p>
                                             <%# Eval("body_content") %>

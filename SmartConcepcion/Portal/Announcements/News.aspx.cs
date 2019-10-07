@@ -120,7 +120,7 @@ namespace SmartConcepcion.Portal.Announcements
                 DataTable _dttemp = _dv.ToTable();
                 _panel.CssClass = "container-fluid announcement-row";
                 _panelbg.CssClass = "annoucement-pinned";
-                string _filepath = "~\\Portal\\Announcements\\Banner\\" + _dttemp.Rows[0]["ID"].ToString() + p_dtAnnouncement.Rows[0]["banner_extension"].ToString();
+                string _filepath = "~\\Portal\\Announcements\\Banner\\" + _dttemp.Rows[0]["ID"].ToString() + _dttemp.Rows[0]["banner_extension"].ToString();
 
 
                 if (System.IO.File.Exists(Server.MapPath(_filepath)))

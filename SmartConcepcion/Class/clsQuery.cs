@@ -195,6 +195,38 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
+
+        public DataTable getUser_Details(string cnstr, long ID)
+        {
+            try
+            {
+                result_Dt = new DataTable("User Details");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[User_detail_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID", SqlDbType.BigInt).Value = ID;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
         #endregion
 
         #region Announcements

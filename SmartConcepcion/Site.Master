@@ -78,7 +78,7 @@
                     <ul>
                         <li><a href="#">DASHBOARD</a></li>
                          <li><a href="~/Portal/Incidents/" runat="server">INCIDENT REPORT</a></li>
-                        <li><a href="#">COMMUNITY</a></li>
+                        <li><a href="~/Portal/Community/" runat="server">COMMUNITY</a></li>
                   
                         <li><a href="#">BUDGET</a></li>
                         

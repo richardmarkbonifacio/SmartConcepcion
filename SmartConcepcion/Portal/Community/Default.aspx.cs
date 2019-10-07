@@ -14,22 +14,22 @@ namespace SmartConcepcion.Portal.Community
         clsQuery csql = new clsQuery();
         DataTable dttemp;
         #region Properties
-        public long? p_IncidentID
+        public long? p_UserProfileID
         {
             get
             {
-                if (ViewState["IncidentID"] == null)
+                if (ViewState["UserProfileID"] == null)
                 {
                     return null;
                 }
                 else
                 {
-                    return Convert.ToInt64(ViewState["IncidentID"].ToString());
+                    return Convert.ToInt64(ViewState["UserProfileID"].ToString());
                 }
             }
             set
             {
-                ViewState["IncidentID"] = value;
+                ViewState["UserProfileID"] = value;
             }
         }
 
@@ -94,137 +94,84 @@ namespace SmartConcepcion.Portal.Community
         {
             isAdmin();
             if (!IsPostBack)
-                loadIncidentReport();
+                loadUserProfile();
         }
-        void loadIncidentReport()
+        void loadUserProfile()
         {
-            dttemp = csql.getIncidentReport("SmartConcepcion", gvIncidentReport.PageSize, p_PageIndex);
-            gvIncidentReport.PageIndex = p_PageIndex;
+            dttemp = csql.getUserPaging("SmartConcepcion", gvUserProfiles.PageSize, p_PageIndex,txtUserSearch.Text,p_BrgyID);
+            gvUserProfiles.PageIndex = p_PageIndex;
             if(dttemp.Rows.Count > 0)
             {
-                gvIncidentReport.VirtualItemCount = (int)dttemp.Rows[0]["reccount"];
-                loadGridView(gvIncidentReport, dttemp);
+                gvUserProfiles.VirtualItemCount = (int)dttemp.Rows[0]["reccount"];
+                loadGridView(gvUserProfiles, dttemp);
                 upIncidentReport.Update();
             }
             
         }
-        void clearIncidentInfo()
+        void clearUserInfo()
         {
-            p_IncidentID = null;
-            p_AccusedID = null;
-            p_ComplainantID = null;
-            txtTitle.Text = "";
-            txtIncidentDate.Text = "";
-            txtAccused.Text = "";
-            txtComplainant.Text = "";
-            txtDetails.Text = "";
-            txtConfrontation.Text = "";
-            txtRemarks.Text = "";
+            p_UserProfileID = null;
+            p_UserProfileID = null;
+            txtFnam.Text = "";
+            txtLnam.Text = "";
+            txtMnam.Text = "";
+            txtBday.Text = "";
+            txtContact.Text = "";
+            txtEmail.Text = "";
+            
             header.InnerText = "Create new Incident";
             upIncidentInfo.Update();
         }
-        protected void gvIncidentReport_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void gvUserProfiles_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             if (IsPostBack)
             {
                 GridView _gvSender = (GridView)sender;
                 p_PageIndex = e.NewPageIndex;
-                loadIncidentReport();
-                clearIncidentInfo();
+                loadUserProfile();
+                clearUserInfo();
 
             }
         }
 
         protected void lnkCreate_Click(object sender, EventArgs e)
         {
-            p_IncidentID = null;
-            txtTitle.Text = "";
-            txtIncidentDate.Text = "";
-            txtAccused.Text = "";
-            txtDetails.Text = "";
-            header.InnerText = "Create new Incident";
-            upIncidentInfo.Update();
+            clearUserInfo();
         }
 
         protected void btnPostIR_Click(object sender, EventArgs e)
         {
-            csql.setIncidentReport("SmartConcepcion", p_IncidentID, txtTitle.Text, txtDetails.Text, "", p_ComplainantID, p_AccusedID, 
-                txtComplainant.Text, txtAccused.Text,Convert.ToDateTime(txtIncidentDate.Text), Convert.ToDateTime(txtConfrontation.Text),txtLocation.Text,
-                txtRemarks.Text,"ptd",p_UserID);
+            //csql.setIncidentReport("SmartConcepcion", p_UserProfileID, txtTitle.Text, txtDetails.Text, "", p_ComplainantID, p_AccusedID, 
+            //    txtComplainant.Text, txtAccused.Text,Convert.ToDateTime(txtIncidentDate.Text), Convert.ToDateTime(txtConfrontation.Text),txtLocation.Text,
+            //    txtRemarks.Text,"ptd",p_UserID);
 
-            loadIncidentReport();
-            clearIncidentInfo();
+            loadUserProfile();
+            clearUserInfo();
         }
 
         protected void Unnamed_Click(object sender, EventArgs e)
         {
             LinkButton _lnk = (LinkButton)sender;
-            DataTable _dttemp = csql.getIncidentReport_Details("SmartConcepcion", Convert.ToInt64(_lnk.ToolTip));
-            header.InnerText = "Update Incident";
-            txtTitle.Text = _dttemp.Rows[0]["title"].ToString();
-            txtIncidentDate.Text = Convert.ToDateTime(_dttemp.Rows[0]["incidentdate"].ToString()).ToLocalTime().ToString("yyyy-MM-ddTHH:mm:ss");
-            txtConfrontation.Text = Convert.ToDateTime(_dttemp.Rows[0]["confrontation_date"].ToString()).ToLocalTime().ToString("yyyy-MM-ddTHH:mm:ss");
-            txtAccused.Text = _dttemp.Rows[0]["accusedName"].ToString();
-            txtComplainant.Text = _dttemp.Rows[0]["complainantName"].ToString();
-            txtDetails.Text = _dttemp.Rows[0]["incident_details"].ToString();
-            txtRemarks.Text = _dttemp.Rows[0]["remarks"].ToString();
+            DataTable _dttemp = csql.getUser_Details("SmartConcepcion", Convert.ToInt64(_lnk.ToolTip));
+            header.InnerText = "Update Account";
 
-            if (_dttemp.Rows[0]["complainantID"].ToString() != "")
-                p_ComplainantID = Convert.ToInt64(_dttemp.Rows[0]["complainantID"].ToString());
-            else
-                p_ComplainantID = null;
+            txtBday.Text = _dttemp.Rows[0]["birthday"].ToString();
+            txtContact.Text = _dttemp.Rows[0]["contactno"].ToString();
+            txtEmail.Text = _dttemp.Rows[0]["email"].ToString();
+            txtFnam.Text = _dttemp.Rows[0]["firstname"].ToString();
+            txtLnam.Text = _dttemp.Rows[0]["lastname"].ToString();
+            txtMnam.Text = _dttemp.Rows[0]["middlename"].ToString();
+            
 
-            if (_dttemp.Rows[0]["accusedID"].ToString() != "")
-                p_AccusedID = Convert.ToInt64(_dttemp.Rows[0]["accusedID"].ToString());
-            else
-                p_AccusedID = null;
-
-            p_IncidentID = Convert.ToInt64(_dttemp.Rows[0]["ID"].ToString());
+            p_UserProfileID = Convert.ToInt64(_dttemp.Rows[0]["ID"].ToString());
             upIncidentInfo.Update();
         }
 
         protected void btnSearchUser_Click(object sender, EventArgs e)
         {
-            dttemp = csql.getUserPaging("SmartConcepcion", 5, 0, txtUserSearch.Text, p_BrgyID);
-            if(dttemp.Rows.Count >0)
-            {
-                loadGridView(gvTemplateError, dttemp);
-                upNameSuggestion.Update();
-            }
+            p_PageIndex = 0; //Reset index in searching
+            loadUserProfile();
         }
 
-        protected void lnkSelectResident_Click(object sender, EventArgs e)
-        {
-            LinkButton _lnk = (LinkButton)sender;
-            
-            if(hfFrom.Value == "accsd")
-            {
-                txtAccused.Text = _lnk.Text;
-                p_AccusedID = Convert.ToInt64(_lnk.ToolTip);
-            }
-            else
-            {
-                txtComplainant.Text = _lnk.Text;
-                p_ComplainantID = Convert.ToInt64(_lnk.ToolTip);
-            }
-            upIncidentInfo.Update();
-        }
-
-        protected void lnkNotAResident_Click(object sender, EventArgs e)
-        {
-            
-
-            if (hfFrom.Value == "accsd")
-            {
-                txtAccused.Text = txtUserSearch.Text;
-                p_AccusedID = null;
-            }
-            else
-            {
-                txtComplainant.Text = txtUserSearch.Text;
-                p_ComplainantID = null;
-            }
-            upIncidentInfo.Update();
-        }
     }
 }
