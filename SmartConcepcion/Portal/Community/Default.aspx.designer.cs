@@ -22,13 +22,31 @@ namespace SmartConcepcion.Portal.Community {
         protected global::System.Web.UI.UpdatePanel upIncidentReport;
         
         /// <summary>
-        /// gvIncidentReport control.
+        /// txtUserSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvIncidentReport;
+        protected global::System.Web.UI.WebControls.TextBox txtUserSearch;
+        
+        /// <summary>
+        /// btnSearchUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearchUser;
+        
+        /// <summary>
+        /// gvUserProfiles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvUserProfiles;
         
         /// <summary>
         /// upIncidentInfo control.
@@ -58,76 +76,85 @@ namespace SmartConcepcion.Portal.Community {
         protected global::System.Web.UI.WebControls.HiddenField hfFrom;
         
         /// <summary>
-        /// txtTitle control.
+        /// txtFnam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTitle;
+        protected global::System.Web.UI.WebControls.TextBox txtFnam;
         
         /// <summary>
-        /// txtAccused control.
+        /// txtMnam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAccused;
+        protected global::System.Web.UI.WebControls.TextBox txtMnam;
         
         /// <summary>
-        /// txtComplainant control.
+        /// txtLnam control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtComplainant;
+        protected global::System.Web.UI.WebControls.TextBox txtLnam;
         
         /// <summary>
-        /// txtLocation control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLocation;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
-        /// txtIncidentDate control.
+        /// txtContact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIncidentDate;
+        protected global::System.Web.UI.WebControls.TextBox txtContact;
         
         /// <summary>
-        /// txtDetails control.
+        /// ddBrgy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDetails;
+        protected global::System.Web.UI.WebControls.DropDownList ddBrgy;
         
         /// <summary>
-        /// txtConfrontation control.
+        /// txtBday control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtConfrontation;
+        protected global::System.Web.UI.WebControls.TextBox txtBday;
         
         /// <summary>
-        /// txtRemarks control.
+        /// ddGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRemarks;
+        protected global::System.Web.UI.WebControls.DropDownList ddGender;
+        
+        /// <summary>
+        /// txtRUserpass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRUserpass;
         
         /// <summary>
         /// btnPostIR control.
@@ -137,41 +164,5 @@ namespace SmartConcepcion.Portal.Community {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnPostIR;
-        
-        /// <summary>
-        /// upNameSuggestion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upNameSuggestion;
-        
-        /// <summary>
-        /// txtUserSearch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserSearch;
-        
-        /// <summary>
-        /// btnSearchUser control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearchUser;
-        
-        /// <summary>
-        /// gvTemplateError control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvTemplateError;
     }
 }
