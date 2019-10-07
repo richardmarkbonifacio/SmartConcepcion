@@ -77,43 +77,74 @@ main article p {
     float: right;
   }
 }
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
 </style>
 
 
 
-    <main>
-        <section>
-            <article>
-                <h2>Headline</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis orci in ex iaculis, nec scelerisque mauris dapibus. Mauris sagittis imperdiet sem laoreet commodo. Phasellus malesuada id odio sed efficitur. Ut laoreet tincidunt neque ut mattis. Pellentesque et risus nisl. Phasellus et elit non quam scelerisque molestie non in enim. Fusce ut dui ut lorem suscipit consectetur nec sit amet ipsum. Cras rhoncus sem in fermentum semper. Sed ac venenatis ex, vel tempus mauris. In et porttitor purus, vitae faucibus nisi. Maecenas eleifend, neque vitae aliquet pretium, metus ante ullamcorper nibh, quis congue libero sem eu tellus.
+<main>
+  <section>
+    <article>
+      <h2>Headline</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis orci in ex iaculis, nec scelerisque mauris dapibus. Mauris sagittis imperdiet sem laoreet commodo. Phasellus malesuada id odio sed efficitur. Ut laoreet tincidunt neque ut mattis. Pellentesque et risus nisl. Phasellus et elit non quam scelerisque molestie non in enim. Fusce ut dui ut lorem suscipit consectetur nec sit amet ipsum. Cras rhoncus sem in fermentum semper. Sed ac venenatis ex, vel tempus mauris. In et porttitor purus, vitae faucibus nisi. Maecenas eleifend, neque vitae aliquet pretium, metus ante ullamcorper nibh, quis congue libero sem eu tellus.
+        Etiam facilisis ipsum eget leo dapibus commodo. Morbi ac elit nec elit efficitur luctus tempor et libero. Sed ullamcorper tristique tortor id feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut in eros vitae nisl laoreet viverra. Ut id nibh sodales, faucibus tellus quis, euismod dolor. Cras sodales velit in elit molestie gravida. Fusce ac diam hendrerit felis dignissim convallis.
+        Sed ullamcorper molestie mauris, eget tincidunt libero tempor ut. In feugiat ante mi, nec tempor diam bibendum at. Integer aliquet, tortor at ultrices ullamcorper, est nisi auctor eros, eget lacinia ex ante in dolor. In eget vulputate nulla. Donec sit amet laoreet lectus. Morbi tempus sem ultrices porta mollis. Donec ac turpis in orci facilisis feugiat vitae eu dui.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis orci in ex iaculis, nec scelerisque mauris dapibus. Mauris sagittis imperdiet sem laoreet commodo. Phasellus malesuada id odio sed efficitur. Ut laoreet tincidunt neque ut mattis. Pellentesque et risus nisl. Phasellus et elit non quam scelerisque molestie non in enim. Fusce ut dui ut lorem suscipit consectetur nec sit amet ipsum. Cras rhoncus sem in fermentum semper. Sed ac venenatis ex, vel tempus mauris. In et porttitor purus, vitae faucibus nisi. Maecenas eleifend, neque vitae aliquet pretium, metus ante ullamcorper nibh, quis congue libero sem eu tellus.
+        Etiam facilisis ipsum eget leo dapibus commodo. Morbi ac elit nec elit efficitur luctus tempor et libero. Sed ullamcorper tristique tortor id feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut in eros vitae nisl laoreet viverra. Ut id nibh sodales, faucibus tellus quis, euismod dolor. Cras sodales velit in elit molestie gravida. Fusce ac diam hendrerit felis dignissim convallis.
+        Sed ullamcorper molestie mauris, eget tincidunt libero tempor ut. In feugiat ante mi, nec tempor diam bibendum at. Integer aliquet, tortor at ultrices ullamcorper, est nisi auctor eros, eget lacinia ex ante in dolor. In eget vulputate nulla. Donec sit amet laoreet lectus. Morbi tempus sem ultrices porta mollis. Donec ac turpis in orci facilisis feugiat vitae eu dui.</p>
 
-                    Etiam facilisis ipsum eget leo dapibus commodo. Morbi ac elit nec elit efficitur luctus tempor et libero. Sed ullamcorper tristique tortor id feugiat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut in eros vitae nisl laoreet viverra. Ut id nibh sodales, faucibus tellus quis, euismod dolor. Cras sodales velit in elit molestie gravida. Fusce ac diam hendrerit felis dignissim convallis.
-
-                    Sed ullamcorper molestie mauris, eget tincidunt libero tempor ut. In feugiat ante mi, nec tempor diam bibendum at. Integer aliquet, tortor at ultrices ullamcorper, est nisi auctor eros, eget lacinia ex ante in dolor. In eget vulputate nulla. Donec sit amet laoreet lectus. Morbi tempus sem ultrices porta mollis. Donec ac turpis in orci facilisis feugiat vitae eu dui.
-                </p>
-            </article>
-        </section>
-        <aside>
-            <div class="capsule">
-                <div class="right-news">
-                    <h3>Widget Headline</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-            <div class="capsule">
-                <div class="right-news">
-                    <h3>Widget Headline</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-            <div class="capsule">
-                <div class="right-news">
-                    <h3>Widget Headline</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-        </aside>
-    </main>
+    </article>
+  </section>
+  <aside>
+    <div class=capsule>
+        <div class="right-news">
+      <h3>Widget Headline</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+        </div>
+    <div class=capsule>
+         <div class="right-news">
+      <h3>Widget Headline</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+        </div>
+    <div class=capsule>
+         <div class="right-news">
+      <h3>Widget Headline</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+        </div>
+ 
     
+       </aside>
+</main>
+  
+      <label for="subject">Leave a Comment</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+     
 </asp:Content>
