@@ -161,6 +161,55 @@ namespace SmartConcepcion.Class
             return result_Dt;
         }
 
+        public DataTable UserCreateUpdate(string cnstr, long?ID, string email, string firstname, string middlename, string lastname,
+            string suffix, string contactno, long brgyID, DateTime birthday,long? createdby,bool isIndigent, bool isSenior, bool isPWD, bool is4ps)
+        {
+            try
+            {
+                result_Dt = new DataTable("User Create Update");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[User_CreateUpdate]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID", SqlDbType.BigInt).Value = ID;
+                cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
+                cmd.Parameters.Add("@firstname", SqlDbType.VarChar).Value = firstname;
+                cmd.Parameters.Add("@middlename", SqlDbType.VarChar).Value = middlename;
+                cmd.Parameters.Add("@lastname", SqlDbType.VarChar).Value = lastname;
+                cmd.Parameters.Add("@suffix", SqlDbType.VarChar).Value = suffix;
+                cmd.Parameters.Add("@contactno", SqlDbType.VarChar).Value = contactno;
+                cmd.Parameters.Add("@birthday", SqlDbType.Date).Value = birthday;
+                cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
+                cmd.Parameters.Add("@isIndigent", SqlDbType.Bit).Value = isIndigent;
+                cmd.Parameters.Add("@isSenior", SqlDbType.Bit).Value = isSenior;
+                cmd.Parameters.Add("@isPWD", SqlDbType.Bit).Value = isPWD;
+                cmd.Parameters.Add("@is4ps", SqlDbType.Bit).Value = is4ps;
+
+
+                cmd.Parameters.Add("@createdby", SqlDbType.BigInt).Value = createdby;
+
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
+
         public DataTable getUserPaging(string cnstr, int pagesize, int pageno,string search, long? brgyID)
         {
             try

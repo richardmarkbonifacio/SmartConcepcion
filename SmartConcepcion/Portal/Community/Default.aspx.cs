@@ -141,12 +141,21 @@ namespace SmartConcepcion.Portal.Community
 
         protected void btnPostIR_Click(object sender, EventArgs e)
         {
-            //csql.setIncidentReport("SmartConcepcion", p_UserProfileID, txtTitle.Text, txtDetails.Text, "", p_ComplainantID, p_AccusedID, 
-            //    txtComplainant.Text, txtAccused.Text,Convert.ToDateTime(txtIncidentDate.Text), Convert.ToDateTime(txtConfrontation.Text),txtLocation.Text,
-            //    txtRemarks.Text,"ptd",p_UserID);
+            try
+            {
+                DataTable _dt = csql.UserCreateUpdate("SmartConcepcion", p_UserProfileID, txtEmail.Text, txtFnam.Text, txtMnam.Text, txtLnam.Text,
+                "", txtContact.Text, p_BrgyID, Convert.ToDateTime(txtBday.Text), p_UserID, chkIndigent.Checked, chkSenir.Checked,
+                    chkPwd.Checked, chk4ps.Checked);
 
-            loadUserProfile();
-            clearUserInfo();
+                loadUserProfile();
+                clearUserInfo();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
 
         protected void Unnamed_Click(object sender, EventArgs e)
@@ -155,13 +164,17 @@ namespace SmartConcepcion.Portal.Community
             DataTable _dttemp = csql.getUser_Details("SmartConcepcion", Convert.ToInt64(_lnk.ToolTip));
             header.InnerText = "Update Account";
 
-            txtBday.Text = _dttemp.Rows[0]["birthday"].ToString();
+            txtBday.Text = Convert.ToDateTime(_dttemp.Rows[0]["birthday"].ToString()).ToString("yyyy-MM-dd");
             txtContact.Text = _dttemp.Rows[0]["contactno"].ToString();
             txtEmail.Text = _dttemp.Rows[0]["email"].ToString();
             txtFnam.Text = _dttemp.Rows[0]["firstname"].ToString();
             txtLnam.Text = _dttemp.Rows[0]["lastname"].ToString();
             txtMnam.Text = _dttemp.Rows[0]["middlename"].ToString();
-            
+
+            chk4ps.Checked = Convert.ToBoolean(_dttemp.Rows[0]["is4ps"].ToString());
+            chkIndigent.Checked = Convert.ToBoolean(_dttemp.Rows[0]["isIndigent"].ToString());
+            chkPwd.Checked = Convert.ToBoolean(_dttemp.Rows[0]["isPWD"].ToString());
+            chkSenir.Checked = Convert.ToBoolean(_dttemp.Rows[0]["isSeniorCitizen"].ToString());
 
             p_UserProfileID = Convert.ToInt64(_dttemp.Rows[0]["ID"].ToString());
             upIncidentInfo.Update();

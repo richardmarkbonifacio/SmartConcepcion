@@ -17,6 +17,9 @@
             display:none;
             height:0px !important;
         }
+        .labeltoggle{
+            color:rgba(0, 0, 0, 0.19);
+        }
         
     </style>
     
@@ -50,7 +53,7 @@
                         <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Fullname" DataField="fullname" />
                         
                         <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Birthday" dataformatstring="{0:d}" DataField="birthday" />
-                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Location" DataField="contactno" />
+                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Contact No." DataField="contactno" />
                         
                         <asp:TemplateField HeaderStyle-CssClass="thead-dark" ItemStyle-CssClass="text-center">
                             <ItemTemplate>
@@ -86,40 +89,80 @@
                         <asp:HiddenField runat="server" ID="hfFrom" />
                         <div class="container-fluid">
                             <div class="form-group">
-                                <div class="col-md-4">
+                                <div class="col-md-4 text-center">
                                     <asp:TextBox runat="server" ID="txtFnam" placeholder="Firstname" CssClass="form-control sign-up-ctrl" />
+                                    <label>Firstname</label>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 text-center">
                                     <asp:TextBox runat="server" ID="txtMnam" placeholder="Middlename" CssClass="form-control sign-up-ctrl" />
+                                    <label>Middlename</label>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 text-center">
                                     <asp:TextBox runat="server" ID="txtLnam" placeholder="Lastname" CssClass="form-control sign-up-ctrl" />
+                                    <label>Lastname</label>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-4">
+                                <div class="col-md-6 text-center">
                                     <asp:TextBox runat="server" ID="txtEmail" placeholder="Email" CssClass="form-control sign-up-ctrl" TextMode="Email" />
+                                    <label>Email</label>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6 text-center">
                                     <asp:TextBox runat="server" ID="txtContact" placeholder="Contact No." CssClass="form-control sign-up-ctrl" />
+                                    <label>Contact No.</label>
                                 </div>
-                                <div class="col-md-4">
-                                    <asp:DropDownList runat="server" ID="ddBrgy" placeholder="Barangay" CssClass="form-control sign-up-ctrl" />
-                                </div>
+                                
                             </div>
                             <div class="form-group">
-                                <div class="col-md-4">
+                                <div class="col-md-4 text-center">
                                     <asp:TextBox runat="server" ID="txtBday" placeholder="Birthdate" CssClass="form-control sign-up-ctrl" TextMode="Date" />
+                                    <label>Birthday</label>
                                 </div>
-                                <div class="col-md-3">
+                                <div class="col-md-4 text-center">
                                     <asp:DropDownList runat="server" ID="ddGender" placeholder="Gender" CssClass="form-control sign-up-ctrl">
                                         <asp:ListItem Text="Male" />
                                         <asp:ListItem Text="Female" />
                                         <asp:ListItem Text="Alien" />
                                     </asp:DropDownList>
+                                    <label>Gender</label>
                                 </div>
                                 <div class="col-md-4">
-                                    <asp:TextBox runat="server" ID="txtRUserpass" placeholder="Password" CssClass="form-control sign-up-ctrl" TextMode="Password" />
+                                    <asp:DropDownList runat="server" ID="ddBrgy" placeholder="Barangay" CssClass="form-control sign-up-ctrl" />
+                                    <label>Barangay</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-3">
+                                    <div class="labeltoggle">Indigent</div>
+                                    <label class="switch">
+                                        <asp:CheckBox runat="server" ID="chkIndigent" Checked="true" />
+                                        <span class="slider round"></span>
+
+                                    </label>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="labeltoggle">Senior Citizen</div>
+                                    <label class="switch">
+                                        <asp:CheckBox runat="server" ID="chkSenir" Checked="true" />
+                                        <span class="slider round"></span>
+
+                                    </label>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="labeltoggle">PWD</div>
+                                    <label class="switch">
+                                        <asp:CheckBox runat="server" ID="chkPwd" Checked="true" />
+                                        <span class="slider round"></span>
+
+                                    </label>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="labeltoggle">4PS</div>
+                                    <label class="switch">
+                                        <asp:CheckBox runat="server" ID="chk4ps" Checked="true" />
+                                        <span class="slider round"></span>
+
+                                    </label>
                                 </div>
                             </div>
                         </div>

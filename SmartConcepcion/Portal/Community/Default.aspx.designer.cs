@@ -121,15 +121,6 @@ namespace SmartConcepcion.Portal.Community {
         protected global::System.Web.UI.WebControls.TextBox txtContact;
         
         /// <summary>
-        /// ddBrgy control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddBrgy;
-        
-        /// <summary>
         /// txtBday control.
         /// </summary>
         /// <remarks>
@@ -148,13 +139,49 @@ namespace SmartConcepcion.Portal.Community {
         protected global::System.Web.UI.WebControls.DropDownList ddGender;
         
         /// <summary>
-        /// txtRUserpass control.
+        /// ddBrgy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRUserpass;
+        protected global::System.Web.UI.WebControls.DropDownList ddBrgy;
+        
+        /// <summary>
+        /// chkIndigent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkIndigent;
+        
+        /// <summary>
+        /// chkSenir control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkSenir;
+        
+        /// <summary>
+        /// chkPwd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkPwd;
+        
+        /// <summary>
+        /// chk4ps control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chk4ps;
         
         /// <summary>
         /// btnPostIR control.
