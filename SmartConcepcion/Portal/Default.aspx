@@ -50,7 +50,7 @@
     margin: 10px;
   }
   .btn-default:hover, .btn-default:active{
-      border-width: 0;
+    border-width: 0;
     outline: none;
     border-radius: 2px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
