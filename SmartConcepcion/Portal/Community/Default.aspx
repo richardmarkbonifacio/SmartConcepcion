@@ -167,7 +167,7 @@
                             </div>
                         </div>
 
-                        <asp:Button runat="server" CssClass="btn btn-danger" Text="POST" ID="btnPostIR" OnClick="btnPostIR_Click" />
+                        <asp:Button runat="server" CssClass="btn btn-danger" Text="POST" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />
                     </div>
                 </div>
             </ContentTemplate>

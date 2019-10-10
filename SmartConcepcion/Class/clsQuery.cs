@@ -85,7 +85,7 @@ namespace SmartConcepcion.Class
 
         #endregion
 
-        #region Accounts
+        #region Accounts and Community
         public DataTable postSignIn(string cnstr, long userid, string userpass)
         {
             try
@@ -501,6 +501,40 @@ namespace SmartConcepcion.Class
             return result_Dt;
         }
 
+        #endregion
+
+        #region Brgy Officials
+        public DataTable getBrgyOfficial(string cnstr, long brgyID)
+        {
+            try
+            {
+                result_Dt = new DataTable("Brgy Officials");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Brgy_official_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
         #endregion
     }
 }

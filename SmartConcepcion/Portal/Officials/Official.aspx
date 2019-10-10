@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Official.aspx.cs" Inherits="SmartConcepcion.Portal.Officials.Official" %>
+﻿<%@ Page Title="Brgy Official" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Official.aspx.cs" Inherits="SmartConcepcion.Portal.Officials.Official" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <style>
 .card-capt {
@@ -34,106 +34,43 @@
     border:none;
 }
 
-
+@media only screen and (max-width: 600px) {
+  .card-capt {
+    width:100%;
+  }
+}
 </style>
     <div class="container-fluid">
         <div class="col-md-6  col-md-offset-3 ">
             <div class="card-capt">
                 <img src="../../images/user.png" alt="Avatar" style="width: 100%">
                 <div class="container-fluid">
-                   <div class="middle">
-   
-  </div>
-  <h4><b>John Doe</b></h4>
+                    <div class="middle">
+                    </div>
+                    <h4><b><asp:Label runat="server" ID="lblCaptain"/></b></h4>
                     <p>Barangay Captain</p>
                 </div>
             </div>
         </div>
     </div>
     
-   <hr /> <div class="container-fluid">
-        <div class="col-md-3">
-            <div class="card-kagawad">
-                <img src="../../images/user.png" alt="Avatar" style="width: 100%">
-                <div class="container-fluid">
-                    <h4><b>John Doe</b></h4>
-                    <p>Barangay Councilor</p>
+    <hr />
+    
+    <div class="container-fluid">
+        <asp:ListView runat="server" ID="lvCouncilor">
+            <ItemTemplate>
+                <div class="col-md-3">
+                    <div class="card-kagawad">
+                        <img src="../../images/user.png" alt="Avatar" style="width: 100%">
+                        <div class="container-fluid">
+                            <h4><b><%# Eval("officialName") %></b></h4>
+                            <p><%# Eval("position") %></p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-        </div>
-        <div class="col-md-3">
-            <div class="card-kagawad">
-                <img src="../../images/user.png" alt="Avatar" style="width: 100%">
-                <div class="container-fluid">
-                    <h4><b>John Doe</b></h4>
-                    <p>Barangay Councilor</p>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-md-3">
-            <div class="card-kagawad">
-                <img src="../../images/user.png" alt="Avatar" style="width: 100%">
-                <div class="container-fluid">
-                    <h4><b>John Doe</b></h4>
-                    <p>Barangay Councilor</p>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-md-3">
-            <div class="card-kagawad">
-                <img src="../../images/user.png" alt="Avatar" style="width: 100%">
-                <div class="container-fluid">
-                    <h4><b>John Doe</b></h4>
-                    <p>Barangay Councilor</p>
-                </div>
-            </div>
-
-        </div>
+            </ItemTemplate>
+        </asp:ListView>
     </div>
-     <div class="container-fluid">
-        <div class="col-md-3">
-            <div class="card-kagawad">
-                <img src="../../images/user.png" alt="Avatar" style="width: 100%">
-                <div class="container-fluid">
-                    <h4><b>John Doe</b></h4>
-                    <p>Barangay Councilor</p>
-                </div>
-            </div>
 
-        </div>
-        <div class="col-md-3">
-            <div class="card-kagawad">
-                <img src="../../images/user.png" alt="Avatar" style="width: 100%">
-                <div class="container-fluid">
-                    <h4><b>John Doe</b></h4>
-                    <p>Barangay Councilor</p>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-md-3">
-            <div class="card-kagawad">
-                <img src="../../images/user.png" alt="Avatar" style="width: 100%">
-                <div class="container-fluid">
-                    <h4><b>John Doe</b></h4>
-                    <p>Barangay Councilor</p>
-                </div>
-            </div>
-
-        </div>
-        <div class="col-md-3">
-            <div class="card-kagawad">
-                <img src="../../images/user.png" alt="Avatar" style="width: 100%">
-                <div class="container-fluid">
-                    <h4><b>John Doe</b></h4>
-                    <p>Barangay Councilor</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
     <hr />
 </asp:Content>
