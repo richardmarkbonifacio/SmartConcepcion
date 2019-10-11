@@ -6,6 +6,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:UpdatePanel runat="server" ID="upPostAnnouncement">
         <ContentTemplate>
+       
+            <div class="header-banner">CREATE NEWS</div>
             <div class="container create-announcement">
 
                 <asp:TextBox runat="server" CssClass="form-control" placeholder="Title" ID="txtTitle" />
@@ -20,7 +22,7 @@
                 <asp:FileUpload runat="server" accept="image/*" multiple="false" ID="fuBanner" ClientIDMode="Static" onchange="readURL(this);" />
                 <hr />
                 
-                <asp:Button runat="server" Text="P O S T" ID="btnPost" OnClick="btnPost_Click" CssClass="btn btn-danger pull-right" />
+                <asp:Button runat="server" Text="P O S T" ID="btnPost" OnClick="btnPost_Click" CssClass="btn btnload pull-right" />
             </div>
         </ContentTemplate>
         <Triggers>
