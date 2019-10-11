@@ -70,7 +70,8 @@ hr{
                                     </article>
                                     <div class="container-fluid">
                                         <div class="col-md-6 ">
-                                            <asp:button runat="server" id="btnLoadmore" Text="Read More" CssClass="btn btnload btn-lg"/>
+                                            <a href='View?ID=<%# Eval("ID") %>' class="btn btnload btn-lg">Read More</a>
+                                            <%--<asp:button runat="server" id="btnLoadmore" Text="Read More" CssClass="btn btnload btn-lg"/>--%>
                                         </div>
                                         <div class="col-md-6 ">
                                             <h3 class="text-right">Comments</h3>

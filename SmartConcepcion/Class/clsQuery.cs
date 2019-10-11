@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -320,6 +321,38 @@ namespace SmartConcepcion.Class
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@PageSize", SqlDbType.Int).Value = pagesize;
                 cmd.Parameters.Add("@PageNumber", SqlDbType.Int).Value = pageno;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
+
+        public DataTable getAnnouncementsInfo(string cnstr, long ID)
+        {
+            try
+            {
+                result_Dt = new DataTable("Announcement Information");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Announcement_information_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
 
                 da = new SqlDataAdapter(cmd);
                 using (cn)

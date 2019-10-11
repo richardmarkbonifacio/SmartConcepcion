@@ -12,6 +12,7 @@ namespace SmartConcepcion.Class
 {
     public class clsInherited : Page
     {
+        
         public void getTickUserData(ref string res)
         {
             try
