@@ -52,7 +52,7 @@
 
             <ul>
                 <li>
-                    <div class="logo">
+                    <div class="logo hidden-xs">
                         <a class="logo" href="#">
                             <img src="~/images/logo3.png" class="logo" runat="server" /></a>
                     </div>
@@ -127,9 +127,10 @@
                            
                             <li><a href="#">HOME</a></li>
                             <li><a href="#">RESIDENCE</a></li>
-                            <li><a href="#">CONTACT</a></li>
+                            <li><a href="#">BUSINESS</a></li>
+                                        <li><a href="#">HEALTHCARE</a></li>
                             <li><a href="#">BARANGAY</a></li>
-                            <li><a href="#">ABOUT</a></li>
+                
                             
                         </ul>
                     </div>
