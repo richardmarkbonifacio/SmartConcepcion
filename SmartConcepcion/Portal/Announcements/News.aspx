@@ -65,7 +65,7 @@ hr{
                                         </div>
 
                                         <p>
-                                            <%# Eval("body_content") %>
+                                            <%# Eval("preview") %>
                                         </p>
                                     </article>
                                     <div class="container-fluid">
