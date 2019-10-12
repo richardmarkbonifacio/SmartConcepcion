@@ -54,6 +54,9 @@
                 <asp:Button runat="server" Text="P O S T" ID="btnPost" OnClick="btnPost_Click" CssClass="btn btnload pull-right" />
             </div>
         </ContentTemplate>
+        <Triggers>
+                    <asp:PostBackTrigger ControlID="btnPost" />
+                </Triggers>
     </asp:UpdatePanel>
     <script>
         function readURL(input) {
