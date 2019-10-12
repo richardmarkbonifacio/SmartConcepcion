@@ -376,7 +376,7 @@ namespace SmartConcepcion.Class
             return result_Dt;
         }
 
-        public DataTable setAnnouncements(string cnstr, string title, string subtitle, string content, DateTime publisheddate, 
+        public DataTable setAnnouncements(string cnstr,long? ID, string title, string subtitle, string content, DateTime publisheddate, 
             long? typeID,  string banner_ext, long createdby)
         {
             try
@@ -385,6 +385,7 @@ namespace SmartConcepcion.Class
                 OpenCn(ref cn, cnstr);
                 cmd = new SqlCommand("[Announcement_Set]", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID", SqlDbType.BigInt).Value = ID;
                 cmd.Parameters.Add("@title", SqlDbType.VarChar).Value = title;
                 cmd.Parameters.Add("@subtitle", SqlDbType.VarChar).Value = subtitle;
                 cmd.Parameters.Add("@body_content", SqlDbType.VarChar).Value = content;
