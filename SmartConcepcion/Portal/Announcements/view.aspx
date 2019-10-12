@@ -114,7 +114,7 @@ border-width: 0;
     padding-right: 35px;
     padding-left: 35px;
     font-weight: 600;
-    margin: 10px;
+   
 }
 .newsimg{
    
