@@ -38,7 +38,18 @@ article p {
 .capsule {
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid lightpink;
+
+}
+.capsule  + .capsule {
+  border-top: none;
+}
+.capsule:first-of-type {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.capsule:last-of-type {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 hr{
     border:none;
@@ -88,24 +99,20 @@ hr{
                 </asp:GridView>
             </div>
             <div class="col-md-3">
-                <div class="capsule">
-                    <div class="right-news">
-                        <h3>Widget Headline</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="capsule">
-                    <div class="right-news">
-                        <h3>Widget Headline</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
-                <div class="capsule">
-                    <div class="right-news">
-                        <h3>Widget Headline</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                </div>
+                <asp:GridView runat="server" ID="gvTopAnnouncement" AutoGenerateColumns="false" CssClass="container-fluid" style="border:transparent">
+                    <Columns>
+                        <asp:TemplateField HeaderStyle-CssClass="hidden">
+                            <ItemTemplate>
+                                <div class="capsule">
+                                    <div class="right-news">
+                                        <h3><%# Eval("title") %></h3>
+                                        <p><%# Eval("sneak_peak") %></p>
+                                    </div>
+                                </div>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

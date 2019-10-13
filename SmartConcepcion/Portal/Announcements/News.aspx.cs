@@ -105,6 +105,7 @@ namespace SmartConcepcion.Portal.Announcements
             p_dtTopAnnouncement = csql.getTopAnnoucements("SmartConcepcion");
             p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", p_PageSize, 0);
             loadGridView(gvAnnouncements, p_dtAnnouncement);
+            loadGridView(gvTopAnnouncement, p_dtTopAnnouncement);
             upAnnouncements.Update();
         }
         protected void gvAnnouncements_RowDataBound(object sender, GridViewRowEventArgs e)

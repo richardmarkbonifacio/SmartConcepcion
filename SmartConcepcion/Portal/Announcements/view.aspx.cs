@@ -47,6 +47,24 @@ namespace SmartConcepcion.Portal.Announcements
                 ViewState["dtAnnouncementInfo"] = value;
             }
         }
+        private DataTable p_dtTopAnnouncement
+        {
+            get
+            {
+                if (ViewState["dtTopAnnouncement"] != null)
+                {
+                    return ViewState["dtTopAnnouncement"] as DataTable;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                ViewState["dtTopAnnouncement"] = value;
+            }
+        }
 
         clsQuery csql = new clsQuery();
         protected void Page_Load(object sender, EventArgs e)
@@ -56,6 +74,9 @@ namespace SmartConcepcion.Portal.Announcements
                 p_AnnouncementID = Convert.ToInt64(Request.QueryString["ID"]);
                 p_dtAnnouncementInfo = csql.getAnnouncementsInfo("SmartConcepcion", p_AnnouncementID.Value);
                 loadInfo();
+
+                p_dtTopAnnouncement = csql.getTopAnnoucements("SmartConcepcion");
+                loadGridView(gvTopAnnouncement, p_dtTopAnnouncement);
             }
         }
         void loadInfo()

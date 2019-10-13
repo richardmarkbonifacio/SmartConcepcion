@@ -148,8 +148,23 @@ height:90px;
 
             <input type="submit" value="Submit" class="btn-formsubmit">
         </section>
+
         <aside>
-            <div class="capsule">
+            <asp:GridView runat="server" ID="gvTopAnnouncement" AutoGenerateColumns="false" CssClass="container-fluid" style="border:transparent">
+                    <Columns>
+                        <asp:TemplateField HeaderText="~Top News~"  HeaderStyle-BackColor="white">
+                            <ItemTemplate>
+                                <div class="capsule">
+                                    <div class="right-news">
+                                        <h3><a href='View?ID=<%# Eval("ID") %>'><%# Eval("title") %></a></h3>
+                                        <i><%# Eval("datecreated", "{0:MMMM dd yyyy}") %></i>
+                                    </div>
+                                </div>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+            <%--<div class="capsule">
 
                 <div class="right-news">
                     <h3>Widget Title</h3>
@@ -170,7 +185,7 @@ height:90px;
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
             </div>
-
+--%>
 
         </aside>
     </main>

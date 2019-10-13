@@ -47,7 +47,7 @@ namespace SmartConcepcion
 
                     if (Request.QueryString["ReturnUrl"] == null)
                     {
-                        Response.Redirect("~/Portal/Announcements");
+                        Response.Redirect("~/Portal/");
                     }
                     else
                     {

@@ -99,9 +99,10 @@ namespace SmartConcepcion.Portal.Incidents
         void loadIncidentReport()
         {
             dttemp = csql.getIncidentReport("SmartConcepcion", gvIncidentReport.PageSize, p_PageIndex);
-            gvIncidentReport.PageIndex = p_PageIndex;
+            
             if(dttemp.Rows.Count > 0)
             {
+                gvIncidentReport.PageIndex = p_PageIndex;
                 gvIncidentReport.VirtualItemCount = (int)dttemp.Rows[0]["reccount"];
                 loadGridView(gvIncidentReport, dttemp);
                 upIncidentReport.Update();
