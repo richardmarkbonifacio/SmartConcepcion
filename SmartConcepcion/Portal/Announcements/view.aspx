@@ -16,6 +16,10 @@ p + p {
 .right-news {
   padding: 1.5em;
   background: white;
+
+}
+.right-news i{
+      text-align:justify;
 }
 div h3 {
   color: #303030;
@@ -129,6 +133,12 @@ width:90px;
 height:90px;
 
 }
+.widget-topnews{
+    font-weight:800;
+    text-align:center;
+    padding:15px;
+     font-size:15px;
+}
 </style>
 
     
@@ -152,9 +162,9 @@ height:90px;
         <aside>
             <asp:GridView runat="server" ID="gvTopAnnouncement" AutoGenerateColumns="false" CssClass="container-fluid" style="border:transparent">
                     <Columns>
-                        <asp:TemplateField HeaderText="~Top News~"  HeaderStyle-BackColor="white">
+                        <asp:TemplateField HeaderText="TOP NEWS"  HeaderStyle-BackColor="lightgray" HeaderStyle-CssClass="widget-topnews">
                             <ItemTemplate>
-                                <div class="capsule">
+                                <div class="capsule hidden-xs">
                                     <div class="right-news">
                                         <h3><a href='View?ID=<%# Eval("ID") %>'><%# Eval("title") %></a></h3>
                                         <i><%# Eval("datecreated", "{0:MMMM dd yyyy}") %></i>

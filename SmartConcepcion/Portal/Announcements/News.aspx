@@ -43,6 +43,14 @@ article p {
 .capsule  + .capsule {
   border-top: none;
 }
+        .right-news {
+            padding: 1.5em;
+            background: white;
+            
+        }
+        .right-news i{
+      text-align:justify;
+}
 .capsule:first-of-type {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -53,6 +61,26 @@ article p {
 }
 hr{
     border:none;
+}
+.btn-nav{
+    background:#f99827;
+    color:#fff;
+    font-weight:600;
+    border-radius:0px;
+    margin-bottom:10px;
+}
+.btn-nav:hover{
+     background:#f19429;
+    color:#fff;
+    font-weight:600;
+    border-radius:0px;
+    margin-bottom:10px;
+}
+.widget-topnews{
+    font-weight:800;
+    text-align:center;
+    padding:15px;
+    font-size:15px;
 }
     </style>
     <asp:UpdatePanel ID="upAnnouncements" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
@@ -97,15 +125,15 @@ hr{
 
                     </Columns>
                 </asp:GridView>
-                <asp:Button runat="server" ID="btnPrev" Text="<<Prev" OnClick="btnPrev_Click" />
-                <asp:Button runat="server" ID="btnNext" Text="Next>>" OnClick="btnNext_Click" />
+                <asp:Button runat="server" CssClass="btn btn-nav" ID="btnPrev" Text="PREV" OnClick="btnPrev_Click" />
+                <asp:Button runat="server" CssClass="btn btn-nav" ID="btnNext" Text="NEXT" OnClick="btnNext_Click" />
             </div>
             <div class="col-md-3">
-                <asp:GridView runat="server" ID="gvTopAnnouncement" AutoGenerateColumns="false" CssClass="container-fluid" style="border:transparent">
+                <asp:GridView runat="server" ID="gvTopAnnouncement" AutoGenerateColumns="false" CssClass="container-fluid" style="border:transparent; margin-top:20px;">
                     <Columns>
-                        <asp:TemplateField HeaderStyle-CssClass="hidden">
+              <asp:TemplateField HeaderText="TOP NEWS"  HeaderStyle-BackColor="lightgray" HeaderStyle-CssClass="widget-topnews">
                             <ItemTemplate>
-                                <div class="capsule">
+                                <div class="capsule hidden-xs">
                                     <div class="right-news">
                                         <h3><%# Eval("title") %></h3>
                                         <p><%# Eval("sneak_peak") %></p>
