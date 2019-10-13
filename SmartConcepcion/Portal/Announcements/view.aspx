@@ -164,29 +164,6 @@ height:90px;
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
-            <%--<div class="capsule">
-
-                <div class="right-news">
-                    <h3>Widget Title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-
-            <div class="capsule">
-
-                <div class="right-news">
-                    <h3>Widget Headline</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-            <div class="capsule">
-                <div class="right-news">
-                    <h3>Widget Headline</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
---%>
-
         </aside>
     </main>
   

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="News.aspx.cs" Inherits="SmartConcepcion.Portal.Announcements.News" %>
+﻿<%@ Page Title="News and Announcement" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="News.aspx.cs" Inherits="SmartConcepcion.Portal.Announcements.News" %>
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <style>
@@ -97,6 +97,8 @@ hr{
 
                     </Columns>
                 </asp:GridView>
+                <asp:Button runat="server" ID="btnPrev" Text="<<Prev" OnClick="btnPrev_Click" />
+                <asp:Button runat="server" ID="btnNext" Text="Next>>" OnClick="btnNext_Click" />
             </div>
             <div class="col-md-3">
                 <asp:GridView runat="server" ID="gvTopAnnouncement" AutoGenerateColumns="false" CssClass="container-fluid" style="border:transparent">

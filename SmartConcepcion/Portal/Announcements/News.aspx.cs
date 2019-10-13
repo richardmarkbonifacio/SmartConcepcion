@@ -87,6 +87,24 @@ namespace SmartConcepcion.Portal.Announcements
                 ViewState["PageSize"] = value;
             }
         }
+        public int p_PageIndex
+        {
+            get
+            {
+                if (ViewState["PageIndex"] == null)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return Convert.ToInt32(ViewState["PageIndex"].ToString());
+                }
+            }
+            set
+            {
+                ViewState["PageIndex"] = value;
+            }
+        }
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -101,9 +119,9 @@ namespace SmartConcepcion.Portal.Announcements
         }
         private void initData()
         {
-            p_BannerIndex = 0;//reset even after postbacks
+            p_BannerIndex = 0;
             p_dtTopAnnouncement = csql.getTopAnnoucements("SmartConcepcion");
-            p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", p_PageSize, 0);
+            p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", p_PageSize, p_PageIndex);
             loadGridView(gvAnnouncements, p_dtAnnouncement);
             loadGridView(gvTopAnnouncement, p_dtTopAnnouncement);
             upAnnouncements.Update();
@@ -133,5 +151,20 @@ namespace SmartConcepcion.Portal.Announcements
             }
         }
 
+        protected void btnPrev_Click(object sender, EventArgs e)
+        {
+            if (p_PageIndex != 0)
+            {
+                p_PageIndex--;
+                initData();
+            }
+                
+        }
+
+        protected void btnNext_Click(object sender, EventArgs e)
+        {
+            p_PageIndex++;
+            initData();
+        }
     }
 }

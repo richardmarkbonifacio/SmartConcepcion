@@ -66,13 +66,20 @@ namespace SmartConcepcion.Portal.Announcements
             }
         }
 
+        protected override void OnLoad(EventArgs e)
+        {
+            Page.Title = "Your Title";
+            base.OnLoad(e);
+        }
         clsQuery csql = new clsQuery();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                Page.Title = "Page Title";
                 p_AnnouncementID = Convert.ToInt64(Request.QueryString["ID"]);
                 p_dtAnnouncementInfo = csql.getAnnouncementsInfo("SmartConcepcion", p_AnnouncementID.Value);
+                
                 loadInfo();
 
                 p_dtTopAnnouncement = csql.getTopAnnoucements("SmartConcepcion");
