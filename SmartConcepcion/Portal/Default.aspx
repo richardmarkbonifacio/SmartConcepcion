@@ -138,6 +138,9 @@ label {
      background-color:#f6f6f6;
      width:100%;
  }
+ #subject{
+     resize:none;
+ }
 </style>
   <div id="about" class="container-fluid">
   <div class="row">
