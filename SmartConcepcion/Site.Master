@@ -70,8 +70,9 @@
                     </ul>
                 </li>
 
-                <li><a href="#">BUSINESS</a></li>
-                <li><a href="#">HEALTHCARE</a></li>
+                
+                <li><a href="~/Portal/Business/" runat="server">BUSINESS</a></li>
+                <li><a href="~/Portal/Healthcare/" runat="server">HEALTHCARE</a></li>
                 <li>
                     <a href="#">BARANGAY</a>
                     <ul>

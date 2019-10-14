@@ -86,6 +86,7 @@ hr{
     padding-top:500px;
             background: white;
 }
+
     </style>
     <asp:UpdatePanel ID="upAnnouncements" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
