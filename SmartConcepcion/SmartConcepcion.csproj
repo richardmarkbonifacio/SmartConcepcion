@@ -34,6 +34,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <LegacyPublishPropertiesPageEnabled>true</LegacyPublishPropertiesPageEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -143,6 +145,7 @@
     <Content Include="images\user.png" />
     <Content Include="logintesting.aspx" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="images\arrow-down.png" />
     <Content Include="images\arrow-down.svg" />
@@ -182,6 +185,7 @@
     <Content Include="Portal\Business\Default.aspx" />
     <Content Include="Portal\Community\Default.aspx" />
     <Content Include="Portal\Default.aspx" />
+    <Content Include="Portal\Healthcare\Default.aspx" />
     <Content Include="Portal\Incidents\Default.aspx" />
     <Content Include="Portal\Officials\Official.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -314,6 +318,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Portal\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Healthcare\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Healthcare\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Incidents\Default.aspx.cs">
