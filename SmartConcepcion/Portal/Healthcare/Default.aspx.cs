@@ -13,5 +13,19 @@ namespace SmartConcepcion.Portal.Healthcare
         {
 
         }
+        protected void CalendarDRender(object sender, System.Web.UI.WebControls.DayRenderEventArgs e)
+        {
+            if (e.Day.IsOtherMonth)
+            {
+                //e.Cell.Visible = false;
+                e.Cell.Text ="";
+            }
+
+        }
+         
+        protected void calSchedule_DayRender(object sender, DayRenderEventArgs e)
+        {
+
+        }
     }
 }
