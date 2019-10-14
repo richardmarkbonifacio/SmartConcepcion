@@ -19,7 +19,7 @@
         }
         
     </style>
-    
+     <div class="header-banner">INCIDENT REPORT</div>
     <asp:UpdatePanel ID="upIncidentReport" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
             <div class="container-fluid">

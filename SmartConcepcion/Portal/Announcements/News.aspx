@@ -82,6 +82,10 @@ hr{
     padding:15px;
     font-size:15px;
 }
+.fast-fact{
+    padding-top:500px;
+            background: white;
+}
     </style>
     <asp:UpdatePanel ID="upAnnouncements" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
@@ -143,7 +147,14 @@ hr{
                         </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
+                <hr />
+                <div class="capsule hidden-xs">
+                                    <div class="fast-fact">
+                                        
+                                    </div>
+                                </div>
             </div>
+         
         </ContentTemplate>
     </asp:UpdatePanel>
     

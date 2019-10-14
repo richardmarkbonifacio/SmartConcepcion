@@ -53,7 +53,7 @@
                                         <p class="mb-0"><%# Eval("subtitle") %></p>
                                         Published by <cite title="Source Title"><%# Eval("createdByName") %>
                                         <span>
-                                            <%# Eval("body_content") %>
+                                            <%# Eval("preview") %>
                                         </span>
                                     </div>
 
