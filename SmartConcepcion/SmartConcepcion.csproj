@@ -179,6 +179,7 @@
     <Content Include="Portal\Announcements\News.aspx" />
     <Content Include="Portal\Announcements\view.aspx" />
     <Content Include="Portal\Barangay\Missionvission.aspx" />
+    <Content Include="Portal\Business\Default.aspx" />
     <Content Include="Portal\Community\Default.aspx" />
     <Content Include="Portal\Default.aspx" />
     <Content Include="Portal\Incidents\Default.aspx" />
@@ -293,6 +294,13 @@
     </Compile>
     <Compile Include="Portal\Barangay\Missionvission.aspx.designer.cs">
       <DependentUpon>Missionvission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Business\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Business\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Community\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
