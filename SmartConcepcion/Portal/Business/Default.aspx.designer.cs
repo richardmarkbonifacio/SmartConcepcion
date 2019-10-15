@@ -85,6 +85,15 @@ namespace SmartConcepcion.Portal.Business {
         protected global::System.Web.UI.WebControls.TextBox txtBusiness;
         
         /// <summary>
+        /// txtDescription control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDescription;
+        
+        /// <summary>
         /// txtOwner control.
         /// </summary>
         /// <remarks>
@@ -101,6 +110,15 @@ namespace SmartConcepcion.Portal.Business {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPermit;
+        
+        /// <summary>
+        /// txtStbldgno control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtStbldgno;
         
         /// <summary>
         /// txtEmail control.

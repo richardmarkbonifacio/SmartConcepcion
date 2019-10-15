@@ -606,6 +606,80 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
+        public DataTable getBusiness_Details(string cnstr, long ID)
+        {
+            try
+            {
+                result_Dt = new DataTable("User Details");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[User_detail_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID", SqlDbType.BigInt).Value = ID;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
+
+        public DataTable setBusiness(string cnstr, long? ID, string email, string businessname,Int64 businestype, string description, string owner,
+            string permitno, string contactno, string stbldgno, long brgyID, long? updatedby)
+        {
+            try
+            {
+                result_Dt = new DataTable("Business Create Update");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Business_set]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID", SqlDbType.BigInt).Value = ID;
+                cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
+                cmd.Parameters.Add("@businessname", SqlDbType.VarChar).Value = businessname;
+                cmd.Parameters.Add("@description", SqlDbType.VarChar).Value = description;
+                cmd.Parameters.Add("@owner", SqlDbType.VarChar).Value = owner;
+                cmd.Parameters.Add("@permitno", SqlDbType.VarChar).Value = permitno;
+                cmd.Parameters.Add("@stnobldg", SqlDbType.VarChar).Value = stbldgno; 
+                cmd.Parameters.Add("@contactno", SqlDbType.VarChar).Value = contactno;
+                cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
+                cmd.Parameters.Add("@businesstype", SqlDbType.BigInt).Value = brgyID;
+                cmd.Parameters.Add("@updatedby", SqlDbType.BigInt).Value = updatedby;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
         #endregion
     }
 }

@@ -95,16 +95,28 @@
                                 
                             </div>
                             <div class="form-group">
-                                <div class="col-md-6 text-center">
-                                    <asp:TextBox runat="server" ID="txtOwner" placeholder="Owner" CssClass="form-control sign-up-ctrl" TextMode="Email" />
-                                    <label>Email</label>
-                                </div>
-                                <div class="col-md-6 text-center">
-                                    <asp:TextBox runat="server" ID="txtPermit" placeholder="Permit no." CssClass="form-control sign-up-ctrl" />
-                                    <label>Contact No.</label>
+                                <div class="col-md-12 text-center">
+                                    <asp:TextBox runat="server" ID="txtDescription" placeholder="Business Name" CssClass="form-control sign-up-ctrl" />
                                 </div>
                                 
                             </div>
+                            <div class="form-group">
+                                <div class="col-md-6 text-center">
+                                    <asp:TextBox runat="server" ID="txtOwner" placeholder="Owner" CssClass="form-control sign-up-ctrl" TextMode="Email" />
+                                    <label>Owner</label>
+                                </div>
+                                <div class="col-md-6 text-center">
+                                    <asp:TextBox runat="server" ID="txtPermit" placeholder="Permit no." CssClass="form-control sign-up-ctrl" />
+                                    <label>Permit No.</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12 text-center">
+                                    <asp:TextBox runat="server" ID="txtStbldgno" placeholder="St Bldg No" CssClass="form-control sign-up-ctrl" />
+                                </div>
+                            </div>
+
                             <div class="form-group">
                                 <div class="col-md-6 text-center">
                                     <asp:TextBox runat="server" ID="txtEmail" placeholder="Email" CssClass="form-control sign-up-ctrl" TextMode="Email" />
