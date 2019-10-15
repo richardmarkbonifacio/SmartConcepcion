@@ -182,6 +182,7 @@
     <Content Include="Portal\Announcements\News.aspx" />
     <Content Include="Portal\Announcements\view.aspx" />
     <Content Include="Portal\Barangay\Missionvission.aspx" />
+    <Content Include="Portal\Beta\loading.aspx" />
     <Content Include="Portal\Business\Default.aspx" />
     <Content Include="Portal\Community\Default.aspx" />
     <Content Include="Portal\Default.aspx" />
@@ -299,6 +300,13 @@
     <Compile Include="Portal\Barangay\Missionvission.aspx.designer.cs">
       <DependentUpon>Missionvission.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Portal\Beta\loading.aspx.cs">
+      <DependentUpon>loading.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Beta\loading.aspx.designer.cs">
+      <DependentUpon>loading.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Portal\Business\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -366,7 +374,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Portal\Announcements\Banner\" />
-    <Folder Include="Portal\Beta\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
