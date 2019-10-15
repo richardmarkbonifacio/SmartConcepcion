@@ -17,7 +17,7 @@ namespace SmartConcepcion.Portal.Healthcare
         {
             if (e.Day.IsOtherMonth)
             {
-                //e.Cell.Visible = false;
+             
                 e.Cell.Text ="";
             }
 
