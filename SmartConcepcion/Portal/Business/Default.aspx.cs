@@ -112,12 +112,12 @@ namespace SmartConcepcion.Portal.Business
         {
             p_UserProfileID = null;
             p_UserProfileID = null;
-            txtFnam.Text = "";
-            txtLnam.Text = "";
-            txtMnam.Text = "";
-            txtBday.Text = "";
-            txtContact.Text = "";
-            txtEmail.Text = "";
+            //txtFnam.Text = "";
+            //txtLnam.Text = "";
+            //txtMnam.Text = "";
+            //txtBday.Text = "";
+            //txtContact.Text = "";
+            //txtEmail.Text = "";
             
             header.InnerText = "Create new Incident";
             upIncidentInfo.Update();

@@ -96,11 +96,11 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-6 text-center">
-                                    <asp:TextBox runat="server" ID="TextBox1" placeholder="Owner" CssClass="form-control sign-up-ctrl" TextMode="Email" />
+                                    <asp:TextBox runat="server" ID="txtOwner" placeholder="Owner" CssClass="form-control sign-up-ctrl" TextMode="Email" />
                                     <label>Email</label>
                                 </div>
                                 <div class="col-md-6 text-center">
-                                    <asp:TextBox runat="server" ID="TextBox2" placeholder="Permit no." CssClass="form-control sign-up-ctrl" />
+                                    <asp:TextBox runat="server" ID="txtPermit" placeholder="Permit no." CssClass="form-control sign-up-ctrl" />
                                     <label>Contact No.</label>
                                 </div>
                                 
