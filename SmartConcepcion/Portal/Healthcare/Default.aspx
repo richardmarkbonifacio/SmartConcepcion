@@ -2,7 +2,12 @@
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
     <style>
         .table-sched{
-            width:100%
+            width:100%;
+            margin-bottom: 25px;
+            height:80vh;
+            
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
         .day-td{
             padding:30px;
@@ -19,11 +24,13 @@
         }
         .other-month{
                   background:#8FBC8F;
+                  height:100px;
         }
         .day-info{
             background:white;
+                height:80vh;
             
-            height:520px;
+         
         }
        .arrow-cal{
    
@@ -41,12 +48,7 @@
         .day-act{
 background:#006400!important;
         }
-        .table-sched{
-    width: 100%;
-
-    background: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+ 
     </style>
       <div class="header-banner">HEALTHCARE</div>
     <div class="col-md-8">

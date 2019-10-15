@@ -66,12 +66,19 @@
                     <ul>
                         <li><a href="~/Portal/Announcements/News" runat="server">NEWS & ANNOUNCEMENTS</a></li>
                         <li><a href="#">HOUSEHOLD</a></li>
-
+                             
                     </ul>
                 </li>
-
-                
-                <li><a href="~/Portal/Business/" runat="server">BUSINESS</a></li>
+           <li>
+                    <a href="#">BUSINESS</a>
+                    <ul>
+                        <li><a href="~/Portal/Business/" runat="server">BUSINESS LIST</a></li>
+       <li><a href="#">BUSINESS DIRECTORY</a></li>
+                        <li><a href="~/Portal/Business/FAQ" runat="server">FAQ</a></li>
+                       
+                    </ul>
+                </li>
+              <%--  <li><a href="~/Portal/Business/" runat="server">BUSINESS</a></li>--%>
                 <li><a href="~/Portal/Healthcare/" runat="server">HEALTHCARE</a></li>
                 <li>
                     <a href="#">BARANGAY</a>

@@ -15,11 +15,11 @@ namespace SmartConcepcion.Portal.Healthcare
         }
         protected void CalendarDRender(object sender, System.Web.UI.WebControls.DayRenderEventArgs e)
         {
-            if (e.Day.IsOtherMonth)
-            {
+            //if (e.Day.IsOtherMonth)
+            //{
              
-                e.Cell.Text ="";
-            }
+            //    e.Cell.Text ="";
+            //}
 
         }
          
