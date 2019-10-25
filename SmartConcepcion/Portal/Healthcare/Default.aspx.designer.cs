@@ -13,6 +13,15 @@ namespace SmartConcepcion.Portal.Healthcare {
     public partial class Default {
         
         /// <summary>
+        /// upCalendar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upCalendar;
+        
+        /// <summary>
         /// calSchedule control.
         /// </summary>
         /// <remarks>
@@ -20,5 +29,14 @@ namespace SmartConcepcion.Portal.Healthcare {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar calSchedule;
+        
+        /// <summary>
+        /// gvHealthSched control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvHealthSched;
     }
 }
