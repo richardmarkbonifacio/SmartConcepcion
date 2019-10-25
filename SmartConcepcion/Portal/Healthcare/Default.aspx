@@ -50,13 +50,31 @@ background:#006400!important;
         }
  
     </style>
-      <div class="header-banner">HEALTHCARE</div>
-    <div class="col-md-8">
-    <asp:Calendar runat="server" ID="calSchedule" CssClass="table-sched" DayStyle-CssClass="day-td" 
-     DayHeaderStyle-CssClass="header-cal" TitleStyle-CssClass="cal-title" OtherMonthDayStyle-CssClass="other-month" 
-        NextPrevStyle-CssClass="arrow-cal" TodayDayStyle-CssClass="cal-today" SelectedDayStyle-CssClass="day-act" OnDayRender="CalendarDRender"/>
-     </div>
-        <div class="col-md-4 day-info">
-            <h5>hello</h5>
-            </div>
+    <div class="header-banner">HEALTHCARE</div>
+        <asp:UpdatePanel runat="server" ID="upCalendar" UpdateMode="Conditional">
+            <ContentTemplate>
+
+                <div class="col-md-8">
+                    <asp:Calendar runat="server" ID="calSchedule" CssClass="table-sched" DayStyle-CssClass="day-td"
+                        DayHeaderStyle-CssClass="header-cal" TitleStyle-CssClass="cal-title" OtherMonthDayStyle-CssClass="other-month"
+                        NextPrevStyle-CssClass="arrow-cal" TodayDayStyle-CssClass="cal-today" SelectedDayStyle-CssClass="day-act" OnDayRender="CalendarDRender" />
+                </div>
+
+                <div class="col-md-4 day-info">
+                    <h5>Schedule</h5>
+                    <asp:GridView runat="server" ID="gvHealthSched" AutoGenerateColumns="false">
+                        <Columns>
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <label>Patient</label>
+                                    <i>date time</i>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                </div>
+
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    
 </asp:Content>
