@@ -86,8 +86,21 @@
             font-size:15px;
         }
         .fast-fact{
-            padding-top:500px;
-                    background: white;
+        min-height: 100%;
+    background-size: cover;
+   
+    background: url(../../images/Abstract-Envelope.svg)no-repeat center center fixed;
+        }
+        .fast-fact h2{
+        font-weight:800;
+        text-align:center;
+        color:#fff;
+        margin-bottom:20px;
+
+        }
+        .fast-fact h4{
+             font-weight:600;
+             color:#fff;
         }
 
     </style>
@@ -153,8 +166,21 @@
                 </asp:GridView>
                 <hr />
                 <div class="capsule hidden-xs">
-                                    <div class="fast-fact">
+                                    <div class="container-fluid fast-fact">
+                                        <h2>FAST FACTS</h2>
+                                        <hr />
+                                          <h4>Country:</h4> 
+
+                                        <h4>Region:</h4>
+                                        <h4>District:</h4>
+                                        <h4>Province:</h4>
+                                        <h4>Area:</h4>
+                                        <h4>Demonym:</h4>
+                                          <h4>Founded:</h4>
+                                          <h4>Total Population:</h4>
+                                        <h4>Zip-code:</h4>
                                         
+                                         
                                     </div>
                                 </div>
             </div>

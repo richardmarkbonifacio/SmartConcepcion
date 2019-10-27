@@ -143,7 +143,7 @@ label {
  }
 </style>
   <div id="about" class="container-fluid">
-  <div class="row">
+  <div class="row text-justify">
     <div class="col-sm-8">
       <h2>About Company Page</h2><br>
       <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
@@ -165,7 +165,7 @@ Get In Touch
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-globe icoabout slideanim"></span>
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-8 text-justify">
       <h2>Our Values</h2><br>
       <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
       <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
