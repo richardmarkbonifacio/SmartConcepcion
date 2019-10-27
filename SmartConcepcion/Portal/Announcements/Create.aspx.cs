@@ -94,7 +94,7 @@ namespace SmartConcepcion.Portal.Announcements
                 
                 string _file_ext = Path.GetExtension(fuBanner.PostedFile.FileName);
                 DataTable _dttemp = csql.setAnnouncements("SmartConcepcion",p_AnnouncementID,  txtTitle.Text, txtSubtitle.Text, txtContent.Text,
-                    Convert.ToDateTime(txtDate.Text), 0, _file_ext, p_UserID);
+                    Convert.ToDateTime(txtDate.Text), 0, _file_ext, p_UserID.Value);
 
                 if (fuBanner.HasFile && fuBanner.PostedFile != null)
                 {

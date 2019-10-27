@@ -151,7 +151,7 @@ namespace SmartConcepcion.Portal.Incidents
         {
             csql.setIncidentReport("SmartConcepcion", p_IncidentID, txtTitle.Text, txtDetails.Text, "", p_ComplainantID, p_AccusedID, 
                 txtComplainant.Text, txtAccused.Text,Convert.ToDateTime(txtIncidentDate.Text), Convert.ToDateTime(txtConfrontation.Text),txtLocation.Text,
-                txtRemarks.Text,"ptd",p_UserID);
+                txtRemarks.Text,"ptd",p_UserID.Value);
 
             loadIncidentReport();
             clearIncidentInfo();

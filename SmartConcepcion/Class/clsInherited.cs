@@ -50,15 +50,17 @@ namespace SmartConcepcion.Class
                 {
                     jUserData = JArray.Parse(userdata);
                     result = (string)jUserData[4];
+                    return Convert.ToInt32(result);
                 }
                 else
                 {
-                    Response.Redirect("~/?ReturnURL=" + HttpUtility.UrlEncode(Request.RawUrl));
+                    FormsAuthentication.RedirectToLoginPage();
+                    return null;
                 }
-                return Convert.ToInt32(result);
+                
             }
         }
-        public long p_UserID
+        public long? p_UserID
         {
             get
             {
@@ -70,12 +72,14 @@ namespace SmartConcepcion.Class
                 {
                     jUserData = JArray.Parse(userdata);
                     result = (string)jUserData[0];
+                    return Convert.ToInt64(result);
                 }
                 else
                 {
-                    Response.Redirect("~/?ReturnURL=" +HttpUtility.UrlEncode(Request.RawUrl));
+                    FormsAuthentication.RedirectToLoginPage();
+                    return null;
                 }
-                return Convert.ToInt64( result);
+                
             }
         }
         public long p_BrgyID
