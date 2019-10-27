@@ -66,19 +66,19 @@
                     <ul>
                         <li><a href="~/Portal/Announcements/News" runat="server">NEWS & ANNOUNCEMENTS</a></li>
                         <li><a href="#">HOUSEHOLD</a></li>
-                             
+
                     </ul>
                 </li>
-           <li>
+                <li>
                     <a href="#">BUSINESS</a>
                     <ul>
                         <li><a href="~/Portal/Business/" runat="server">BUSINESS LIST</a></li>
-       <li><a href="#">BUSINESS DIRECTORY</a></li>
+                        <li><a href="#">BUSINESS DIRECTORY</a></li>
                         <li><a href="~/Portal/Business/FAQ" runat="server">FAQ</a></li>
-                       
+
                     </ul>
                 </li>
-              <%--  <li><a href="~/Portal/Business/" runat="server">BUSINESS</a></li>--%>
+                <%--  <li><a href="~/Portal/Business/" runat="server">BUSINESS</a></li>--%>
                 <li><a href="~/Portal/Healthcare/" runat="server">HEALTHCARE</a></li>
                 <li>
                     <a href="#">BARANGAY</a>
@@ -99,7 +99,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="#">MY PROFILE</a></li>
                         <li><a href="#">MY NOTIFICATION</a></li>
-                        <li><a href="#">LOG OUT</a></li>
+                        <li><asp:LinkButton runat="server" Text="LOG OUT" OnClick="btnSignOut" /> </li>
                     </ul>
                 </li>
             </ul>
@@ -125,14 +125,11 @@
 
                     <div class="col-md-6 hidden-xs">
                         <ul class="pages">
-                           
                             <li><a href="#">HOME</a></li>
                             <li><a href="#">RESIDENCE</a></li>
                             <li><a href="#">BUSINESS</a></li>
-                                        <li><a href="#">HEALTHCARE</a></li>
-                            <li><a href="#">BARANGAY</a></li>
-                
-                            
+                            <li><a href="#">HEALTHCARE</a></li>
+                            <li><a href="#">BARANGAY</a></li>            
                         </ul>
                     </div>
                     <div class="col-md-6 hidden-xs">

@@ -101,7 +101,7 @@ select:-webkit-autofill:focus {
                         <div class="row">
                             <div class="inputWithIcon">
                                 <%--       <input type="text" placeholder="Username" />--%>
-                                <asp:TextBox runat="server" TextMode="number" ID="txtUserid" placeholder="UserID" CssClass="btnsign" />
+                                <asp:TextBox runat="server" ID="txtUserid" placeholder="UserID" CssClass="btnsign" />
                                 <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
                             </div>
 
