@@ -186,5 +186,10 @@ namespace SmartConcepcion.Portal.Community
             loadUserProfile();
         }
 
+        protected void btnVerify_Click(object sender, EventArgs e)
+        {
+            csql.postVerify("SmartConcepcion", p_UserProfileID.Value);
+            loadUserProfile();
+        }
     }
 }

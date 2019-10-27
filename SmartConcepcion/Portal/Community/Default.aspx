@@ -1,7 +1,14 @@
 ﻿<%@ Page Title="Community" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Portal.Community.Default" %>
 <asp:Content ID="content_report" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    
+    <style>
+        .fa-check-circle-o{
+            color:green;
+        }
+        .fa-times-circle{
+            color:red;
+        }
+    </style>
     <div class="header-banner">COMMUNITY</div>
     <asp:UpdatePanel ID="upIncidentReport" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
@@ -30,6 +37,11 @@
 
                         <Columns>
                             <asp:BoundField HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden" DataField="ID" />
+                            <asp:TemplateField HeaderStyle-CssClass="thead-dark" ItemStyle-CssClass="text-center" HeaderText="Verified">
+                                <ItemTemplate>
+                                    <i class='<%# ((bool)Eval("verified")) ? "fa fa-check-circle-o" : "fa fa-times-circle" %>'></i>
+                                </ItemTemplate>
+                            </asp:TemplateField>
                             <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Email" DataField="email" />
                             <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Fullname" DataField="fullname" />
 
@@ -138,8 +150,11 @@
                                 </div>
                             </div>
                         </div>
-
-                        <asp:Button runat="server" CssClass="btn btn-danger" Text="POST" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />
+                        <div class="text-right container-fluid">
+                            <asp:Button runat="server" CssClass="btn btn-warning" Text="VERIFY" ID="btnVerify" OnClick="btnVerify_Click" OnClientClick="closeNav()" />
+                            <asp:Button runat="server" CssClass="btn btn-danger" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />
+                        </div>
+                        
                     </div>
                 </div>
             </ContentTemplate>

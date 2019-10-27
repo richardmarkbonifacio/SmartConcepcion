@@ -161,6 +161,37 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
+        public DataTable postVerify(string cnstr, long userid)
+        {
+            try
+            {
+                result_Dt = new DataTable("Account Verify");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[User_verify_set]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@userID", SqlDbType.BigInt).Value = userid;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+            return result_Dt;
+        }
 
         public DataTable UserCreateUpdate(string cnstr, long?ID, string email, string firstname, string middlename, string lastname,
             string suffix, string contactno, long brgyID, DateTime birthday,long? createdby,bool isIndigent, bool isSenior, bool isPWD, bool is4ps)
