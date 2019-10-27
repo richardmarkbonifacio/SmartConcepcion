@@ -2,10 +2,10 @@
 
 
 <!DOCTYPE html>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Smart Concepcion</title>
 </head>
     
     <body>
@@ -14,10 +14,27 @@
         <link href="Content/bootstrap.css" rel="stylesheet" />
         <style>
 
-            body {
-                background: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('../images/bglogin.jpg') no-repeat center center fixed;
+            html,body {
+                background: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('../images/Rose-Petals.svg') no-repeat center center fixed;
                 background-size: cover;
+                height: 100%;
             }
+    
+
+      input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff;
+  
+  -webkit-box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.5);
+  transition: background-color 5000s ease-in-out 0s;
+}
       
         </style>
      
@@ -71,7 +88,7 @@
                             </div>
 
                             <div class="row" style="vertical-align: middle">
-                                <div class="col-md-6">
+                                <div class="col-md-6 col-xs-6">
                                     <label class="switch">
                                         <%--   <input type="checkbox" />--%>
                                         <asp:CheckBox runat="server" ID="RememberMe" />
@@ -79,9 +96,9 @@
 
                                     </label>
 
-                                    <div class="labeltoggle">Keep Logged In</div>
+                                    <div class="labeltoggle">Remember Me</div>
                                 </div>
-                                <div class="col-md-6 text-right">
+                                <div class="col-md-6 col-xs-6 text-right">
                                     <a class="forgot" href="#">Forgot Password?</a>
                                 </div>
                             </div>
