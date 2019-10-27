@@ -76,7 +76,7 @@ namespace SmartConcepcion.Portal.Announcements
         {
             if (!IsPostBack)
             {
-                Page.Title = "Page Title";
+                Page.Title = string.Format("Master Page Tutorials :: About :: {0:d}", DateTime.Now);
                 p_AnnouncementID = Convert.ToInt64(Request.QueryString["ID"]);
                 p_dtAnnouncementInfo = csql.getAnnouncementsInfo("SmartConcepcion", p_AnnouncementID.Value);
                 
