@@ -1,27 +1,7 @@
 ﻿<%@ Page Title="Business" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Portal.Business.Default" %>
 <asp:Content ID="content_report" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <style>
-        table{
-            background:#fff;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        }
-        .thead-dark{
-            background:#454d55;
-            color:white;
-            font-weight:500;
-            text-align:center;
-        }
-        .ui-effects-wrapper{
-            /*cnflict on dialog box*/
-            display:none;
-            height:0px !important;
-        }
-        .labeltoggle{
-            color:rgba(0, 0, 0, 0.19);
-        }
-        
-    </style>
+    
     <div class="header-banner">BUSINESS</div>
     <asp:UpdatePanel ID="upBusiness" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
@@ -31,10 +11,10 @@
                         <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New Business Profile" CausesValidation="false" />
                     </div>
                     <div class="col-md-6">
-                        <div class="col-md-9">
+                        <div class="col-md-9 col-xs-9">
                         <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" />
                     </div>
-                        <div class="col-md-3">
+                        <div class="col-md-3 col-xs-3">
                             <asp:Button runat="server" CssClass="btn btn-warning" Text="search" ID="btnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false" />
                         </div>
                     </div>
@@ -43,8 +23,9 @@
                 
                 <hr />
                 <%--<asp:LinkButton runat="server" Text="New Incident Report" ID="lnkCreate" OnClick="lnkCreate_Click"/>--%>
-                <asp:GridView runat="server" AutoGenerateColumns="false" 
-                    ID="gvBusinessProfiles" CssClass="table table-hover table-responsive table-dark" PageSize="5" 
+                <div style="overflow-x: scroll">
+                    <asp:GridView runat="server" AutoGenerateColumns="false" 
+                    ID="gvBusinessProfiles" CssClass="table table-default table-hover table-responsive table-dark" PageSize="5" 
                     AllowPaging="true" AllowCustomPaging="true"  OnPageIndexChanging="gvBusinessProfiles_PageIndexChanging">
                     
                     <Columns>
@@ -75,6 +56,7 @@
                     <PagerSettings mode="NextPrevious" Position="Bottom" PreviousPageText="Previous" NextPageText="Next" FirstPageText="First" LastPageText="Last"   />
                 <PagerStyle HorizontalAlign="Right" />   
                 </asp:GridView>
+                </div>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

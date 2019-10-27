@@ -83,7 +83,7 @@
                 <li>
                     <a href="#">BARANGAY</a>
                     <ul>
-                        <li><a href="#">DASHBOARD</a></li>
+                        <li><a href="~/Portal/Barangay/Dashboard" runat="server">DASHBOARD</a></li>
                         <li><a href="~/Portal/Incidents/" runat="server">INCIDENT REPORT</a></li>
                         <li><a href="~/Portal/Community/" runat="server">COMMUNITY</a></li>
                         <li><a href="#">BUDGET</a></li>

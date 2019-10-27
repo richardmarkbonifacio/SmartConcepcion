@@ -139,13 +139,13 @@ namespace SmartConcepcion.Portal.Community {
         protected global::System.Web.UI.WebControls.DropDownList ddGender;
         
         /// <summary>
-        /// ddBrgy control.
+        /// txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddBrgy;
+        protected global::System.Web.UI.WebControls.TextBox txt;
         
         /// <summary>
         /// chkIndigent control.

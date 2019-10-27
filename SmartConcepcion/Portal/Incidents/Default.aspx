@@ -1,24 +1,7 @@
 ﻿<%@ Page Title="Incident Report" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Portal.Incidents.Default" %>
 <asp:Content ID="content_report" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <style>
-        table{
-            background:#fff;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        }
-        .thead-dark{
-            background:#454d55;
-            color:white;
-            font-weight:500;
-            text-align:center;
-        }
-        .ui-effects-wrapper{
-            /*cnflict on dialog box*/
-            display:none;
-            height:0px !important;
-        }
-        
-    </style>
+    
      <div class="header-banner">INCIDENT REPORT</div>
     <asp:UpdatePanel ID="upIncidentReport" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
@@ -27,39 +10,43 @@
                 
                 <hr />
                 <%--<asp:LinkButton runat="server" Text="New Incident Report" ID="lnkCreate" OnClick="lnkCreate_Click"/>--%>
-                <asp:GridView runat="server" AutoGenerateColumns="false" 
-                    ID="gvIncidentReport" CssClass="table table-hover table-responsive table-dark" PageSize="5" 
-                    AllowPaging="true" AllowCustomPaging="true"  OnPageIndexChanging="gvIncidentReport_PageIndexChanging">
-                    
-                    <Columns>
-                        <asp:BoundField HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden" DataField="ID" />
-                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Title" DataField="title" />
-                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Incident Date" dataformatstring="{0:d}" DataField="incidentdate" />
-                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Location" DataField="incident_location" />
-                        
-                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Accused" DataField="accusedByName" />
-                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Complainant" DataField="complainantByName" />
-                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Confrontation Date" dataformatstring="{0:d}" DataField="confrontation_date" />
-                        <asp:TemplateField HeaderStyle-CssClass="thead-dark" ItemStyle-CssClass="text-center">
-                            <ItemTemplate>
-                                <asp:LinkButton runat="server" ToolTip='<%# Eval("ID") %>' CssClass="glyphicon glyphicon-edit" OnClick="Unnamed_Click" OnClientClick="openNav()" CausesValidation="false" />
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                    </Columns>
-                    <PagerTemplate>
-                        
-                        <ul class="pagination pagination-md">
-                            <li class="page-item"><asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Prev" Text="Previous" CausesValidation="false" /></li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Next" Text="Next" CausesValidation="false" /></li>
-                        </ul>
-                        
-                    </PagerTemplate>
-                    <PagerSettings mode="NextPrevious" Position="Bottom" PreviousPageText="Previous" NextPageText="Next" FirstPageText="First" LastPageText="Last"   />
-                <PagerStyle HorizontalAlign="Right" />   
-                </asp:GridView>
+                <div style="overflow-x: scroll">
+                    <asp:GridView runat="server" AutoGenerateColumns="false"
+                        ID="gvIncidentReport" CssClass="table table-default table-hover table-responsive table-dark" PageSize="5"
+                        AllowPaging="true" AllowCustomPaging="true" OnPageIndexChanging="gvIncidentReport_PageIndexChanging">
+
+                        <Columns>
+                            <asp:BoundField HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden" DataField="ID" />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Title" DataField="title" />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Incident Date" DataFormatString="{0:d}" DataField="incidentdate" />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Location" DataField="incident_location" />
+
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Accused" DataField="accusedByName" />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Complainant" DataField="complainantByName" />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Confrontation Date" DataFormatString="{0:d}" DataField="confrontation_date" />
+                            <asp:TemplateField HeaderStyle-CssClass="thead-dark" ItemStyle-CssClass="text-center">
+                                <ItemTemplate>
+                                    <asp:LinkButton runat="server" ToolTip='<%# Eval("ID") %>' CssClass="glyphicon glyphicon-edit" OnClick="Unnamed_Click" OnClientClick="openNav()" CausesValidation="false" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                        <PagerTemplate>
+
+                            <ul class="pagination pagination-md">
+                                <li class="page-item">
+                                    <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Prev" Text="Previous" CausesValidation="false" /></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Next" Text="Next" CausesValidation="false" /></li>
+                            </ul>
+
+                        </PagerTemplate>
+                        <PagerSettings Mode="NextPrevious" Position="Bottom" PreviousPageText="Previous" NextPageText="Next" FirstPageText="First" LastPageText="Last" />
+                        <PagerStyle HorizontalAlign="Right" />
+                    </asp:GridView>
+                </div>
             </div>
         </ContentTemplate>
     </asp:UpdatePanel>

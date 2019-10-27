@@ -372,7 +372,7 @@ textarea {
     }
 #cssmenu ul ul li:last-child > a, #cssmenu ul ul li.last-item > a {border-bottom: 0;}
 #cssmenu ul ul li:hover > a, #cssmenu ul ul li a:hover {color: #00ff00;}
-#cssmenu.small-screen {width: 100%;}
+#cssmenu.small-screen {width: 100%;overflow-y:scroll}
 #cssmenu.small-screen ul {
             width: 100%;
             display: none;
@@ -1038,3 +1038,27 @@ input:checked + .slider:before {
         }
 }
 /*end of side navbar*/
+
+/*Table*/
+.table-default {
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    white-space: nowrap;
+}
+
+.thead-dark {
+    background: #454d55;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+}
+
+.ui-effects-wrapper {
+    /*cnflict on dialog box*/
+    display: none;
+    height: 0px !important;
+}
+
+.labeltoggle {
+    color: rgba(0, 0, 0, 0.19);
+}

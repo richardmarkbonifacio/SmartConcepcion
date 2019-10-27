@@ -55,16 +55,20 @@ namespace SmartConcepcion.Portal.Announcements
 
             if (querystring != "")
             {
-                p_AnnouncementID = Convert.ToInt64(querystring);
-                p_dtAnnouncement = csql.getAnnouncementsInfo("SmartConcepcion", p_AnnouncementID.Value);
-
-                if(p_dtAnnouncement.Rows.Count > 0)
+                if (!IsPostBack)
                 {
-                    txtTitle.Text = p_dtAnnouncement.Rows[0]["title"].ToString();
-                    txtSubtitle.Text = p_dtAnnouncement.Rows[0]["subtitle"].ToString();
-                    txtContent.Text = p_dtAnnouncement.Rows[0]["body_content"].ToString();
+                    p_AnnouncementID = Convert.ToInt64(querystring);
+                    p_dtAnnouncement = csql.getAnnouncementsInfo("SmartConcepcion", p_AnnouncementID.Value);
+
+                    if (p_dtAnnouncement.Rows.Count > 0)
+                    {
+                        txtTitle.Text = p_dtAnnouncement.Rows[0]["title"].ToString();
+                        txtSubtitle.Text = p_dtAnnouncement.Rows[0]["subtitle"].ToString();
+                        txtContent.Text = p_dtAnnouncement.Rows[0]["body_content"].ToString();
+                    }
+
                 }
-                
+
 
             }
             else
@@ -108,7 +112,7 @@ namespace SmartConcepcion.Portal.Announcements
                         fuBanner.SaveAs(Server.MapPath("Banner//" + _dttemp.Rows[0]["ID"].ToString() + _file_ext));
                     }
                 }
-                Response.Redirect("~/Portal/Announcements/",false);
+                Response.Redirect("~/Portal/Announcements/News",false);
             }
             catch (Exception ex)
             {

@@ -21,24 +21,23 @@
             }
     
 
-      input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  -webkit-text-fill-color: #fff;
-  
-  -webkit-box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.5);
-  transition: background-color 5000s ease-in-out 0s;
-}
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover, 
+            input:-webkit-autofill:focus,
+            textarea:-webkit-autofill,
+            textarea:-webkit-autofill:hover,
+            textarea:-webkit-autofill:focus,
+            select:-webkit-autofill,
+            select:-webkit-autofill:hover,
+            select:-webkit-autofill:focus {
+                -webkit-text-fill-color: #fff;
+                -webkit-box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.5);
+                transition: background-color 5000s ease-in-out 0s;
+            }
             .create {
                 text-align: center;
-            color: #ffd800;
-    font-weight: 600;
+                color: #ffd800;
+                font-weight: 600;
                   
             }
             .create:hover{
@@ -46,28 +45,27 @@ select:-webkit-autofill:focus {
                 text-decoration:none;
                  transition: 0.3s;
             }
-               .create:focus{
-                color:#06d96b;
-                text-decoration:none;
-                 transition: 0.3s;
+            .create:focus{
+            color:#06d96b;
+            text-decoration:none;
+                transition: 0.3s;
             }
- .notreg{
-     color:#fff;
-
- }
+            .notreg{
+                 color:#fff;
+            }
             .forgot:hover {
                 color: #ffd800;
                 text-decoration: none;
                 transition: 0.3s;
             }
-             .forgot:focus{
-     color: #ffd800;
-       text-decoration:none;
-                 transition: 0.3s;
- }
- ::placeholder{
-     color:#fff;
- }
+            .forgot:focus{
+                color: #ffd800;
+                text-decoration:none;
+                transition: 0.3s;
+             }
+            ::placeholder{
+                 color:#fff;
+            }
         </style>
      
         <form id="form1" runat="server">
@@ -183,7 +181,7 @@ select:-webkit-autofill:focus {
                                         <asp:TextBox runat="server" ID="txtContact" placeholder="Contact No." CssClass="form-control sign-up-ctrl" />
                                     </div>
                                     <div class="col-md-4">
-                                        <asp:DropDownList runat="server" ID="ddBrgy" placeholder="Barangay" CssClass="form-control sign-up-ctrl" />
+                                        <asp:DropDownList runat="server" ID="ddBrgy" placeholder="Barangay" CssClass="form-control sign-up-ctrl" DataValueField="ID" DataTextField="Description" />
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -201,6 +199,10 @@ select:-webkit-autofill:focus {
                                         <asp:TextBox runat="server" ID="txtRUserpass" placeholder="Password" autocomplete="off" CssClass="form-control sign-up-ctrl" TextMode="Password" />
                                     </div>
                                 </div>
+                                <div class="col-md-12" style="color:red">
+                                    <span><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Note: You need an Admin approval after signing up, Ask for assistance</span>
+                                </div>
+                                
                             </div>
 
 

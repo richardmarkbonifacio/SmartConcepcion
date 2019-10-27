@@ -20,6 +20,7 @@
         }
         p {
             margin: 0;
+            word-break:break-all
         }
         p + p {
             margin-top: .75em;
@@ -105,7 +106,7 @@
                                         <h2><%# Eval("title") %></h2>
                                         
                                         <div class="container-fluid">
-                                            <h5><%# Eval("subtitle") %>,
+                                            <h5><%# Eval("createdByName") %>,
                                             <i><%# Eval("datecreated", "{0:MMMM dd yyyy}") %></i></h5>
 
                                         </div>
@@ -142,7 +143,7 @@
                             <ItemTemplate>
                                 <div class="capsule hidden-xs">
                                     <div class="right-news">
-                                        <h3><%# Eval("title") %></h3>
+                                        <h3><a href='View?ID=<%# Eval("ID") %>'> <%# Eval("title") %></a></h3>
                                         <p><%# Eval("sneak_peak") %></p>
                                     </div>
                                 </div>

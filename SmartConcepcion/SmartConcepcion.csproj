@@ -182,8 +182,10 @@
     <Content Include="Portal\Announcements\Default.aspx" />
     <Content Include="Portal\Announcements\News.aspx" />
     <Content Include="Portal\Announcements\view.aspx" />
+    <Content Include="Portal\Barangay\Dashboard.aspx" />
     <Content Include="Portal\Barangay\Missionvission.aspx" />
     <Content Include="Portal\Beta\loading.aspx" />
+    <Content Include="Portal\Beta\textbox_design.aspx" />
     <Content Include="Portal\Business\Default.aspx" />
     <Content Include="Portal\Business\FAQ.aspx" />
     <Content Include="Portal\Community\Default.aspx" />
@@ -295,6 +297,13 @@
     <Compile Include="Portal\Announcements\view.aspx.designer.cs">
       <DependentUpon>view.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Portal\Barangay\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Barangay\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Portal\Barangay\Missionvission.aspx.cs">
       <DependentUpon>Missionvission.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -308,6 +317,13 @@
     </Compile>
     <Compile Include="Portal\Beta\loading.aspx.designer.cs">
       <DependentUpon>loading.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Beta\textbox_design.aspx.cs">
+      <DependentUpon>textbox_design.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Beta\textbox_design.aspx.designer.cs">
+      <DependentUpon>textbox_design.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Business\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

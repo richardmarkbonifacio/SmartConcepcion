@@ -94,8 +94,13 @@ namespace SmartConcepcion.Class
                 {
                     jUserData = JArray.Parse(userdata);
                     result = (string)jUserData[3];
+                    return Convert.ToInt32(result);
                 }
-                return Convert.ToInt64( result);
+                else
+                {
+                    FormsAuthentication.RedirectToLoginPage();
+                    return 0;
+                }
             }
         }
         

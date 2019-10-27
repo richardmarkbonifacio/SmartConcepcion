@@ -11,11 +11,10 @@ namespace SmartConcepcion
 {
     public partial class SiteMaster : MasterPage
     {
-        clsInherited cInh = new clsInherited();
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnSignOut(object sender, EventArgs e)

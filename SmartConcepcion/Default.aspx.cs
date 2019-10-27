@@ -17,7 +17,7 @@ namespace SmartConcepcion
         clsQuery csql = new clsQuery();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            loadDropDown(ddBrgy, csql.getBrgyList("SmartConcepcion"), false);
         }
 
         protected void btnSignIn(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace SmartConcepcion
         protected void btnSignUp(object sender, EventArgs e)
         {
             DataTable _dt = csql.postSignUp("SmartConcepcion", txtEmail.Text, txtFnam.Text, txtMnam.Text, txtLnam.Text,
-                "", txtContact.Text, txtRUserpass.Text,0, Convert.ToDateTime(txtBday.Text));
+                "", txtContact.Text, txtRUserpass.Text,Convert.ToInt64(ddBrgy.SelectedValue), Convert.ToDateTime(txtBday.Text));
         }
     }
 }
