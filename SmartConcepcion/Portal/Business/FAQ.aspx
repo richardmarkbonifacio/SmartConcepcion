@@ -123,7 +123,7 @@
     </div
     </div><!-- end of accordion body -->
   </div><!-- end of accordion item -->
-  <div class="accordion__item js-accordion-item active">
+  <div class="accordion__item js-accordion-item ">
     <div class="accordion-header js-accordion-header">Panel 2</div> 
   <div class="accordion-body js-accordion-body">
     <div class="accordion-body__contents">
