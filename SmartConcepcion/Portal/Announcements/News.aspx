@@ -25,67 +25,69 @@
             margin-top: .75em;
         }
         
-body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-article {
-  padding: 1.5em;
-  background: white;
-  border-radius: 3px;
-}
-article p {
-  color: indianred;
-  line-height: 1.5;
-}
-.capsule {
-  margin-left: auto;
-  margin-right: auto;
+        body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+        article {
+          padding: 1.5em;
+          background: white;
+          border-radius: 3px;
+        }
+        article p {
+          color: indianred;
+          line-height: 1.5;
+          word-break:break-all;
+          text-align:justify;
+        }
+        .capsule {
+          margin-left: auto;
+          margin-right: auto;
 
-}
-.capsule  + .capsule {
-  border-top: none;
-}
+        }
+        .capsule  + .capsule {
+          border-top: none;
+        }
         .right-news {
             padding: 1.5em;
             background: white;
             
         }
         .right-news i{
-      text-align:justify;
-}
-.capsule:first-of-type {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-.capsule:last-of-type {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-hr{
-    border:none;
-}
-.btn-nav{
-    background:#f99827;
-    color:#fff;
-    font-weight:600;
-    border-radius:0px;
-    margin-bottom:10px;
-}
-.btn-nav:hover{
-     background:#f19429;
-    color:#fff;
-    font-weight:600;
-    border-radius:0px;
-    margin-bottom:10px;
-}
-.widget-topnews{
-    font-weight:800;
-    text-align:center;
-    padding:15px;
-    font-size:15px;
-}
-.fast-fact{
-    padding-top:500px;
-            background: white;
-}
+        text-align:justify;
+        }
+        .capsule:first-of-type {
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+        }
+        .capsule:last-of-type {
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+        hr{
+            border:none;
+        }
+        .btn-nav{
+            background:#f99827;
+            color:#fff;
+            font-weight:600;
+            border-radius:0px;
+            margin-bottom:10px;
+        }
+        .btn-nav:hover{
+             background:#f19429;
+            color:#fff;
+            font-weight:600;
+            border-radius:0px;
+            margin-bottom:10px;
+        }
+        .widget-topnews{
+            font-weight:800;
+            text-align:center;
+            padding:15px;
+            font-size:15px;
+        }
+        .fast-fact{
+            padding-top:500px;
+                    background: white;
+        }
 
     </style>
     <asp:UpdatePanel ID="upAnnouncements" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
@@ -136,7 +138,7 @@ hr{
             <div class="col-md-3">
                 <asp:GridView runat="server" ID="gvTopAnnouncement" AutoGenerateColumns="false" CssClass="container-fluid" style="border:transparent; margin-top:20px;">
                     <Columns>
-              <asp:TemplateField HeaderText="TOP NEWS"  HeaderStyle-BackColor="lightgray" HeaderStyle-CssClass="widget-topnews">
+              <asp:TemplateField HeaderText="TOP NEWS"  HeaderStyle-BackColor="lightgray" HeaderStyle-CssClass="widget-topnews hidden-xs">
                             <ItemTemplate>
                                 <div class="capsule hidden-xs">
                                     <div class="right-news">
