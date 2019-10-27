@@ -46,11 +46,21 @@ select:-webkit-autofill:focus {
                 text-decoration:none;
                  transition: 0.3s;
             }
+               .create:focus{
+                color:#06d96b;
+                text-decoration:none;
+                 transition: 0.3s;
+            }
  .notreg{
      color:#fff;
 
  }
- .forgot:hover{
+            .forgot:hover {
+                color: #ffd800;
+                text-decoration: none;
+                transition: 0.3s;
+            }
+             .forgot:focus{
      color: #ffd800;
        text-decoration:none;
                  transition: 0.3s;
@@ -178,7 +188,7 @@ select:-webkit-autofill:focus {
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-4">
-                                        <asp:TextBox runat="server" ID="txtBday" placeholder="Birthdate" CssClass="form-control sign-up-ctrl" TextMode="Date" />
+                                        <asp:TextBox runat="server" ID="txtBday" placeholder="Birthdate" autocomplete="off" CssClass="form-control sign-up-ctrl" TextMode="Date" />
                                     </div>
                                     <div class="col-md-3">
                                         <asp:DropDownList runat="server" ID="ddGender" placeholder="Gender" CssClass="form-control sign-up-ctrl">
@@ -188,7 +198,7 @@ select:-webkit-autofill:focus {
                                         </asp:DropDownList>
                                     </div>
                                     <div class="col-md-4">
-                                        <asp:TextBox runat="server" ID="txtRUserpass" placeholder="Password" CssClass="form-control sign-up-ctrl" TextMode="Password" />
+                                        <asp:TextBox runat="server" ID="txtRUserpass" placeholder="Password" autocomplete="off" CssClass="form-control sign-up-ctrl" TextMode="Password" />
                                     </div>
                                 </div>
                             </div>
