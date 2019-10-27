@@ -15,12 +15,10 @@
         <style>
 
             body {
-                background: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('../images/bglogin.jpg') no-repeat center center fixed;
+                background: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('../images/Rose-Petals.svg') no-repeat center center fixed;
                 background-size: cover;
             }
-      ::placeholder {
-  color: white;
-}f
+    
 
       input:-webkit-autofill,
 input:-webkit-autofill:hover, 

@@ -142,6 +142,7 @@
     <Content Include="images\bglogin.jpg" />
     <Content Include="images\loginbgbg.jpg" />
     <Content Include="images\noimage.jpg" />
+    <Content Include="images\Rose-Petals.svg" />
     <Content Include="images\user.png" />
     <Content Include="logintesting.aspx" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
