@@ -714,7 +714,7 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
-        public DataTable getBusiness_Details(string cnstr, long ID)
+        public DataTable getHealthcare_Details(string cnstr, long ID)
         {
             try
             {
@@ -742,11 +742,10 @@ namespace SmartConcepcion.Class
                 throw;
             }
 
-
             return result_Dt;
         }
 
-        public DataTable setBusiness(string cnstr, long? ID, string email, string businessname, Int64 businestype, string description, string owner,
+        public DataTable setHealthcare(string cnstr, long? ID, string email, string businessname, Int64 businestype, string description, string owner,
             string permitno, string contactno, string stbldgno, long brgyID, long? updatedby)
         {
             try
