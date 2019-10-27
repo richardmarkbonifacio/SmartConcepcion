@@ -14,13 +14,12 @@
         <link href="Content/bootstrap.css" rel="stylesheet" />
         <style>
 
-            body {
-                background: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('../images/bglogin.jpg') no-repeat center center fixed;
+            html,body {
+                background: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('../images/Rose-Petals.svg') no-repeat center center fixed;
                 background-size: cover;
+                height: 100%;
             }
-      ::placeholder {
-  color: white;
-}f
+    
 
       input:-webkit-autofill,
 input:-webkit-autofill:hover, 
@@ -36,7 +35,39 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: inset 0px 0px 0px rgba(0, 0, 0, 0.5);
   transition: background-color 5000s ease-in-out 0s;
 }
-      
+            .create {
+                text-align: center;
+            color: #ffd800;
+    font-weight: 600;
+                  
+            }
+            .create:hover{
+                color:#06d96b;
+                text-decoration:none;
+                 transition: 0.3s;
+            }
+               .create:focus{
+                color:#06d96b;
+                text-decoration:none;
+                 transition: 0.3s;
+            }
+ .notreg{
+     color:#fff;
+
+ }
+            .forgot:hover {
+                color: #ffd800;
+                text-decoration: none;
+                transition: 0.3s;
+            }
+             .forgot:focus{
+     color: #ffd800;
+       text-decoration:none;
+                 transition: 0.3s;
+ }
+ ::placeholder{
+     color:#fff;
+ }
         </style>
      
         <form id="form1" runat="server">
@@ -70,7 +101,7 @@ select:-webkit-autofill:focus {
                         <div class="row">
                             <div class="inputWithIcon">
                                 <%--       <input type="text" placeholder="Username" />--%>
-                                <asp:TextBox runat="server" ID="txtUserid" placeholder="Username" CssClass="btnsign" />
+                                <asp:TextBox runat="server" TextMode="number" ID="txtUserid" placeholder="UserID" CssClass="btnsign" />
                                 <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
                             </div>
 
@@ -89,7 +120,7 @@ select:-webkit-autofill:focus {
                             </div>
 
                             <div class="row" style="vertical-align: middle">
-                                <div class="col-md-6 col-xs-6">
+                                <div class="col-md-6 col-xs-6 hidden">
                                     <label class="switch">
                                         <%--   <input type="checkbox" />--%>
                                         <asp:CheckBox runat="server" ID="RememberMe" />
@@ -99,26 +130,27 @@ select:-webkit-autofill:focus {
 
                                     <div class="labeltoggle">Remember Me</div>
                                 </div>
-                                <div class="col-md-6 col-xs-6 text-right">
+                                
+                        <div class="row">
+                             <div class="container-fluid text-center">
                                     <a class="forgot" href="#">Forgot Password?</a>
                                 </div>
-                            </div>
-                        </div>
+                            <div class="container-fluid text-center">
 
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <a class="forgot" href="#" data-toggle="modal" data-target="#myModal">CREATE ACCOUNT</a>
+                               <span class="notreg">Not registered?</span> <a class="create" href="#" data-toggle="modal" data-target="#myModal">CREATE ACCOUNT</a>
                             </div>
-
-                            <div class="col-md-6 text-right">
-                                <a class="forgot" href="#">NEED HELP?</a>
-                            </div>
+                           
+                           
                         </div>
                     </div>
 
                 </div>
             </div>
+                               
+                            </div>
+                        </div>
+
+
             <div class="modal fade" id="myModal">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -156,7 +188,7 @@ select:-webkit-autofill:focus {
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-4">
-                                        <asp:TextBox runat="server" ID="txtBday" placeholder="Birthdate" CssClass="form-control sign-up-ctrl" TextMode="Date" />
+                                        <asp:TextBox runat="server" ID="txtBday" placeholder="Birthdate" autocomplete="off" CssClass="form-control sign-up-ctrl" TextMode="Date" />
                                     </div>
                                     <div class="col-md-3">
                                         <asp:DropDownList runat="server" ID="ddGender" placeholder="Gender" CssClass="form-control sign-up-ctrl">
@@ -166,7 +198,7 @@ select:-webkit-autofill:focus {
                                         </asp:DropDownList>
                                     </div>
                                     <div class="col-md-4">
-                                        <asp:TextBox runat="server" ID="txtRUserpass" placeholder="Password" CssClass="form-control sign-up-ctrl" TextMode="Password" />
+                                        <asp:TextBox runat="server" ID="txtRUserpass" placeholder="Password" autocomplete="off" CssClass="form-control sign-up-ctrl" TextMode="Password" />
                                     </div>
                                 </div>
                             </div>
