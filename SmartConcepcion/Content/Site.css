@@ -6,8 +6,11 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
-    
 
+    #cssmenu > ul > li > a {
+      
+        height: 46px !important;
+    }
     .body-content {
         margin-top: 0 !important;
     }
@@ -285,7 +288,7 @@ textarea {
 #cssmenu ul li a,
 #cssmenu #menu-button {
     margin: 0;
-    padding: 0;
+    
     border: 0;
     list-style: none;
     line-height: 1;
@@ -322,7 +325,7 @@ textarea {
                                  }
  #cssmenu.align-center ul ul {text-align: left; }
  #cssmenu.align-right > ul > li { float: right; }
- #cssmenu > ul > li > a {
+    #cssmenu > ul > li > a {
         padding: 17px;
         font-size: 12px;
         letter-spacing: 1px;
@@ -330,9 +333,12 @@ textarea {
         color: #dddddd;
         font-weight: 700;
         text-transform: uppercase;
-        margin-top: 40px;
-                        }
- #cssmenu > ul > li:hover > a { color: #00ff00; }
+        display: table-cell;
+        vertical-align: middle;
+     
+        height: 14vh;
+    }
+ #cssmenu > ul > li:hover > a { color: #00ff00;}
  #cssmenu > ul > li.has-sub > a {padding-right: 30px;}
  #cssmenu ul ul {
         position: absolute;
@@ -345,6 +351,7 @@ textarea {
         -moz-transition: all .25s ease;
         -o-transition: all .25s ease;
         transition: all .25s ease;
+        
                    }
  #cssmenu li:hover > ul {left: auto;}
  #cssmenu.align-right li:hover > ul {
@@ -360,7 +367,7 @@ textarea {
         margin-left: 0;
         margin-right: 100%;
     }
- #cssmenu ul ul li a {
+    #cssmenu ul ul li a {
         border-bottom: 1px solid rgba(150, 150, 150, 0.15);
         padding: 11px 15px;
         width: 170px;
@@ -369,10 +376,11 @@ textarea {
         color: #dddddd;
         font-weight: 400;
         background: #333333;
+        margin-left: -35px;
     }
 #cssmenu ul ul li:last-child > a, #cssmenu ul ul li.last-item > a {border-bottom: 0;}
 #cssmenu ul ul li:hover > a, #cssmenu ul ul li a:hover {color: #00ff00;}
-#cssmenu.small-screen {width: 100%;overflow-y:scroll}
+#cssmenu.small-screen {width: 100%;}
 #cssmenu.small-screen ul {
             width: 100%;
             display: none;
@@ -541,8 +549,7 @@ textarea {
     transition: 0.4s;
                }
 a .logo {
-    margin-left: 40px;
-    margin-right: 160px;
+    
     height: 14vh;
         }
     /*===Announcement Image Hover==*/

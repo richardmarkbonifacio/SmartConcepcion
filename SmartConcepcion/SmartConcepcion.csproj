@@ -185,6 +185,7 @@
     <Content Include="Portal\Announcements\view.aspx" />
     <Content Include="Portal\Barangay\Dashboard.aspx" />
     <Content Include="Portal\Barangay\Missionvission.aspx" />
+    <Content Include="Portal\Beta\contactform.aspx" />
     <Content Include="Portal\Beta\loading.aspx" />
     <Content Include="Portal\Beta\textbox_design.aspx" />
     <Content Include="Portal\Business\Default.aspx" />
@@ -311,6 +312,13 @@
     </Compile>
     <Compile Include="Portal\Barangay\Missionvission.aspx.designer.cs">
       <DependentUpon>Missionvission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Beta\contactform.aspx.cs">
+      <DependentUpon>contactform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Beta\contactform.aspx.designer.cs">
+      <DependentUpon>contactform.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Beta\loading.aspx.cs">
       <DependentUpon>loading.aspx</DependentUpon>

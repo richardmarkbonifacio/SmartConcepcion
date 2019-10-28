@@ -21,6 +21,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no" /> 
 </head>
 <body>
+  
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -46,9 +47,24 @@
         <%--NAVBAR--%>
 
         <style>
-      </style>
+            body::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #f99827;
+  outline: 1px solid slategrey;
+}
 
-        <div id="cssmenu">
+
+
+      </style>
+        
+        <div id="cssmenu" class="container">
 
             <ul>
                 <li>
@@ -59,7 +75,7 @@
                 </li>
 
 
-                <li><a href="~/Portal/" runat="server">HOME</a></li>
+                <li><a class="active" href="~/Portal/" runat="server">HOME</a></li>
 
                 <li class="active">
                     <a href="#">RESIDENCE</a>
@@ -92,7 +108,15 @@
                     </ul>
                 </li>
 
-                <li>
+                     <li>
+                    <a href="#">HOWDY ADMIN</a>
+                    <ul>
+                     <li><a href="#">MY NOTIFICATION</a></li>
+                        <li><asp:LinkButton runat="server" Text="LOG OUT" OnClick="btnSignOut" /> </li>
+                    </ul>
+                </li>
+
+              <%--  <li>
                     <button class="btn btn-navbar btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
                         <span class="caret"></span>
                     </button>
@@ -101,7 +125,7 @@
                         <li><a href="#">MY NOTIFICATION</a></li>
                         <li><asp:LinkButton runat="server" Text="LOG OUT" OnClick="btnSignOut" /> </li>
                     </ul>
-                </li>
+                </li>--%>
             </ul>
         </div>
 
@@ -189,7 +213,7 @@ $('#return-to-top').click(function() {      // When arrow is clicked
 });</script>
         <script type="text/javascript">
             $("#cssmenu").menumaker({
-                title: "Menu",
+                title: "SMART CONCEPCION",
                 format: "multitoggle"
             });
 
@@ -205,7 +229,9 @@ $('#return-to-top').click(function() {      // When arrow is clicked
             $( '#cssmenu .btn-navbar ' ).on( 'click', function () {
 	$( '#cssmenu .btn-navbar' ).find( 'li.active' ).removeClass( 'active' );
 	$( this ).parent( 'li' ).addClass( 'active' );
-});
+            });
+
+
         </script>
 
 

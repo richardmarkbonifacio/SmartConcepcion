@@ -137,6 +137,7 @@ label {
  .cntc-home{
      background-color:#f6f6f6;
      width:100%;
+     margin-bottom:15px;
  }
  #subject{
      resize:none;
@@ -145,7 +146,7 @@ label {
   <div id="about" class="container-fluid">
   <div class="row text-justify">
     <div class="col-sm-8">
-      <h2>About Company Page</h2><br>
+      <h2>About Smart Concepcion</h2><br>
       <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <br><%--<button class="btn btn-default btn-lg">Get in Touch</button>--%>
@@ -257,8 +258,8 @@ Get In Touch
     </div>
   </div>
   <div class="row">
-   
-  <button type="button" class="btn btn-send pull-right" data-container="body" data-toggle="popover" data-placement="right" data-content="Email Us: Loremipsum@gmail.com">
+ 
+  <button type="button" class="btn btn-send pull-right" data-container="body">
 Send
 </button>
   </div>
@@ -269,7 +270,9 @@ Send
     <script>
 $(function () {
   $('[data-toggle="popover"]').popover()
-})
+        })
+
+     
     </script>
 
 
