@@ -313,13 +313,6 @@
     <Compile Include="Portal\Barangay\Missionvission.aspx.designer.cs">
       <DependentUpon>Missionvission.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Portal\Barangay\Official.aspx.cs">
-      <DependentUpon>Official.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Portal\Barangay\Official.aspx.designer.cs">
-      <DependentUpon>Official.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Portal\Beta\loading.aspx.cs">
       <DependentUpon>loading.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
