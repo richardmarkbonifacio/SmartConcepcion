@@ -154,9 +154,29 @@ height:90px;
             </article>
             <hr />
             <label for="subject">Leave a Comment</label>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="height: 200px"></textarea>
-
-            <input type="submit" value="Submit" class="btn-formsubmit">
+            <asp:UpdatePanel runat="server" ID="upCommentSection" UpdateMode="Conditional">
+                <ContentTemplate>
+                    
+                    <asp:TextBox runat="server" ID="txtComment" placeholder="Write something.." TextMode="MultiLine" Columns="5" />
+                    <asp:Button runat="server" Text="Submit" CssClass="btn-formsubmit" OnClick="btnComment_Click" />
+                    
+                    <asp:GridView runat="server" ID="gvCommentSection" AutoGenerateColumns="false" CssClass="table table-hover table-responsive table-dark">
+                        <Columns>
+                            <asp:TemplateField HeaderStyle-CssClass="hidden">
+                                <ItemTemplate>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading"><%# Eval("submittedby") %>, <i><%# Eval("datecreated", "{0:MMMM dd yyyy hh:mm tt}") %></i></div>
+                                        <div class="panel-body"><%# Eval("comment") %></div>
+                                    </div>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                    
+                    <asp:Button runat="server" CssClass="btn btn-nav" ID="btnLoad" Text="Load More" OnClick="btnLoad_Click" />
+                </ContentTemplate>
+            </asp:UpdatePanel>
+            
         </section>
 
         <aside>

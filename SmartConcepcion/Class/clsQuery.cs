@@ -448,6 +448,75 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
+        public DataTable getAnnouncementsComments(string cnstr, int pagesize, int pageno, long announcementID)
+        {
+            try
+            {
+                result_Dt = new DataTable("Announcement Comments");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Announcement_comments_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@announcementID", SqlDbType.Int).Value = announcementID;
+                cmd.Parameters.Add("@PageSize", SqlDbType.Int).Value = pagesize;
+                cmd.Parameters.Add("@PageNumber", SqlDbType.Int).Value = pageno;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
+        public DataTable setAnnouncementsComment(string cnstr, long? ID,
+            long announcementID, string comment, long createdby)
+        {
+            try
+            {
+                result_Dt = new DataTable("Announcement Comment Set");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Announcement_comment_set]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID", SqlDbType.BigInt).Value = ID;
+                cmd.Parameters.Add("@announcementID", SqlDbType.BigInt).Value = announcementID;
+                cmd.Parameters.Add("@comment", SqlDbType.VarChar).Value = comment;
+                cmd.Parameters.Add("@createdby", SqlDbType.BigInt).Value = createdby;
+
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
         #endregion
 
         #region Incident Report
@@ -596,7 +665,6 @@ namespace SmartConcepcion.Class
 
                 throw;
             }
-
 
             return result_Dt;
         }
