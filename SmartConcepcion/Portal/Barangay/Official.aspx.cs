@@ -13,5 +13,14 @@ namespace SmartConcepcion.Portal.Barangay
         {
 
         }
+        protected void btnSearchUser_Click(object sender, EventArgs e)
+        {
+            dttemp = csql.getUserPaging("SmartConcepcion", 5, 0, txtUserSearch.Text, p_BrgyID);
+            if (dttemp.Rows.Count > 0)
+            {
+                loadGridView(gvTemplateError, dttemp);
+                upNameSuggestion.Update();
+            }
+        }
     }
 }
