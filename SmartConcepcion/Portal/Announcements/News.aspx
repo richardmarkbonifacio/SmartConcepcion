@@ -101,6 +101,8 @@
         .fast-fact h4{
              font-weight:600;
              color:#fff;
+             line-height: 30px;
+
         }
 
     </style>
@@ -147,7 +149,7 @@
                     </Columns>
                 </asp:GridView>
                 <asp:Button runat="server" CssClass="btn btn-nav" ID="btnPrev" Text="PREV" OnClick="btnPrev_Click" />
-                <asp:Button runat="server" CssClass="btn btn-nav" ID="btnNext" Text="NEXT" OnClick="btnNext_Click" />
+         <asp:Button runat="server" CssClass="btn btn-nav" ID="btnNext" Text="NEXT" OnClick="btnNext_Click" /> 
             </div>
             <div class="col-md-3">
                 <asp:GridView runat="server" ID="gvTopAnnouncement" AutoGenerateColumns="false" CssClass="container-fluid" style="border:transparent; margin-top:20px;">
@@ -184,8 +186,11 @@
                                     </div>
                                 </div>
             </div>
-         
+      <script>
+   
+      </script>
+
         </ContentTemplate>
     </asp:UpdatePanel>
-    
+
 </asp:Content>

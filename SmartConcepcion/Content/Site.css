@@ -288,7 +288,6 @@ textarea {
 #cssmenu ul li a,
 #cssmenu #menu-button {
     margin: 0;
-    
     border: 0;
     list-style: none;
     line-height: 1;
@@ -297,34 +296,51 @@ textarea {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-                    }
- #cssmenu:after,#cssmenu > ul:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0;
-                                     }
- #cssmenu #menu-button { display: none;}
- #cssmenu {
-    top:0;
-    min-width:100%;
-    z-index:2;
-    background: #333333;
-    position:fixed;
 }
- #cssmenu > ul > li { float: left; }
- #cssmenu.align-center > ul {
+
+    #cssmenu:after, #cssmenu > ul:after {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }
+
+    #cssmenu #menu-button {
+        display: none;
+    }
+
+#cssmenu {
+    top: 0;
+    min-width: 100%;
+    z-index: 2;
+    background: #333333;
+    position: fixed;
+}
+
+    #cssmenu > ul > li {
+        float: left;
+    }
+
+    #cssmenu.align-center > ul {
         font-size: 0;
         text-align: center;
-                             }
- #cssmenu.align-center > ul > li {
+    }
+
+        #cssmenu.align-center > ul > li {
             display: inline-block;
             float: none;
-                                 }
- #cssmenu.align-center ul ul {text-align: left; }
- #cssmenu.align-right > ul > li { float: right; }
+        }
+
+    #cssmenu.align-center ul ul {
+        text-align: left;
+    }
+
+    #cssmenu.align-right > ul > li {
+        float: right;
+    }
+
     #cssmenu > ul > li > a {
         padding: 17px;
         font-size: 12px;
@@ -335,38 +351,57 @@ textarea {
         text-transform: uppercase;
         display: table-cell;
         vertical-align: middle;
-     
         height: 14vh;
     }
- #cssmenu > ul > li:hover > a { color: #00ff00;}
- #cssmenu > ul > li.has-sub > a {padding-right: 30px;}
- #cssmenu ul ul {
+
+    #cssmenu > ul > li:hover > a {
+        color: #00ff00;
+    }
+
+    #cssmenu > ul > li.has-sub > a {
+        padding-right: 30px;
+    }
+
+    #cssmenu ul ul {
         position: absolute;
         left: -9999px;
-                }
- #cssmenu.align-right ul ul { text-align: right; }
- #cssmenu ul ul li {
+    }
+
+    #cssmenu.align-right ul ul {
+        text-align: right;
+    }
+
+    #cssmenu ul ul li {
         height: 0;
         -webkit-transition: all .25s ease;
         -moz-transition: all .25s ease;
         -o-transition: all .25s ease;
         transition: all .25s ease;
-        
-                   }
- #cssmenu li:hover > ul {left: auto;}
- #cssmenu.align-right li:hover > ul {
+    }
+
+    #cssmenu li:hover > ul {
+        left: auto;
+    }
+
+    #cssmenu.align-right li:hover > ul {
         left: auto;
         right: 0;
     }
- #cssmenu li:hover > ul > li { height: 35px;}
- #cssmenu ul ul ul {
+
+    #cssmenu li:hover > ul > li {
+        height: 35px;
+    }
+
+    #cssmenu ul ul ul {
         margin-left: 100%;
         top: 0;
     }
- #cssmenu.align-right ul ul ul {
+
+    #cssmenu.align-right ul ul ul {
         margin-left: 0;
         margin-right: 100%;
     }
+
     #cssmenu ul ul li a {
         border-bottom: 1px solid rgba(150, 150, 150, 0.15);
         padding: 11px 15px;
@@ -378,38 +413,73 @@ textarea {
         background: #333333;
         margin-left: -35px;
     }
-#cssmenu ul ul li:last-child > a, #cssmenu ul ul li.last-item > a {border-bottom: 0;}
-#cssmenu ul ul li:hover > a, #cssmenu ul ul li a:hover {color: #00ff00;}
-#cssmenu.small-screen {width: 100%;}
-#cssmenu.small-screen ul {
+
+    #cssmenu ul ul li:last-child > a, #cssmenu ul ul li.last-item > a {
+        border-bottom: 0;
+    }
+
+    #cssmenu ul ul li:hover > a, #cssmenu ul ul li a:hover {
+        color: #00ff00;
+    }
+
+    #cssmenu.small-screen {
+        width: 100%;
+    }
+
+        #cssmenu.small-screen ul {
             width: 100%;
             display: none;
-                         }
-#cssmenu.small-screen.align-center > ul {text-align: left;}
-#cssmenu.small-screen ul li {
+        }
+
+        #cssmenu.small-screen.align-center > ul {
+            text-align: left;
+        }
+
+        #cssmenu.small-screen ul li {
             width: 100%;
             border-top: 1px solid rgba(120, 120, 120, 0.2);
-                             }
-#cssmenu.small-screen ul ul li, #cssmenu.small-screen li:hover > ul > li { height: auto; }
-#cssmenu.small-screen ul li a,#cssmenu.small-screen ul ul li a {
-             width: 100%;
-             border-bottom: 0;
-                                                               }
-#cssmenu.small-screen > ul > li { float: none; }
-#cssmenu.small-screen ul ul li a { padding-left: 25px;  }
-#cssmenu.small-screen ul ul ul li a {padding-left: 35px; }
-#cssmenu.small-screen ul ul li a { color: #dddddd; }
-#cssmenu.small-screen ul ul li:hover > a, #cssmenu.small-screen ul ul li.active > a {color: #ffffff; }
-#cssmenu.small-screen ul ul,
-#cssmenu.small-screen ul ul ul,
-#cssmenu.small-screen.align-right ul ul {
+        }
+
+        #cssmenu.small-screen ul ul li, #cssmenu.small-screen li:hover > ul > li {
+            height: auto;
+        }
+
+            #cssmenu.small-screen ul li a, #cssmenu.small-screen ul ul li a {
+                width: 100%;
+                border-bottom: 0;
+            }
+
+        #cssmenu.small-screen > ul > li {
+            float: none;
+        }
+
+        #cssmenu.small-screen ul ul li a {
+            padding-left: 25px;
+        }
+
+        #cssmenu.small-screen ul ul ul li a {
+            padding-left: 35px;
+        }
+
+        #cssmenu.small-screen ul ul li a {
+            color: #dddddd;
+        }
+
+        #cssmenu.small-screen ul ul li:hover > a, #cssmenu.small-screen ul ul li.active > a {
+            color: #ffffff;
+        }
+
+        #cssmenu.small-screen ul ul,
+        #cssmenu.small-screen ul ul ul,
+        #cssmenu.small-screen.align-right ul ul {
             position: relative;
             left: 0;
             width: 100%;
             margin: 0;
             text-align: left;
-                                        }
-#cssmenu.small-screen #menu-button {
+        }
+
+        #cssmenu.small-screen #menu-button {
             display: block;
             padding: 17px;
             color: #dddddd;
@@ -417,50 +487,55 @@ textarea {
             font-size: 12px;
             text-transform: uppercase;
             font-weight: 700;
-                                  }
-#cssmenu.small-screen #menu-button:after {
-             position: absolute;
-             top: 22px;
-             right: 17px;
-             display: block;
-             height: 4px;
-             width: 20px;
-             border-top: 2px solid #dddddd;
-             content: '';
-                                         }
-#cssmenu.small-screen #menu-button:before {
-             position: absolute;
-             top: 16px;
-             right: 17px;
-             display: block;
-             height: 2px;
-             width: 20px;
-             background: #dddddd;
-             content: '';
-                                          }
-#cssmenu.small-screen #menu-button.menu-opened:after {
-            top: 23px;
-            border: 0;
-            height: 2px;
-            width: 15px;
-            background: #ffffff;
-            -webkit-transform: rotate(45deg);
-            -moz-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            -o-transform: rotate(45deg);
-            transform: rotate(45deg);
-                                                    }
-#cssmenu.small-screen #menu-button.menu-opened:before {
-            top: 23px;
-            background: #ffffff;
-            width: 15px;
-            -webkit-transform: rotate(-45deg);
-            -moz-transform: rotate(-45deg);
-            -ms-transform: rotate(-45deg);
-            -o-transform: rotate(-45deg);
-            transform: rotate(-45deg);
-                                                      }
-#cssmenu.small-screen .submenu-button {
+        }
+
+            #cssmenu.small-screen #menu-button:after {
+                position: absolute;
+                top: 22px;
+                right: 17px;
+                display: block;
+                height: 4px;
+                width: 20px;
+                border-top: 2px solid #dddddd;
+                content: '';
+            }
+
+            #cssmenu.small-screen #menu-button:before {
+                position: absolute;
+                top: 16px;
+                right: 17px;
+                display: block;
+                height: 2px;
+                width: 20px;
+                background: #dddddd;
+                content: '';
+            }
+
+            #cssmenu.small-screen #menu-button.menu-opened:after {
+                top: 23px;
+                border: 0;
+                height: 2px;
+                width: 15px;
+                background: #ffffff;
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+
+            #cssmenu.small-screen #menu-button.menu-opened:before {
+                top: 23px;
+                background: #ffffff;
+                width: 15px;
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+            }
+
+        #cssmenu.small-screen .submenu-button {
             position: absolute;
             z-index: 1;
             right: 0;
@@ -470,117 +545,140 @@ textarea {
             height: 46px;
             width: 46px;
             cursor: pointer;
-                                     }
-#cssmenu.small-screen .submenu-button.submenu-opened { background: #262626; }
-#cssmenu.small-screen ul ul .submenu-button {
-     height: 34px;
-     width: 34px;
-                                             }
-#cssmenu.small-screen .submenu-button:after {
-     position: absolute;
-     top: 22px;
-     right: 19px;
-     width: 8px;
-     height: 2px;
-     display: block;
-     background: #dddddd;
-     content: '';
-                                             }
-#cssmenu.small-screen ul ul .submenu-button:after {
-     top: 15px;
-     right: 13px;
-                                                   }
-#cssmenu.small-screen .submenu-button.submenu-opened:after {background: #ffffff; }
-#cssmenu.small-screen .submenu-button:before {
-    position: absolute;
-    top: 19px;
-    right: 22px;
-    display: block;
-    width: 2px;
-    height: 8px;
-    background: #dddddd;
-    content: '';
-                                             }
-#cssmenu.small-screen ul ul .submenu-button:before {
-    top: 12px;
-    right: 16px;
-                                                   }
-#cssmenu.small-screen .submenu-button.submenu-opened:before {display: none;}
-#cssmenu.small-screen.select-list {padding: 5px;}
+        }
+
+            #cssmenu.small-screen .submenu-button.submenu-opened {
+                background: #262626;
+            }
+
+        #cssmenu.small-screen ul ul .submenu-button {
+            height: 34px;
+            width: 34px;
+        }
+
+        #cssmenu.small-screen .submenu-button:after {
+            position: absolute;
+            top: 22px;
+            right: 19px;
+            width: 8px;
+            height: 2px;
+            display: block;
+            background: #dddddd;
+            content: '';
+        }
+
+        #cssmenu.small-screen ul ul .submenu-button:after {
+            top: 15px;
+            right: 13px;
+        }
+
+        #cssmenu.small-screen .submenu-button.submenu-opened:after {
+            background: #ffffff;
+        }
+
+        #cssmenu.small-screen .submenu-button:before {
+            position: absolute;
+            top: 19px;
+            right: 22px;
+            display: block;
+            width: 2px;
+            height: 8px;
+            background: #dddddd;
+            content: '';
+        }
+
+        #cssmenu.small-screen ul ul .submenu-button:before {
+            top: 12px;
+            right: 16px;
+        }
+
+        #cssmenu.small-screen .submenu-button.submenu-opened:before {
+            display: none;
+        }
+
+        #cssmenu.small-screen.select-list {
+            padding: 5px;
+        }
 
 
 
 
-    .btn-navbar {
+.btn-navbar {
     margin-top: 45px;
     background: transparent;
     padding: 8px 10px;
     border-color: transparent;
 }
-.btn-navbar:hover {
-    background: transparent;
-    border-color: transparent;
-    color: #00ff00;
- }
-    
+
+    .btn-navbar:hover {
+        background: transparent;
+        border-color: transparent;
+        color: #00ff00;
+    }
+
 .dropdown-menu {
     background-color: #333;
     border-radius: 0px;
-               }
-.dropdown-menu a { color: #fff;}
-.dropdown-menu > a:hover {
-    color: #00ff00;
-    text-decoration: none;
-    margin-right: 2px;
-                         }
-.dropdown-menu ul ul li a {
-    border-bottom: 1px solid rgba(150, 150, 150, 0.15);
-    padding: 11px 15px;
-    width: 170px;
-    font-size: 12px;
-    text-decoration: none;
-    color: #dddddd;
-    font-weight: 400;
-    background: #333333;
-                          }
+}
+
+    .dropdown-menu a {
+        color: #fff;
+    }
+
+    .dropdown-menu > a:hover {
+        color: #00ff00;
+        text-decoration: none;
+        margin-right: 2px;
+    }
+
+    .dropdown-menu ul ul li a {
+        border-bottom: 1px solid rgba(150, 150, 150, 0.15);
+        padding: 11px 15px;
+        width: 170px;
+        font-size: 12px;
+        text-decoration: none;
+        color: #dddddd;
+        font-weight: 400;
+        background: #333333;
+    }
+
 #ccsmenu .logo {
     font-size: 35px;
     font-weight: bold;
     transition: 0.4s;
-               }
+}
+
 a .logo {
-    
     height: 14vh;
-        }
-    /*===Announcement Image Hover==*/
-    .panelRow {
-        background-size: cover;
-        height: 300px;
-    }
+}
+/*===Announcement Image Hover==*/
+.panelRow {
+    background-size: cover;
+    height: 300px;
+}
 
-    .gvAnnouncements {
-        border: transparent;
-        width:100%;
-
-    }
+.gvAnnouncements {
+    border: transparent;
+    width: 100%;
+}
 
 .announcement-row {
     background: #fff;
     min-height: 75vh;
     margin-bottom: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding:0;
+    padding: 0;
 }
 
-    .hovereffect {
-        width: 100%;
-        height: 100%;
-        float: left;
-        overflow: hidden;
-        position: relative;
-        text-align: center;
-        cursor: default;
-    }
+.hovereffect {
+    width: 100%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+}
 
     .hovereffect .overlay {
         width: 100%;
@@ -661,18 +759,20 @@ a .logo {
     }
 
 
-    .create-announcement {
-        background: #fff;
-        padding: 2rem 0.3rem;
-    }
-    .create-announcement, .form-control{
-        margin-bottom:1rem;
-    }
+.create-announcement {
+    background: #fff;
+    padding: 2rem 0.3rem;
+}
+
+.create-announcement, .form-control {
+    margin-bottom: 1rem;
+}
+
 .create-announcement {
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-    /*==================================header banner==============================*/
+/*==================================header banner==============================*/
 .header-banner {
     background-color: #F4D03F;
     background-image: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
