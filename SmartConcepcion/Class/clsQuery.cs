@@ -521,7 +521,7 @@ namespace SmartConcepcion.Class
 
         #region Incident Report
 
-        public DataTable getIncidentReport(string cnstr, int pagesize, int pageno)
+        public DataTable getIncidentReport(string cnstr, int pagesize, int pageno,DateTime? dtfrom, DateTime? dtto ,string search)
         {
             try
             {
@@ -531,6 +531,9 @@ namespace SmartConcepcion.Class
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@PageSize", SqlDbType.Int).Value = pagesize;
                 cmd.Parameters.Add("@PageNumber", SqlDbType.Int).Value = pageno;
+                cmd.Parameters.Add("@dtfrom", SqlDbType.Date).Value = dtfrom;
+                cmd.Parameters.Add("@dtto", SqlDbType.Date).Value = dtto;
+                cmd.Parameters.Add("@search", SqlDbType.VarChar).Value = search;
 
                 da = new SqlDataAdapter(cmd);
                 using (cn)

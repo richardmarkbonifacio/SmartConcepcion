@@ -3,10 +3,29 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     
      <div class="header-banner">INCIDENT REPORT</div>
+
     <asp:UpdatePanel ID="upIncidentReport" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="input-daterange input-group">
+                        
+                        <asp:TextBox runat="server" TextMode="Date" CssClass="form-control" ID="txtFrom"  />
+                        <span class="input-group-addon">to</span>
+                        <asp:TextBox runat="server" TextMode="Date" CssClass="form-control" ID="txtTo"/>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <asp:TextBox runat="server" placeholder="Search by name" CssClass="form-control" ID="txtName" />
+                </div>
+                <div class="col-md-2">
+                    <asp:Button runat="server"  CssClass="btn btn-warning form-control" ID="btnFilter" OnClick="Filter_Text" CausesValidation="false" />
+                </div>
+                <div class="col-md-2">
+                    <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New Incident Report" CausesValidation="false" CssClass="btn btn-danger form-control" />
+                </div>
+            </div>
             <div class="container-fluid">
-                <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New Incident Report" CssClass="pull-right" CausesValidation="false" />
                 
                 <hr />
                 <%--<asp:LinkButton runat="server" Text="New Incident Report" ID="lnkCreate" OnClick="lnkCreate_Click"/>--%>
@@ -18,12 +37,12 @@
                         <Columns>
                             <asp:BoundField HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden" DataField="ID" />
                             <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Title" DataField="title" />
-                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Incident Date" DataFormatString="{0:d}" DataField="incidentdate" />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Incident Date" DataFormatString="{0:MMMM dd, yyyy - dddd}" DataField="incidentdate" />
                             <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Location" DataField="incident_location" />
 
                             <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Accused" DataField="accusedByName" />
                             <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Complainant" DataField="complainantByName" />
-                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Confrontation Date" DataFormatString="{0:d}" DataField="confrontation_date" />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Confrontation Date" DataFormatString="{0:MMMM dd, yyyy - dddd}" DataField="confrontation_date" />
                             <asp:TemplateField HeaderStyle-CssClass="thead-dark" ItemStyle-CssClass="text-center">
                                 <ItemTemplate>
                                     <asp:LinkButton runat="server" ToolTip='<%# Eval("ID") %>' CssClass="glyphicon glyphicon-edit" OnClick="Unnamed_Click" OnClientClick="openNav()" CausesValidation="false" />
@@ -46,6 +65,7 @@
                         <PagerSettings Mode="NextPrevious" Position="Bottom" PreviousPageText="Previous" NextPageText="Next" FirstPageText="First" LastPageText="Last" />
                         <PagerStyle HorizontalAlign="Right" />
                     </asp:GridView>
+                    <asp:Label runat="server" ID="norecord" Visible="false" Text="NO RECORD FOUND" />
                 </div>
             </div>
         </ContentTemplate>

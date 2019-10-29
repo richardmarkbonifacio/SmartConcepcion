@@ -185,7 +185,6 @@
     <Content Include="Portal\Announcements\view.aspx" />
     <Content Include="Portal\Barangay\Dashboard.aspx" />
     <Content Include="Portal\Barangay\Missionvission.aspx" />
-    <Content Include="Portal\Barangay\Official.aspx" />
     <Content Include="Portal\Beta\loading.aspx" />
     <Content Include="Portal\Beta\textbox_design.aspx" />
     <Content Include="Portal\Business\Default.aspx" />
@@ -194,6 +193,7 @@
     <Content Include="Portal\Default.aspx" />
     <Content Include="Portal\Healthcare\Default.aspx" />
     <Content Include="Portal\Incidents\Default.aspx" />
+    <Content Include="Portal\Officials\Board.aspx" />
     <Content Include="Portal\Officials\Official.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -368,6 +368,13 @@
     </Compile>
     <Compile Include="Portal\Incidents\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Officials\Board.aspx.cs">
+      <DependentUpon>Board.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Officials\Board.aspx.designer.cs">
+      <DependentUpon>Board.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Officials\Official.aspx.cs">
       <DependentUpon>Official.aspx</DependentUpon>

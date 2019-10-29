@@ -13,6 +13,7 @@ namespace SmartConcepcion.Portal.Incidents
     {
         clsQuery csql = new clsQuery();
         DataTable dttemp;
+        
         #region Properties
         public long? p_IncidentID
         {
@@ -89,7 +90,6 @@ namespace SmartConcepcion.Portal.Incidents
         }
         #endregion
 
-
         protected void Page_Load(object sender, EventArgs e)
         {
             isAdmin();
@@ -98,16 +98,33 @@ namespace SmartConcepcion.Portal.Incidents
         }
         void loadIncidentReport()
         {
-            dttemp = csql.getIncidentReport("SmartConcepcion", gvIncidentReport.PageSize, p_PageIndex);
+            DateTime? _dtfrom = null, _dtto = null;
+
+            if (txtFrom.Text != "")
+                _dtfrom = Convert.ToDateTime(txtFrom.Text);
+
+            if (txtFrom.Text != "")
+                _dtto = Convert.ToDateTime(txtTo.Text);
+
+            dttemp = csql.getIncidentReport("SmartConcepcion", gvIncidentReport.PageSize, p_PageIndex, _dtfrom, _dtto, txtName.Text);
             
             if(dttemp.Rows.Count > 0)
             {
+                norecord.Visible = false;
+                gvIncidentReport.Visible = true;
+
                 gvIncidentReport.PageIndex = p_PageIndex;
                 gvIncidentReport.VirtualItemCount = (int)dttemp.Rows[0]["reccount"];
                 loadGridView(gvIncidentReport, dttemp);
-                upIncidentReport.Update();
+                
             }
-            
+            else
+            {
+                norecord.Visible = true;
+                gvIncidentReport.Visible = false;
+            }
+            upIncidentReport.Update();
+
         }
         void clearIncidentInfo()
         {
@@ -226,6 +243,11 @@ namespace SmartConcepcion.Portal.Incidents
                 p_ComplainantID = null;
             }
             upIncidentInfo.Update();
+        }
+
+        protected void Filter_Text(object sender, EventArgs e)
+        {
+            loadIncidentReport();
         }
     }
 }
