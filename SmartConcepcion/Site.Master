@@ -61,11 +61,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-
       </style>
-        
-        <div id="cssmenu" class="container">
-
+         <div id="cssmenu" class="container">
+            
+  
             <ul>
                 <li>
                     <div class="logo hidden-xs">
@@ -87,7 +86,7 @@ body::-webkit-scrollbar-thumb {
                 </li>
                 <li>
                     <a href="#">BUSINESS</a>
-                    <ul>
+                            <ul class="nav-dropdown">
                         <li><a href="~/Portal/Business/" runat="server">BUSINESS LIST</a></li>
                         <li><a href="#">BUSINESS DIRECTORY</a></li>
                         <li><a href="~/Portal/Business/FAQ" runat="server">FAQ</a></li>
@@ -98,7 +97,7 @@ body::-webkit-scrollbar-thumb {
                 <li><a href="~/Portal/Healthcare/" runat="server">HEALTHCARE</a></li>
                 <li>
                     <a href="#">BARANGAY</a>
-                    <ul>
+                             <ul class="nav-dropdown">
                         <li><a href="~/Portal/Barangay/Dashboard" runat="server">DASHBOARD</a></li>
                         <li><a href="~/Portal/Incidents/" runat="server">INCIDENT REPORT</a></li>
                         <li><a href="~/Portal/Community/" runat="server">COMMUNITY</a></li>
@@ -110,7 +109,7 @@ body::-webkit-scrollbar-thumb {
 
                      <li>
                     <a href="#">HOWDY ADMIN</a>
-                    <ul>
+                             <ul class="nav-dropdown">
                      <li><a href="#">MY NOTIFICATION</a></li>
                         <li><asp:LinkButton runat="server" Text="LOG OUT" OnClick="btnSignOut" /> </li>
                     </ul>
@@ -128,7 +127,6 @@ body::-webkit-scrollbar-thumb {
                 </li>--%>
             </ul>
         </div>
-
 
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -149,11 +147,11 @@ body::-webkit-scrollbar-thumb {
 
                     <div class="col-md-6 hidden-xs">
                         <ul class="pages">
-                            <li><a href="#">HOME</a></li>
-                            <li><a href="#">RESIDENCE</a></li>
-                            <li><a href="#">BUSINESS</a></li>
-                            <li><a href="#">HEALTHCARE</a></li>
-                            <li><a href="#">BARANGAY</a></li>            
+                            <li><a class="active" href="~/Portal/" runat="server">HOME</a></li>
+                            <li><a href="~/Portal/Announcements/News" runat="server">NEWS & ANNOUNCEMENTS</a></li>
+                            <li><a href="~/Portal/Business/" runat="server">BUSINESS LIST</a></li>
+                            <li><a href="~/Portal/Healthcare/" runat="server">HEALTHCARE</a></li>
+                            <li><a href="~/Portal/Community/" runat="server">community</a></li>            
                         </ul>
                     </div>
                     <div class="col-md-6 hidden-xs">
@@ -222,17 +220,10 @@ $('#return-to-top').click(function() {      // When arrow is clicked
             });
 
 
-
-
-        </script>
-        <script>
-            $( '#cssmenu .btn-navbar ' ).on( 'click', function () {
-	$( '#cssmenu .btn-navbar' ).find( 'li.active' ).removeClass( 'active' );
-	$( this ).parent( 'li' ).addClass( 'active' );
-            });
-
+          
 
         </script>
+      
 
 
 
