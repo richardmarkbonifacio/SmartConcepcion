@@ -149,6 +149,7 @@ height:90px;
                 <asp:Image runat="server" AlternateText="Default" ID="imgBanner" CssClass="newsimg" />
                 <%--<img src="../../images/BANNER.jpg" alt="Nature" class="newsimg">--%>
                 <h2 runat="server" id="txtTitle">Title</h2>
+              <h4 runat="server" id="txtsubtitle"><i>Subtitle</i></h4>
                 <asp:Label runat="server" ID="lblContent" CssClass="text-justify" />
 
             </article>

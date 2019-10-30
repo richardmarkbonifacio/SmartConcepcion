@@ -53,7 +53,7 @@ namespace SmartConcepcion.Portal.Announcements
         {
             string querystring = Request.QueryString["ID"];
 
-            if (querystring != "")
+            if (querystring != null)
             {
                 if (!IsPostBack)
                 {

@@ -148,6 +148,7 @@ namespace SmartConcepcion.Portal.Announcements
         void loadInfo()
         {
             txtTitle.InnerText = p_dtAnnouncementInfo.Rows[0]["title"].ToString();
+            txtsubtitle.InnerText = p_dtAnnouncementInfo.Rows[0]["subtitle"].ToString();
             string _filepath = "~\\Portal\\Announcements\\Banner\\" + p_dtAnnouncementInfo.Rows[0]["ID"].ToString() + p_dtAnnouncementInfo.Rows[0]["banner_extension"].ToString();
             imgBanner.ImageUrl = _filepath;
             lblContent.Text = p_dtAnnouncementInfo.Rows[0]["body_content"].ToString();

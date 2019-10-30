@@ -132,7 +132,7 @@
                                     </article>
                                     <div class="container-fluid">
                                         <div class="col-md-6 ">
-                                            <a href='View?ID=<%# Eval("ID") %>' class="btn btnload btn-lg">Read More</a>
+                                            <a href='View?ID=<%# Eval("ID") %>' class="btn btnload btn-lg">Read More >></a>
                                             <%--<asp:button runat="server" id="btnLoadmore" Text="Read More" CssClass="btn btnload btn-lg"/>--%>
                                         </div>
                                         <div class="col-md-6 ">
