@@ -31,18 +31,19 @@
                 <%--<asp:LinkButton runat="server" Text="New Incident Report" ID="lnkCreate" OnClick="lnkCreate_Click"/>--%>
                 <div style="overflow-x: scroll">
                     <asp:GridView runat="server" AutoGenerateColumns="false"
-                        ID="gvIncidentReport" CssClass="table table-default table-hover table-responsive table-dark" PageSize="5"
+                        ID="gvIncidentReport" CssClass="table table-default table-hover table-responsive table-dark" PageSize="20"
                         AllowPaging="true" AllowCustomPaging="true" OnPageIndexChanging="gvIncidentReport_PageIndexChanging">
 
                         <Columns>
                             <asp:BoundField HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden" DataField="ID" />
                             <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Title" DataField="title" />
-                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Incident Date" DataFormatString="{0:MMMM dd, yyyy - dddd}" DataField="incidentdate" />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Status" DataField="status" />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Incident Date" DataFormatString="{0:MMMM dd, yyyy}" DataField="incidentdate" />
                             <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Location" DataField="incident_location" />
 
                             <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Accused" DataField="accusedByName" />
                             <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Complainant" DataField="complainantByName" />
-                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Confrontation Date" DataFormatString="{0:MMMM dd, yyyy - dddd}" DataField="confrontation_date" />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Confrontation Date" DataFormatString="{0:MMMM dd, yyyy}" DataField="confrontation_date" />
                             <asp:TemplateField HeaderStyle-CssClass="thead-dark" ItemStyle-CssClass="text-center">
                                 <ItemTemplate>
                                     <asp:LinkButton runat="server" ToolTip='<%# Eval("ID") %>' CssClass="glyphicon glyphicon-edit" OnClick="Unnamed_Click" OnClientClick="openNav()" CausesValidation="false" />
@@ -126,8 +127,11 @@
                             <label>Remarks</label>
                             <asp:TextBox ID="txtRemarks" runat="server" placeholder="Remarks" CssClass="form-control" />
                         </div>
-
-                        <asp:Button runat="server" CssClass="btn btn-danger" Text="POST" ID="btnPostIR" OnClick="btnPostIR_Click" />
+                        <div class="row text-right">
+                            <asp:Button runat="server" CssClass="btn btn-warning" Text="CASE CLOSED" ID="btnCaseClose" OnClick="btnCaseClose_Click" OnClientClick="closeNav()" />
+                            <asp:Button runat="server" CssClass="btn btn-danger" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()"/>
+                        </div>
+                        
                     </div>
                 </div>
             </ContentTemplate>

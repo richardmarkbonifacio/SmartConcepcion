@@ -138,6 +138,7 @@ namespace SmartConcepcion.Portal.Incidents
             txtDetails.Text = "";
             txtConfrontation.Text = "";
             txtRemarks.Text = "";
+            txtLocation.Text = "";
             header.InnerText = "Create new Incident";
             upIncidentInfo.Update();
         }
@@ -180,6 +181,7 @@ namespace SmartConcepcion.Portal.Incidents
             DataTable _dttemp = csql.getIncidentReport_Details("SmartConcepcion", Convert.ToInt64(_lnk.ToolTip));
             header.InnerText = "Update Incident";
             txtTitle.Text = _dttemp.Rows[0]["title"].ToString();
+            txtLocation.Text = _dttemp.Rows[0]["incident_location"].ToString();
             txtIncidentDate.Text = Convert.ToDateTime(_dttemp.Rows[0]["incidentdate"].ToString()).ToLocalTime().ToString("yyyy-MM-ddTHH:mm:ss");
             txtConfrontation.Text = Convert.ToDateTime(_dttemp.Rows[0]["confrontation_date"].ToString()).ToLocalTime().ToString("yyyy-MM-ddTHH:mm:ss");
             txtAccused.Text = _dttemp.Rows[0]["accusedName"].ToString();
@@ -248,6 +250,14 @@ namespace SmartConcepcion.Portal.Incidents
         protected void Filter_Text(object sender, EventArgs e)
         {
             loadIncidentReport();
+        }
+
+        protected void btnCaseClose_Click(object sender, EventArgs e)
+        {
+            csql.SetIncidentClosed("SmartConcepcion", p_IncidentID.Value, p_UserID.Value);
+
+            loadIncidentReport();
+            clearIncidentInfo();
         }
     }
 }

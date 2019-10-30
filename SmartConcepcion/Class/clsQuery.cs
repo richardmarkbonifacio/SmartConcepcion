@@ -606,6 +606,36 @@ namespace SmartConcepcion.Class
             return result_Dt;
         }
 
+        public DataTable SetIncidentClosed(string cnstr, long ID, long updatedby)
+        {
+            try
+            {
+                result_Dt = new DataTable("Incident Case Closed");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Incident_report_close_set]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@incidentID", SqlDbType.BigInt).Value = ID;
+                cmd.Parameters.Add("@updatedby", SqlDbType.BigInt).Value = updatedby;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return result_Dt;
+        }
         public DataTable getIncidentReport_Details(string cnstr, long ID)
         {
             try
