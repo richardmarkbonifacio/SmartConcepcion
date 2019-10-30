@@ -23,21 +23,23 @@
                     <label class="col-md-2 text-right">Title</label>
                     <div class="col-md-10">
                         <asp:TextBox runat="server" CssClass="form-control" placeholder="Title" ID="txtTitle" />
+                          <asp:RequiredFieldValidator runat="server" ControlToValidate="txtContent" SetFocusOnError="true" ErrorMessage="Title must not be blank!" ForeColor="Red" />
                     </div>
                 </div>
 
                 <div class="container-fluid">
                     <label class="col-md-2 text-right">Subtitle</label>
                     <div class="col-md-10">
-                        <asp:TextBox runat="server" CssClass="form-control" placeholder="Subtitle" ID="txtSubtitle" />
+                        <asp:TextBox runat="server" CssClass="form-control" placeholder="Subtitle" ID="txtSubtitle"/>
+                          <asp:RequiredFieldValidator runat="server" ControlToValidate="txtContent" SetFocusOnError="true" ErrorMessage="Subtitle must not be blank!" ForeColor="Red" />
                     </div>
                 </div>
 
                 <div class="container-fluid">
                     <label class="col-md-2 text-right">Event Date</label>
                     <div class="col-md-10">
-                        <asp:TextBox runat="server" CssClass="form-control" TextMode="DateTimeLocal" ID="txtDate" />
-                        <asp:RequiredFieldValidator runat="server" ControlToValidate="txtDate" SetFocusOnError="true" ErrorMessage="Input some Details" ForeColor="Red" />
+                        <asp:TextBox runat="server" CssClass="form-control" TextMode="DateTimeLocal" ID="txtDate" width="250" />
+                        <asp:RequiredFieldValidator runat="server" ControlToValidate="txtDate" SetFocusOnError="true" ErrorMessage="Please put Time and Date" ForeColor="Red" />
                     </div>
                 </div>
 
@@ -48,14 +50,13 @@
                     <asp:TextBox runat="server" TextMode="MultiLine" Rows="10" CssClass="form-control" placeholder="Write something" ID="txtContent" />
                     <asp:RequiredFieldValidator runat="server" ControlToValidate="txtContent" SetFocusOnError="true" ErrorMessage="Input some Details" ForeColor="Red" />
                 </div>
-                
-                <hr />
 
-                <asp:Button runat="server" Text="P O S T" ID="btnPost" OnClick="btnPost_Click" CssClass="btn btnload pull-right" />
+            <%--    <asp:Button runat="server" Text="P O S T" ID="btnPost1" OnClick="btnPost_Click" CssClass="btn btnload pull-right" />--%>
+                <asp:LinkButton runat="server" ID="btnsave" OnClick="btnPost_Click" CssClass="btn btnload pull-right" >P O S T <i class="fa fa-check" aria-hidden="true"></i> </asp:LinkButton>
             </div>
         </ContentTemplate>
         <Triggers>
-                    <asp:PostBackTrigger ControlID="btnPost" />
+                    <asp:PostBackTrigger ControlID="btnsave" />
                 </Triggers>
     </asp:UpdatePanel>
     <script>

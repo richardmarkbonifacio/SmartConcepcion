@@ -82,7 +82,7 @@ label {
     color: green;
     font-size: 200px;
   }
-  .btn-default{
+  .btn-default , .btn-default:active{
       border-width: 0;
     outline: none;
     border-radius: 2px;
@@ -95,7 +95,7 @@ label {
     font-weight: 600;
     margin: 10px;
   }
-  .btn-default:hover, .btn-default:active{
+  .btn-default:hover, .btn-default:focus{
     border-width: 0;
     outline: none;
     border-radius: 2px;
@@ -260,7 +260,7 @@ Get In Touch
   <div class="row">
  
   <button type="button" class="btn btn-send pull-right" data-container="body">
-Send
+Send <i class="fa fa-send-o"></i>
 </button>
   </div>
  

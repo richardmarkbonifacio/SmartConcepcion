@@ -31,6 +31,15 @@ namespace SmartConcepcion.Portal.Announcements {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtTitle;
         
         /// <summary>
+        /// txtsubtitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtsubtitle;
+        
+        /// <summary>
         /// lblContent control.
         /// </summary>
         /// <remarks>
