@@ -19,7 +19,10 @@
                     <asp:TextBox runat="server" placeholder="Search by name" CssClass="form-control" ID="txtName" />
                 </div>
                 <div class="col-md-2">
-                    <asp:Button runat="server"  CssClass="btn btn-warning form-control" ID="btnFilter" OnClick="Filter_Text" CausesValidation="false" />
+                    <%--<asp:Button runat="server"  CssClass="btn btn-warning form-control" ID="btnFilter" OnClick="Filter_Text" CausesValidation="false" />--%>
+                    <button runat="server" onserverclick="Filter_Text" CausesValidation="false"  class="btn btn-mini btn-warning form-control" title="Search">
+<i class="fa fa-search" aria-hidden="true"></i> Search
+</button>
                 </div>
                 <div class="col-md-2">
                     <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New Incident Report" CausesValidation="false" CssClass="btn btn-danger form-control" />

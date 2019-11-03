@@ -49,24 +49,6 @@ namespace SmartConcepcion.Portal.Announcements {
         protected global::System.Web.UI.WebControls.Label lblContent;
         
         /// <summary>
-        /// upCommentSection control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upCommentSection;
-        
-        /// <summary>
-        /// txtComment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtComment;
-        
-        /// <summary>
         /// gvCommentSection control.
         /// </summary>
         /// <remarks>
@@ -83,6 +65,24 @@ namespace SmartConcepcion.Portal.Announcements {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnLoad;
+        
+        /// <summary>
+        /// upCommentSection control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upCommentSection;
+        
+        /// <summary>
+        /// txtComment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtComment;
         
         /// <summary>
         /// gvTopAnnouncement control.

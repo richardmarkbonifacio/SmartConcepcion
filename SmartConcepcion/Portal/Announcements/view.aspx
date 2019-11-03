@@ -139,6 +139,9 @@ height:90px;
     padding:15px;
      font-size:15px;
 }
+.table-comment{
+    border-color:transparent;
+}
 </style>
 
     
@@ -153,15 +156,10 @@ height:90px;
                 <asp:Label runat="server" ID="lblContent" CssClass="text-justify" />
 
             </article>
-            <hr />
-            <label for="subject">Leave a Comment</label>
-            <asp:UpdatePanel runat="server" ID="upCommentSection" UpdateMode="Conditional">
-                <ContentTemplate>
-                    
-                    <asp:TextBox runat="server" ID="txtComment" placeholder="Write something.." TextMode="MultiLine" Columns="5" />
-                    <asp:Button runat="server" Text="Submit" CssClass="btn-formsubmit" OnClick="btnComment_Click" />
-                    
-                    <asp:GridView runat="server" ID="gvCommentSection" AutoGenerateColumns="false" CssClass="table table-hover table-responsive table-dark">
+      
+       <div class="container-fluid">
+                      <h3>Comments<span class="badge">5</span></h3>
+                    <asp:GridView runat="server" ID="gvCommentSection" AutoGenerateColumns="false" CssClass="table table-hover table-responsive table-dark table-comment">
                         <Columns>
                             <asp:TemplateField HeaderStyle-CssClass="hidden">
                                 <ItemTemplate>
@@ -173,8 +171,17 @@ height:90px;
                             </asp:TemplateField>
                         </Columns>
                     </asp:GridView>
+               <asp:Button runat="server" CssClass="btn btn-nav" ID="btnLoad" Text="Load More" OnClick="btnLoad_Click" />
+           </div>
+        <hr />
+                         <label for="subject">Leave a Comment</label>
+            <asp:UpdatePanel runat="server" ID="upCommentSection" UpdateMode="Conditional">
+
+                <ContentTemplate>
                     
-                    <asp:Button runat="server" CssClass="btn btn-nav" ID="btnLoad" Text="Load More" OnClick="btnLoad_Click" />
+                    <asp:TextBox runat="server" ID="txtComment" placeholder="Write something.." TextMode="MultiLine" Columns="5" />
+                    <asp:Button runat="server" Text="Submit" CssClass="btn-formsubmit" OnClick="btnComment_Click" />
+                
                 </ContentTemplate>
             </asp:UpdatePanel>
             
