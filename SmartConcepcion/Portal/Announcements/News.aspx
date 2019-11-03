@@ -114,12 +114,12 @@
                     <Columns>
                         <asp:TemplateField>
                             <ItemTemplate>
-                                <asp:Image runat="server" ID="imgbanner" ToolTip='<%#Eval("ID") %>' CssClass="hidden"  />
+                                <asp:Image runat="server" ID="imgbanner" ToolTip='<%#Eval("ID") %>' CssClass="hidden" />
                                 <asp:Panel runat="server" ID="panelRow" CssClass="panelRow">
                                     <asp:Panel runat="server" ID="panelbgContainer" />
                                     <article>
                                         <h2><%# Eval("title") %></h2>
-                                        
+
                                         <div class="container-fluid">
                                             <h5><%# Eval("createdByName") %>,
                                             <i><%# Eval("datecreated", "{0:MMMM dd yyyy}") %></i></h5>
@@ -139,26 +139,25 @@
                                             <h3 class="text-right">Comments</h3>
                                         </div>
                                     </div>
-                                    
-                                    
+
+
                                 </asp:Panel>
                                 <hr />
                             </ItemTemplate>
                         </asp:TemplateField>
-
                     </Columns>
                 </asp:GridView>
-                <asp:Button runat="server" CssClass="btn btn-nav" ID="btnPrev" Text="PREV" OnClick="btnPrev_Click" />
-         <asp:Button runat="server" CssClass="btn btn-nav" ID="btnNext" Text="NEXT" OnClick="btnNext_Click" /> 
+                <asp:Button runat="server" CssClass="btn btn-nav" ID="btnPrev" Text="PREV" OnClick="btnPrev_Click" OnClientClick="return_to_top()" />
+                <asp:Button runat="server" CssClass="btn btn-nav" ID="btnNext" Text="NEXT" OnClick="btnNext_Click" OnClientClick="return_to_top()" />
             </div>
             <div class="col-md-3">
-                <asp:GridView runat="server" ID="gvTopAnnouncement" AutoGenerateColumns="false" CssClass="container-fluid" style="border:transparent; margin-top:20px;">
+                <asp:GridView runat="server" ID="gvTopAnnouncement" AutoGenerateColumns="false" CssClass="container-fluid" Style="border: transparent; margin-top: 20px;">
                     <Columns>
-              <asp:TemplateField HeaderText="TOP NEWS"  HeaderStyle-BackColor="lightgray" HeaderStyle-CssClass="widget-topnews hidden-xs">
+                        <asp:TemplateField HeaderText="TOP NEWS" HeaderStyle-BackColor="lightgray" HeaderStyle-CssClass="widget-topnews hidden-xs">
                             <ItemTemplate>
                                 <div class="capsule hidden-xs">
                                     <div class="right-news">
-                                        <h3><a href='View?ID=<%# Eval("ID") %>'> <%# Eval("title") %></a></h3>
+                                        <h3><a href='View?ID=<%# Eval("ID") %>'><%# Eval("title") %></a></h3>
                                         <p><%# Eval("sneak_peak") %></p>
                                     </div>
                                 </div>
@@ -168,27 +167,27 @@
                 </asp:GridView>
                 <hr />
                 <div class="capsule hidden-xs">
-                                    <div class="container-fluid fast-fact">
-                                        <h2>FAST FACTS</h2>
-                                        <hr />
-                                          <h4>Country:</h4> 
+                    <div class="container-fluid fast-fact">
+                        <h2>FAST FACTS</h2>
+                        <hr />
+                        <h4>Country:</h4>
 
-                                        <h4>Region:</h4>
-                                        <h4>District:</h4>
-                                        <h4>Province:</h4>
-                                        <h4>Area:</h4>
-                                        <h4>Demonym:</h4>
-                                          <h4>Founded:</h4>
-                                          <h4>Total Population:</h4>
-                                        <h4>Zip-code:</h4>
-                                        
-                                         
-                                    </div>
-                                </div>
+                        <h4>Region:</h4>
+                        <h4>District:</h4>
+                        <h4>Province:</h4>
+                        <h4>Area:</h4>
+                        <h4>Demonym:</h4>
+                        <h4>Founded:</h4>
+                        <h4>Total Population:</h4>
+                        <h4>Zip-code:</h4>
+
+
+                    </div>
+                </div>
             </div>
-      <script>
-   
-      </script>
+            <script>
+
+</script>
 
         </ContentTemplate>
     </asp:UpdatePanel>

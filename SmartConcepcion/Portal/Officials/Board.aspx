@@ -8,45 +8,24 @@
             <asp:HiddenField runat="server" ID="hfFrom" />
             <div class="row">
                 <div class="col-md-12">
-                    <asp:TextBox runat="server" placeholder="Chairman" CssClass="form-control" ID="txtChairman" onclick="openNameSuggestion('chairman')" ReadOnly="true" />
+                    <asp:TextBox runat="server" placeholder="Chairman" CssClass="form-control" ID="txtChairman" onclick="openNameSuggestion('capt')" ReadOnly="true" />
                 </div>
             </div>
             <h2>COUNCILOR</h2>
             <div class="row">
                 <div class="col-md-12">
-                    <asp:TextBox runat="server" placeholder="Councilor" CssClass="form-control" ReadOnly="true" onclick="openNameSuggestion('coun1')" />
+                    <asp:TextBox runat="server" placeholder="Councilor" CssClass="form-control" ReadOnly="true" onclick="openNameSuggestion('coun')" />
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <asp:TextBox runat="server" placeholder="Councilor" CssClass="form-control" ReadOnly="true" onclick="openNameSuggestion('coun2')"/>
-                </div>
+            <div class="container-fluid">
+                <asp:ListView runat="server" ID="lvCouncilor">
+                    <ItemTemplate>
+                        
+                        <asp:TextBox runat="server" placeholder="Councilor" Text='<%# Eval("officialName") %>' CssClass="form-control" ReadOnly="true" onclick="openNameSuggestion('coun')"/>
+                    </ItemTemplate>
+                </asp:ListView>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <asp:TextBox runat="server" placeholder="Councilor" CssClass="form-control" ReadOnly="true" onclick="openNameSuggestion('coun3')"/>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <asp:TextBox runat="server" placeholder="Councilor" CssClass="form-control" ReadOnly="true" onclick="openNameSuggestion('coun4')"/>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <asp:TextBox runat="server" placeholder="Councilor" CssClass="form-control" ReadOnly="true" onclick="openNameSuggestion('coun5')"/>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <asp:TextBox runat="server" placeholder="Councilor" CssClass="form-control" ReadOnly="true" onclick="openNameSuggestion('coun6')"/>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <asp:TextBox runat="server" placeholder="Councilor" CssClass="form-control" ReadOnly="true" onclick="openNameSuggestion('coun7')"/>
-                </div>
-            </div>
+
         </ContentTemplate>
     </asp:UpdatePanel>
     

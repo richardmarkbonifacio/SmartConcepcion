@@ -670,12 +670,12 @@ namespace SmartConcepcion.Class
 
         #endregion
 
-        #region Brgy Officials
-        public DataTable getBrgyOfficial(string cnstr, long brgyID)
+        #region Barangay
+        public DataSet getBrgyOfficial(string cnstr, long brgyID)
         {
             try
             {
-                result_Dt = new DataTable("Brgy Officials");
+                result_DS = new DataSet("Brgy Officials");
                 OpenCn(ref cn, cnstr);
                 cmd = new SqlCommand("[Brgy_official_get]", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -688,7 +688,10 @@ namespace SmartConcepcion.Class
                     {
                         using (da)
                         {
-                            da.Fill(result_Dt);
+                            da.Fill(result_DS);
+                            result_DS.Tables[0].TableName = "dtCapt";
+                            result_DS.Tables[1].TableName = "dtCouncilor";
+                            result_DS.Tables[2].TableName = "dtOther";
                         }
                     }
                 }
@@ -699,7 +702,7 @@ namespace SmartConcepcion.Class
                 throw;
             }
 
-            return result_Dt;
+            return result_DS;
         }
         public DataTable getBrgyList(string cnstr)
         {
@@ -726,6 +729,39 @@ namespace SmartConcepcion.Class
             {
 
                 throw;
+            }
+
+
+            return result_Dt;
+        }
+        public DataTable setBrgyOfficial(string cnstr, long brgyID, string role_code, long userID, long? replaceID, long updatedby)
+        {
+            try
+            {
+                result_Dt = new DataTable("Brgy Official Set");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Brgy_official_set]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@role_code", SqlDbType.VarChar, 10).Value = role_code;
+                cmd.Parameters.Add("@userID", SqlDbType.BigInt).Value = userID;
+                cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
+                cmd.Parameters.Add("@updatedby", SqlDbType.BigInt).Value = updatedby;
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
 
 

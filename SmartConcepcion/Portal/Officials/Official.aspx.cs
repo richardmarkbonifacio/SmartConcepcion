@@ -15,15 +15,15 @@ namespace SmartConcepcion.Portal.Officials
         DataView view;
         DataTable dttemp;
         #region Properties
-        public DataTable p_dtOfficial
+        public DataSet p_dsOfficial
         {
             get
             {
-                return (DataTable)ViewState["dtOfficial"];
+                return (DataSet)ViewState["dsOfficial"];
             }
             set
             {
-                ViewState["dtOfficial"] = value;
+                ViewState["dsOfficial"] = value;
             }
         }
         #endregion
@@ -34,22 +34,9 @@ namespace SmartConcepcion.Portal.Officials
         }
         void initOfficial()
         {
-            p_dtOfficial = csql.getBrgyOfficial("SmartConcepcion", p_BrgyID);
-            //CAPTAIN
-            view = new DataView();
-            view = p_dtOfficial.AsDataView();
-            view.RowFilter = "code = 'brgycptn'";
-            dttemp = view.ToTable();
-
-            lblCaptain.Text = dttemp.Rows[0]["officialName"].ToString();
-
-            //COUNCILOR
-            view = new DataView();
-            view = p_dtOfficial.AsDataView();
-            view.RowFilter = "code = 'brgycnclr'";
-            dttemp = view.ToTable();
-
-            loadListview(lvCouncilor, dttemp);
+            p_dsOfficial = csql.getBrgyOfficial("SmartConcepcion", p_BrgyID);
+            lblCaptain.Text = p_dsOfficial.Tables["dtCapt"].Rows[0]["officialName"].ToString();
+            loadListview(lvCouncilor, p_dsOfficial.Tables["dtCouncilor"]);
         }
     }
 }

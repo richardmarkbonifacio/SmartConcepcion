@@ -11,11 +11,61 @@ namespace SmartConcepcion.Portal.Officials
 {
     public partial class Board : clsInherited
     {
+        #region PROPERTIES
+        public long? p_replaceID
+        {
+            get
+            {
+                if (ViewState["replaceID"] != null)
+                {
+                    return Convert.ToInt32(ViewState["replaceID"]);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                ViewState["replaceID"] = value;
+            }
+        }
+        public long? p_OfficialID
+        {
+            get
+            {
+                if (ViewState["OfficialID"] != null)
+                {
+                    return Convert.ToInt32(ViewState["OfficialID"]);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                ViewState["OfficialID"] = value;
+            }
+        }
+        public DataSet p_dsOfficial
+        {
+            get
+            {
+                return (DataSet)ViewState["dsOfficial"];
+            }
+            set
+            {
+                ViewState["dsOfficial"] = value;
+            }
+        }
+        #endregion
         clsQuery csql = new clsQuery();
         DataTable dttemp;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+                loadOfficial();
         }
         protected void btnSearchUser_Click(object sender, EventArgs e)
         {
@@ -30,17 +80,8 @@ namespace SmartConcepcion.Portal.Officials
         {
             LinkButton _lnk = (LinkButton)sender;
 
-            if (hfFrom.Value == "accsd")
-            {
-                //txtAccused.Text = _lnk.Text;
-                //p_AccusedID = Convert.ToInt64(_lnk.ToolTip);
-            }
-            else
-            {
-                //txtComplainant.Text = _lnk.Text;
-                //p_ComplainantID = Convert.ToInt64(_lnk.ToolTip);
-            }
-            upBoard.Update();
+            csql.setBrgyOfficial("SmartConcepcion",p_BrgyID, hfFrom.Value, Convert.ToInt64(_lnk.ToolTip), null ,p_UserID.Value);
+            loadOfficial();
         }
 
         protected void lnkNotAResident_Click(object sender, EventArgs e)
@@ -57,6 +98,13 @@ namespace SmartConcepcion.Portal.Officials
                 //txtComplainant.Text = txtUserSearch.Text;
                 //p_ComplainantID = null;
             }
+            upBoard.Update();
+        }
+        void loadOfficial()
+        {
+            p_dsOfficial = csql.getBrgyOfficial("SmartConcepcion", p_BrgyID);
+            txtChairman.Text = p_dsOfficial.Tables["dtCapt"].Rows[0]["officialName"].ToString();
+            loadListview(lvCouncilor, p_dsOfficial.Tables["dtCoun"]);
             upBoard.Update();
         }
     }
