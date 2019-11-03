@@ -141,6 +141,7 @@
     <Content Include="images\Abstract-Envelope.svg" />
     <Content Include="images\BANNER.jpg" />
     <Content Include="images\bglogin.jpg" />
+    <Content Include="images\Flat-Mountains.svg" />
     <Content Include="images\loginbgbg.jpg" />
     <Content Include="images\noimage.jpg" />
     <Content Include="images\Rose-Petals.svg" />
@@ -377,6 +378,12 @@
     <Compile Include="Portal\Incidents\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Portal\Incidents\rpt\summon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>summon.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Portal\Officials\Board.aspx.cs">
       <DependentUpon>Board.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -430,6 +437,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Portal\Incidents\rpt\summon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>summon.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Portal\Reports\IRLetterOfInvitation.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>IRLetterOfInvitation.cs</LastGenOutput>
