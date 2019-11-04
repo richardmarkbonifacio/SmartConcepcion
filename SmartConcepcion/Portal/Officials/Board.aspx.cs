@@ -104,7 +104,7 @@ namespace SmartConcepcion.Portal.Officials
         {
             p_dsOfficial = csql.getBrgyOfficial("SmartConcepcion", p_BrgyID);
             txtChairman.Text = p_dsOfficial.Tables["dtCapt"].Rows[0]["officialName"].ToString();
-            loadListview(lvCouncilor, p_dsOfficial.Tables["dtCoun"]);
+            loadListview(lvCouncilor, p_dsOfficial.Tables["dtCouncilor"]);
             upBoard.Update();
         }
     }

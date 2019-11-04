@@ -194,6 +194,7 @@
     <Content Include="Portal\Community\Default.aspx" />
     <Content Include="Portal\Default.aspx" />
     <Content Include="Portal\Healthcare\Default.aspx" />
+    <Content Include="Portal\Healthcare\HealthRecord.aspx" />
     <Content Include="Portal\Incidents\Default.aspx" />
     <Content Include="Portal\Officials\Board.aspx" />
     <Content Include="Portal\Officials\Official.aspx" />
@@ -370,6 +371,13 @@
     </Compile>
     <Compile Include="Portal\Healthcare\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Healthcare\HealthRecord.aspx.cs">
+      <DependentUpon>HealthRecord.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Healthcare\HealthRecord.aspx.designer.cs">
+      <DependentUpon>HealthRecord.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Incidents\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
