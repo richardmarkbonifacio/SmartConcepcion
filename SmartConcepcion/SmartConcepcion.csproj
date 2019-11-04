@@ -141,7 +141,9 @@
     <Content Include="images\Abstract-Envelope.svg" />
     <Content Include="images\BANNER.jpg" />
     <Content Include="images\bglogin.jpg" />
-    <Content Include="images\Flat-Mountains.svg" />
+    <Content Include="images\Flat-Mountains.svg">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="images\loginbgbg.jpg" />
     <Content Include="images\noimage.jpg" />
     <Content Include="images\Rose-Petals.svg" />
@@ -358,6 +360,24 @@
     <Compile Include="Portal\Community\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Portal\Community\rpt\barangaycert.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>barangaycert.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Portal\Community\rpt\barangayclearance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>barangayclearance.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Portal\Community\rpt\indigency.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>indigency.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Portal\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -385,6 +405,18 @@
     </Compile>
     <Compile Include="Portal\Incidents\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Incidents\rpt\hearing.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>hearing.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Portal\Incidents\rpt\IRList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IRList.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Portal\Incidents\rpt\summon.cs">
       <AutoGen>True</AutoGen>
@@ -445,6 +477,26 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Portal\Community\rpt\barangaycert.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>barangaycert.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Portal\Community\rpt\barangayclearance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>barangayclearance.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Portal\Community\rpt\indigency.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>indigency.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Portal\Incidents\rpt\hearing.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>hearing.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Portal\Incidents\rpt\IRList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IRList.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Portal\Incidents\rpt\summon.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>summon.cs</LastGenOutput>
