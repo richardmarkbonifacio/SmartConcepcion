@@ -366,12 +366,6 @@
       <DependentUpon>barangaycert.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Portal\Community\rpt\barangayclearance.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>barangayclearance.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Portal\Community\rpt\indigency.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -480,10 +474,6 @@
     <EmbeddedResource Include="Portal\Community\rpt\barangaycert.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>barangaycert.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Portal\Community\rpt\barangayclearance.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>barangayclearance.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Portal\Community\rpt\indigency.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
