@@ -184,6 +184,15 @@ namespace SmartConcepcion.Portal.Healthcare {
         protected global::System.Web.UI.WebControls.CheckBox chk4ps;
         
         /// <summary>
+        /// gvMedicalRecord control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvMedicalRecord;
+        
+        /// <summary>
         /// btnVerify control.
         /// </summary>
         /// <remarks>
