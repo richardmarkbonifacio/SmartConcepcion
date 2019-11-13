@@ -191,6 +191,7 @@
     <Content Include="Portal\Beta\loading.aspx" />
     <Content Include="Portal\Beta\textbox_design.aspx" />
     <Content Include="Portal\Beta\WebForm1.aspx" />
+    <Content Include="Portal\Budget\Default.aspx" />
     <Content Include="Portal\Business\Default.aspx" />
     <Content Include="Portal\Business\FAQ.aspx" />
     <Content Include="Portal\Community\Default.aspx" />
@@ -200,6 +201,7 @@
     <Content Include="Portal\Incidents\Default.aspx" />
     <Content Include="Portal\Officials\Board.aspx" />
     <Content Include="Portal\Officials\Official.aspx" />
+    <Content Include="Portal\Projects\Default.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\custom\jquery-dialog.js" />
@@ -339,6 +341,13 @@
     <Compile Include="Portal\Beta\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Portal\Budget\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Budget\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Portal\Business\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -431,6 +440,13 @@
     </Compile>
     <Compile Include="Portal\Officials\Official.aspx.designer.cs">
       <DependentUpon>Official.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Projects\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Projects\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Reports\IRLetterOfInvitation.cs">
       <AutoGen>True</AutoGen>

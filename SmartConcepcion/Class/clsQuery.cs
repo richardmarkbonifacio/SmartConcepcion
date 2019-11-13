@@ -950,7 +950,7 @@ namespace SmartConcepcion.Class
             {
                 result_Dt = new DataTable("Business Create Update");
                 OpenCn(ref cn, cnstr);
-                cmd = new SqlCommand("[Business_set]", cn);
+                cmd = new SqlCommand("[]", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@ID", SqlDbType.BigInt).Value = ID;
                 cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
@@ -985,6 +985,74 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
+
+        public DataTable getHealth_record(string cnstr, long userID)
+        {
+            try
+            {
+                result_Dt = new DataTable("Health Record");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Health_record_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@userID", SqlDbType.BigInt).Value = userID;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return result_Dt;
+        }
+
+        public DataTable setHealth_record(string cnstr, long userID, string finding, string remarks, DateTime? med_date_from, DateTime? med_date_to, long createdby)
+        {
+            try
+            {
+                result_Dt = new DataTable("User Details");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Health_record_set]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@userID", SqlDbType.BigInt).Value = userID;
+                cmd.Parameters.Add("@findings", SqlDbType.VarChar, 150).Value = finding;
+                cmd.Parameters.Add("@remarks", SqlDbType.VarChar, 150).Value = remarks;
+                cmd.Parameters.Add("@med_date_from", SqlDbType.Date).Value = med_date_from;
+                cmd.Parameters.Add("@med_date_to", SqlDbType.Date).Value = med_date_to;
+                cmd.Parameters.Add("@createdby", SqlDbType.BigInt).Value = createdby;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return result_Dt;
+        }
+
         #endregion
     }
 }

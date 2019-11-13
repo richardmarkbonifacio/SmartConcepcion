@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="Health Records" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="HealthRecord.aspx.cs" Inherits="SmartConcepcion.Portal.Healthcare.HealthRecord" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <div class="header-banner">Health Record</div>
     <asp:UpdatePanel ID="upIncidentReport" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
@@ -67,7 +68,7 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <asp:UpdatePanel runat="server" ID="upIncidentInfo" UpdateMode="Conditional">
+        <asp:UpdatePanel runat="server" ID="upHealthInfo" UpdateMode="Conditional">
             <ContentTemplate>
                 <div class="col-md-6 col-md-offset-3" style="min-height: 100vh; background: white;">
                     <div class="container-fluid">
@@ -75,94 +76,52 @@
                         <asp:HiddenField runat="server" ID="hfFrom" />
                         <div class="container-fluid">
                             <div class="form-group">
-                                <div class="col-md-4 text-center">
-                                    <asp:TextBox runat="server" ID="txtFnam" placeholder="Firstname" CssClass="form-control sign-up-ctrl" />
-                                    
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <asp:TextBox runat="server" ID="txtMnam" placeholder="Middlename" CssClass="form-control sign-up-ctrl" />
-                                    
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <asp:TextBox runat="server" ID="txtLnam" placeholder="Lastname" CssClass="form-control sign-up-ctrl" />
-                                    
+                                <label class="col-md-4 text-right" for="txtHeight">Height</label>
+                                <div class="col-md-8 text-center">
+                                    <asp:TextBox runat="server" ID="txtHeight" TextMode="Number" placeholder="Height" CssClass="form-control sign-up-ctrl" />
                                 </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-6 text-center">
-                                    <asp:TextBox runat="server" ID="txtEmail" placeholder="Email" CssClass="form-control sign-up-ctrl" TextMode="Email" />
-                                    
-                                </div>
-                                <div class="col-md-6 text-center">
-                                    <asp:TextBox runat="server" ID="txtContact" placeholder="Contact No." CssClass="form-control sign-up-ctrl" />
-                                    
-                                </div>
-                                
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-4 text-center">
-                                    <asp:TextBox runat="server" ID="txtBday" placeholder="Birthdate" CssClass="form-control sign-up-ctrl" TextMode="Date" />
-                                    
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <asp:DropDownList runat="server" ID="ddGender" placeholder="Gender" CssClass="form-control sign-up-ctrl">
-                                        <asp:ListItem Text="Male" />
-                                        <asp:ListItem Text="Female" />
-                                        <asp:ListItem Text="Alien" />
-                                    </asp:DropDownList>
-                                    
-                                </div>
-                                <div class="col-md-4">
-                                    <asp:TextBox runat="server" ID="txt" placeholder="Voter's ID" CssClass="form-control sign-up-ctrl" />
-                                    
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-3">
-                                    <asp:CheckBox runat="server" ID="chkIndigent" CssClass="form-check-input" Checked="true" />
-                                    <label class="form-check-label" for="chkIndigent">Indigent</label>
-                                </div>
-                                <div class="col-md-3">
-                                    
-                                    <asp:CheckBox runat="server" ID="chkSenir" Checked="true" />
-                                    <label class="form-check-label" for="chkSenir">Senior Citizen</label>
-                                </div>
-                                <div class="col-md-3">
-                                    
-                                        <asp:CheckBox runat="server" ID="chkPwd" Checked="true" />
-                                        <label class="form-check-label" for="chkPwd">PWD</label>
-
-                                </div>
-                                <div class="col-md-3">
-                                    
-                                        <asp:CheckBox runat="server" ID="chk4ps" Checked="true" />
-                                        <label class="form-check-label" for="chk4ps">4PS</label>
+                                <label class="col-md-4 text-right" >Weight</label>
+                                <div class="col-md-8 text-center">
+                                    <asp:TextBox runat="server" ID="txtWeight" TextMode="Number" placeholder="Weight" CssClass="form-control sign-up-ctrl" />
                                 </div>
                             </div>
                         </div>
+                        <div class="text-right container-fluid">
+                            <asp:Button runat="server" CssClass="btn btn-danger" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />
+                        </div>
+                        
+                        <hr />
+
                         <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <%--<asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New User Profile" CausesValidation="false" />--%>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="col-md-9 col-xs-9">
+                                        <asp:TextBox runat="server" CssClass="form-control" ID="TextBox1" />
+                                    </div>
+                                    <div class="col-md-3 col-xs-3">
+                                        <asp:Button runat="server" CssClass="btn btn-warning" Text="search" ID="Button1" OnClick="btnSearchUser_Click" CausesValidation="false" />
+                                    </div>
+                                </div>
+                            </div>
                             <div style="overflow-x: scroll">
                                 <asp:GridView runat="server" AutoGenerateColumns="false"
                                     ID="gvMedicalRecord" CssClass="table table-default table-hover table-responsive table-dark" PageSize="5"
-                                    AllowPaging="true" AllowCustomPaging="true" OnPageIndexChanging="gvUserProfiles_PageIndexChanging">
+                                    AllowPaging="true" AllowCustomPaging="true" OnPageIndexChanging="gvMedicalRecord_PageIndexChanging">
 
                                     <Columns>
                                         <asp:BoundField HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden" DataField="ID" />
 
-                                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Fullname" DataField="fullname" />
+                                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Findings" DataField="findings" />
+                                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Remarks" DataField="remarks" />
 
-                                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Birthday" DataFormatString="{0:MMMM dd yyyy}" DataField="birthday" />
-                                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Contact No." DataField="contactno" />
-                                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Height" DataField="height" />
-                                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Weight" DataField="weight" />
-                                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Age" ItemStyle-CssClass="text-center" DataField="age" />
+                                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Medication start" DataFormatString="{0:MMMM dd yyyy}" DataField="med_date_from" />
+                                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Medication end" DataFormatString="{0:MMMM dd yyyy}" DataField="med_date_to" />
 
-
-                                        <asp:TemplateField HeaderStyle-CssClass="thead-dark" ItemStyle-CssClass="text-center">
-                                            <ItemTemplate>
-                                                <asp:LinkButton runat="server" ToolTip='<%# Eval("ID") %>' CssClass="glyphicon glyphicon-edit" OnClick="Unnamed_Click" OnClientClick="openNav()" CausesValidation="false" />
-                                            </ItemTemplate>
-                                        </asp:TemplateField>
                                     </Columns>
                                     <PagerTemplate>
 
@@ -182,18 +141,49 @@
                                 </asp:GridView>
                             </div>
                         </div>
-                        <div class="text-right container-fluid">
-                            <asp:Button runat="server" CssClass="btn btn-warning" Text="VERIFY" ID="btnVerify" OnClick="btnVerify_Click" OnClientClick="closeNav()" />
-                            <asp:Button runat="server" CssClass="btn btn-danger" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />
-                        </div>
                         
                     </div>
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>
-        
     </div>
 
+    <div id="dlgHealthRecord" title="Add Health Record" class="" style="display:none;">
+        <asp:UpdatePanel runat="server" ID="upHealtRecord" UpdateMode="Conditional">
+            <ContentTemplate>
+                <div class="container-fluid">
+                    <label class="col-md-4 text-right" for="txtHeight">Findings</label>
+                    <div class="col-md-8 text-center">
+                        <asp:TextBox runat="server" ID="txtFindings" placeholder="Findings" CssClass="form-control sign-up-ctrl" />
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <label class="col-md-4 text-right" for="txtHeight">Remarks</label>
+                    <div class="col-md-8 text-center">
+                        <asp:TextBox runat="server" ID="txtRemarks" placeholder="Height" CssClass="form-control sign-up-ctrl" />
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <label class="col-md-4 text-right" for="txtHeight">Start date</label>
+                    <div class="col-md-8 text-center">
+                        <asp:TextBox runat="server" ID="txtFrom" TextMode="Date" placeholder="Height" CssClass="form-control sign-up-ctrl" />
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <label class="col-md-4 text-right" for="txtHeight">End date</label>
+                    <div class="col-md-8 text-center">
+                        <asp:TextBox runat="server" ID="txtTo" TextMode="Date" placeholder="Height" CssClass="form-control sign-up-ctrl" />
+                    </div>
+                    <i><label style="color:darkred">NOTE: If medication is on going leave the end date blank</label></i>
+                </div>
+
+                <div class="container-fluid text-right">
+                    <asp:Button runat="server" CssClass="btn btn-danger" Text="SAVE" ID="btnSaveHealthReocrd" OnClick="btnSaveHealthReocrd_Click" />
+                </div>
+               
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
 
     
     <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>

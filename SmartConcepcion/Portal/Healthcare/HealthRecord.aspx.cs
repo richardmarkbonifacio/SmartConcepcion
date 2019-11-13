@@ -14,7 +14,7 @@ namespace SmartConcepcion.Portal.Healthcare
         clsQuery csql = new clsQuery();
         DataTable dttemp;
         #region Properties
-        public long? p_UserProfileID
+        public long? p_selectedUser
         {
             get
             {
@@ -33,42 +33,6 @@ namespace SmartConcepcion.Portal.Healthcare
             }
         }
 
-        public long? p_ComplainantID
-        {
-            get
-            {
-                if (ViewState["ComplainantID"] == null)
-                {
-                    return null;
-                }
-                else
-                {
-                    return Convert.ToInt64(ViewState["ComplainantID"].ToString());
-                }
-            }
-            set
-            {
-                ViewState["ComplainantID"] = value;
-            }
-        }
-        public long? p_AccusedID
-        {
-            get
-            {
-                if (ViewState["AccusedID"] == null)
-                {
-                    return null;
-                }
-                else
-                {
-                    return Convert.ToInt64(ViewState["AccusedID"].ToString());
-                }
-            }
-            set
-            {
-                ViewState["AccusedID"] = value;
-            }
-        }
         public int p_PageIndex
         {
             get
@@ -106,21 +70,27 @@ namespace SmartConcepcion.Portal.Healthcare
                 loadGridView(gvUserProfiles, dttemp);
                 upIncidentReport.Update();
             }
-
+        }
+        void loadHealthRecord()
+        {
+            dttemp = csql.getHealth_record("SmartConcepcion", p_selectedUser.Value);
+            //gvUserProfiles.PageIndex = p_PageIndex;
+            if (dttemp.Rows.Count > 0)
+            {
+                
+                loadGridView(gvMedicalRecord, dttemp);
+                upHealtRecord.Update();
+            }
         }
         void clearUserInfo()
         {
-            p_UserProfileID = null;
-            p_UserProfileID = null;
-            txtFnam.Text = "";
-            txtLnam.Text = "";
-            txtMnam.Text = "";
-            txtBday.Text = "";
-            txtContact.Text = "";
-            txtEmail.Text = "";
-
+            p_selectedUser = null;
+            p_selectedUser = null;
+            txtHeight.Text = "";
+            txtWeight.Text = "";
+            
             header.InnerText = "Create new Incident";
-            upIncidentInfo.Update();
+            upHealthInfo.Update();
         }
         protected void gvUserProfiles_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
@@ -143,9 +113,7 @@ namespace SmartConcepcion.Portal.Healthcare
         {
             try
             {
-                DataTable _dt = csql.UserCreateUpdate("SmartConcepcion", p_UserProfileID, txtEmail.Text, txtFnam.Text, txtMnam.Text, txtLnam.Text,
-                "", txtContact.Text, p_BrgyID, Convert.ToDateTime(txtBday.Text), p_UserID, chkIndigent.Checked, chkSenir.Checked,
-                    chkPwd.Checked, chk4ps.Checked);
+                //DataTable _dt = csql.setHealth_record("SmartConcepcion", p_UserProfileID, ;
 
                 loadUserProfile();
                 clearUserInfo();
@@ -164,20 +132,13 @@ namespace SmartConcepcion.Portal.Healthcare
             DataTable _dttemp = csql.getUser_Details("SmartConcepcion", Convert.ToInt64(_lnk.ToolTip));
             header.InnerText = "Update Account";
 
-            txtBday.Text = Convert.ToDateTime(_dttemp.Rows[0]["birthday"].ToString()).ToString("yyyy-MM-dd");
-            txtContact.Text = _dttemp.Rows[0]["contactno"].ToString();
-            txtEmail.Text = _dttemp.Rows[0]["email"].ToString();
-            txtFnam.Text = _dttemp.Rows[0]["firstname"].ToString();
-            txtLnam.Text = _dttemp.Rows[0]["lastname"].ToString();
-            txtMnam.Text = _dttemp.Rows[0]["middlename"].ToString();
+            txtHeight.Text = _dttemp.Rows[0]["height"].ToString();
+            txtWeight.Text = _dttemp.Rows[0]["weight"].ToString();
+            
 
-            chk4ps.Checked = Convert.ToBoolean(_dttemp.Rows[0]["is4ps"].ToString());
-            chkIndigent.Checked = Convert.ToBoolean(_dttemp.Rows[0]["isIndigent"].ToString());
-            chkPwd.Checked = Convert.ToBoolean(_dttemp.Rows[0]["isPWD"].ToString());
-            chkSenir.Checked = Convert.ToBoolean(_dttemp.Rows[0]["isSeniorCitizen"].ToString());
-
-            p_UserProfileID = Convert.ToInt64(_dttemp.Rows[0]["ID"].ToString());
-            upIncidentInfo.Update();
+            p_selectedUser = Convert.ToInt64(_dttemp.Rows[0]["ID"].ToString());
+            loadHealthRecord();
+            upHealthInfo.Update();
         }
 
         protected void btnSearchUser_Click(object sender, EventArgs e)
@@ -188,8 +149,25 @@ namespace SmartConcepcion.Portal.Healthcare
 
         protected void btnVerify_Click(object sender, EventArgs e)
         {
-            csql.postVerify("SmartConcepcion", p_UserProfileID.Value);
+            csql.postVerify("SmartConcepcion", p_selectedUser.Value);
             loadUserProfile();
+        }
+
+        protected void btnSaveHealthReocrd_Click(object sender, EventArgs e)
+        {
+            DateTime? _dtfrom = null, _dtto = null;
+            if (txtFrom.Text != "")
+                _dtfrom = Convert.ToDateTime(txtFrom.Text);
+            if (txtTo.Text != "")
+                _dtto =  Convert.ToDateTime(txtTo.Text);
+
+            csql.setHealth_record("SmartConcepcion", p_selectedUser.Value, txtFindings.Text, txtRemarks.Text, _dtfrom, _dtto, p_UserID.Value);
+            loadHealthRecord();
+        }
+
+        protected void gvMedicalRecord_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
         }
     }
 }
