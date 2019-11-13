@@ -136,7 +136,7 @@
                                             <%--<asp:button runat="server" id="btnLoadmore" Text="Read More" CssClass="btn btnload btn-lg"/>--%>
                                         </div>
                                         <div class="col-md-6 ">
-                                            <h3 class="text-right">Comments</h3>
+                                            <h3 class="text-right">Comments <a href="#"><span class="badge">5</span></a> </h3>
                                         </div>
                                     </div>
 
