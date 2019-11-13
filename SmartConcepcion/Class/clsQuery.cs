@@ -835,7 +835,6 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
-
         public DataTable setBusiness(string cnstr, long? ID, string email, string businessname,Int64 businestype, string description, string owner,
             string permitno, string contactno, string stbldgno, long brgyID, long? updatedby)
         {
@@ -1053,6 +1052,90 @@ namespace SmartConcepcion.Class
             return result_Dt;
         }
 
+        #endregion
+
+        #region Projects
+        public DataTable getProjectPaging(string cnstr, int pagesize, int pageno, DateTime? startdate, DateTime? enddate, string search, long? brgyID)
+        {
+            try
+            {
+                result_Dt = new DataTable("Project Paging Get");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Project_paging_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@PageSize", SqlDbType.Int).Value = pagesize;
+                cmd.Parameters.Add("@PageNumber", SqlDbType.Int).Value = pageno;
+                cmd.Parameters.Add("@startdate", SqlDbType.Date).Value = startdate;
+                cmd.Parameters.Add("@enddate", SqlDbType.Date).Value = enddate;
+                cmd.Parameters.Add("@brgyID", SqlDbType.Date).Value = brgyID;
+                cmd.Parameters.Add("@search", SqlDbType.VarChar).Value = search;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
+        public DataTable setProject(string cnstr, long? ID, long? brgyID, string title, string description, string status, decimal alloted_budget,
+            DataTable leader, long createdby)
+        {
+            try
+            {
+                result_Dt = new DataTable("Project Paging Get");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Project_set]", cn);
+
+                DataView _view = leader.AsDataView();
+                DataTable _tt_leader = _view.ToTable(true, "ID");
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@ID", SqlDbType.BigInt).Value = ID;
+                cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
+
+                cmd.Parameters.Add("@description", SqlDbType.VarChar).Value = description;
+                cmd.Parameters.Add("@title", SqlDbType.VarChar).Value = title;
+                cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
+                cmd.Parameters.Add("@alloted_budget", SqlDbType.BigInt).Value = alloted_budget;
+
+                cmd.Parameters.Add("@tt_leader", SqlDbType.BigInt).Value = _tt_leader;
+
+                cmd.Parameters.Add("@createdby", SqlDbType.BigInt).Value = createdby;
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
         #endregion
     }
 }
