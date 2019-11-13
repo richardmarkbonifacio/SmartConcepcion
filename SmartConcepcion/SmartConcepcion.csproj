@@ -202,6 +202,7 @@
     <Content Include="Portal\Officials\Board.aspx" />
     <Content Include="Portal\Officials\Official.aspx" />
     <Content Include="Portal\Projects\Default.aspx" />
+    <Content Include="Portal\termscondition.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\custom\jquery-dialog.js" />
@@ -454,6 +455,19 @@
       <DependentUpon>IRLetterOfInvitation.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Portal\REPORT\termscondition.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>termscondition.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Portal\termscondition.aspx.cs">
+      <DependentUpon>termscondition.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\termscondition.aspx.designer.cs">
+      <DependentUpon>termscondition.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -510,6 +524,10 @@
     <EmbeddedResource Include="Portal\Reports\IRLetterOfInvitation.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>IRLetterOfInvitation.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Portal\REPORT\termscondition.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>termscondition.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
