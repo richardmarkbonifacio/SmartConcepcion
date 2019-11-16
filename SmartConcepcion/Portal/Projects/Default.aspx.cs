@@ -13,8 +13,9 @@ namespace SmartConcepcion.Portal.Projects
     {
         clsQuery csql = new clsQuery();
         DataTable dttemp;
+
         #region Properties
-        public long? p_UserProfileID
+        public long? p_ProjectID
         {
             get
             {
@@ -32,7 +33,6 @@ namespace SmartConcepcion.Portal.Projects
                 ViewState["UserProfileID"] = value;
             }
         }
-
         public long? p_ComplainantID
         {
             get
@@ -87,6 +87,25 @@ namespace SmartConcepcion.Portal.Projects
                 ViewState["PageIndex"] = value;
             }
         }
+        public DataTable p_dtLeader
+        {
+            get
+            {
+                if (ViewState["dtLeader"] == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return ViewState["dtLeader"] as DataTable;
+                }
+            }
+            set
+            {
+                ViewState["dtLeader"] = value;
+            }
+        }
+
         #endregion
 
 
@@ -94,65 +113,76 @@ namespace SmartConcepcion.Portal.Projects
         {
             isAdmin();
             if (!IsPostBack)
-                loadUserProfile();
+                loadProjects();
         }
-        void loadUserProfile()
+        void loadProjects()
         {
-            dttemp = csql.getUserPaging("SmartConcepcion", gvUserProfiles.PageSize, p_PageIndex, txtUserSearch.Text, p_BrgyID);
-            gvUserProfiles.PageIndex = p_PageIndex;
+            DateTime? dtFrom = null, dtTo = null;
+
+            if (txtdtFrom.Text != "")
+                dtFrom = Convert.ToDateTime(txtdtFrom.Text);
+            if (txtdtTo.Text != "")
+                dtTo = Convert.ToDateTime(txtdtTo.Text);
+
+            dttemp = csql.getProjectPaging("SmartConcepcion", gvProjects.PageSize, gvProjects.PageIndex, dtFrom, dtTo, txtProjectname.Text, p_BrgyID);
+            gvProjects.PageIndex = p_PageIndex;
             if (dttemp.Rows.Count > 0)
             {
-                gvUserProfiles.VirtualItemCount = (int)dttemp.Rows[0]["reccount"];
-                loadGridView(gvUserProfiles, dttemp);
-                upIncidentReport.Update();
+                gvProjects.VirtualItemCount = (int)dttemp.Rows[0]["reccount"];
+                loadGridView(gvProjects, dttemp);
+                upProject.Update();
             }
 
+            p_dtLeader = initLeaderDatatable();
         }
-        void clearUserInfo()
-        {
-            p_UserProfileID = null;
-            p_UserProfileID = null;
-            txtFnam.Text = "";
-            txtLnam.Text = "";
-            txtMnam.Text = "";
-            txtBday.Text = "";
-            txtContact.Text = "";
-            txtEmail.Text = "";
 
-            header.InnerText = "Create new Incident";
-            upIncidentInfo.Update();
+        void clearProjectInfo()
+        {
+            p_ProjectID = null;
+            txtTitle.Text = "";
+            txtDesc.Text = "";
+            txtStart.Text = "";
+            txtEnd.Text = "";
+            
+            header.InnerText = "New Project";
+            upProjectInfo.Update();
         }
-        protected void gvUserProfiles_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        DataTable initLeaderDatatable()
+        {
+            dttemp = new DataTable("Leader");
+            dttemp.Columns.Add("ID");
+            dttemp.Columns.Add("Fullname");
+            return dttemp;
+        }
+
+        protected void gvProjects_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             if (IsPostBack)
             {
                 GridView _gvSender = (GridView)sender;
                 p_PageIndex = e.NewPageIndex;
-                loadUserProfile();
-                clearUserInfo();
-
+                loadProjects();
+                clearProjectInfo();
             }
         }
 
         protected void lnkCreate_Click(object sender, EventArgs e)
         {
-            clearUserInfo();
+            clearProjectInfo();
         }
 
-        protected void btnPostIR_Click(object sender, EventArgs e)
+        protected void btnPostProject_Click(object sender, EventArgs e)
         {
             try
             {
-                DataTable _dt = csql.UserCreateUpdate("SmartConcepcion", p_UserProfileID, txtEmail.Text, txtFnam.Text, txtMnam.Text, txtLnam.Text,
-                "", txtContact.Text, p_BrgyID, Convert.ToDateTime(txtBday.Text), p_UserID, chkIndigent.Checked, chkSenir.Checked,
-                    chkPwd.Checked, chk4ps.Checked);
+                DataTable _dt = csql.setProject("SmartConcepcion", p_ProjectID, p_BrgyID, txtTitle.Text,txtDesc.Text, "ptd", Convert.ToDecimal(txtBudget.Text),
+                    Convert.ToDateTime(txtStart.Text),Convert.ToDateTime(txtEnd.Text),  p_dtLeader, p_UserID.Value);
 
-                loadUserProfile();
-                clearUserInfo();
+                loadProjects();
+                clearProjectInfo();
             }
             catch (Exception)
             {
-
                 throw;
             }
 
@@ -161,35 +191,50 @@ namespace SmartConcepcion.Portal.Projects
         protected void Unnamed_Click(object sender, EventArgs e)
         {
             LinkButton _lnk = (LinkButton)sender;
-            DataTable _dttemp = csql.getUser_Details("SmartConcepcion", Convert.ToInt64(_lnk.ToolTip));
-            header.InnerText = "Update Account";
-
-            txtBday.Text = Convert.ToDateTime(_dttemp.Rows[0]["birthday"].ToString()).ToString("yyyy-MM-dd");
-            txtContact.Text = _dttemp.Rows[0]["contactno"].ToString();
-            txtEmail.Text = _dttemp.Rows[0]["email"].ToString();
-            txtFnam.Text = _dttemp.Rows[0]["firstname"].ToString();
-            txtLnam.Text = _dttemp.Rows[0]["lastname"].ToString();
-            txtMnam.Text = _dttemp.Rows[0]["middlename"].ToString();
-
-            chk4ps.Checked = Convert.ToBoolean(_dttemp.Rows[0]["is4ps"].ToString());
-            chkIndigent.Checked = Convert.ToBoolean(_dttemp.Rows[0]["isIndigent"].ToString());
-            chkPwd.Checked = Convert.ToBoolean(_dttemp.Rows[0]["isPWD"].ToString());
-            chkSenir.Checked = Convert.ToBoolean(_dttemp.Rows[0]["isSeniorCitizen"].ToString());
-
-            p_UserProfileID = Convert.ToInt64(_dttemp.Rows[0]["ID"].ToString());
-            upIncidentInfo.Update();
+            DataTable _dttemp = csql.getProjectDetails("SmartConcepcion", Convert.ToInt64(_lnk.ToolTip));
+            header.InnerText = "Update Project Info";
+            txtTitle.Text = _dttemp.Rows[0]["title"].ToString();
+            txtDesc.Text = _dttemp.Rows[0]["description"].ToString();
+            txtBudget.Text = _dttemp.Rows[0]["title"].ToString();
+            p_ProjectID = Convert.ToInt64(_dttemp.Rows[0]["ID"].ToString());
+            upProjectInfo.Update();
         }
 
-        protected void btnSearchUser_Click(object sender, EventArgs e)
+        protected void btnProject_Click(object sender, EventArgs e)
         {
             p_PageIndex = 0; //Reset index in searching
-            loadUserProfile();
+            loadProjects();
         }
 
         protected void btnVerify_Click(object sender, EventArgs e)
         {
-            csql.postVerify("SmartConcepcion", p_UserProfileID.Value);
-            loadUserProfile();
+            csql.postVerify("SmartConcepcion", p_ProjectID.Value);
+            loadProjects();
+        }
+
+        protected void gvProjectLeader_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+        }
+        protected void btnSearchUser_Click(object sender, EventArgs e)
+        {
+            dttemp = csql.getUserPaging("SmartConcepcion", 5, 0, txtUserSearch.Text, p_BrgyID);
+            if (dttemp.Rows.Count > 0)
+            {
+                loadGridView(gvTemplateError, dttemp);
+                upNameSuggestion.Update();
+            }
+        }
+        protected void lnkSelectResident_Click(object sender, EventArgs e)
+        {
+            LinkButton _lnk = (LinkButton)sender;
+            DataRow _dr = p_dtLeader.NewRow();
+            _dr["ID"] = _lnk.ToolTip;
+            _dr["Fullname"] = _lnk.Text;
+
+            p_dtLeader.Rows.Add(_dr);
+            loadGridView(gvProjectLeader, p_dtLeader);
+            upProjectInfo.Update();
         }
     }
 }

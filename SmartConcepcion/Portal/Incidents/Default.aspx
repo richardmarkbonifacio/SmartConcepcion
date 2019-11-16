@@ -9,10 +9,10 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="input-daterange input-group">
-                        
-                        <asp:TextBox runat="server" TextMode="Date" CssClass="form-control" ID="txtFrom"  />
+
+                        <asp:TextBox runat="server" TextMode="Date" CssClass="form-control" ID="txtFrom" />
                         <span class="input-group-addon">to</span>
-                        <asp:TextBox runat="server" TextMode="Date" CssClass="form-control" ID="txtTo"/>
+                        <asp:TextBox runat="server" TextMode="Date" CssClass="form-control" ID="txtTo" />
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -20,9 +20,9 @@
                 </div>
                 <div class="col-md-2">
                     <%--<asp:Button runat="server"  CssClass="btn btn-warning form-control" ID="btnFilter" OnClick="Filter_Text" CausesValidation="false" />--%>
-                    <button runat="server" onserverclick="Filter_Text" CausesValidation="false"  class="btn btn-mini btn-warning form-control" title="Search">
-<i class="fa fa-search" aria-hidden="true"></i> Search
-</button>
+                    <button runat="server" onserverclick="Filter_Text" causesvalidation="false" class="btn btn-mini btn-warning form-control" title="Search">
+                        <i class="fa fa-search" aria-hidden="true"></i>Search
+                    </button>
                 </div>
                 <div class="col-md-2">
                     <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New Incident Report" CausesValidation="false" CssClass="btn btn-danger form-control" />

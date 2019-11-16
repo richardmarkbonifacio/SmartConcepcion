@@ -1067,7 +1067,7 @@ namespace SmartConcepcion.Class
                 cmd.Parameters.Add("@PageNumber", SqlDbType.Int).Value = pageno;
                 cmd.Parameters.Add("@startdate", SqlDbType.Date).Value = startdate;
                 cmd.Parameters.Add("@enddate", SqlDbType.Date).Value = enddate;
-                cmd.Parameters.Add("@brgyID", SqlDbType.Date).Value = brgyID;
+                cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
                 cmd.Parameters.Add("@search", SqlDbType.VarChar).Value = search;
 
                 da = new SqlDataAdapter(cmd);
@@ -1092,7 +1092,7 @@ namespace SmartConcepcion.Class
             return result_Dt;
         }
         public DataTable setProject(string cnstr, long? ID, long? brgyID, string title, string description, string status, decimal alloted_budget,
-            DataTable leader, long createdby)
+            DateTime startdate, DateTime enddate, DataTable leader, long createdby)
         {
             try
             {
@@ -1112,7 +1112,10 @@ namespace SmartConcepcion.Class
                 cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
                 cmd.Parameters.Add("@alloted_budget", SqlDbType.BigInt).Value = alloted_budget;
 
-                cmd.Parameters.Add("@tt_leader", SqlDbType.BigInt).Value = _tt_leader;
+                cmd.Parameters.Add("@startdate", SqlDbType.Date).Value = startdate;
+                cmd.Parameters.Add("@enddate", SqlDbType.Date).Value = enddate;
+
+                cmd.Parameters.Add("@tt_leader", SqlDbType.Structured).Value = _tt_leader;
 
                 cmd.Parameters.Add("@createdby", SqlDbType.BigInt).Value = createdby;
                 da = new SqlDataAdapter(cmd);
@@ -1136,6 +1139,38 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
+        public DataTable getProjectDetails(string cnstr, long? ID)
+        {
+            try
+            {
+                result_Dt = new DataTable("Project Info Get");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Project_details_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@projectID", SqlDbType.BigInt).Value = ID;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
+
         #endregion
     }
 }

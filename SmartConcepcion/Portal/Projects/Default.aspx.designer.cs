@@ -13,49 +13,67 @@ namespace SmartConcepcion.Portal.Projects {
     public partial class Default {
         
         /// <summary>
-        /// upIncidentReport control.
+        /// upProject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upIncidentReport;
+        protected global::System.Web.UI.UpdatePanel upProject;
         
         /// <summary>
-        /// txtUserSearch control.
+        /// txtProjectname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserSearch;
+        protected global::System.Web.UI.WebControls.TextBox txtProjectname;
         
         /// <summary>
-        /// btnSearchUser control.
+        /// txtdtFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearchUser;
+        protected global::System.Web.UI.WebControls.TextBox txtdtFrom;
         
         /// <summary>
-        /// gvUserProfiles control.
+        /// txtdtTo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvUserProfiles;
+        protected global::System.Web.UI.WebControls.TextBox txtdtTo;
         
         /// <summary>
-        /// upHealthInfo control.
+        /// btnProject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upHealthInfo;
+        protected global::System.Web.UI.WebControls.Button btnProject;
+        
+        /// <summary>
+        /// gvProjects control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvProjects;
+        
+        /// <summary>
+        /// upProjectInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upProjectInfo;
         
         /// <summary>
         /// header control.
@@ -112,93 +130,66 @@ namespace SmartConcepcion.Portal.Projects {
         protected global::System.Web.UI.WebControls.TextBox txtEnd;
         
         /// <summary>
-        /// btnPostIR control.
+        /// txtBudget control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPostIR;
+        protected global::System.Web.UI.WebControls.TextBox txtBudget;
         
         /// <summary>
-        /// TextBox1 control.
+        /// btnPostProject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.Button btnPostProject;
         
         /// <summary>
-        /// Button1 control.
+        /// gvProjectLeader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.GridView gvProjectLeader;
         
         /// <summary>
-        /// gvMedicalRecord control.
+        /// upNameSuggestion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvMedicalRecord;
+        protected global::System.Web.UI.UpdatePanel upNameSuggestion;
         
         /// <summary>
-        /// upHealtRecord control.
+        /// txtUserSearch control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upHealtRecord;
+        protected global::System.Web.UI.WebControls.TextBox txtUserSearch;
         
         /// <summary>
-        /// txtFindings control.
+        /// btnSearchUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFindings;
+        protected global::System.Web.UI.WebControls.Button btnSearchUser;
         
         /// <summary>
-        /// txtRemarks control.
+        /// gvTemplateError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRemarks;
-        
-        /// <summary>
-        /// txtFrom control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFrom;
-        
-        /// <summary>
-        /// txtTo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTo;
-        
-        /// <summary>
-        /// btnSaveHealthReocrd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSaveHealthReocrd;
+        protected global::System.Web.UI.WebControls.GridView gvTemplateError;
     }
 }
