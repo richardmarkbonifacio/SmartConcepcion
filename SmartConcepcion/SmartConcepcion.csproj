@@ -201,7 +201,7 @@
     <Content Include="Portal\Incidents\Default.aspx" />
     <Content Include="Portal\Officials\Board.aspx" />
     <Content Include="Portal\Officials\Official.aspx" />
-    <Content Include="Portal\Projects\Default.aspx" />
+    <Content Include="Portal\privacy.aspx" />
     <Content Include="Portal\termscondition.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -442,12 +442,12 @@
     <Compile Include="Portal\Officials\Official.aspx.designer.cs">
       <DependentUpon>Official.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Portal\Projects\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Portal\privacy.aspx.cs">
+      <DependentUpon>privacy.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Portal\Projects\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="Portal\privacy.aspx.designer.cs">
+      <DependentUpon>privacy.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Reports\IRLetterOfInvitation.cs">
       <AutoGen>True</AutoGen>
@@ -455,7 +455,7 @@
       <DependentUpon>IRLetterOfInvitation.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Portal\REPORT\termscondition.cs">
+    <Compile Include="Portal\Reports\termscondition.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>termscondition.rpt</DependentUpon>
@@ -525,7 +525,7 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>IRLetterOfInvitation.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Portal\REPORT\termscondition.rpt">
+    <EmbeddedResource Include="Portal\Reports\termscondition.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>termscondition.cs</LastGenOutput>
     </EmbeddedResource>
