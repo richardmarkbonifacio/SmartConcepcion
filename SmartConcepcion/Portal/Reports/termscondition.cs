@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SmartConcepcion.Portal.REPORT {
+namespace SmartConcepcion.Portal.Reports {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace SmartConcepcion.Portal.REPORT {
         
         public override string FullResourceName {
             get {
-                return "SmartConcepcion.Portal.REPORT.termscondition.rpt";
+                return "SmartConcepcion.Portal.Reports.termscondition.rpt";
             }
             set {
                 // Do nothing

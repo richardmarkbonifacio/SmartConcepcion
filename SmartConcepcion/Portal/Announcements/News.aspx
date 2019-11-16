@@ -158,6 +158,7 @@
                                 <div class="capsule hidden-xs">
                                     <div class="right-news">
                                         <h3><a href='View?ID=<%# Eval("ID") %>'><%# Eval("title") %></a></h3>
+                                           <i><b><%# Eval("datecreated", "{0:MMMM dd yyyy}") %></i></b></h5>
                                         <p><%# Eval("sneak_peak") %></p>
                                     </div>
                                 </div>
