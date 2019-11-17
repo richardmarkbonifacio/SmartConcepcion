@@ -103,7 +103,29 @@ namespace SmartConcepcion.Class
                 }
             }
         }
-        
+
+        public string p_firstname
+        {
+            get
+            {
+                JArray jUserData;
+                string userdata = "", result = "";
+                getTickUserData(ref userdata);
+
+                if (!userdata.Equals(""))
+                {
+                    jUserData = JArray.Parse(userdata);
+                    result = (string)jUserData[5];
+                    return result;
+                }
+                else
+                {
+                    FormsAuthentication.RedirectToLoginPage();
+                    return "";
+                }
+            }
+        }
+
         #endregion
 
         public bool b_hasrow(DataTable dt)

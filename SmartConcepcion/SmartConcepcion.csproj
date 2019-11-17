@@ -202,6 +202,7 @@
     <Content Include="Portal\Officials\Board.aspx" />
     <Content Include="Portal\Officials\Official.aspx" />
     <Content Include="Portal\privacy.aspx" />
+    <Content Include="Portal\Projects\Default.aspx" />
     <Content Include="Portal\termscondition.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -448,6 +449,13 @@
     </Compile>
     <Compile Include="Portal\privacy.aspx.designer.cs">
       <DependentUpon>privacy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Projects\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Projects\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Reports\IRLetterOfInvitation.cs">
       <AutoGen>True</AutoGen>
