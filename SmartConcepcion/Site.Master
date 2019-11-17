@@ -107,25 +107,15 @@ body::-webkit-scrollbar-thumb {
                     </ul>
                 </li>
                 <li><a href="#" runat="server">MEDIA</a></li>
-                     <li>
+
+                <li class="pull-right">
                     <a href="#"><asp:Label runat="server" ID="lblFullname" Text="Howdy admin" /> </a>
-                             <ul class="nav-dropdown">
-                     <li><a href="#">MY NOTIFICATION</a></li>
+                    <ul class="nav-dropdown">
+                        <li><a href="#">MY NOTIFICATION</a></li>
                         <li><asp:LinkButton runat="server" Text="LOG OUT" OnClick="btnSignOut" /> </li>
                     </ul>
                 </li>
                 
-
-              <%--  <li>
-                    <button class="btn btn-navbar btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">MY PROFILE</a></li>
-                        <li><a href="#">MY NOTIFICATION</a></li>
-                        <li><asp:LinkButton runat="server" Text="LOG OUT" OnClick="btnSignOut" /> </li>
-                    </ul>
-                </li>--%>
             </ul>
         </div>
         
