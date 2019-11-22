@@ -1110,7 +1110,7 @@ namespace SmartConcepcion.Class
                 cmd.Parameters.Add("@description", SqlDbType.VarChar).Value = description;
                 cmd.Parameters.Add("@title", SqlDbType.VarChar).Value = title;
                 cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
-                cmd.Parameters.Add("@alloted_budget", SqlDbType.BigInt).Value = alloted_budget;
+                cmd.Parameters.Add("@alloted_budget", SqlDbType.Decimal).Value = alloted_budget;
 
                 cmd.Parameters.Add("@startdate", SqlDbType.Date).Value = startdate;
                 cmd.Parameters.Add("@enddate", SqlDbType.Date).Value = enddate;
@@ -1171,6 +1171,87 @@ namespace SmartConcepcion.Class
             return result_Dt;
         }
 
+        #endregion
+
+        #region Budget
+        public DataTable getBudgetPaging(string cnstr, int pagesize, int pageno, DateTime? startdate, DateTime? enddate, string search, long? brgyID)
+        {
+            try
+            {
+                result_Dt = new DataTable("Budget Paging Get");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Budget_paging_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@PageSize", SqlDbType.Int).Value = pagesize;
+                cmd.Parameters.Add("@PageNumber", SqlDbType.Int).Value = pageno;
+                cmd.Parameters.Add("@dtfrom", SqlDbType.Date).Value = startdate;
+                cmd.Parameters.Add("@dtto", SqlDbType.Date).Value = enddate;
+                cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
+                cmd.Parameters.Add("@search", SqlDbType.VarChar).Value = search;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
+        public DataTable setBudget(string cnstr, long? brgyID, string description, bool cashflow, decimal amount,
+            DateTime startdate, DateTime enddate, DataTable leader, long createdby)
+        {
+            try
+            {
+                result_Dt = new DataTable("Project Paging Get");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Project_set]", cn);
+
+                DataView _view = leader.AsDataView();
+                DataTable _tt_leader = _view.ToTable(true, "ID");
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                
+                cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
+
+                cmd.Parameters.Add("@description", SqlDbType.VarChar).Value = description;
+                cmd.Parameters.Add("@status", SqlDbType.Bit).Value = cashflow;
+                cmd.Parameters.Add("@alloted_budget", SqlDbType.Decimal).Value = amount;
+
+                cmd.Parameters.Add("@createdby", SqlDbType.BigInt).Value = createdby;
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
         #endregion
     }
 }

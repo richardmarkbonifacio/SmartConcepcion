@@ -48,23 +48,36 @@
 
         <style>
             body::-webkit-scrollbar {
-    width: 4px;
-}
- 
-body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
- 
-body::-webkit-scrollbar-thumb {
-  background-color: #f99827;
-  outline: 1px solid slategrey;
-}
+                width: 4px;
+            }
+
+            body::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            }
+
+            body::-webkit-scrollbar-thumb {
+                background-color: #f99827;
+                outline: 1px solid slategrey;
+            }
+            .emergency{
+                position: fixed;
+                height: 100vh;
+                width: 100%;
+                top: 0;
+                z-index: 99999;
+                background-color: darkred;
+                text-align:center;
+                padding: 25px;
+                color:#fff;
+            }
+            .emergency img{
+                width: 50%;
+                height: 50vh;
+            }
+        </style>
 
 
-      </style>
-         <div id="cssmenu" class="container">
-            
-  
+        <div id="cssmenu" class="container">
             <ul>
                 <li>
                     <div class="logo hidden-xs">
@@ -72,7 +85,6 @@ body::-webkit-scrollbar-thumb {
                             <img src="~/images/logo3.png" class="logo" runat="server" /></a>
                     </div>
                 </li>
-
 
                 <li><a class="active" href="~/Portal/" runat="server">HOME</a></li>
 
@@ -86,7 +98,7 @@ body::-webkit-scrollbar-thumb {
                 </li>
                 <li>
                     <a href="#">BUSINESS</a>
-                            <ul class="nav-dropdown">
+                    <ul class="nav-dropdown">
                         <li><a href="~/Portal/Business/" runat="server">BUSINESS LIST</a></li>
                         <li><a href="#">BUSINESS DIRECTORY</a></li>
                         <li><a href="~/Portal/Business/FAQ" runat="server">FAQ</a></li>
@@ -97,7 +109,7 @@ body::-webkit-scrollbar-thumb {
                 <li><a href="~/Portal/Healthcare/HealthRecord" runat="server">HEALTHCARE</a></li>
                 <li>
                     <a href="#">BARANGAY</a>
-                             <ul class="nav-dropdown">
+                    <ul class="nav-dropdown">
                         <li><a href="~/Portal/Barangay/Dashboard" runat="server">DASHBOARD</a></li>
                         <li><a href="~/Portal/Incidents/" runat="server">INCIDENT REPORT</a></li>
                         <li><a href="~/Portal/Community/" runat="server">COMMUNITY</a></li>
@@ -109,16 +121,31 @@ body::-webkit-scrollbar-thumb {
                 <li><a href="#" runat="server">MEDIA</a></li>
 
                 <li class="pull-right">
-                    <a href="#"><asp:Label runat="server" ID="lblFullname" Text="Howdy admin" /> </a>
+                    <a href="#">
+                        <asp:Label runat="server" ID="lblFullname" Text="Howdy admin" />
+                    </a>
                     <ul class="nav-dropdown">
                         <li><a href="#">MY NOTIFICATION</a></li>
-                        <li><asp:LinkButton runat="server" Text="LOG OUT" OnClick="btnSignOut" /> </li>
+                        <li>
+                            <asp:LinkButton runat="server" Text="LOG OUT" OnClick="btnSignOut" />
+                        </li>
                     </ul>
                 </li>
-                
+
             </ul>
         </div>
         
+        <div class="container emergency">
+            <img runat="server" src="~/images/warning.svg" alt="WARNING" />
+            <h1>
+                EMERGENCY ALERT
+            </h1>
+            <span>
+                Emergency details
+            </span>
+            
+        </div>
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
@@ -172,11 +199,6 @@ body::-webkit-scrollbar-thumb {
                         <li>Landline:+ 204606</li>
                     </ul>
 
-
-
-                    <%--<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-    <input type="submit" value="Submit">--%>
                 </div>
             </div>
             <a href="javascript:" id="return-to-top" onclick="return_to_top()"><i class="glyphicon glyphicon-triangle-top"></i></a>
@@ -188,7 +210,6 @@ body::-webkit-scrollbar-thumb {
         </footer>
 
 
-        <%--<script src="../Scripts/jquery-3.3.1.min.js"></script>--%>
         <script>$(window).scroll(function() {
             if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
                 $('#return-to-top').fadeIn(200);    // Fade in the arrow
@@ -217,10 +238,6 @@ body::-webkit-scrollbar-thumb {
 
         </script>
       
-
-
-
-
     </form>
 </body>
 </html>
