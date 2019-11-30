@@ -123,30 +123,23 @@
                                         <%--   <input type="checkbox" />--%>
                                         <asp:CheckBox runat="server" ID="RememberMe" />
                                         <span class="slider round"></span>
-
                                     </label>
-
                                     <div class="labeltoggle">Remember Me</div>
                                 </div>
-                                
-                        <div class="row">
-                             <div class="container-fluid text-center">
-                                    <a class="forgot" href="#">Forgot Password?</a>
-                                </div>
-                            <div class="container-fluid text-center">
 
-                               <span class="notreg">Not registered?</span> <a class="create" href="#" data-toggle="modal" data-target="#myModal">CREATE ACCOUNT</a>
+                                <div class="row">
+                                    <div class="container-fluid text-center">
+                                        <a class="forgot" href="#">Forgot Password?</a>
+                                    </div>
+                                    <div class="container-fluid text-center">
+                                        <span class="notreg">Not registered?</span> <a class="create" href="#" data-toggle="modal" data-target="#myModal">CREATE ACCOUNT</a>
+                                    </div>
+                                </div>
                             </div>
-                           
-                           
                         </div>
                     </div>
-
                 </div>
             </div>
-                               
-                            </div>
-                        </div>
 
 
             <div class="modal fade" id="myModal">
@@ -166,19 +159,35 @@
                                     <div class="col-md-4">
                                         <asp:TextBox runat="server" ID="txtFnam" placeholder="Firstname" CssClass="form-control sign-up-ctrl" />
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <asp:TextBox runat="server" ID="txtMnam" placeholder="Middlename" CssClass="form-control sign-up-ctrl" />
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <asp:TextBox runat="server" ID="txtLnam" placeholder="Lastname" CssClass="form-control sign-up-ctrl" />
                                     </div>
+                                    <div class="col-md-2">
+                                        <asp:TextBox runat="server" ID="txtSuffix" placeholder="Suffix" CssClass="form-control sign-up-ctrl" />
+                                    </div>
                                 </div>
+
                                 <div class="form-group">
                                     <div class="col-md-4">
                                         <asp:TextBox runat="server" ID="txtEmail" placeholder="Email" CssClass="form-control sign-up-ctrl" TextMode="Email" />
                                     </div>
                                     <div class="col-md-4">
                                         <asp:TextBox runat="server" ID="txtContact" placeholder="Contact No." CssClass="form-control sign-up-ctrl" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <asp:TextBox runat="server" ID="txtNationality" placeholder="Nationality" CssClass="form-control sign-up-ctrl" />
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <div class="col-md-4">
+                                        <asp:TextBox runat="server" ID="txtStbldgno" placeholder="St. Bldg No." CssClass="form-control sign-up-ctrl" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <asp:DropDownList runat="server" ID="ddZone" placeholder="Barangay" CssClass="form-control sign-up-ctrl" DataValueField="ID" DataTextField="Description" />
                                     </div>
                                     <div class="col-md-4">
                                         <asp:DropDownList runat="server" ID="ddBrgy" placeholder="Barangay" CssClass="form-control sign-up-ctrl" DataValueField="ID" DataTextField="Description" />
@@ -188,7 +197,7 @@
                                     <div class="col-md-4">
                                         <asp:TextBox runat="server" ID="txtBday" placeholder="Birthdate" autocomplete="off" CssClass="form-control sign-up-ctrl" TextMode="Date" />
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <asp:DropDownList runat="server" ID="ddGender" placeholder="Gender" CssClass="form-control sign-up-ctrl">
                                             <asp:ListItem Text="Male" />
                                             <asp:ListItem Text="Female" />
@@ -202,10 +211,7 @@
                                 <div class="col-md-12" style="color:red">
                                     <span><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Note: You need an Admin approval after signing up, Ask for assistance</span>
                                 </div>
-                                
                             </div>
-
-
                         </div>
 
                         <!-- Modal footer -->

@@ -33,3 +33,21 @@ function openHealthRecord() {
     $("#dlgHealthRecord").parent().appendTo($("form:first"));
     
 }
+
+function openGeneric() {
+    $("#dlgGeneric").dialog({
+        height: "auto",
+        width: "400px",
+        modal: true,
+        show: {
+            effect: "drop",
+            duration: 500
+        },
+        hide: {
+            effect: "drop",
+            duration: 500
+        }
+    });
+    $("#dlgHealthRecord").parent().appendTo($("form:first"));
+
+}
