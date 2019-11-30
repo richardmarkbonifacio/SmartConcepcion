@@ -59,7 +59,9 @@ body::-webkit-scrollbar-thumb {
   background-color: #f99827;
   outline: 1px solid slategrey;
 }
-
+.namenav{
+    margin-left:100px !important;
+}
 
       </style>
          <div id="cssmenu" class="container">
@@ -98,19 +100,23 @@ body::-webkit-scrollbar-thumb {
                 <li>
                     <a href="#">BARANGAY</a>
                              <ul class="nav-dropdown">
-                        <li><a href="~/Portal/Barangay/Dashboard" runat="server">DASHBOARD</a></li>
+                       
                         <li><a href="~/Portal/Incidents/" runat="server">INCIDENT REPORT</a></li>
                         <li><a href="~/Portal/Community/" runat="server">COMMUNITY</a></li>
                         <li><a href="#">BUDGET</a></li>
                         <li><a href="~/Portal/Officials/Official" runat="server">OFFICIALS</a></li>
                         <li><a href="#">PROJECTS</a></li>
+                                   <li><a href="#">MISSION & VISION</a></li>
                     </ul>
                 </li>
                 <li><a href="#" runat="server">MEDIA</a></li>
 
-                <li class="pull-right">
-                    <a href="#"><asp:Label runat="server" ID="lblFullname" Text="Howdy admin" /> </a>
+                <li>
+                    <a href="#">
+                        <img class="profile-pic" src="~/images/boy.png" runat="server"/> </a>
                     <ul class="nav-dropdown">
+                        <li><a href="#"><asp:Label runat="server" ID="lblFullname" Text="Howdy admin" style="text-transform:uppercase" Font-Bold="TRUE" ForeColor="Yellow"/></a></li>
+                         <li><a href="~/Portal/Barangay/Dashboard" runat="server">DASHBOARD</a></li>
                         <li><a href="#">MY NOTIFICATION</a></li>
                         <li><asp:LinkButton runat="server" Text="LOG OUT" OnClick="btnSignOut" /> </li>
                     </ul>

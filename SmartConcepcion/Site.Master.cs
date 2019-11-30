@@ -14,7 +14,7 @@ namespace SmartConcepcion
         clsInherited inh = new clsInherited();
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblFullname.Text = inh.p_firstname;
+            lblFullname.Text = inh.p_fullname;
         }
 
         protected void btnSignOut(object sender, EventArgs e)

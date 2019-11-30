@@ -104,7 +104,7 @@ namespace SmartConcepcion.Class
             }
         }
 
-        public string p_firstname
+        public string p_fullname
         {
             get
             {
@@ -115,7 +115,7 @@ namespace SmartConcepcion.Class
                 if (!userdata.Equals(""))
                 {
                     jUserData = JArray.Parse(userdata);
-                    result = (string)jUserData[5];
+                    result = (string)jUserData[1];
                     return result;
                 }
                 else
