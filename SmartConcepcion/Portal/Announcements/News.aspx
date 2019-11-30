@@ -47,7 +47,7 @@
           border-top: none;
         }
         .right-news {
-            padding: 1.5em;
+            padding: 3em;
             background: white;
             
         }
@@ -136,7 +136,7 @@
                                             <%--<asp:button runat="server" id="btnLoadmore" Text="Read More" CssClass="btn btnload btn-lg"/>--%>
                                         </div>
                                         <div class="col-md-6 ">
-                                            <h3 class="text-right">Comments</h3>
+                                            <h3 class="text-right">Comments <a href="#"><span class="badge"><%# Eval("CommentCount") %></span></a> </h3>
                                         </div>
                                     </div>
 
@@ -158,6 +158,7 @@
                                 <div class="capsule hidden-xs">
                                     <div class="right-news">
                                         <h3><a href='View?ID=<%# Eval("ID") %>'><%# Eval("title") %></a></h3>
+                                           <i><b><%# Eval("datecreated", "{0:MMMM dd yyyy}") %></i></b></h5>
                                         <p><%# Eval("sneak_peak") %></p>
                                     </div>
                                 </div>

@@ -20,7 +20,7 @@
 .accordion-header {
   padding: 1.5em 1.5em;
   background: 		#008000;
-  
+  font-weight:600;
   color: white;
   cursor: pointer;
   font-size: .7em;

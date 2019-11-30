@@ -14,7 +14,7 @@ p + p {
   margin-top: .75em;
 }
 .right-news {
-  padding: 1.5em;
+  padding: 3em;
   background: white;
 
 }
@@ -84,13 +84,11 @@ main article p {
 }
 
 input[type=text], select, textarea {
-  width: 100%;
+  width: 100% !important;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  margin-top: 6px;
- 
   resize: vertical;
 }
 
@@ -122,7 +120,7 @@ border-width: 0;
 }
 .newsimg{
    
-  width: 100%;
+  width: 100% !important;
   height: auto;
  
   margin-top: 20px;
@@ -142,6 +140,15 @@ height:90px;
 .table-comment{
     border-color:transparent;
 }
+.commentcount{
+    color:#00ff00
+}
+.btn-comment{
+    font-size:2rem;
+}
+.img-profile{
+    
+}
 </style>
 
     
@@ -152,39 +159,52 @@ height:90px;
                 <asp:Image runat="server" AlternateText="Default" ID="imgBanner" CssClass="newsimg" />
                 <%--<img src="../../images/BANNER.jpg" alt="Nature" class="newsimg">--%>
                 <h2 runat="server" id="txtTitle">Title</h2>
-              <h4 runat="server" id="txtsubtitle"><i>Subtitle</i></h4>
+                <h4 runat="server" id="txtsubtitle"><i>Subtitle</i></h4>
                 <asp:Label runat="server" ID="lblContent" CssClass="text-justify" />
 
             </article>
-      
-       <div class="container-fluid">
-                      <h3>Comments<span class="badge">5</span></h3>
-                    <asp:GridView runat="server" ID="gvCommentSection" AutoGenerateColumns="false" CssClass="table table-hover table-responsive table-dark table-comment">
-                        <Columns>
-                            <asp:TemplateField HeaderStyle-CssClass="hidden">
-                                <ItemTemplate>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading"><%# Eval("submittedby") %>, <i><%# Eval("datecreated", "{0:MMMM dd yyyy hh:mm tt}") %></i></div>
-                                        <div class="panel-body"><%# Eval("comment") %></div>
-                                    </div>
-                                </ItemTemplate>
-                            </asp:TemplateField>
-                        </Columns>
-                    </asp:GridView>
-               <asp:Button runat="server" CssClass="btn btn-nav" ID="btnLoad" Text="Load More" OnClick="btnLoad_Click" />
-           </div>
-        <hr />
-                         <label for="subject">Leave a Comment</label>
-            <asp:UpdatePanel runat="server" ID="upCommentSection" UpdateMode="Conditional">
 
-                <ContentTemplate>
-                    
-                    <asp:TextBox runat="server" ID="txtComment" placeholder="Write something.." TextMode="MultiLine" Columns="5" />
-                    <asp:Button runat="server" Text="Submit" CssClass="btn-formsubmit" OnClick="btnComment_Click" />
+            <div class="container-fluid text-center">
                 
-                </ContentTemplate>
-            </asp:UpdatePanel>
+                
+                <asp:UpdatePanel runat="server" ID="upCommentSection" UpdateMode="Conditional">
+                    <ContentTemplate>
+                        <h3><i class="fa fa-comments" aria-hidden="true"></i>Comments
+                        <asp:Label runat="server" ID="txtCommentCount" class="commentcount" />
+                        </h3>
+                        <div class="form-inline">
+                            <div class="col-md-1">
+                                <img src="../../images/boy.png" class="profile-pic" />
+                            </div>
+                            <div class="col-md-10">
+                                <asp:TextBox runat="server" ID="txtComment" placeholder="Write your comment.." CssClass="form-control form-control-sm" TextMode="MultiLine" Columns="1" />
+                            </div>
+                            <div class="col-md-1">
+                                <asp:LinkButton runat="server" OnClick="btnComment_Click" CssClass="btn-comment"><i class="fa fa-paper-plane" aria-hidden="true"></i></asp:LinkButton>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <asp:GridView runat="server" ID="gvCommentSection" AutoGenerateColumns="false" CssClass="table table-hover table-responsive table-dark table-comment">
+                            <Columns>
+                                <asp:TemplateField HeaderStyle-CssClass="hidden">
+                                    <ItemTemplate>
+                                        <div class="panel-heading"><b><%# Eval("submittedby") %> </b>, <i><%# Eval("datecreated", "{0:MMMM dd yyyy hh:mm tt}") %></i></div>
+                                        <div class="panel-body"><%# Eval("comment") %></div>
+                                        <hr />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+
+                        <asp:Button runat="server" CssClass="btn btn-nav" ID="btnLoad" Text="Load More" OnClick="btnLoad_Click" />
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
             
+
+
         </section>
 
         <aside>

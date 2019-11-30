@@ -19,7 +19,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="col-md-9 col-xs-9">
-                        <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" />
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" autocomplete="false"/>
                     </div>
                         <div class="col-md-3 col-xs-3">
                             <asp:Button runat="server" CssClass="btn btn-warning" Text="search" ID="btnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false" />
@@ -84,49 +84,74 @@
                         <h2 runat="server" id="header">Create Incident Report</h2>
                         <asp:HiddenField runat="server" ID="hfFrom" />
                         <div class="container-fluid">
+                            <h3><asp:Label runat="server" ID="lblAccountNo" /></h3>
                             <div class="form-group">
-                                <div class="col-md-4 text-center">
-                                    <asp:TextBox runat="server" ID="txtFnam" placeholder="Firstname" CssClass="form-control sign-up-ctrl" />
-                                    
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <asp:TextBox runat="server" ID="txtMnam" placeholder="Middlename" CssClass="form-control sign-up-ctrl" />
-                                    
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <asp:TextBox runat="server" ID="txtLnam" placeholder="Lastname" CssClass="form-control sign-up-ctrl" />
-                                    
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-6 text-center">
-                                    <asp:TextBox runat="server" ID="txtEmail" placeholder="Email" CssClass="form-control sign-up-ctrl" TextMode="Email" />
-                                    
-                                </div>
-                                <div class="col-md-6 text-center">
-                                    <asp:TextBox runat="server" ID="txtContact" placeholder="Contact No." CssClass="form-control sign-up-ctrl" />
-                                    
-                                </div>
-                                
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-4 text-center">
-                                    <asp:TextBox runat="server" ID="txtBday" placeholder="Birthdate" CssClass="form-control sign-up-ctrl" TextMode="Date" />
-                                    
-                                </div>
-                                <div class="col-md-4 text-center">
-                                    <asp:DropDownList runat="server" ID="ddGender" placeholder="Gender" CssClass="form-control sign-up-ctrl">
-                                        <asp:ListItem Text="Male" />
-                                        <asp:ListItem Text="Female" />
-                                        <asp:ListItem Text="Alien" />
-                                    </asp:DropDownList>
-                                    
-                                </div>
-                                <div class="col-md-4">
-                                    <asp:TextBox runat="server" ID="txt" placeholder="Voter's ID" CssClass="form-control sign-up-ctrl" />
-                                    
-                                </div>
-                            </div>
+                                            <div class="col-md-4">
+                                                <asp:TextBox runat="server" ID="txtFnam" placeholder="Firstname" CssClass="form-control sign-up-ctrl" />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <asp:TextBox runat="server" ID="txtMnam" placeholder="Middlename" CssClass="form-control sign-up-ctrl" />
+                                            </div>
+                                            <div class="col-md-3">
+                                                <asp:TextBox runat="server" ID="txtLnam" placeholder="Lastname" CssClass="form-control sign-up-ctrl" />
+                                            </div>
+                                            <div class="col-md-2">
+                                                <asp:TextBox runat="server" ID="txtSuffix" placeholder="Suffix" CssClass="form-control sign-up-ctrl" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-4">
+                                                <asp:TextBox runat="server" ID="txtEmail" placeholder="Email" CssClass="form-control sign-up-ctrl" TextMode="Email" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <asp:TextBox runat="server" ID="txtContact" placeholder="Contact No." CssClass="form-control sign-up-ctrl" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <asp:TextBox runat="server" ID="txtNationality" placeholder="Nationality" CssClass="form-control sign-up-ctrl" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            
+                                            <div class="col-md-4">
+                                                <asp:DropDownList runat="server" ID="ddZone" placeholder="Barangay" CssClass="form-control sign-up-ctrl"
+                                                    DataValueField="ID" DataTextField="Description" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <asp:TextBox runat="server" ID="txtStbldgno" placeholder="St. Bldg No." CssClass="form-control sign-up-ctrl" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-4">
+                                                <asp:TextBox runat="server" ID="txtBday" placeholder="Birthdate" autocomplete="off" CssClass="form-control sign-up-ctrl" TextMode="Date" />
+                                            </div>
+                                            <div class="col-md-4">
+                                                <asp:DropDownList runat="server" ID="ddGender" placeholder="Gender" CssClass="form-control sign-up-ctrl">
+                                                    <asp:ListItem Text="Male" />
+                                                    <asp:ListItem Text="Female" />
+                                                    <asp:ListItem Text="Alien" />
+                                                </asp:DropDownList>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <asp:TextBox runat="server" ID="txtVotersID" placeholder="Voter's ID" autocomplete="off" CssClass="form-control sign-up-ctrl" />
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-4">
+                                                <asp:DropDownList runat="server" ID="ddCivilStatus" CssClass="form-control sign-up-ctrl">
+                                                    <asp:ListItem Text="Single" />
+                                                    <asp:ListItem Text="Married" />
+                                                    <asp:ListItem Text="Widowed" />
+                                                    <asp:ListItem Text="Seperated" />
+                                                    <asp:ListItem Text="Divorced" />
+                                                </asp:DropDownList>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <asp:TextBox runat="server" ID="txtRUserpass" placeholder="Password" autocomplete="off" CssClass="form-control sign-up-ctrl" TextMode="Password" />
+                                            </div>
+                                        </div>
                             <div class="form-group">
                                 <div class="col-md-3">
                                     <asp:CheckBox runat="server" ID="chkIndigent" CssClass="form-check-input" Checked="true" />

@@ -49,6 +49,9 @@ namespace SmartConcepcion.Portal.Announcements
                 ViewState["dtAnnouncement"] = value;
             }
         }
+
+        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             string querystring = Request.QueryString["ID"];
@@ -57,6 +60,7 @@ namespace SmartConcepcion.Portal.Announcements
             {
                 if (!IsPostBack)
                 {
+                    loadDropDown(ddCategory, csql.getAnnouncementsCategory("SmartConcepcion"), true);
                     p_AnnouncementID = Convert.ToInt64(querystring);
                     p_dtAnnouncement = csql.getAnnouncementsInfo("SmartConcepcion", p_AnnouncementID.Value);
 
@@ -73,7 +77,13 @@ namespace SmartConcepcion.Portal.Announcements
             }
             else
             {
-                p_AnnouncementID = null;
+                if (!IsPostBack)
+                {
+                    loadDropDown(ddCategory, csql.getAnnouncementsCategory("SmartConcepcion"), true);
+                    pnlZone.Visible = false;
+                    p_AnnouncementID = null;
+                }
+                
             }
                 
         }
@@ -97,8 +107,8 @@ namespace SmartConcepcion.Portal.Announcements
             {
                 
                 string _file_ext = Path.GetExtension(fuBanner.PostedFile.FileName);
-                DataTable _dttemp = csql.setAnnouncements("SmartConcepcion",p_AnnouncementID,  txtTitle.Text, txtSubtitle.Text, txtContent.Text,
-                    Convert.ToDateTime(txtDate.Text), 0, _file_ext, p_UserID.Value);
+                DataTable _dttemp = csql.setAnnouncements("SmartConcepcion", p_AnnouncementID, p_BrgyID, txtTitle.Text, txtSubtitle.Text, txtContent.Text,
+                    Convert.ToDateTime(txtDate.Text), ddCategory.SelectedValue , _file_ext, getSelectedZone(), p_UserID.Value);
 
                 if (fuBanner.HasFile && fuBanner.PostedFile != null)
                 {
@@ -116,9 +126,41 @@ namespace SmartConcepcion.Portal.Announcements
             }
             catch (Exception ex)
             {
-
                 throw;
             }
+        }
+
+        protected void ddCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(ddCategory.SelectedValue == "emrgnc")
+            {
+                loadCheckboxList(chkZone, csql.getBrgyZone("SmartConcepcion", p_BrgyID));
+                pnlZone.Visible = true;
+            }
+
+        }
+
+        private DataTable dtSelectedZone()
+        {
+            DataTable _dt = new DataTable();
+            _dt.Columns.Add("ID");
+            return _dt;
+        }
+        private DataTable getSelectedZone()
+        {
+            DataTable _resultdt = dtSelectedZone();
+            DataRow _dr;
+
+            List<ListItem> selected = chkZone.Items.Cast<ListItem>()
+                .Where(li => li.Selected)
+                .ToList();
+            foreach (ListItem _li in selected)
+            {
+                _dr = _resultdt.NewRow();
+                _dr["ID"] = _li.Value;
+                _resultdt.Rows.Add(_dr);
+            }
+            return _resultdt;
         }
     }
 }

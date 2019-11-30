@@ -17,7 +17,8 @@ namespace SmartConcepcion
         clsQuery csql = new clsQuery();
         protected void Page_Load(object sender, EventArgs e)
         {
-            loadDropDown(ddBrgy, csql.getBrgyList("SmartConcepcion"), false);
+            if(!IsPostBack)
+                loadDropDown(ddBrgy, csql.getBrgyList("SmartConcepcion"), true);
         }
 
         protected void btnSignIn(object sender, EventArgs e)
@@ -32,8 +33,9 @@ namespace SmartConcepcion
                     string userName = (string)_dt.Rows[0]["fullname"];
                     string email = (string)_dt.Rows[0]["email"];
                     string brgyid = (string)_dt.Rows[0]["brgyid"].ToString();
-                    string roleID = (string)_dt.Rows[0]["roleID"].ToString();
-                    userdata = new string[] { txtUserid.Text, userName, email, brgyid,roleID };
+                    string roleID = (string)_dt.Rows[0]["role_code"].ToString();
+                    string firstname = (string)_dt.Rows[0]["firstname"].ToString();
+                    userdata = new string[] { txtUserid.Text, userName, email, brgyid, roleID, firstname };
                     
 
                     FormsAuthenticationTicket fTicket = new FormsAuthenticationTicket(1, userName,
@@ -68,8 +70,15 @@ namespace SmartConcepcion
 
         protected void btnSignUp(object sender, EventArgs e)
         {
-            DataTable _dt = csql.postSignUp("SmartConcepcion", txtEmail.Text, txtFnam.Text, txtMnam.Text, txtLnam.Text,
-                "", txtContact.Text, txtRUserpass.Text,Convert.ToInt64(ddBrgy.SelectedValue), Convert.ToDateTime(txtBday.Text));
+            DataTable _dt = csql.postSignUp("SmartConcepcion", txtEmail.Text, txtFnam.Text, txtMnam.Text, txtLnam.Text, txtSuffix.Text, 
+                txtNationality.Text, ddCivilStatus.SelectedValue, txtContact.Text, txtStbldgno.Text, Convert.ToInt64(ddBrgy.SelectedValue), 
+                Convert.ToInt64(ddZone.SelectedValue),txtVotersID.Text, Convert.ToDateTime(txtBday.Text), txtRUserpass.Text);
+        }
+
+        protected void ddBrgy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadDropDown(ddZone, csql.getBrgyZone("SmartConcepcion", Convert.ToInt64(ddBrgy.SelectedValue)), false);
+            upSignup.Update();
         }
     }
 }
