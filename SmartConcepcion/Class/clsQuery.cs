@@ -1397,5 +1397,40 @@ namespace SmartConcepcion.Class
             return result_Dt;
         }
         #endregion
+
+        #region Location
+        public DataTable setLocationData(string cnstr, long? refID, string description, string mode, long createdby)
+        {
+            try
+            {
+                result_Dt = new DataTable("Location Set");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Location_data_set]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@refID", SqlDbType.BigInt).Value = refID;
+                cmd.Parameters.Add("@description", SqlDbType.VarChar).Value = description;
+                cmd.Parameters.Add("@mode", SqlDbType.VarChar).Value = mode;
+                cmd.Parameters.Add("@createdby", SqlDbType.BigInt).Value = createdby;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return result_Dt;
+        }
+        #endregion
     }
 }
