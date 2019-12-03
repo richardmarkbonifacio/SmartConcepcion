@@ -97,7 +97,7 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <%--<asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New User Profile" CausesValidation="false" />--%>
+                                    <a onclick="openHealthRecord()" >Add health record</a>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="col-md-9 col-xs-9">
@@ -108,6 +108,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div style="overflow-x: scroll">
                                 <asp:GridView runat="server" AutoGenerateColumns="false"
                                     ID="gvMedicalRecord" CssClass="table table-default table-hover table-responsive table-dark" PageSize="5"

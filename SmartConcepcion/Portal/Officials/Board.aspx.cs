@@ -62,6 +62,16 @@ namespace SmartConcepcion.Portal.Officials
         #endregion
         clsQuery csql = new clsQuery();
         DataTable dttemp;
+
+        protected override void OnPreLoad(EventArgs e)
+        {
+            base.OnPreLoad(e);
+            if (!isAdmin())
+            {
+                Response.Redirect("~/403");
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)

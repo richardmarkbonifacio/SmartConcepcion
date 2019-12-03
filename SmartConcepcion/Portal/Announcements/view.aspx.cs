@@ -120,11 +120,7 @@ namespace SmartConcepcion.Portal.Announcements
             }
         }
 
-        protected override void OnLoad(EventArgs e)
-        {
-            Page.Title = "Your Title";
-            base.OnLoad(e);
-        }
+       
         clsQuery csql = new clsQuery();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -139,6 +135,7 @@ namespace SmartConcepcion.Portal.Announcements
                 p_dtAnnouncementInfo = csql.getAnnouncementsInfo("SmartConcepcion", p_AnnouncementID.Value);
                 
                 p_dtTopAnnouncement = csql.getTopAnnoucements("SmartConcepcion");
+                
                 loadGridView(gvTopAnnouncement, p_dtTopAnnouncement);
 
                 loadInfo();
@@ -158,6 +155,15 @@ namespace SmartConcepcion.Portal.Announcements
             p_dtAnnouncementComment = csql.getAnnouncementsComments("SmartConcepcion",p_PageSize,p_PageIndex, p_AnnouncementID.Value);
             loadGridView(gvCommentSection, p_dtAnnouncementComment);
             txtComment.Text = null;
+            
+
+            if (p_dtAnnouncementComment.Rows.Count > 0)
+            {
+                txtCommentCount.Text = p_dtAnnouncementComment.Rows[0]["commentcount"].ToString();
+                btnLoad.Visible = false;
+            }
+                
+
             upCommentSection.Update();
         }
         protected void btnComment_Click(object sender, EventArgs e)
@@ -165,6 +171,7 @@ namespace SmartConcepcion.Portal.Announcements
             try
             {
                 csql.setAnnouncementsComment("SmartConcepcion", null, p_AnnouncementID.Value, txtComment.Text, p_UserID.Value);
+                
                 loadComment();
                 
             }

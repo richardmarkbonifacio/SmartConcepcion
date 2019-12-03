@@ -90,6 +90,14 @@ namespace SmartConcepcion.Portal.Incidents
         }
         #endregion
 
+        protected override void OnPreLoad(EventArgs e)
+        {
+            base.OnPreLoad(e);
+            if (!isAdmin())
+            {
+                Response.Redirect("~/403");
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             isAdmin();

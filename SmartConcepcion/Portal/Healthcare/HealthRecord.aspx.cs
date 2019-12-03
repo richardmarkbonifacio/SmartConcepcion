@@ -53,7 +53,14 @@ namespace SmartConcepcion.Portal.Healthcare
         }
         #endregion
 
-
+        protected override void OnPreLoad(EventArgs e)
+        {
+            base.OnPreLoad(e);
+            if (!isAdmin())
+            {
+                Response.Redirect("~/403");
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             isAdmin();
@@ -80,6 +87,7 @@ namespace SmartConcepcion.Portal.Healthcare
                 
                 loadGridView(gvMedicalRecord, dttemp);
                 upHealtRecord.Update();
+                upHealthInfo.Update();
             }
         }
         void clearUserInfo()

@@ -89,12 +89,24 @@ namespace SmartConcepcion.Portal.Community
         }
         #endregion
 
+        protected override void OnPreLoad(EventArgs e)
+        {
+            base.OnPreLoad(e);
+            if (!isAdmin())
+            {
+                Response.Redirect("~/Portal/");
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            isAdmin();
+            
             if (!IsPostBack)
+            {
                 loadUserProfile();
+                loadDropDown(ddZone, csql.getBrgyZone("SmartConcepcion", p_BrgyID), false);
+            }
+                
         }
         void loadUserProfile()
         {
@@ -144,8 +156,8 @@ namespace SmartConcepcion.Portal.Community
             try
             {
                 DataTable _dt = csql.UserCreateUpdate("SmartConcepcion", p_UserProfileID, txtEmail.Text, txtFnam.Text, txtMnam.Text, txtLnam.Text,
-                "", txtContact.Text, p_BrgyID, Convert.ToDateTime(txtBday.Text), p_UserID, chkIndigent.Checked, chkSenir.Checked,
-                    chkPwd.Checked, chk4ps.Checked);
+                txtSuffix.Text, txtNationality.Text, ddCivilStatus.SelectedValue, txtContact.Text, txtStbldgno.Text, p_BrgyID, Convert.ToInt64(ddZone.SelectedValue), txtVotersID.Text,
+                Convert.ToDateTime(txtBday.Text), p_UserID, chkIndigent.Checked, chkSenir.Checked, chkPwd.Checked, chk4ps.Checked);
 
                 loadUserProfile();
                 clearUserInfo();
@@ -170,12 +182,19 @@ namespace SmartConcepcion.Portal.Community
             txtFnam.Text = _dttemp.Rows[0]["firstname"].ToString();
             txtLnam.Text = _dttemp.Rows[0]["lastname"].ToString();
             txtMnam.Text = _dttemp.Rows[0]["middlename"].ToString();
+            txtStbldgno.Text = _dttemp.Rows[0]["stbldgno"].ToString();
+            txtVotersID.Text =  _dttemp.Rows[0]["votersID"].ToString();
+            txtSuffix.Text = _dttemp.Rows[0]["suffix"].ToString();
+            //ddGender.SelectedValue = _dttemp.Rows[0]["middlename"].ToString();
+            ddCivilStatus.SelectedValue = _dttemp.Rows[0]["civil_status"].ToString();
+            ddZone.SelectedValue = _dttemp.Rows[0]["zoneID"].ToString();
+            txtNationality.Text = _dttemp.Rows[0]["nationality"].ToString();
 
             chk4ps.Checked = Convert.ToBoolean(_dttemp.Rows[0]["is4ps"].ToString());
             chkIndigent.Checked = Convert.ToBoolean(_dttemp.Rows[0]["isIndigent"].ToString());
             chkPwd.Checked = Convert.ToBoolean(_dttemp.Rows[0]["isPWD"].ToString());
             chkSenir.Checked = Convert.ToBoolean(_dttemp.Rows[0]["isSeniorCitizen"].ToString());
-
+            lblAccountNo.Text = _dttemp.Rows[0]["ID"].ToString();
             p_UserProfileID = Convert.ToInt64(_dttemp.Rows[0]["ID"].ToString());
             upIncidentInfo.Update();
         }

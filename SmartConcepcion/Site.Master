@@ -48,25 +48,26 @@
 
         <style>
             body::-webkit-scrollbar {
-    width: 4px;
-}
- 
-body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-}
- 
-body::-webkit-scrollbar-thumb {
-  background-color: #f99827;
-  outline: 1px solid slategrey;
-}
-.namenav{
-    margin-left:100px !important;
-}
+                width: 4px;
+            }
 
-      </style>
-         <div id="cssmenu" class="container">
-            
-  
+            body::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            }
+
+            body::-webkit-scrollbar-thumb {
+                background-color: #f99827;
+                outline: 1px solid slategrey;
+            }
+            .emergency{
+                position: fixed;
+                right: 50px;
+                bottom: 10%
+            }
+        </style>
+
+
+        <div id="cssmenu" class="container">
             <ul>
                 <li>
                     <div class="logo hidden-xs">
@@ -103,10 +104,10 @@ body::-webkit-scrollbar-thumb {
                        
                         <li><a href="~/Portal/Incidents/" runat="server">INCIDENT REPORT</a></li>
                         <li><a href="~/Portal/Community/" runat="server">COMMUNITY</a></li>
-                        <li><a href="#">BUDGET</a></li>
+                        <li><a href="~/Portal/Budget/" runat="server">BUDGET</a></li>
                         <li><a href="~/Portal/Officials/Official" runat="server">OFFICIALS</a></li>
-                        <li><a href="#">PROJECTS</a></li>
-                                   <li><a href="#">MISSION & VISION</a></li>
+                        <li><a href="~/Portal/Projects" runat="server">PROJECTS</a></li>
+                        
                     </ul>
                 </li>
                 <li><a href="#" runat="server">MEDIA</a></li>
@@ -124,11 +125,19 @@ body::-webkit-scrollbar-thumb {
                 
             </ul>
         </div>
-        
+
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
+        
+        <asp:Panel runat="server" id="pnlEmergency" CssClass="col-md-4 emergency" >
+            <div class="alert alert-danger alert-dismissible">
+                <asp:LinkButton runat="server" OnClick="notif_seen" CssClass="close" >&times;</asp:LinkButton>
+                <%--<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>--%>
+                <strong>Emergency!</strong> Your zone was declared as a danger zone. <asp:LinkButton runat="server" ID="lnk" Text="More info" OnClick="lnk_Click" />
+              </div>
+        </asp:Panel>
 
         <%--  FOOTER--%>
         <footer class="puuter">

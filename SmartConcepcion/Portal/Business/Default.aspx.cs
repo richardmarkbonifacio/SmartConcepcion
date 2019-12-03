@@ -92,7 +92,7 @@ namespace SmartConcepcion.Portal.Business
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            isAdmin();
+            
             if (!IsPostBack)
                 loadBusinessProfile();
         }
@@ -110,7 +110,6 @@ namespace SmartConcepcion.Portal.Business
         }
         void clearUserInfo()
         {
-            p_UserProfileID = null;
             p_UserProfileID = null;
             //txtFnam.Text = "";
             //txtLnam.Text = "";
@@ -163,7 +162,11 @@ namespace SmartConcepcion.Portal.Business
             DataTable _dttemp = csql.getBusiness_Details("SmartConcepcion", Convert.ToInt64(_lnk.ToolTip));
             header.InnerText = "Update Account";
 
-            //txtBday.Text = Convert.ToDateTime(_dttemp.Rows[0]["birthday"].ToString()).ToString("yyyy-MM-dd");
+            txtBusiness.Text = _dttemp.Rows[0]["businessname"].ToString();
+            txtOwner.Text = _dttemp.Rows[0]["owner"].ToString();
+            txtDescription.Text = _dttemp.Rows[0]["description"].ToString();
+            txtPermit.Text = _dttemp.Rows[0]["permitno"].ToString();
+            txtStbldgno.Text = _dttemp.Rows[0]["stnobldg"].ToString();
             txtContact.Text = _dttemp.Rows[0]["contactno"].ToString();
             txtEmail.Text = _dttemp.Rows[0]["email"].ToString();
 

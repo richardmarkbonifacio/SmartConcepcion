@@ -7,6 +7,13 @@ using System.Web.Security;
 using System.Web.UI.WebControls;
 using System.Data;
 using Newtonsoft.Json.Linq;
+using System.Collections.Specialized;
+using System.Configuration;
+using System.Globalization;
+using System.Net;
+using System.Net.Mail;
+using System.Text;
+using System.Web.Caching;
 
 namespace SmartConcepcion.Class
 {
@@ -38,7 +45,7 @@ namespace SmartConcepcion.Class
             }
         }
         #region Properties
-        public Int32? p_roleLevel
+        public string p_roleLevel
         {
             get
             {
@@ -50,14 +57,15 @@ namespace SmartConcepcion.Class
                 {
                     jUserData = JArray.Parse(userdata);
                     result = (string)jUserData[4];
-                    return Convert.ToInt32(result);
+                    
                 }
                 else
                 {
                     FormsAuthentication.RedirectToLoginPage();
-                    return null;
+                    
                 }
-                
+                return result;
+
             }
         }
         public long? p_UserID
@@ -139,7 +147,7 @@ namespace SmartConcepcion.Class
 
         public bool isAdmin()
         {
-            if (p_roleLevel == 0)
+            if (p_roleLevel == "admin")
                 return true;
             else
                 return false;
@@ -160,7 +168,6 @@ namespace SmartConcepcion.Class
             if (hasPrefixValue)
             {
                 ddl.Items.Insert(0, new ListItem("-Select one-", "-1"));
-                ddl.Items.Insert(1, new ListItem("N/A", "-2"));
             }
 
             try
@@ -188,6 +195,21 @@ namespace SmartConcepcion.Class
                 throw e;
             }
         }
+        public void loadCheckboxList(CheckBoxList cbl, DataTable dt)
+        {
+            try
+            {
+
+                cbl.DataSource = dt;
+                cbl.DataBind();
+
+            }
+
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
         public void loadListview(ListView lv, DataTable dt)
         {
             try
@@ -203,6 +225,69 @@ namespace SmartConcepcion.Class
                 throw e;
             }
         }
+        public string readCookie(string obj, string name, Boolean crypt)
+        {
+            string res = null;
 
+            if (Request.Cookies[obj] != null)
+            {
+                if (Request.Cookies[obj][name] != null)
+                {
+                    if (crypt)
+                    {
+                        res = Crypt(Request.Cookies[obj][name]);
+                    }
+                    else
+                        res = Request.Cookies[obj][name];
+                }
+            }
+            return res;
+        }
+
+        public void writeCookie(string obj, string value, Boolean crypt)
+        {
+            if (crypt)
+                Response.Cookies[obj].Value = Crypt(value);
+            else
+                Response.Cookies[obj].Value = value;
+        }
+
+        public void writeCookie(string obj, string key, string value, Boolean crypt)
+        {
+            string _temp = Crypt(value);
+            if (crypt)
+                Response.Cookies[obj][key] = _temp;
+            //Response.Cookies["test"].Value = _temp;
+            else
+                Response.Cookies[obj][key] = value;
+        }
+
+        public void clearCookie(string obj)
+        {
+            Response.Cookies.Remove(obj);
+            Response.Cookies[obj].Expires = DateTime.Now.AddDays(-1);
+        }
+        public static string Crypt(string input)
+        {
+
+            string strTempChar = "", newValue = "";
+
+
+            for (int i = 0; i < input.Length; i++)
+            {
+
+                if (Convert.ToInt32(Convert.ToChar(input.Substring(i, 1))) < 128)
+                {
+                    strTempChar = Convert.ToString(Convert.ToInt32(Convert.ToChar(input.Substring(i, 1))) + 128);
+                }
+                else if (Convert.ToInt32(Convert.ToChar(input.Substring(i, 1))) > 128)
+                {
+                    strTempChar = Convert.ToString(Convert.ToInt32(Convert.ToChar(input.Substring(i, 1))) - 128);
+                }
+                newValue += Convert.ToChar(Convert.ToInt32(strTempChar)).ToString();
+
+            }
+            return newValue;
+        }
     }
 }

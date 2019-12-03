@@ -7,108 +7,90 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SmartConcepcion.Portal.Announcements {
+namespace SmartConcepcion.Portal.Administrator {
     
     
-    public partial class Create {
+    public partial class Location {
         
         /// <summary>
-        /// upPostAnnouncement control.
+        /// upLocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upPostAnnouncement;
+        protected global::System.Web.UI.UpdatePanel upLocation;
         
         /// <summary>
-        /// txtTitle control.
+        /// hfMode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTitle;
+        protected global::System.Web.UI.WebControls.HiddenField hfMode;
         
         /// <summary>
-        /// txtSubtitle control.
+        /// ddProvince control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSubtitle;
+        protected global::System.Web.UI.WebControls.DropDownList ddProvince;
         
         /// <summary>
-        /// txtDate control.
+        /// DropDownList1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDate;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// ddCategory control.
+        /// ddBrgy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddCategory;
+        protected global::System.Web.UI.WebControls.DropDownList ddBrgy;
         
         /// <summary>
-        /// fuBanner control.
+        /// ddZone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fuBanner;
+        protected global::System.Web.UI.WebControls.DropDownList ddZone;
         
         /// <summary>
-        /// editor_txtContent control.
+        /// upHealtRecord control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.HtmlEditorExtender editor_txtContent;
+        protected global::System.Web.UI.UpdatePanel upHealtRecord;
         
         /// <summary>
-        /// txtContent control.
+        /// txtDescrition control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContent;
+        protected global::System.Web.UI.WebControls.TextBox txtDescrition;
         
         /// <summary>
-        /// pnlZone control.
+        /// btnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlZone;
-        
-        /// <summary>
-        /// chkZone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList chkZone;
-        
-        /// <summary>
-        /// btnsave control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnsave;
+        protected global::System.Web.UI.WebControls.Button btnSave;
     }
 }

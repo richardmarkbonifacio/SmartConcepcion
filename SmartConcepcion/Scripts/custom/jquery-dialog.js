@@ -48,6 +48,11 @@ function openGeneric() {
             duration: 500
         }
     });
-    $("#dlgHealthRecord").parent().appendTo($("form:first"));
+    $("#dlgGeneric").parent().appendTo($("form:first"));
 
 }
+
+function setDataMode(mode) {
+    openGeneric();
+    $("#MainContent_hfMode").val(mode);
+} 
