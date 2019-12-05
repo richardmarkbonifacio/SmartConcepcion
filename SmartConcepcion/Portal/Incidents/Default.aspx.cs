@@ -175,7 +175,7 @@ namespace SmartConcepcion.Portal.Incidents
 
         protected void btnPostIR_Click(object sender, EventArgs e)
         {
-            csql.setIncidentReport("SmartConcepcion", p_IncidentID, txtTitle.Text, txtDetails.Text, "", p_ComplainantID, p_AccusedID, 
+            csql.setIncidentReport("SmartConcepcion", p_IncidentID, p_BrgyID,  txtTitle.Text, txtDetails.Text, "", p_ComplainantID, p_AccusedID, 
                 txtComplainant.Text, txtAccused.Text,Convert.ToDateTime(txtIncidentDate.Text), Convert.ToDateTime(txtConfrontation.Text),txtLocation.Text,
                 txtRemarks.Text,"ptd",p_UserID.Value);
 

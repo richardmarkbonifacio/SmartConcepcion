@@ -638,7 +638,7 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
-        public DataTable setIncidentReport(string cnstr,long? ID, string title,
+        public DataTable setIncidentReport(string cnstr,long? ID, long brgyID, string title,
             string incident_details, string letter_content, 
             long? complainant, long? accused, string complainantName, string accusedName,
             DateTime incident_date, DateTime confrontaion_date, string incident_location,
@@ -662,6 +662,7 @@ namespace SmartConcepcion.Class
                 cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
                 cmd.Parameters.Add("@complainantID", SqlDbType.BigInt).Value = complainant;
                 cmd.Parameters.Add("@accusedID", SqlDbType.BigInt).Value = accused;
+                cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
                 cmd.Parameters.Add("@complainantName", SqlDbType.VarChar).Value = complainantName;
                 cmd.Parameters.Add("@accusedName", SqlDbType.VarChar).Value = accusedName;
                 cmd.Parameters.Add("@createdby", SqlDbType.BigInt).Value = createdby;
