@@ -71,8 +71,8 @@
             <ul>
                 <li>
                     <div class="logo hidden-xs">
-                        <a class="logo" href="#">
-                            <img src="~/images/logo3.png" class="logo" runat="server" /></a>
+                        <a class="logo" href="~/Portal/" runat="server">
+                            <img src="~/images/BARANGAYFINALLOGO.png" class="logo" runat="server" /></a>
                     </div>
                 </li>
 
