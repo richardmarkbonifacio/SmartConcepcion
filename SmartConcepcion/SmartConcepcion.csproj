@@ -393,13 +393,19 @@
     <Compile Include="Portal\Community\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Portal\Community\rpt\barangaycert.cs">
+    <Compile Include="Portal\Reports\barangaycert.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>barangaycert.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Portal\Community\rpt\indigency.cs">
+    <Compile Include="Portal\Reports\solo-parent.cs">
+      <DependentUpon>solo-parent.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Portal\Reports\indigency.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>indigency.rpt</DependentUpon>
@@ -531,11 +537,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Portal\Community\rpt\barangaycert.rpt">
+    <EmbeddedResource Include="Portal\Reports\barangaycert.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>barangaycert.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Portal\Community\rpt\indigency.rpt">
+    <EmbeddedResource Include="Portal\Reports\solo-parent.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>solo-parent.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Portal\Reports\indigency.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>indigency.cs</LastGenOutput>
     </EmbeddedResource>
