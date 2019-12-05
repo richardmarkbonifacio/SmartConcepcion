@@ -327,7 +327,7 @@ textarea {
     }
 
     #cssmenu > ul > li > a {
-        padding: 17px;
+        padding: 25px;
         font-size: 12px;
         letter-spacing: 1px;
         text-decoration: none;
@@ -642,6 +642,7 @@ textarea {
 
 a .logo {
     height: 14vh;
+ 
 }
 /*===Announcement Image Hover==*/
 .panelRow {

@@ -16,14 +16,14 @@ namespace SmartConcepcion.Portal.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class indigency : ReportClass {
+    public class certfileaction : ReportClass {
         
-        public indigency() {
+        public certfileaction() {
         }
         
         public override string ResourceName {
             get {
-                return "indigency.rpt";
+                return "certfileaction.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SmartConcepcion.Portal.Reports {
         
         public override string FullResourceName {
             get {
-                return "SmartConcepcion.Portal.Reports.indigency.rpt";
+                return "SmartConcepcion.Portal.Reports.certfileaction.rpt";
             }
             set {
                 // Do nothing
@@ -58,7 +58,7 @@ namespace SmartConcepcion.Portal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportHeaderSection4 {
+        public CrystalDecisions.CrystalReports.Engine.Section ReportHeaderSection2 {
             get {
                 return this.ReportDefinition.Sections[1];
             }
@@ -95,28 +95,12 @@ namespace SmartConcepcion.Portal.Reports {
                 return this.ReportDefinition.Sections[5];
             }
         }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_ID {
-            get {
-                return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Reason {
-            get {
-                return this.DataDefinition.ParameterFields[1];
-            }
-        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedindigency : Component, ICachedReport {
+    public class Cachedcertfileaction : Component, ICachedReport {
         
-        public Cachedindigency() {
+        public Cachedcertfileaction() {
         }
         
         [Browsable(false)]
@@ -153,7 +137,7 @@ namespace SmartConcepcion.Portal.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            indigency rpt = new indigency();
+            certfileaction rpt = new certfileaction();
             rpt.Site = this.Site;
             return rpt;
         }

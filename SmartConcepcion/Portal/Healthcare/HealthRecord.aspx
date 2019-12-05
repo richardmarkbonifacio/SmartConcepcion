@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Health Records" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="HealthRecord.aspx.cs" Inherits="SmartConcepcion.Portal.Healthcare.HealthRecord" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <div class="header-banner">Health Record</div>
+    <div class="header-banner">HEALTH RECORD</div>
     <asp:UpdatePanel ID="upIncidentReport" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
             <div class="container-fluid">
@@ -14,7 +14,7 @@
                         <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" />
                     </div>
                         <div class="col-md-3 col-xs-3">
-                            <asp:Button runat="server" CssClass="btn btn-warning" Text="search" ID="btnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false" />
+                            <asp:Button runat="server" CssClass="btn btn-warning" Text="search" ID="healthbtnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false" />
                         </div>
                     </div>
                 </div>

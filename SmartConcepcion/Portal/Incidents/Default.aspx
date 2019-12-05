@@ -21,7 +21,7 @@
             </div>
             <div class="row filter">
                 <div class="col-md-5">
-                    <div class="input-daterange input-group">
+                    <div class="input-daterange input-group" style="z-index: 0">
 
                         <asp:TextBox runat="server" TextMode="Date" CssClass="form-control" ID="txtFrom" />
                         <span class="input-group-addon">to</span>
