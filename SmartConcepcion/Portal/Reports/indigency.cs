@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SmartConcepcion.Portal.Community.rpt {
+namespace SmartConcepcion.Portal.Reports {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace SmartConcepcion.Portal.Community.rpt {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class barangaycert : ReportClass {
+    public class indigency : ReportClass {
         
-        public barangaycert() {
+        public indigency() {
         }
         
         public override string ResourceName {
             get {
-                return "barangaycert.rpt";
+                return "indigency.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SmartConcepcion.Portal.Community.rpt {
         
         public override string FullResourceName {
             get {
-                return "SmartConcepcion.Portal.Community.rpt.barangaycert.rpt";
+                return "SmartConcepcion.Portal.Reports.indigency.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace SmartConcepcion.Portal.Community.rpt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportHeaderSection5 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section2 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace SmartConcepcion.Portal.Community.rpt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportHeaderSection6 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace SmartConcepcion.Portal.Community.rpt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportHeaderSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,33 +90,9 @@ namespace SmartConcepcion.Portal.Community.rpt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section PageHeaderSection2 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
-            get {
-                return this.ReportDefinition.Sections[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[7];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[8];
+                return this.ReportDefinition.Sections[5];
             }
         }
         
@@ -130,9 +106,9 @@ namespace SmartConcepcion.Portal.Community.rpt {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedbarangaycert : Component, ICachedReport {
+    public class Cachedindigency : Component, ICachedReport {
         
-        public Cachedbarangaycert() {
+        public Cachedindigency() {
         }
         
         [Browsable(false)]
@@ -169,7 +145,7 @@ namespace SmartConcepcion.Portal.Community.rpt {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            barangaycert rpt = new barangaycert();
+            indigency rpt = new indigency();
             rpt.Site = this.Site;
             return rpt;
         }
