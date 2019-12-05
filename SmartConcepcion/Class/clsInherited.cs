@@ -289,5 +289,46 @@ namespace SmartConcepcion.Class
             }
             return newValue;
         }
+
+        public static string GetConfigSetting(string setting)
+        {
+            Cache cache = HttpContext.Current.Cache;
+
+            if (cache[setting] != null)
+                return ((string)cache[setting]);
+
+            NameValueCollection settings = (NameValueCollection)ConfigurationManager.GetSection("appSettings");
+            string storedSetting = settings[setting];
+
+            if ((storedSetting != null) && (storedSetting != String.Empty))
+            {
+                cache.Insert(setting, storedSetting, new CacheDependency(HttpContext.Current.Request.PhysicalApplicationPath.TrimEnd('\\') + "\\Web.config"));
+                return (storedSetting);
+            }
+
+            return (null);
+        }
+
+        public long? convert_long(string val, bool returnZero)
+        {
+            if (val.Equals(""))
+            {
+                if (returnZero)
+                    return 0;
+                else
+                    return null;
+            }
+            else
+            {
+                try
+                {
+                    return Convert.ToInt64(val);
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+        }
     }
 }

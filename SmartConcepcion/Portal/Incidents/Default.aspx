@@ -2,11 +2,24 @@
 <asp:Content ID="content_report" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     
-     <div class="header-banner">INCIDENT REPORT</div>
-
+    <div class="header-banner">INCIDENT REPORT</div>
+    <style>
+        .filter{
+            display:none;
+        }
+    </style>
+    <script>
+            
+        function FilterBox() {
+            $(".filter").toggle(500, "linear");
+        }
+    </script>
     <asp:UpdatePanel ID="upIncidentReport" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
-            <div class="row">
+            <div class="container-fluid">
+                <i class="fa fa-sliders" aria-hidden="true" style="cursor:pointer" onclick="FilterBox()" >Filter</i>
+            </div>
+            <div class="row filter">
                 <div class="col-md-5">
                     <div class="input-daterange input-group">
 
@@ -28,9 +41,10 @@
                     <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New Incident Report" CausesValidation="false" CssClass="btn btn-danger form-control" />
                 </div>
             </div>
+            <hr />
             <div class="container-fluid">
                 
-                <hr />
+                
                 <%--<asp:LinkButton runat="server" Text="New Incident Report" ID="lnkCreate" OnClick="lnkCreate_Click"/>--%>
                 <div style="overflow-x: scroll">
                     <asp:GridView runat="server" AutoGenerateColumns="false"

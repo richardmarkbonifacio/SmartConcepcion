@@ -14,7 +14,7 @@ namespace SmartConcepcion.Portal.Community
         clsQuery csql = new clsQuery();
         DataTable dttemp;
         #region Properties
-        public long? p_UserProfileID
+        public long? p_selecteduser
         {
             get
             {
@@ -122,8 +122,8 @@ namespace SmartConcepcion.Portal.Community
         }
         void clearUserInfo()
         {
-            p_UserProfileID = null;
-            p_UserProfileID = null;
+            p_selecteduser = null;
+            p_selecteduser = null;
             txtFnam.Text = "";
             txtLnam.Text = "";
             txtMnam.Text = "";
@@ -155,7 +155,7 @@ namespace SmartConcepcion.Portal.Community
         {
             try
             {
-                DataTable _dt = csql.UserCreateUpdate("SmartConcepcion", p_UserProfileID, txtEmail.Text, txtFnam.Text, txtMnam.Text, txtLnam.Text,
+                DataTable _dt = csql.UserCreateUpdate("SmartConcepcion", p_selecteduser, txtEmail.Text, txtFnam.Text, txtMnam.Text, txtLnam.Text,
                 txtSuffix.Text, txtNationality.Text, ddCivilStatus.SelectedValue, txtContact.Text, txtStbldgno.Text, p_BrgyID, Convert.ToInt64(ddZone.SelectedValue), txtVotersID.Text,
                 Convert.ToDateTime(txtBday.Text), p_UserID, chkIndigent.Checked, chkSenir.Checked, chkPwd.Checked, chk4ps.Checked);
 
@@ -195,7 +195,7 @@ namespace SmartConcepcion.Portal.Community
             chkPwd.Checked = Convert.ToBoolean(_dttemp.Rows[0]["isPWD"].ToString());
             chkSenir.Checked = Convert.ToBoolean(_dttemp.Rows[0]["isSeniorCitizen"].ToString());
             lblAccountNo.Text = _dttemp.Rows[0]["ID"].ToString();
-            p_UserProfileID = Convert.ToInt64(_dttemp.Rows[0]["ID"].ToString());
+            p_selecteduser = Convert.ToInt64(_dttemp.Rows[0]["ID"].ToString());
             upIncidentInfo.Update();
         }
 
@@ -207,8 +207,18 @@ namespace SmartConcepcion.Portal.Community
 
         protected void btnVerify_Click(object sender, EventArgs e)
         {
-            csql.postVerify("SmartConcepcion", p_UserProfileID.Value);
+            csql.postVerify("SmartConcepcion", p_selecteduser.Value);
             loadUserProfile();
+        }
+
+        protected void btnBrgyCert_Click(object sender, EventArgs e)
+        {    
+            Response.Redirect($"~/Portal/Reports/RptViewer?title=baranggaycert&type=1&id={p_selecteduser.ToString()}");
+        }
+
+        protected void brgyIndigency_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"~/Portal/Reports/RptViewer?title=baranggaycert&type=2&id={p_selecteduser.ToString()}");
         }
     }
 }

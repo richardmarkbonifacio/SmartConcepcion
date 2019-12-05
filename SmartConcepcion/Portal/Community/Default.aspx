@@ -178,6 +178,8 @@
                         <div class="text-right container-fluid">
                             <asp:Button runat="server" CssClass="btn btn-warning" Text="VERIFY" ID="btnVerify" OnClick="btnVerify_Click" OnClientClick="closeNav()" />
                             <asp:Button runat="server" CssClass="btn btn-danger" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />
+                            <asp:Button runat="server" CssClass="btn btn-danger" Text="BRGY CERT" ID="btnBrgyCert" OnClick="btnBrgyCert_Click" OnClientClick="closeNav()" />
+                            <asp:Button runat="server" CssClass="btn btn-danger" Text="INDIGENCY" ID="brgyIndigency" OnClick="brgyIndigency_Click" OnClientClick="closeNav()" />
                         </div>
                         
                     </div>
