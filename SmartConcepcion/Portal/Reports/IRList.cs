@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SmartConcepcion.Portal.Incidents.rpt {
+namespace SmartConcepcion.Portal.Reports {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace SmartConcepcion.Portal.Incidents.rpt {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class hearing : ReportClass {
+    public class IRList : ReportClass {
         
-        public hearing() {
+        public IRList() {
         }
         
         public override string ResourceName {
             get {
-                return "hearing.rpt";
+                return "IRList.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SmartConcepcion.Portal.Incidents.rpt {
         
         public override string FullResourceName {
             get {
-                return "SmartConcepcion.Portal.Incidents.rpt.hearing.rpt";
+                return "SmartConcepcion.Portal.Reports.IRList.rpt";
             }
             set {
                 // Do nothing
@@ -58,7 +58,7 @@ namespace SmartConcepcion.Portal.Incidents.rpt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section2 {
+        public CrystalDecisions.CrystalReports.Engine.Section ReportHeaderSection2 {
             get {
                 return this.ReportDefinition.Sections[1];
             }
@@ -66,7 +66,7 @@ namespace SmartConcepcion.Portal.Incidents.rpt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section2 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace SmartConcepcion.Portal.Incidents.rpt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,9 +82,17 @@ namespace SmartConcepcion.Portal.Incidents.rpt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[4];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[5];
             }
         }
         
@@ -103,12 +111,20 @@ namespace SmartConcepcion.Portal.Incidents.rpt {
                 return this.DataDefinition.ParameterFields[1];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_search {
+            get {
+                return this.DataDefinition.ParameterFields[2];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedhearing : Component, ICachedReport {
+    public class CachedIRList : Component, ICachedReport {
         
-        public Cachedhearing() {
+        public CachedIRList() {
         }
         
         [Browsable(false)]
@@ -145,7 +161,7 @@ namespace SmartConcepcion.Portal.Incidents.rpt {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            hearing rpt = new hearing();
+            IRList rpt = new IRList();
             rpt.Site = this.Site;
             return rpt;
         }

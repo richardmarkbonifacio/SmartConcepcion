@@ -2,7 +2,7 @@
 <asp:Content ID="content_report" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     
-    <div class="header-banner">BUSINESS</div>
+    <div class="header-banner">BUSINESS DIRECTORY</div>
     <asp:UpdatePanel ID="upBusiness" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
             <div class="container-fluid">
@@ -112,10 +112,11 @@
                             </div>
 
                         </div>
-
-                        <asp:Button runat="server" CssClass="btn btn-danger" Text="POST" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />
-                    </div>
+<%-- <asp:Button runat="server" CssClass="btn btn-send" Text="POST"  ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />--%>
+                       <asp:LinkButton runat="server" CssClass="btn btn-send"  ID="btnPost" OnClick="btnPostIR_Click" OnClientClick="closeNav()" > UPDATE <i class="fa fa-check" ></i></asp:LinkButton>
                 </div>
+                    </div>
+                     
             </ContentTemplate>
         </asp:UpdatePanel>
         

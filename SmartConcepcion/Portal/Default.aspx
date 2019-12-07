@@ -108,32 +108,7 @@ label {
     font-weight: 600;
     margin: 10px;
   }
-  .btn-send{
-      border-width: 0;
-    outline: none;
-    border-radius: 2px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
-    background-color: #f99827;
-    color: #ecf0f1;
-    transition: background-color .3s;
-    padding-right: 35px;
-    padding-left: 35px;
-    font-weight: 600;
-   margin-bottom:10px;
-  }
- .btn-send:hover{
-      border-width: 0;
-    outline: none;
-    border-radius: 2px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
-    background-color: #f19429;
-    color: #ecf0f1;
-    transition: background-color .3s;
-    padding-right: 35px;
-    padding-left: 35px;
-    font-weight: 600;
-   
- }
+ 
  .cntc-home{
      background-color:#f6f6f6;
      width:100%;

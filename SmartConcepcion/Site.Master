@@ -90,8 +90,8 @@
                 <li>
                     <a href="#">BUSINESS</a>
                             <ul class="nav-dropdown">
-                        <li><a href="~/Portal/Business/" runat="server">BUSINESS LIST</a></li>
-                        <li><a href="#">BUSINESS DIRECTORY</a></li>
+                        <li><a href="~/Portal/Business/" runat="server">BUSINESS DIRECTORY</a></li>
+                        <li><a href="#">BUSINESS LIST</a></li>
                         <li><a href="~/Portal/Business/FAQ" runat="server">FAQ</a></li>
 
                     </ul>

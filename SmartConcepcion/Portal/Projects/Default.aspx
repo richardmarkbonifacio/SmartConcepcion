@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Projects" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Portal.Projects.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <div class="header-banner">Projects</div>
+    <div class="header-banner">PROJECTS</div>
     <asp:UpdatePanel ID="upProject" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
             <div class="container-fluid">
@@ -110,7 +110,7 @@
                             </div>
                         </div>
                         <div class="text-right container-fluid">
-                            <asp:Button runat="server" CssClass="btn btn-danger" Text="SAVE" ID="btnPostProject" OnClick="btnPostProject_Click" OnClientClick="closeNav()" />
+                            <asp:Button runat="server" CssClass="btn btn-send" Text="SAVE" ID="btnPostProject" OnClick="btnPostProject_Click" OnClientClick="closeNav()" />
                         </div>
                         
                         <hr />
