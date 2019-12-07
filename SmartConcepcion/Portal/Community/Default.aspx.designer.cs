@@ -202,15 +202,6 @@ namespace SmartConcepcion.Portal.Community {
         protected global::System.Web.UI.WebControls.DropDownList ddCivilStatus;
         
         /// <summary>
-        /// txtRUserpass control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRUserpass;
-        
-        /// <summary>
         /// chkIndigent control.
         /// </summary>
         /// <remarks>
@@ -265,13 +256,31 @@ namespace SmartConcepcion.Portal.Community {
         protected global::System.Web.UI.WebControls.Button btnPostIR;
         
         /// <summary>
-        /// btnBrgyCert control.
+        /// brgyCertificate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBrgyCert;
+        protected global::System.Web.UI.WebControls.Button brgyCertificate;
+        
+        /// <summary>
+        /// upHealtRecord control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upHealtRecord;
+        
+        /// <summary>
+        /// txtReason control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtReason;
         
         /// <summary>
         /// brgyIndigency control.

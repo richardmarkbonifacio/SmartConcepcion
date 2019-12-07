@@ -89,6 +89,24 @@ namespace SmartConcepcion.Portal.Report
                     #endregion
 
                     break;
+                case 3:
+                    #region Summon Letter
+                    recid = convert_long(Request.QueryString["id"], false);
+                    _title = Request.QueryString["title"];
+                    this.Title = _title;
+                    rpt = new ReportDocument();
+                    rpt.Load(Server.MapPath("~/portal/Reports/IRLetterOfInvitation.rpt"));
+                    rpt.SetParameterValue("@id", recid);
+
+                    rptCred = GetConfigSetting("rptbackoffice").Split('$');
+                    rpt.DataSourceConnections.Clear();
+                    rpt.DataSourceConnections[0].SetConnection(cn.DataSource, cn.Database, rptCred[0], rptCred[1]);
+                    rpt.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, this.Title + " (" + DateTime.Now.ToString("MM/dd/yy hh:mm tt") + ")");
+                    rpt.Close();
+                    rpt.Dispose();
+                    #endregion
+
+                    break;
             }
         }
 

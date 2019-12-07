@@ -102,11 +102,18 @@ namespace SmartConcepcion.Portal.Incidents
         {
             isAdmin();
             if (!IsPostBack)
+            {
+                loadDropDown(ddStatus, csql.GetStatusList("SmartConcepcion"), true);
                 loadIncidentReport();
+            }
         }
         void loadIncidentReport()
         {
             DateTime? _dtfrom = null, _dtto = null;
+            string status_code = "";
+
+            if (ddStatus.SelectedValue != "-1")
+                status_code = ddStatus.SelectedValue;
 
             if (txtFrom.Text != "")
                 _dtfrom = Convert.ToDateTime(txtFrom.Text);
@@ -114,7 +121,7 @@ namespace SmartConcepcion.Portal.Incidents
             if (txtFrom.Text != "")
                 _dtto = Convert.ToDateTime(txtTo.Text);
 
-            dttemp = csql.getIncidentReport("SmartConcepcion", gvIncidentReport.PageSize, p_PageIndex, _dtfrom, _dtto, txtName.Text);
+            dttemp = csql.getIncidentReport("SmartConcepcion", gvIncidentReport.PageSize, p_PageIndex, _dtfrom, _dtto, txtName.Text, status_code);
             
             if(dttemp.Rows.Count > 0)
             {
@@ -124,7 +131,6 @@ namespace SmartConcepcion.Portal.Incidents
                 gvIncidentReport.PageIndex = p_PageIndex;
                 gvIncidentReport.VirtualItemCount = (int)dttemp.Rows[0]["reccount"];
                 loadGridView(gvIncidentReport, dttemp);
-                
             }
             else
             {
@@ -158,7 +164,6 @@ namespace SmartConcepcion.Portal.Incidents
                 p_PageIndex = e.NewPageIndex;
                 loadIncidentReport();
                 clearIncidentInfo();
-
             }
         }
 
@@ -175,9 +180,12 @@ namespace SmartConcepcion.Portal.Incidents
 
         protected void btnPostIR_Click(object sender, EventArgs e)
         {
-            csql.setIncidentReport("SmartConcepcion", p_IncidentID, p_BrgyID,  txtTitle.Text, txtDetails.Text, "", p_ComplainantID, p_AccusedID, 
+            DataTable _dttemp = csql.setIncidentReport("SmartConcepcion", p_IncidentID, p_BrgyID,  txtTitle.Text, txtDetails.Text, "", p_ComplainantID, p_AccusedID, 
                 txtComplainant.Text, txtAccused.Text,Convert.ToDateTime(txtIncidentDate.Text), Convert.ToDateTime(txtConfrontation.Text),txtLocation.Text,
                 txtRemarks.Text,"ptd",p_UserID.Value);
+
+            if(p_IncidentID == null)
+                Response.Redirect($"~/Portal/Reports/RptViewer?title=SummonLetter&type=3&id={_dttemp.Rows[0]["ID"].ToString()}");
 
             loadIncidentReport();
             clearIncidentInfo();
@@ -240,8 +248,6 @@ namespace SmartConcepcion.Portal.Incidents
 
         protected void lnkNotAResident_Click(object sender, EventArgs e)
         {
-            
-
             if (hfFrom.Value == "accsd")
             {
                 txtAccused.Text = txtUserSearch.Text;

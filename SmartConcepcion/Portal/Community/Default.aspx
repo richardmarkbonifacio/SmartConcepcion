@@ -148,9 +148,6 @@
                                                     <asp:ListItem Text="Divorced" />
                                                 </asp:DropDownList>
                                             </div>
-                                            <div class="col-md-4">
-                                                <asp:TextBox runat="server" ID="txtRUserpass" placeholder="Password" autocomplete="off" CssClass="form-control sign-up-ctrl" TextMode="Password" />
-                                            </div>
                                         </div>
                             <div class="form-group">
                                 <div class="col-md-3">
@@ -178,8 +175,10 @@
                         <div class="text-right container-fluid">
                             <asp:Button runat="server" CssClass="btn btn-warning" Text="VERIFY" ID="btnVerify" OnClick="btnVerify_Click" OnClientClick="closeNav()" />
                             <asp:Button runat="server" CssClass="btn btn-danger" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />
-                            <asp:Button runat="server" CssClass="btn btn-danger" Text="BRGY CERT" ID="btnBrgyCert" OnClick="btnBrgyCert_Click" OnClientClick="closeNav()" />
-                            <asp:Button runat="server" CssClass="btn btn-danger" Text="INDIGENCY" ID="brgyIndigency" OnClick="brgyIndigency_Click" OnClientClick="closeNav()" />
+                            <asp:Button runat="server" CssClass="btn btn-danger" Text="Print Certificate" ID="brgyCertificate" OnClick="btnBrgyCert_Click" OnClientClick="closeNav()" />
+                            <asp:Button runat="server" CssClass="btn btn-danger" Text="Print Indigency" OnClientClick="openGeneric()" />
+                            
+                            
                         </div>
                         
                     </div>
@@ -189,7 +188,24 @@
         
     </div>
 
-
+    <div id="dlgGeneric" title="Certificate of Indigency" class="" style="display:none;">
+        <asp:UpdatePanel runat="server" ID="upHealtRecord" UpdateMode="Conditional">
+            <ContentTemplate>
+                <div class="container-fluid">
+                    <label class="col-md-4 text-right" >Reason</label>
+                    <div class="col-md-8 text-center">
+                        <asp:TextBox runat="server" ID="txtReason" placeholder="Reason" CssClass="form-control sign-up-ctrl" />
+                    </div>
+                </div>
+                
+                <div class="container-fluid text-right">
+                    <asp:Button runat="server" CssClass="btn btn-danger" Text="INDIGENCY" ID="brgyIndigency" OnClick="brgyIndigency_Click" OnClientClick="closeNav()" />
+                    
+                </div>
+               
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </div>
     
     <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>

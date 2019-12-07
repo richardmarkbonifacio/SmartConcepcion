@@ -603,7 +603,7 @@ namespace SmartConcepcion.Class
 
         #region Incident Report
 
-        public DataTable getIncidentReport(string cnstr, int pagesize, int pageno,DateTime? dtfrom, DateTime? dtto ,string search)
+        public DataTable getIncidentReport(string cnstr, int pagesize, int pageno,DateTime? dtfrom, DateTime? dtto ,string search, string status)
         {
             try
             {
@@ -616,6 +616,7 @@ namespace SmartConcepcion.Class
                 cmd.Parameters.Add("@dtfrom", SqlDbType.Date).Value = dtfrom;
                 cmd.Parameters.Add("@dtto", SqlDbType.Date).Value = dtto;
                 cmd.Parameters.Add("@search", SqlDbType.VarChar).Value = search;
+                cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = status;
 
                 da = new SqlDataAdapter(cmd);
                 using (cn)
@@ -750,7 +751,34 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
+        public DataTable GetStatusList(string cnstr)
+        {
+            try
+            {
+                result_Dt = new DataTable("Incident Case Closed");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Status_list_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
+            return result_Dt;
+        }
         #endregion
 
         #region Barangay

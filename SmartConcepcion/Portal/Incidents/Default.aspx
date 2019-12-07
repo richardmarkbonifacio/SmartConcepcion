@@ -9,20 +9,27 @@
         }
     </style>
     <script>
-            
         function FilterBox() {
             $(".filter").toggle(500, "linear");
         }
     </script>
     <asp:UpdatePanel ID="upIncidentReport" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
-            <div class="container-fluid">
-                <i class="fa fa-sliders" aria-hidden="true" style="cursor:pointer" onclick="FilterBox()" >Filter</i>
+            <div class="row">
+                <div class="col-md-6">
+                    <i class="fa fa-sliders" aria-hidden="true" style="cursor:pointer" onclick="FilterBox()" >Filter</i>
+                </div>
+                <div class="col-md-6 text-right">
+                    <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New Incident Report" CausesValidation="false"  />
+                </div>
             </div>
+
             <div class="row filter">
+                <div class="col-md-2">
+                    <asp:DropDownList runat="server" ID="ddStatus" CssClass="form-control" DataTextField="Description" DataValueField="code" />
+                </div>
                 <div class="col-md-5">
                     <div class="input-daterange input-group" style="z-index: 0">
-
                         <asp:TextBox runat="server" TextMode="Date" CssClass="form-control" ID="txtFrom" />
                         <span class="input-group-addon">to</span>
                         <asp:TextBox runat="server" TextMode="Date" CssClass="form-control" ID="txtTo" />
@@ -32,20 +39,14 @@
                     <asp:TextBox runat="server" placeholder="Search by name" CssClass="form-control" ID="txtName" />
                 </div>
                 <div class="col-md-2">
-                    <%--<asp:Button runat="server"  CssClass="btn btn-warning form-control" ID="btnFilter" OnClick="Filter_Text" CausesValidation="false" />--%>
                     <button runat="server" onserverclick="Filter_Text" causesvalidation="false" class="btn btn-mini btn-warning form-control" title="Search">
                         <i class="fa fa-search" aria-hidden="true"></i>Search
                     </button>
                 </div>
-                <div class="col-md-2">
-                    <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New Incident Report" CausesValidation="false" CssClass="btn btn-danger form-control" />
-                </div>
             </div>
+
             <hr />
             <div class="container-fluid">
-                
-                
-                <%--<asp:LinkButton runat="server" Text="New Incident Report" ID="lnkCreate" OnClick="lnkCreate_Click"/>--%>
                 <div style="overflow-x: scroll">
                     <asp:GridView runat="server" AutoGenerateColumns="false"
                         ID="gvIncidentReport" CssClass="table table-default table-hover table-responsive table-dark" PageSize="20"
@@ -146,7 +147,7 @@
                         </div>
                         <div class="row text-right">
                             <asp:Button runat="server" CssClass="btn btn-warning" Text="CASE CLOSED" ID="btnCaseClose" OnClick="btnCaseClose_Click" OnClientClick="closeNav()" />
-                            <asp:Button runat="server" CssClass="btn btn-danger" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()"/>
+                            <asp:Button runat="server" CssClass="btn btn-danger" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav();target ='_blank';"/>
                         </div>
                         
                     </div>
