@@ -145,8 +145,8 @@
                             <asp:TextBox ID="txtRemarks" runat="server" placeholder="Remarks" CssClass="form-control" />
                         </div>
                         <div class="row text-right">
-                            <asp:Button runat="server" CssClass="btn btn-warning" Text="CASE CLOSED" ID="btnCaseClose" OnClick="btnCaseClose_Click" OnClientClick="closeNav()" />
-                            <asp:Button runat="server" CssClass="btn btn-danger" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()"/>
+                            <asp:Button runat="server" CssClass="btn btn-red" Text="CASE CLOSED" ID="btnCaseClose" OnClick="btnCaseClose_Click" OnClientClick="closeNav()" /><br />
+                            <asp:Button runat="server" CssClass="btn btn-send" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()"/>
                         </div>
                         
                     </div>
