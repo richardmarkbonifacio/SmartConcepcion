@@ -218,6 +218,7 @@
     <Content Include="Portal\Officials\Official.aspx" />
     <Content Include="Portal\privacy.aspx" />
     <Content Include="Portal\Projects\Default.aspx" />
+    <Content Include="Portal\Reports\Media.aspx" />
     <Content Include="Portal\Reports\RptViewer.aspx" />
     <Content Include="Portal\termscondition.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -412,6 +413,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>certfileaction.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Portal\Reports\Media.aspx.cs">
+      <DependentUpon>Media.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Reports\Media.aspx.designer.cs">
+      <DependentUpon>Media.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Reports\RptViewer.aspx.cs">
       <DependentUpon>RptViewer.aspx</DependentUpon>
