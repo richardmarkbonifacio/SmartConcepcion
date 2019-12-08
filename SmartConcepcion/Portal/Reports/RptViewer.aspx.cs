@@ -51,6 +51,7 @@ namespace SmartConcepcion.Portal.Report
             rptCred = GetConfigSetting("rptbackoffice").Split('$');
             long? recid;
             string _title;
+            string _reason = "";
             switch (type) {
                 
                 case 1:
@@ -74,11 +75,14 @@ namespace SmartConcepcion.Portal.Report
                 case 2:
                     #region Barangay Indigency
                     recid = convert_long(Request.QueryString["id"], false);
+
                     _title = Request.QueryString["title"];
+                    _reason = Request.QueryString["reason"];
                     this.Title = _title;
                     rpt = new ReportDocument();
                     rpt.Load(Server.MapPath("~/portal/Reports/indigency.rpt"));
                     rpt.SetParameterValue("@id", recid);
+                    rpt.SetParameterValue("Reason", _reason);
 
                     rptCred = GetConfigSetting("rptbackoffice").Split('$');
                     rpt.DataSourceConnections.Clear();

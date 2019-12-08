@@ -218,7 +218,7 @@ namespace SmartConcepcion.Portal.Community
 
         protected void brgyIndigency_Click(object sender, EventArgs e)
         {
-            Response.Redirect($"~/Portal/Reports/RptViewer?title=baranggaycert&type=2&id={p_selecteduser.ToString()}");
+            Response.Redirect($"~/Portal/Reports/RptViewer?title=baranggaycert&type=2&id={p_selecteduser.ToString()}&reason={txtReason.Text}");
         }
     }
 }
