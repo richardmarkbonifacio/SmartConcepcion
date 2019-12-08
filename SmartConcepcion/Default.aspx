@@ -93,7 +93,7 @@
             </asp:ScriptManager>
             <div class="container">
                 <div class="col-md-6 col-md-offset-3">
-                    <img src="../images/logo3.png" style="width: 100%" />
+                    <img src="../images/BARANGAYFINALLOGO.png" style="width: 80%" />
                     <div class="col-md-8 col-md-offset-2">
                         <div class="row">
                             <div class="inputWithIcon">

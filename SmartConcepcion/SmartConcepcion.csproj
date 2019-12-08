@@ -157,6 +157,12 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="Portal\Media\17-0001.pdf" />
+    <Content Include="Portal\Media\A.-LETTER.pdf" />
+    <Content Include="Portal\Media\Application-Form-Ginoo-at-Binibining-Baliwag-2017.docx" />
+    <Content Include="Portal\Media\cert-of-toda-RENEWAL-FORM.pdf" />
+    <Content Include="Portal\Media\Environmental section clearance.pdf" />
+    <Content Include="Portal\Media\PCR.pdf" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -526,7 +532,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Portal\Announcements\Banner\" />
-    <Folder Include="Portal\Media\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

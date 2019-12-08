@@ -14,7 +14,7 @@
                         <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" />
                     </div>
                         <div class="col-md-3 col-xs-3">
-                            <asp:Button runat="server" CssClass="btn btn-warning" Text="search" ID="healthbtnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false" />
+                            <asp:Button runat="server" CssClass="btn btn-send" Text="search" ID="healthbtnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false" />
                         </div>
                     </div>
                 </div>
@@ -24,7 +24,7 @@
                 <%--<asp:LinkButton runat="server" Text="New Incident Report" ID="lnkCreate" OnClick="lnkCreate_Click"/>--%>
                 <div style="overflow-x: scroll">
                     <asp:GridView runat="server" AutoGenerateColumns="false"
-                        ID="gvUserProfiles" CssClass="table table-default table-hover table-responsive table-dark" PageSize="20"
+                        ID="gvUserProfiles" CssClass="table table-default table-hover table-responsive table-dark table-striped" PageSize="20"
                         AllowPaging="true" AllowCustomPaging="true" OnPageIndexChanging="gvUserProfiles_PageIndexChanging">
 
                         <Columns>
@@ -89,23 +89,25 @@
                             </div>
                         </div>
                         <div class="text-right container-fluid">
-                            <asp:Button runat="server" CssClass="btn btn-danger" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />
+                            <asp:Button runat="server" CssClass="btn btn-send" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />
                         </div>
                         
                         <hr />
 
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-3">
                                     <a onclick="openHealthRecord()" >Add health record</a>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-9">
                                     <div class="col-md-9 col-xs-9">
                                         <asp:TextBox runat="server" CssClass="form-control" ID="TextBox1" />
                                     </div>
+                                
                                     <div class="col-md-3 col-xs-3">
-                                        <asp:Button runat="server" CssClass="btn btn-send" Text="search" ID="Button1" OnClick="btnSearchUser_Click" CausesValidation="false" />
+                                        <asp:Button runat="server" CssClass="btn btn-send" Text="SEARCH" ID="Button1" OnClick="btnSearchUser_Click" CausesValidation="false" />
                                     </div>
+                                       
                                 </div>
                             </div>
 
