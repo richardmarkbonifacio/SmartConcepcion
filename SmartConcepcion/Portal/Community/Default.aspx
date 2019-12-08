@@ -22,7 +22,7 @@
                         <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" autocomplete="false"/>
                     </div>
                         <div class="col-md-3 col-xs-3">
-                            <asp:Button runat="server" CssClass="btn btn-warning" Text="search" ID="btnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false" />
+                            <asp:Button runat="server" CssClass="btn btn-send" Text="SEARCH" ID="btnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false" />
                         </div>
                     </div>
                 </div>
@@ -173,10 +173,10 @@
                             </div>
                         </div>
                         <div class="text-right container-fluid">
-                            <asp:Button runat="server" CssClass="btn btn-warning" Text="VERIFY" ID="btnVerify" OnClick="btnVerify_Click" OnClientClick="closeNav()" />
-                            <asp:Button runat="server" CssClass="btn btn-danger" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />
-                            <asp:Button runat="server" CssClass="btn btn-danger" Text="Print Certificate" ID="brgyCertificate" OnClick="btnBrgyCert_Click" OnClientClick="closeNav()" />
-                            <asp:Button runat="server" CssClass="btn btn-danger" Text="Print Indigency" OnClientClick="openGeneric()" />
+                            <asp:Button runat="server" CssClass="btn btn-send" Text="VERIFY" ID="btnVerify" OnClick="btnVerify_Click" OnClientClick="closeNav()" />
+                            <asp:Button runat="server" CssClass="btn btn-send" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />
+                            <asp:Button runat="server" CssClass="btn btn-red" Text="Print Certificate" ID="brgyCertificate" OnClick="btnBrgyCert_Click" OnClientClick="closeNav()" />
+                            <asp:Button runat="server" CssClass="btn btn-red" Text="Print Indigency" OnClientClick="openGeneric()" />
                             
                             
                         </div>

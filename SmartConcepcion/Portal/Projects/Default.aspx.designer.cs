@@ -22,15 +22,6 @@ namespace SmartConcepcion.Portal.Projects {
         protected global::System.Web.UI.UpdatePanel upProject;
         
         /// <summary>
-        /// txtProjectname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProjectname;
-        
-        /// <summary>
         /// txtdtFrom control.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,15 @@ namespace SmartConcepcion.Portal.Projects {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtdtTo;
+        
+        /// <summary>
+        /// txtProjectname control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtProjectname;
         
         /// <summary>
         /// btnProject control.
