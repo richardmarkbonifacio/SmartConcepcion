@@ -29,7 +29,7 @@
                 
                 <div style="overflow-x: scroll">
                     <asp:GridView runat="server" AutoGenerateColumns="false"
-                        ID="gvProjects" CssClass="table table-default table-hover table-responsive table-dark" PageSize="20"
+                        ID="gvProjects" CssClass="table table-default table-hover table-responsive table-dark  table-striped" PageSize="20"
                         AllowPaging="true" AllowCustomPaging="true" OnPageIndexChanging="gvProjects_PageIndexChanging">
 
                         <Columns>

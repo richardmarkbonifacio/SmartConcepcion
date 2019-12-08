@@ -32,7 +32,7 @@
                 <%--<asp:LinkButton runat="server" Text="New Incident Report" ID="lnkCreate" OnClick="lnkCreate_Click"/>--%>
                 <div style="overflow-x: scroll">
                     <asp:GridView runat="server" AutoGenerateColumns="false"
-                        ID="gvUserProfiles" CssClass="table table-default table-hover table-responsive table-dark" PageSize="20"
+                        ID="gvUserProfiles" CssClass="table table-default table-hover table-responsive table-dark table-striped" PageSize="20"
                         AllowPaging="true" AllowCustomPaging="true" OnPageIndexChanging="gvUserProfiles_PageIndexChanging">
 
                         <Columns>
