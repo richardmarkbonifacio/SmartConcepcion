@@ -10,17 +10,19 @@
                         <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New Project" CausesValidation="false" />
                     </div>
                     <div class="col-md-8">
-                        <div class="col-md-3 col-xs-3">
-                            <asp:TextBox runat="server" CssClass="form-control" ID="txtProjectname" />
-                        </div>
+                        
                         <div class="col-md-3 col-xs-3">
                             <asp:TextBox runat="server" CssClass="form-control" ID="txtdtFrom" TextMode="Date" />
                         </div>
                         <div class="col-md-3 col-xs-3">
                             <asp:TextBox runat="server" CssClass="form-control" ID="txtdtTo" TextMode="Date" />
+
+                        </div>
+                        <div class="col-md- col-xs-3">
+                            <asp:TextBox runat="server" CssClass="form-control" placeholder="search..." ID="txtProjectname" />
                         </div>
                         <div class="col-md-3 col-xs-3">
-                            <asp:Button runat="server" CssClass="btn btn-warning" Text="search" ID="btnProject" OnClick="btnProject_Click" CausesValidation="false" />
+                            <asp:Button runat="server" CssClass="btn btn-send" Text="SEARCH" ID="btnProject" OnClick="btnProject_Click" CausesValidation="false" />
                         </div>
                     </div>
                 </div>
@@ -161,7 +163,7 @@
                         <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" />
                     </div>
                     <div class="col-md-4">
-                        <asp:Button runat="server" CssClass="btn btn-warning" Text="search" ID="btnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false"/>
+                        <asp:Button runat="server" CssClass="btn btn-send" Text="SEARCH" ID="btnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false"/>
                     </div>
                 </div>
                 <hr />
