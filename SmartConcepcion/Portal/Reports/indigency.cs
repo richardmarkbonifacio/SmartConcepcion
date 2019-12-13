@@ -111,6 +111,14 @@ namespace SmartConcepcion.Portal.Reports {
                 return this.DataDefinition.ParameterFields[1];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_forsubreportrpt_brgyID {
+            get {
+                return this.DataDefinition.ParameterFields[2];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
