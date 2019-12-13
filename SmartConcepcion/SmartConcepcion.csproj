@@ -401,16 +401,22 @@
     <Compile Include="Portal\Community\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Portal\Reports\barangaycert.cs">
+    <Compile Include="Portal\Reports\barangayclearance.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>barangaycert.rpt</DependentUpon>
+      <DependentUpon>barangayclearance.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Portal\Reports\certfileaction.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>certfileaction.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Portal\Reports\forsubreport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>forsubreport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Portal\Reports\RptViewer.aspx.cs">
@@ -546,13 +552,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Portal\Reports\barangaycert.rpt">
+    <EmbeddedResource Include="Portal\Reports\barangayclearance.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>barangaycert.cs</LastGenOutput>
+      <LastGenOutput>barangayclearance.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Portal\Reports\certfileaction.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>certfileaction.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Portal\Reports\forsubreport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>forsubreport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Portal\Reports\solo-parent.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

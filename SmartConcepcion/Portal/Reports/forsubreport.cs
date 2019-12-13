@@ -16,14 +16,14 @@ namespace SmartConcepcion.Portal.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class barangaycert : ReportClass {
+    public class forsubreport : ReportClass {
         
-        public barangaycert() {
+        public forsubreport() {
         }
         
         public override string ResourceName {
             get {
-                return "barangaycert.rpt";
+                return "forsubreport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SmartConcepcion.Portal.Reports {
         
         public override string FullResourceName {
             get {
-                return "SmartConcepcion.Portal.Reports.barangaycert.rpt";
+                return "SmartConcepcion.Portal.Reports.forsubreport.rpt";
             }
             set {
                 // Do nothing
@@ -58,7 +58,7 @@ namespace SmartConcepcion.Portal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportHeaderSection4 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section2 {
             get {
                 return this.ReportDefinition.Sections[1];
             }
@@ -66,7 +66,7 @@ namespace SmartConcepcion.Portal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportHeaderSection5 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace SmartConcepcion.Portal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportHeaderSection6 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace SmartConcepcion.Portal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportHeaderSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,39 +90,7 @@ namespace SmartConcepcion.Portal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section PageHeaderSection2 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
-            get {
-                return this.ReportDefinition.Sections[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[7];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
-            get {
-                return this.ReportDefinition.Sections[8];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_ID {
+        public CrystalDecisions.Shared.IParameterField Parameter_brgyID {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -130,9 +98,9 @@ namespace SmartConcepcion.Portal.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedbarangaycert : Component, ICachedReport {
+    public class Cachedforsubreport : Component, ICachedReport {
         
-        public Cachedbarangaycert() {
+        public Cachedforsubreport() {
         }
         
         [Browsable(false)]
@@ -169,7 +137,7 @@ namespace SmartConcepcion.Portal.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            barangaycert rpt = new barangaycert();
+            forsubreport rpt = new forsubreport();
             rpt.Site = this.Site;
             return rpt;
         }

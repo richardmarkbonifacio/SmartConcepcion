@@ -16,14 +16,14 @@ namespace SmartConcepcion.Portal.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class certfileaction : ReportClass {
+    public class barangayclearance : ReportClass {
         
-        public certfileaction() {
+        public barangayclearance() {
         }
         
         public override string ResourceName {
             get {
-                return "certfileaction.rpt";
+                return "barangayclearance.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace SmartConcepcion.Portal.Reports {
         
         public override string FullResourceName {
             get {
-                return "SmartConcepcion.Portal.Reports.certfileaction.rpt";
+                return "SmartConcepcion.Portal.Reports.barangayclearance.rpt";
             }
             set {
                 // Do nothing
@@ -58,7 +58,7 @@ namespace SmartConcepcion.Portal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section ReportHeaderSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section ReportHeaderSection4 {
             get {
                 return this.ReportDefinition.Sections[1];
             }
@@ -66,7 +66,7 @@ namespace SmartConcepcion.Portal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section2 {
+        public CrystalDecisions.CrystalReports.Engine.Section PageHeaderSection2 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -98,17 +98,25 @@ namespace SmartConcepcion.Portal.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_forsubreportrpt_brgyID {
+        public CrystalDecisions.Shared.IParameterField Parameter_ID {
             get {
                 return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_forsubreportrpt_brgyID {
+            get {
+                return this.DataDefinition.ParameterFields[1];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class Cachedcertfileaction : Component, ICachedReport {
+    public class Cachedbarangayclearance : Component, ICachedReport {
         
-        public Cachedcertfileaction() {
+        public Cachedbarangayclearance() {
         }
         
         [Browsable(false)]
@@ -145,7 +153,7 @@ namespace SmartConcepcion.Portal.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            certfileaction rpt = new certfileaction();
+            barangayclearance rpt = new barangayclearance();
             rpt.Site = this.Site;
             return rpt;
         }
