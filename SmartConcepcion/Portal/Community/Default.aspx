@@ -8,7 +8,15 @@
         .fa-times-circle{
             color:red;
         }
+        .filter{
+            display:none;
+        }
     </style>
+    <script>
+        function FilterBox() {
+            $(".filter").toggle(500, "linear");
+        }
+    </script>
     <div class="header-banner">COMMUNITY</div>
     <asp:UpdatePanel ID="upIncidentReport" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
@@ -17,16 +25,25 @@
                     <div class="col-md-6">
                         <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New User Profile" CausesValidation="false" />
                     </div>
-                    <div class="col-md-6">
-                        <div class="col-md-9 col-xs-9">
-                        <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" autocomplete="false"/>
-                    </div>
-                        <div class="col-md-3 col-xs-3">
-                            <asp:Button runat="server" CssClass="btn btn-send" Text="SEARCH" ID="btnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false" />
-                        </div>
+                    <div class="col-md-6 text-right">
+                        <i class="fa fa-sliders" aria-hidden="true" style="cursor:pointer" onclick="FilterBox()" >Filter</i>
                     </div>
                 </div>
-                
+                <div class="row filter">
+                    <div class="col-md-3 col-xs-3 col-md-offset-3">
+                        <asp:DropDownList runat="server" ID="ddVerified" CssClass="form-control">
+                            <asp:ListItem Text="Select One" Value="-1" />
+                            <asp:ListItem Text="Verified" Value="1" />
+                            <asp:ListItem Text="Not Verified" Value="0" />
+                        </asp:DropDownList>
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" autocomplete="false" placeholder="Search for name" />
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <asp:Button runat="server" CssClass="btn btn-send" Text="SEARCH" ID="btnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false" />
+                    </div>
+                </div>
                 
                 <hr />
                 <%--<asp:LinkButton runat="server" Text="New Incident Report" ID="lnkCreate" OnClick="lnkCreate_Click"/>--%>

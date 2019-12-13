@@ -90,7 +90,12 @@ namespace SmartConcepcion.Portal.Officials
         {
             LinkButton _lnk = (LinkButton)sender;
 
-            csql.setBrgyOfficial("SmartConcepcion",p_BrgyID, hfFrom.Value, Convert.ToInt64(_lnk.ToolTip), null ,p_UserID.Value);
+            long? replaceID = null;
+
+            if (hfReplaceID.Value != "")
+                replaceID = convert_long(hfReplaceID.Value,false);
+
+            csql.setBrgyOfficial("SmartConcepcion",p_BrgyID, hfFrom.Value, Convert.ToInt64(_lnk.ToolTip), replaceID ,p_UserID.Value);
             loadOfficial();
         }
 

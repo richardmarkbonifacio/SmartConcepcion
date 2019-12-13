@@ -94,11 +94,23 @@ namespace SmartConcepcion.Portal.Business
         {
             
             if (!IsPostBack)
+            {
+                dttemp = csql.getBusinessType("SmartConcepcion");
+                loadDropDown(ddBusinessType,dttemp ,false);
+                loadDropDown(ddFilterBusinessType, dttemp, true);
+
                 loadBusinessProfile();
+            }
+                
         }
         void loadBusinessProfile()
         {
-            dttemp = csql.getBusinessPaging("SmartConcepcion", gvBusinessProfiles.PageSize, p_PageIndex,txtUserSearch.Text,p_BrgyID);
+            long? selected_business_type = null;
+
+            if (ddFilterBusinessType.SelectedValue != "-1")
+                selected_business_type = convert_long(ddFilterBusinessType.SelectedValue, false);
+
+            dttemp = csql.getBusinessPaging("SmartConcepcion", gvBusinessProfiles.PageSize, p_PageIndex, txtUserSearch.Text, p_BrgyID, selected_business_type);
             gvBusinessProfiles.PageIndex = p_PageIndex;
             if(dttemp.Rows.Count > 0)
             {
@@ -111,14 +123,9 @@ namespace SmartConcepcion.Portal.Business
         void clearUserInfo()
         {
             p_UserProfileID = null;
-            //txtFnam.Text = "";
-            //txtLnam.Text = "";
-            //txtMnam.Text = "";
-            //txtBday.Text = "";
-            //txtContact.Text = "";
-            //txtEmail.Text = "";
             
-            header.InnerText = "Create new Incident";
+            
+            header.InnerText = "Create new Business";
             upIncidentInfo.Update();
         }
         protected void gvBusinessProfiles_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -142,16 +149,16 @@ namespace SmartConcepcion.Portal.Business
         {
             try
             {
-                DataTable _dt = csql.setBusiness("SmartConcepcion", p_UserProfileID, txtEmail.Text, txtBusiness.Text, 0, txtDescription.Text, txtOwner.Text,
-                txtPermit.Text, txtContact.Text,txtStbldgno.Text, p_BrgyID, p_UserID);
+                DataTable _dt = csql.setBusiness("SmartConcepcion", p_UserProfileID, txtEmail.Text, txtBusiness.Text, 
+                    convert_long(ddBusinessType.SelectedValue, false).Value,txtDescription.Text, txtOwner.Text,
+                    txtPermit.Text, txtContact.Text,txtStbldgno.Text, p_BrgyID, p_UserID);
 
                 loadBusinessProfile();
                 clearUserInfo();
             }
             catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
             
         }
@@ -160,7 +167,7 @@ namespace SmartConcepcion.Portal.Business
         {
             LinkButton _lnk = (LinkButton)sender;
             DataTable _dttemp = csql.getBusiness_Details("SmartConcepcion", Convert.ToInt64(_lnk.ToolTip));
-            header.InnerText = "Update Account";
+            header.InnerText = "Update Business Details";
 
             txtBusiness.Text = _dttemp.Rows[0]["businessname"].ToString();
             txtOwner.Text = _dttemp.Rows[0]["owner"].ToString();
@@ -169,7 +176,7 @@ namespace SmartConcepcion.Portal.Business
             txtStbldgno.Text = _dttemp.Rows[0]["stnobldg"].ToString();
             txtContact.Text = _dttemp.Rows[0]["contactno"].ToString();
             txtEmail.Text = _dttemp.Rows[0]["email"].ToString();
-
+            ddBusinessType.SelectedValue = _dttemp.Rows[0]["businessTypeID"].ToString();
 
             p_UserProfileID = Convert.ToInt64(_dttemp.Rows[0]["ID"].ToString());
             upIncidentInfo.Update();

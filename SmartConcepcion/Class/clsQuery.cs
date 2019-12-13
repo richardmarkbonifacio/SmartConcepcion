@@ -802,7 +802,6 @@ namespace SmartConcepcion.Class
                             da.Fill(result_DS);
                             result_DS.Tables[0].TableName = "dtCapt";
                             result_DS.Tables[1].TableName = "dtCouncilor";
-                            result_DS.Tables[2].TableName = "dtOther";
                         }
                     }
                 }
@@ -886,6 +885,7 @@ namespace SmartConcepcion.Class
                 cmd.Parameters.Add("@role_code", SqlDbType.VarChar, 10).Value = role_code;
                 cmd.Parameters.Add("@userID", SqlDbType.BigInt).Value = userID;
                 cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
+                cmd.Parameters.Add("@replaceID", SqlDbType.BigInt).Value = replaceID;
                 cmd.Parameters.Add("@updatedby", SqlDbType.BigInt).Value = updatedby;
                 da = new SqlDataAdapter(cmd);
                 using (cn)
@@ -911,7 +911,8 @@ namespace SmartConcepcion.Class
         #endregion
 
         #region Business
-        public DataTable getBusinessPaging(string cnstr, int pagesize, int pageno, string search, long? brgyID)
+        public DataTable getBusinessPaging(string cnstr, int pagesize, int pageno, string search,
+            long? brgyID, long? businessType)
         {
             try
             {
@@ -923,7 +924,7 @@ namespace SmartConcepcion.Class
                 cmd.Parameters.Add("@PageNumber", SqlDbType.Int).Value = pageno;
                 cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
                 cmd.Parameters.Add("@search", SqlDbType.VarChar).Value = search;
-
+                cmd.Parameters.Add("@businessType", SqlDbType.BigInt).Value = businessType;
                 da = new SqlDataAdapter(cmd);
                 using (cn)
                 {
@@ -976,6 +977,38 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
+
+        public DataTable getBusinessType(string cnstr)
+        {
+            try
+            {
+                result_Dt = new DataTable("Businesss Type");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Business_type_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
+
         public DataTable setBusiness(string cnstr, long? ID, string email, string businessname,Int64 businestype, string description, string owner,
             string permitno, string contactno, string stbldgno, long brgyID, long? updatedby)
         {

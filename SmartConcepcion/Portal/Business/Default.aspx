@@ -1,28 +1,49 @@
 ﻿<%@ Page Title="Business" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Portal.Business.Default" %>
 <asp:Content ID="content_report" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    
+    <style>
+        .fa-check-circle-o{
+            color:green;
+        }
+        .fa-times-circle{
+            color:red;
+        }
+        .filter{
+            display:none;
+        }
+    </style>
+    <script>
+        function FilterBox() {
+            $(".filter").toggle(500, "linear");
+        }
+    </script>
+
     <div class="header-banner">BUSINESS DIRECTORY</div>
     <asp:UpdatePanel ID="upBusiness" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
+                        <i class="fa fa-sliders" aria-hidden="true" style="cursor:pointer" onclick="FilterBox()" >Filter</i>
+                    </div>
+                    <div class="col-md-6 text-right">
                         <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New Business Profile" CausesValidation="false" />
-                    </div>
-                    <div class="col-md-6">
-                        <div class="col-md-9 col-xs-9">
-                        <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" />
-                    </div>
-                        <div class="col-md-3 col-xs-3">
-                            <asp:Button runat="server" CssClass="btn btn-send" Text="SEARCH" ID="btnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false" />
-                        </div>
                     </div>
                 </div>
                 
+                <div class="row filter">
+                    <div class="col-md-3 col-xs-3 col-md-offset-3">
+                        <asp:DropDownList runat="server" ID="ddFilterBusinessType" DataValueField="ID" DataTextField="Description" CssClass="form-control" />
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" />
+                    </div>
+                    <div class="col-md-3 col-xs-3">
+                        <asp:Button runat="server" CssClass="btn btn-send" Text="SEARCH" ID="btnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false" />
+                    </div>
+                </div>
                 
                 <hr />
-                <%--<asp:LinkButton runat="server" Text="New Incident Report" ID="lnkCreate" OnClick="lnkCreate_Click"/>--%>
                 <div style="overflow-x: scroll">
                     <asp:GridView runat="server" AutoGenerateColumns="false" 
                     ID="gvBusinessProfiles" CssClass="table table-default table-hover table-responsive table-dark table-striped" PageSize="5" 
@@ -53,7 +74,7 @@
                         </ul>
                         
                     </PagerTemplate>
-                    <PagerSettings mode="NextPrevious" Position="Bottom" PreviousPageText="Previous" NextPageText="Next" FirstPageText="First" LastPageText="Last"   />
+                    <PagerSettings mode="NextPrevious" Position="Bottom" PreviousPageText="Previous" NextPageText="Next" FirstPageText="First" LastPageText="Last" />
                 <PagerStyle HorizontalAlign="Right" />   
                 </asp:GridView>
                 </div>
@@ -78,7 +99,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12 text-center">
-                                    <asp:TextBox runat="server" ID="txtDescription" placeholder="Business Name" CssClass="form-control sign-up-ctrl" />
+                                    <asp:TextBox runat="server" ID="txtDescription" placeholder="Description" CssClass="form-control sign-up-ctrl" />
                                 </div>
                                 
                             </div>
@@ -93,22 +114,26 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group text-center">
                                 <div class="col-md-12 text-center">
                                     <asp:TextBox runat="server" ID="txtStbldgno" placeholder="St Bldg No" CssClass="form-control sign-up-ctrl" />
+                                    <label>St Bldg No</label>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <div class="col-md-6 text-center">
+                                <div class="col-md-4 text-center">
                                     <asp:TextBox runat="server" ID="txtEmail" placeholder="Email" CssClass="form-control sign-up-ctrl" TextMode="Email" />
                                     <label>Email</label>
                                 </div>
-                                <div class="col-md-6 text-center">
+                                <div class="col-md-4 text-center">
                                     <asp:TextBox runat="server" ID="txtContact" placeholder="Contact No." CssClass="form-control sign-up-ctrl" />
                                     <label>Contact No.</label>
                                 </div>
-                                
+                                <div class="col-md-4 text-center">
+                                    <asp:DropDownList runat="server" ID="ddBusinessType" DataTextField="Description" DataValueField="ID" CssClass="form-control" />
+                                    <label>Business Type</label>
+                                </div>
                             </div>
 
                         </div>

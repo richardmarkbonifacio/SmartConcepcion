@@ -198,8 +198,8 @@ namespace SmartConcepcion.Portal.Incidents
             header.InnerText = "Update Incident";
             txtTitle.Text = _dttemp.Rows[0]["title"].ToString();
             txtLocation.Text = _dttemp.Rows[0]["incident_location"].ToString();
-            txtIncidentDate.Text = Convert.ToDateTime(_dttemp.Rows[0]["incidentdate"].ToString()).ToLocalTime().ToString("yyyy-MM-ddTHH:mm:ss");
-            txtConfrontation.Text = Convert.ToDateTime(_dttemp.Rows[0]["confrontation_date"].ToString()).ToLocalTime().ToString("yyyy-MM-ddTHH:mm:ss");
+            txtIncidentDate.Text = Convert.ToDateTime(_dttemp.Rows[0]["incidentdate"].ToString()).ToString("yyyy-MM-ddTHH:mm:ss");//.ToLocalTime().ToString("yyyy-MM-ddTHH:mm:ss");
+            txtConfrontation.Text = Convert.ToDateTime(_dttemp.Rows[0]["confrontation_date"].ToString()).ToString("yyyy-MM-ddTHH:mm:ss"); //ToLocalTime().ToString("yyyy-MM-ddTHH:mm:ss");
             txtAccused.Text = _dttemp.Rows[0]["accusedName"].ToString();
             txtComplainant.Text = _dttemp.Rows[0]["complainantName"].ToString();
             txtDetails.Text = _dttemp.Rows[0]["incident_details"].ToString();

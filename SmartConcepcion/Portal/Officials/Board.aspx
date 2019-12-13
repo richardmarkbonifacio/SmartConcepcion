@@ -6,6 +6,7 @@
         <ContentTemplate>
             <h2>BRGY CHAIRMAN</h2>
             <asp:HiddenField runat="server" ID="hfFrom" />
+            <asp:HiddenField runat="server" ID="hfReplaceID" />
             <div class="row">
                 <div class="col-md-12">
                     <asp:TextBox runat="server" placeholder="Chairman" CssClass="form-control" ID="txtChairman" onclick="openNameSuggestion('capt')" ReadOnly="true" />
@@ -20,8 +21,8 @@
             <div class="container-fluid">
                 <asp:ListView runat="server" ID="lvCouncilor">
                     <ItemTemplate>
-                        
-                        <asp:TextBox runat="server" placeholder="Councilor" Text='<%# Eval("officialName") %>' CssClass="form-control" ReadOnly="true" onclick="openNameSuggestion('coun')"/>
+                        <asp:TextBox runat="server" placeholder="Councilor" Text='<%# Eval("officialName") %>' CssClass="form-control" 
+                            ReadOnly="true" onclick='<%# "setReplaceID(" + Eval("userID") + ");" %> '  />
                     </ItemTemplate>
                 </asp:ListView>
             </div>
@@ -60,6 +61,7 @@
         </asp:UpdatePanel>
         
     </div>
+
     <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
     <script src="../../Scripts/custom/sidenav.js"></script>

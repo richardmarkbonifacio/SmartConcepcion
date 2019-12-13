@@ -56,3 +56,8 @@ function setDataMode(mode) {
     openGeneric();
     $("#MainContent_hfMode").val(mode);
 } 
+
+function setReplaceID(from) {
+    $("#MainContent_hfReplaceID").val(from);
+    openNameSuggestion("coun");
+}

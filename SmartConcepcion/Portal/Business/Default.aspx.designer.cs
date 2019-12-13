@@ -22,6 +22,15 @@ namespace SmartConcepcion.Portal.Business {
         protected global::System.Web.UI.UpdatePanel upBusiness;
         
         /// <summary>
+        /// ddFilterBusinessType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddFilterBusinessType;
+        
+        /// <summary>
         /// txtUserSearch control.
         /// </summary>
         /// <remarks>
@@ -137,6 +146,15 @@ namespace SmartConcepcion.Portal.Business {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtContact;
+        
+        /// <summary>
+        /// ddBusinessType control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddBusinessType;
         
         /// <summary>
         /// btnPost control.
