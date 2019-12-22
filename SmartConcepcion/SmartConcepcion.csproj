@@ -157,6 +157,7 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="Portal\Beta\multi-step-form.aspx" />
     <Content Include="Portal\Media\17-0001.pdf" />
     <Content Include="Portal\Media\A.-LETTER.pdf" />
     <Content Include="Portal\Media\Application-Form-Ginoo-at-Binibining-Baliwag-2017.docx" />
@@ -358,6 +359,13 @@
     </Compile>
     <Compile Include="Portal\Beta\loading.aspx.designer.cs">
       <DependentUpon>loading.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Beta\multi-step-form.aspx.cs">
+      <DependentUpon>multi-step-form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Beta\multi-step-form.aspx.designer.cs">
+      <DependentUpon>multi-step-form.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Beta\textbox_design.aspx.cs">
       <DependentUpon>textbox_design.aspx</DependentUpon>

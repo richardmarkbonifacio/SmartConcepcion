@@ -92,15 +92,16 @@ namespace SmartConcepcion.Portal.Community
         protected override void OnPreLoad(EventArgs e)
         {
             base.OnPreLoad(e);
-            if (!isAdmin())
-            {
-                Response.Redirect("~/Portal/");
-            }
+            
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (!isAdmin())
+            {
+                Response.Redirect("~/Portal/");
+            }
+
             if (!IsPostBack)
             {
                 loadUserProfile();
@@ -196,7 +197,9 @@ namespace SmartConcepcion.Portal.Community
             chkSenir.Checked = Convert.ToBoolean(_dttemp.Rows[0]["isSeniorCitizen"].ToString());
             lblAccountNo.Text = _dttemp.Rows[0]["ID"].ToString();
             p_selecteduser = Convert.ToInt64(_dttemp.Rows[0]["ID"].ToString());
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "CallMyFunction", "showTab(0);", true);
             upIncidentInfo.Update();
+            
         }
 
         protected void btnSearchUser_Click(object sender, EventArgs e)

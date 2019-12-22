@@ -103,22 +103,31 @@ namespace SmartConcepcion {
         protected global::System.Web.UI.WebControls.TextBox txtSuffix;
         
         /// <summary>
-        /// txtEmail control.
+        /// txtBday control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtBday;
         
         /// <summary>
-        /// txtContact control.
+        /// ddGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContact;
+        protected global::System.Web.UI.WebControls.DropDownList ddGender;
+        
+        /// <summary>
+        /// txtVotersID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtVotersID;
         
         /// <summary>
         /// txtNationality control.
@@ -128,6 +137,15 @@ namespace SmartConcepcion {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNationality;
+        
+        /// <summary>
+        /// ddCivilStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddCivilStatus;
         
         /// <summary>
         /// ddBrgy control.
@@ -157,40 +175,112 @@ namespace SmartConcepcion {
         protected global::System.Web.UI.WebControls.TextBox txtStbldgno;
         
         /// <summary>
-        /// txtBday control.
+        /// txtEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtBday;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
-        /// ddGender control.
+        /// txtContact control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddGender;
+        protected global::System.Web.UI.WebControls.TextBox txtContact;
         
         /// <summary>
-        /// txtVotersID control.
+        /// txtPreschool control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtVotersID;
+        protected global::System.Web.UI.WebControls.TextBox txtPreschool;
         
         /// <summary>
-        /// ddCivilStatus control.
+        /// txtPreFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddCivilStatus;
+        protected global::System.Web.UI.WebControls.TextBox txtPreFrom;
+        
+        /// <summary>
+        /// txtPreTo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtPreTo;
+        
+        /// <summary>
+        /// txtHS control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHS;
+        
+        /// <summary>
+        /// txtHSStart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHSStart;
+        
+        /// <summary>
+        /// txtHSEnd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHSEnd;
+        
+        /// <summary>
+        /// txtCollege control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCollege;
+        
+        /// <summary>
+        /// txtCourse control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCourse;
+        
+        /// <summary>
+        /// txtCollegeStart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCollegeStart;
+        
+        /// <summary>
+        /// txtCollegeEnd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCollegeEnd;
         
         /// <summary>
         /// txtRUserpass control.
