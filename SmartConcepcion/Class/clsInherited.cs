@@ -330,5 +330,42 @@ namespace SmartConcepcion.Class
                 }
             }
         }
+
+        public DateTime? convert_date(string val)
+        {
+            if (val.Equals(""))
+            {
+                    return null;
+            }
+            else
+            {
+                try
+                {
+                    return Convert.ToDateTime(val);
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+        }
+        public string convert_date(string val, string format)
+        {
+            if (val.Equals(""))
+            {
+                return null;
+            }
+            else
+            {
+                try
+                {
+                    return Convert.ToDateTime(val).ToString(format);
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+        }
     }
 }

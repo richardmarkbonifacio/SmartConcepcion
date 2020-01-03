@@ -97,11 +97,8 @@ namespace SmartConcepcion.Portal.Community
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!isAdmin())
-            {
-                Response.Redirect("~/Portal/");
-            }
-
+            isAdmin();
+            
             if (!IsPostBack)
             {
                 loadUserProfile();
@@ -131,7 +128,25 @@ namespace SmartConcepcion.Portal.Community
             txtBday.Text = "";
             txtContact.Text = "";
             txtEmail.Text = "";
-            
+
+            txtPreschool.Text = "";
+            txtPreFrom.Text = "";
+            txtPreTo.Text = "";
+
+            txtElem.Text = "";
+            txtElemStart.Text = "";
+            txtElemEnd.Text = "";
+
+            txtHS.Text = "";
+            txtHSStart.Text = "";
+            txtHSEnd.Text = "";
+
+            txtCollege.Text = "";
+            txtCollegeStart.Text = "";
+            txtCollegeEnd.Text = "";
+            txtCourse.Text = "";
+
+
             header.InnerText = "Create new Incident";
             upIncidentInfo.Update();
         }
@@ -156,9 +171,11 @@ namespace SmartConcepcion.Portal.Community
         {
             try
             {
-                DataTable _dt = csql.UserCreateUpdate("SmartConcepcion", p_selecteduser, txtEmail.Text, txtFnam.Text, txtMnam.Text, txtLnam.Text,
-                txtSuffix.Text, txtNationality.Text, ddCivilStatus.SelectedValue, txtContact.Text, txtStbldgno.Text, p_BrgyID, Convert.ToInt64(ddZone.SelectedValue), txtVotersID.Text,
-                Convert.ToDateTime(txtBday.Text), p_UserID, chkIndigent.Checked, chkSenir.Checked, chkPwd.Checked, chk4ps.Checked);
+                DataTable _dt = csql.UserCreateUpdate("SmartConcepcion", p_selecteduser, txtEmail.Text, txtFnam.Text, txtMnam.Text, txtLnam.Text, txtSuffix.Text,
+                    txtNationality.Text, ddCivilStatus.SelectedValue, txtContact.Text, txtStbldgno.Text, p_BrgyID, Convert.ToInt64(ddZone.SelectedValue), txtVotersID.Text,
+                        txtPreschool.Text, convert_date(txtPreFrom.Text), convert_date(txtPreTo.Text), txtElem.Text, convert_date(txtElemStart.Text), convert_date(txtElemEnd.Text),
+                            txtHS.Text, convert_date(txtHSStart.Text), convert_date(txtHSStart.Text), txtCollege.Text, convert_date(txtCollegeStart.Text), convert_date(txtCollegeEnd.Text),
+                                txtCourse.Text, Convert.ToDateTime(txtBday.Text), p_UserID, chkIndigent.Checked, chkSenir.Checked, chkPwd.Checked, chk4ps.Checked);
 
                 loadUserProfile();
                 clearUserInfo();
@@ -177,19 +194,42 @@ namespace SmartConcepcion.Portal.Community
             DataTable _dttemp = csql.getUser_Details("SmartConcepcion", Convert.ToInt64(_lnk.ToolTip));
             header.InnerText = "Update Account";
 
-            txtBday.Text = Convert.ToDateTime(_dttemp.Rows[0]["birthday"].ToString()).ToString("yyyy-MM-dd");
-            txtContact.Text = _dttemp.Rows[0]["contactno"].ToString();
-            txtEmail.Text = _dttemp.Rows[0]["email"].ToString();
+            //PERSONAL INFORMATION
             txtFnam.Text = _dttemp.Rows[0]["firstname"].ToString();
             txtLnam.Text = _dttemp.Rows[0]["lastname"].ToString();
             txtMnam.Text = _dttemp.Rows[0]["middlename"].ToString();
-            txtStbldgno.Text = _dttemp.Rows[0]["stbldgno"].ToString();
-            txtVotersID.Text =  _dttemp.Rows[0]["votersID"].ToString();
             txtSuffix.Text = _dttemp.Rows[0]["suffix"].ToString();
-            //ddGender.SelectedValue = _dttemp.Rows[0]["middlename"].ToString();
-            ddCivilStatus.SelectedValue = _dttemp.Rows[0]["civil_status"].ToString();
-            ddZone.SelectedValue = _dttemp.Rows[0]["zoneID"].ToString();
+
+            txtBday.Text = Convert.ToDateTime(_dttemp.Rows[0]["birthday"].ToString()).ToString("yyyy-MM-dd");
+            txtVotersID.Text = _dttemp.Rows[0]["votersID"].ToString();
             txtNationality.Text = _dttemp.Rows[0]["nationality"].ToString();
+            ddCivilStatus.SelectedValue = _dttemp.Rows[0]["civil_status"].ToString();
+
+            //Contact and Address
+            txtContact.Text = _dttemp.Rows[0]["contactno"].ToString();
+            txtEmail.Text = _dttemp.Rows[0]["email"].ToString();
+            
+            txtStbldgno.Text = _dttemp.Rows[0]["stbldgno"].ToString();
+            ddGender.SelectedValue = _dttemp.Rows[0]["middlename"].ToString();
+            ddZone.SelectedValue = _dttemp.Rows[0]["zoneID"].ToString();
+            
+            //Educational Background
+            txtPreschool.Text = _dttemp.Rows[0]["preschool"].ToString();
+            txtPreFrom.Text = convert_date(_dttemp.Rows[0]["preschool_start"].ToString(), "yyyy-MM-dd");
+            txtPreTo.Text = convert_date(_dttemp.Rows[0]["preschool_end"].ToString(), "yyyy-MM-dd");
+
+            txtElem.Text = _dttemp.Rows[0]["elementary"].ToString();
+            txtElemStart.Text = convert_date(_dttemp.Rows[0]["elem_start"].ToString(), "yyyy-MM-dd");
+            txtElemEnd.Text = convert_date(_dttemp.Rows[0]["elem_end"].ToString(), "yyyy-MM-dd");
+
+            txtHS.Text = _dttemp.Rows[0]["highschool"].ToString();
+            txtHSStart.Text = convert_date(_dttemp.Rows[0]["hs_start"].ToString(), "yyyy-MM-dd");
+            txtHSEnd.Text = convert_date(_dttemp.Rows[0]["hs_end"].ToString(), "yyyy-MM-dd");
+
+            txtCollege.Text = _dttemp.Rows[0]["college"].ToString();
+            txtCollegeStart.Text = convert_date(_dttemp.Rows[0]["preschool_start"].ToString(), "yyyy-MM-dd");
+            txtCollegeEnd.Text = convert_date(_dttemp.Rows[0]["preschool_end"].ToString(), "yyyy-MM-dd");
+            txtCourse.Text = _dttemp.Rows[0]["course"].ToString();
 
             chk4ps.Checked = Convert.ToBoolean(_dttemp.Rows[0]["is4ps"].ToString());
             chkIndigent.Checked = Convert.ToBoolean(_dttemp.Rows[0]["isIndigent"].ToString());

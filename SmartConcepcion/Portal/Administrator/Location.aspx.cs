@@ -11,6 +11,8 @@ namespace SmartConcepcion.Portal.Administrator
     public partial class Location : clsInherited
     {
         clsQuery csql = new clsQuery();
+        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

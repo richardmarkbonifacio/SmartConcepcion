@@ -118,6 +118,7 @@
     <Content Include="403.aspx" />
     <Content Include="About.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Content\admin-navbar.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -153,11 +154,14 @@
     <Content Include="images\user.png" />
     <Content Include="images\warning.svg" />
     <Content Include="logintesting.aspx" />
+    <Content Include="Admin.Master" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="Portal\Administrator\Dashboard.aspx" />
     <Content Include="Portal\Beta\multi-step-form.aspx" />
+    <Content Include="Portal\Community\Household.aspx" />
     <Content Include="Portal\Media\17-0001.pdf" />
     <Content Include="Portal\Media\A.-LETTER.pdf" />
     <Content Include="Portal\Media\Application-Form-Ginoo-at-Binibining-Baliwag-2017.docx" />
@@ -223,6 +227,7 @@
     <Content Include="Portal\termscondition.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\custom\admin.js" />
     <Content Include="Scripts\custom\jquery-dialog.js" />
     <Content Include="Scripts\custom\sidenav.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -267,6 +272,13 @@
     <Compile Include="403.aspx.designer.cs">
       <DependentUpon>403.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -303,6 +315,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Administrator\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Administrator\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Administrator\Location.aspx.cs">
       <DependentUpon>Location.aspx</DependentUpon>
@@ -408,6 +427,13 @@
     </Compile>
     <Compile Include="Portal\Community\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Community\Household.aspx.cs">
+      <DependentUpon>Household.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Community\Household.aspx.designer.cs">
+      <DependentUpon>Household.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Reports\barangayclearance.cs">
       <AutoGen>True</AutoGen>

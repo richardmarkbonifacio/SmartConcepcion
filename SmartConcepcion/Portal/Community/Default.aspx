@@ -139,19 +139,19 @@
                                 <div class="form-group">
                                     <label class="col-md-4 text-right">Firstname</label>
                                     <div class="col-md-8">
-                                        <asp:TextBox runat="server" ID="txtFnam" placeholder="Firstname" CssClass="form-control sign-up-ctrl" />
+                                        <asp:TextBox runat="server" ID="txtFnam" placeholder="Firstname" CssClass="form-control sign-up-ctrl required" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-4 text-right">Middlename</label>
                                     <div class="col-md-8">
-                                        <asp:TextBox runat="server" ID="txtMnam" placeholder="Middlename" CssClass="form-control sign-up-ctrl" />
+                                        <asp:TextBox runat="server" ID="txtMnam" placeholder="Middlename" CssClass="form-control sign-up-ctrl required" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-4 text-right">Lastname</label>
                                     <div class="col-md-8">
-                                        <asp:TextBox runat="server" ID="txtLnam" placeholder="Lastname" CssClass="form-control sign-up-ctrl" />
+                                        <asp:TextBox runat="server" ID="txtLnam" placeholder="Lastname" CssClass="form-control sign-up-ctrl required" />
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -178,13 +178,13 @@
                                 <div class="form-group">
                                     <label class="col-md-4 text-right">Voter's ID</label>
                                     <div class="col-md-8">
-                                        <asp:TextBox runat="server" ID="txtVotersID" placeholder="Voter's ID" autocomplete="off" CssClass="form-control sign-up-ctrl" />
+                                        <asp:TextBox runat="server" ID="txtVotersID" placeholder="Voter's ID" autocomplete="off" CssClass="form-control sign-up-ctrl required" />
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-4 text-right">Nationality</label>
                                     <div class="col-md-8">
-                                        <asp:TextBox runat="server" ID="txtNationality" placeholder="Nationality" CssClass="form-control sign-up-ctrl" />
+                                        <asp:TextBox runat="server" ID="txtNationality" placeholder="Nationality" CssClass="form-control sign-up-ctrl required" />
                                     </div>
                                 </div>
 
@@ -228,7 +228,7 @@
                                 <div class="form-group">
                                     <label class="col-md-4 text-right">Contact No.</label>
                                     <div class="col-md-8">
-                                        <asp:TextBox runat="server" ID="txtContact" placeholder="Contact No." CssClass="form-control sign-up-ctrl" />
+                                        <asp:TextBox runat="server" ID="txtContact" placeholder="Contact No." CssClass="form-control sign-up-ctrl required" />
                                     </div>
                                 </div>
 
@@ -236,14 +236,14 @@
 
                             <div class="tab">
                                 <h3>Educational Attainment</h3>
-                                <!-- Elementary -->
-                                <div class="form-group">
+                                <!-- Preschool -->
+                                <div class="container-fluid">
                                     <label class="col-md-4 text-right">Preschool</label>
                                     <div class="col-md-8">
                                         <asp:TextBox runat="server" ID="txtPreschool" placeholder="Preschool" CssClass="form-control sign-up-ctrl" />
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="container-fluid">
                                     <label class="col-md-4 text-right">Preschool Date</label>
                                     <div class="col-md-8">
                                         <div class="input-daterange input-group" style="z-index: 0">
@@ -253,15 +253,33 @@
                                         </div>
                                     </div>
                                 </div>
+                                
+                                <!-- Elementary -->
+                                <div class="container-fluid">
+                                    <label class="col-md-4 text-right">Elementary</label>
+                                    <div class="col-md-8">
+                                        <asp:TextBox runat="server" ID="txtElem" placeholder="Elementary" CssClass="form-control sign-up-ctrl" />
+                                    </div>
+                                </div>
+                                <div class="container-fluid">
+                                    <label class="col-md-4 text-right">Elementary Date</label>
+                                    <div class="col-md-8">
+                                        <div class="input-daterange input-group" style="z-index: 0">
+                                            <asp:TextBox runat="server" TextMode="Date" CssClass="form-control" ID="txtElemStart" />
+                                            <span class="input-group-addon">to</span>
+                                            <asp:TextBox runat="server" TextMode="Date" CssClass="form-control" ID="txtElemEnd" />
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <!-- Highschool -->
-                                <div class="form-group">
+                                <div class="container-fluid">
                                     <label class="col-md-4 text-right">Highschool</label>
                                     <div class="col-md-8">
                                         <asp:TextBox runat="server" ID="txtHS" placeholder="Highschool" CssClass="form-control sign-up-ctrl" />
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="container-fluid">
                                     <label class="col-md-4 text-right">Highschool Date</label>
                                     <div class="col-md-8">
                                         <div class="input-daterange input-group" style="z-index: 0">
@@ -273,19 +291,19 @@
                                 </div>
 
                                 <!-- College -->
-                                <div class="form-group">
+                                <div class="container-fluid">
                                     <label class="col-md-4 text-right">College</label>
                                     <div class="col-md-8">
                                         <asp:TextBox runat="server" ID="txtCollege" placeholder="College" CssClass="form-control sign-up-ctrl" />
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="container-fluid">
                                     <label class="col-md-4 text-right">Course</label>
                                     <div class="col-md-8">
                                         <asp:TextBox runat="server" ID="txtCourse" placeholder="Course" CssClass="form-control sign-up-ctrl" />
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="container-fluid">
                                     <label class="col-md-4 text-right">College Date</label>
                                     <div class="col-md-8">
                                         <div class="input-daterange input-group" style="z-index: 0">

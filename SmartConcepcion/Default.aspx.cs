@@ -72,7 +72,10 @@ namespace SmartConcepcion
         {
             DataTable _dt = csql.postSignUp("SmartConcepcion", txtEmail.Text, txtFnam.Text, txtMnam.Text, txtLnam.Text, txtSuffix.Text, 
                 txtNationality.Text, ddCivilStatus.SelectedValue, txtContact.Text, txtStbldgno.Text, Convert.ToInt64(ddBrgy.SelectedValue), 
-                Convert.ToInt64(ddZone.SelectedValue),txtVotersID.Text, Convert.ToDateTime(txtBday.Text), txtRUserpass.Text);
+                    Convert.ToInt64(ddZone.SelectedValue),txtVotersID.Text, txtPreschool.Text, convert_date(txtPreFrom.Text), convert_date(txtPreTo.Text), 
+                        txtElem.Text, convert_date(txtElemStart.Text), convert_date(txtElemEnd.Text), txtHS.Text, convert_date(txtHSStart.Text), 
+                            convert_date(txtHSStart.Text), txtCollege.Text, convert_date(txtCollegeStart.Text), convert_date(txtCollegeEnd.Text),
+                                txtCourse.Text, Convert.ToDateTime(txtBday.Text), txtRUserpass.Text);
         }
 
         protected void ddBrgy_SelectedIndexChanged(object sender, EventArgs e)

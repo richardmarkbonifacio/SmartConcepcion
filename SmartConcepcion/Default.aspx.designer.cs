@@ -220,6 +220,33 @@ namespace SmartConcepcion {
         protected global::System.Web.UI.WebControls.TextBox txtPreTo;
         
         /// <summary>
+        /// txtElem control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtElem;
+        
+        /// <summary>
+        /// txtElemStart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtElemStart;
+        
+        /// <summary>
+        /// txtElemEnd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtElemEnd;
+        
+        /// <summary>
         /// txtHS control.
         /// </summary>
         /// <remarks>
