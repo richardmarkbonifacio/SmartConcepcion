@@ -17,7 +17,8 @@ namespace SmartConcepcion
         clsQuery csql = new clsQuery();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            
+            if (!IsPostBack)
                 loadDropDown(ddBrgy, csql.getBrgyList("SmartConcepcion"), true);
         }
 
@@ -49,10 +50,7 @@ namespace SmartConcepcion
 
                     if (Request.QueryString["ReturnUrl"] == null)
                     {
-                        if(isAdmin())
-                            Response.Redirect("~/Portal/Administrator/Dashboard");
-                        else
-                            Response.Redirect("~/Portal/Announcements/News");
+                        Response.Redirect("~/Portal/Announcements/News");
                     }
                     else
                     {

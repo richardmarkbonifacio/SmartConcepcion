@@ -259,134 +259,138 @@
         </symbol>
     </svg>
 
-        <header class="page-header">
-            <nav>
-                <a href="#0">
-                    <img class="logo1" src="/images/Logo2020.png" />
-                </a>
-                <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
-                    <svg width="20" height="20" aria-hidden="true">
-                        <use xlink:href="#down"></use>
-                    </svg>
-                </button>
-                <ul class="admin-menu">
-                    <li class="menu-heading">
-                        <h3>Admin Setting</h3>
-                    </li>
-                     <li>
-                        <a href="~/Portal/Administrator/Dashboard.aspx" runat="server">
-                            <svg>
-                                <use xlink:href="#dash"></use>
-                            </svg>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                    <li>
-                    <li>
-                        <a href="~/Portal/Announcements/Create.aspx" runat="server">
-                            <svg>
-                                <use xlink:href="#pages"></use>
-                            </svg>
-                            <span>News & Announcements</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#0">
-                            <svg>
-                                <use xlink:href="#users"></use>
-                            </svg>
-                            <span>Household</span>
-                        </a>
-                    </li>
-                    <li>
-                                       <a href="~/Portal/Business/Default.aspx" runat="server">
-                            <svg>
-                                <use xlink:href="#trends"></use>
-                            </svg>
-                            <span>Business</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#0">
-                            <svg>
-                                <use xlink:href="#collection"></use>
-                            </svg>
-                            <span>Healthcare</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#0">
-                            <svg>
-                                <use xlink:href="#comments"></use>
-                            </svg>
-                            <span>Incident Report</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#0">
-                            <svg>
-                                <use xlink:href="#community"></use>
-                            </svg>
-                            <span>Community</span>
-                        </a>
-                    </li>
-                
-                      <li>
-                        <a href="#0">
-                            <svg>
-                                <use xlink:href="#budget"></use>
-                            </svg>
-                            <span>Budget</span>
-                        </a>
-                    </li>
+    <header class="page-header">
+        <nav>
+            <a href="#0">
+                <img class="logo1" src="/images/Logo2020.png" />
+            </a>
+            <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
+                <svg width="20" height="20" aria-hidden="true">
+                    <use xlink:href="#down"></use>
+                </svg>
+            </button>
+            <ul class="admin-menu">
+                <li class="menu-heading">
+                    <h3>Admin Setting</h3>
+                </li>
+                <li>
+                    <a href="~/Portal/Administrator/Dashboard.aspx" runat="server">
+                        <svg>
+                            <use xlink:href="#dash"></use>
+                        </svg>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                <li>
+                    <a href="~/Portal/Announcements/Create.aspx" runat="server">
+                        <svg>
+                            <use xlink:href="#pages"></use>
+                        </svg>
+                        <span>News & Announcements</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#0">
+                        <svg>
+                            <use xlink:href="#users"></use>
+                        </svg>
+                        <span>Household</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="~/Portal/Business/Default.aspx" runat="server">
+                        <svg>
+                            <use xlink:href="#trends"></use>
+                        </svg>
+                        <span>Business</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#0">
+                        <svg>
+                            <use xlink:href="#collection"></use>
+                        </svg>
+                        <span>Healthcare</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#0">
+                        <svg>
+                            <use xlink:href="#comments"></use>
+                        </svg>
+                        <span>Incident Report</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="~/Portal/Community/" runat="server">
+                        <svg>
+                            <use xlink:href="#community"></use>
+                        </svg>
+                        <span>Community</span>
+                    </a>
+                </li>
 
-                      <li>
-                        <a href="#0">
-                            <svg>
-                                <use xlink:href="#officials"></use>
-                            </svg>
-                            <span>Officials</span>
-                        </a>
-                    </li>
+                <li>
+                    <a href="#0">
+                        <svg>
+                            <use xlink:href="#budget"></use>
+                        </svg>
+                        <span>Budget</span>
+                    </a>
+                </li>
 
-                      <li>
-                        <a href="#0">
-                            <svg>
-                                <use xlink:href="#project"></use>
-                            </svg>
-                            <span>Projects</span>
-                        </a>
-                    </li>
+                <li>
+                    <a href="#0">
+                        <svg>
+                            <use xlink:href="#officials"></use>
+                        </svg>
+                        <span>Officials</span>
+                    </a>
+                </li>
 
-                      <li>
-                        <a href="#0">
-                            <svg>
-                                <use xlink:href="#media"></use>
-                            </svg>
-                            <span>Media</span>
-                        </a>
-                    </li>
-                    <li>
-                         <a href="#0">
-                        <span class="adminlogout">LOG OUT</span>
-                    </li>
-                    <li>
+                <li>
+                    <a href="#0">
+                        <svg>
+                            <use xlink:href="#project"></use>
+                        </svg>
+                        <span>Projects</span>
+                    </a>
+                </li>
 
-                        <button class="collapse-btn" aria-expanded="true" aria-label="collapse menu">
-                            <svg aria-hidden="true">
-                                <use xlink:href="#collapse"></use>
-                            </svg>
+                <li>
+                    <a href="#0">
+                        <svg>
+                            <use xlink:href="#media"></use>
+                        </svg>
+                        <span>Media</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#0">
+                        <svg>
+                            <use xlink:href="#media"></use>
+                        </svg>
+                        <span>Logout</span>
+                    </a>
+                </li>
+                <li>
 
-                            <span>Collapse</span>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <section class="page-content">
-            <section class="search-and-user">
-             
-               <%-- <div class="admin-profile">
+                    <button class="collapse-btn" aria-expanded="true" aria-label="collapse menu">
+                        <svg aria-hidden="true">
+                            <use xlink:href="#collapse"></use>
+                        </svg>
+
+                        <span>Collapse</span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="page-content">
+        <section class="search-and-user">
+
+            <%-- <div class="admin-profile">
                     <span class="greeting">Hello admin</span>
                     <div class="notifications">
                         <span class="badge">1</span>
@@ -395,38 +399,38 @@
                         </svg>
                     </div>
                 </div>--%>
-            </section>
-            <section >
-                <form id="FormAdmin" runat="server">
-                    <asp:ScriptManager runat="server">
-                        <Scripts>
-                            <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                            <%--Framework Scripts--%>
-                            <asp:ScriptReference Name="MsAjaxBundle" />
-                            <asp:ScriptReference Name="jquery" />
-                            <asp:ScriptReference Name="bootstrap" />
-                            <asp:ScriptReference Path="~/Scripts/menumaker.js" />
-                            <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-                            <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-                            <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-                            <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-                            <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-                            <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-                            <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                            <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                            <asp:ScriptReference Name="WebFormsBundle" />
-                            <%--Site Scripts--%>
-                        </Scripts>
-                    </asp:ScriptManager>
-                    <div id="main" class="container-fluid">
-                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </div>
-
-                </form>
-            </section>
-          
         </section>
-    
+        <section>
+            <form id="FormAdmin" runat="server">
+                <asp:ScriptManager runat="server">
+                    <Scripts>
+                        <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                        <%--Framework Scripts--%>
+                        <asp:ScriptReference Name="MsAjaxBundle" />
+                        <asp:ScriptReference Name="jquery" />
+                        <asp:ScriptReference Name="bootstrap" />
+                        <asp:ScriptReference Path="~/Scripts/menumaker.js" />
+                        <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                        <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                        <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                        <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                        <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                        <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                        <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                        <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                        <asp:ScriptReference Name="WebFormsBundle" />
+                        <%--Site Scripts--%>
+                    </Scripts>
+                </asp:ScriptManager>
+                <div id="main" class="container-fluid">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+
+            </form>
+        </section>
+
+    </section>
+
 </body>
 </html>
