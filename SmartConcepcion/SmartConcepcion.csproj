@@ -145,11 +145,22 @@
     <Content Include="images\BANNER.jpg" />
     <Content Include="images\bglogin.jpg" />
     <Content Include="images\boy.png" />
+    <Content Include="images\budget-admin.png" />
+    <Content Include="images\budget-admin.svg" />
+    <Content Include="images\community-admin.png" />
+    <Content Include="images\community-admin.svg" />
     <Content Include="images\Flat-Mountains.svg">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="images\loginbgbg.jpg" />
+    <Content Include="images\Logo2020.png" />
+    <Content Include="images\media-admin.png" />
+    <Content Include="images\media-admin.svg" />
     <Content Include="images\noimage.jpg" />
+    <Content Include="images\official-admin.png" />
+    <Content Include="images\official-admin.svg" />
+    <Content Include="images\project-admin.png" />
+    <Content Include="images\project-admin.svg" />
     <Content Include="images\Rose-Petals.svg" />
     <Content Include="images\user.png" />
     <Content Include="images\warning.svg" />
@@ -189,9 +200,6 @@
     <Content Include="images\home_logo.png" />
     <Content Include="images\line-chart.png" />
     <Content Include="images\logo3.png" />
-    <Content Include="images\LOGOBRAIN.png" />
-    <Content Include="images\logobrain.svg" />
-    <Content Include="images\logos.png" />
     <Content Include="images\logout_icon.png" />
     <Content Include="images\multiple-users-silhouette.png" />
     <Content Include="images\residence_logo.png" />
