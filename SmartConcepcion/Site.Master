@@ -72,7 +72,7 @@
                 <li>
                     <div class="logo hidden-xs">
                         <a class="logo" href="~/Portal/" runat="server">
-                            <img src="~/images/BARANGAYFINALLOGO.png" class="logo" runat="server" /></a>
+                            <img src="~/images/logo2020.png" class="logo" runat="server" /></a>
                     </div>
                 </li>
 
