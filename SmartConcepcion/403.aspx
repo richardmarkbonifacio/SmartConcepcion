@@ -4,7 +4,7 @@
     <div id="notfound">
 		<div class="notfound">
 			<div class="notfound-404">
-				<h1>4<span><%--<img src="../images/LOGOBRAIN.png" />--%></span>3</h1>
+				<h1>403</h1>
 			</div>
 			<h2>OOPS! ACCESS DENIED!</h2>
 			<p>WE ARE SORRY BUT THE PAGE YOU ARE ABOUT TO ENTER REQUIRES ADMIN PREVILEDGES</p>
