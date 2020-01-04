@@ -175,6 +175,10 @@ body {
             color: #fff;
             transition: background 0.2s, color 0.2s;
         }
+            .adminlogout{
+                font-weight:700;
+             
+            }
 
             .page-header .admin-menu a:hover,
             .page-header .admin-menu a:focus,
@@ -183,7 +187,7 @@ body {
                 background: var(--page-header-bgColor-hover);
                 color: #00ff00;
                 outline: none;
-                text-decoration:none;
+                text-decoration: none;
             }
 
                 .page-header .admin-menu a:hover svg,
