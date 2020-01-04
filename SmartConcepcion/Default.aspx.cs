@@ -49,7 +49,10 @@ namespace SmartConcepcion
 
                     if (Request.QueryString["ReturnUrl"] == null)
                     {
-                        Response.Redirect("~/Portal/");
+                        if(isAdmin())
+                            Response.Redirect("~/Portal/Administrator/Dashboard");
+                        else
+                            Response.Redirect("~/Portal/Announcements/News");
                     }
                     else
                     {

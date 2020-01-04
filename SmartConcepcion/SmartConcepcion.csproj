@@ -172,6 +172,7 @@
     </None>
     <Content Include="Portal\Administrator\Dashboard.aspx" />
     <Content Include="Portal\Beta\multi-step-form.aspx" />
+    <Content Include="Portal\Business\Directory.aspx" />
     <Content Include="Portal\Community\Household.aspx" />
     <Content Include="Portal\Media\17-0001.pdf" />
     <Content Include="Portal\Media\A.-LETTER.pdf" />
@@ -414,6 +415,13 @@
     </Compile>
     <Compile Include="Portal\Budget\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Business\Directory.aspx.cs">
+      <DependentUpon>Directory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Business\Directory.aspx.designer.cs">
+      <DependentUpon>Directory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Business\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
