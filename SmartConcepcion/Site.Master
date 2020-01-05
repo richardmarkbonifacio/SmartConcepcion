@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - Smart Concepcion</title>
 
-    <asp:PlaceHolder runat="server">fa
+    <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
     <link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
@@ -108,7 +108,7 @@
                     </a>
                     <ul class="nav-dropdown">
                         <li><a href="#"><asp:Label runat="server" ID="lblFullname" Text="Howdy admin" style="text-transform:uppercase" Font-Bold="TRUE" ForeColor="Yellow"/></a></li>
-                         <li><a href="~/Portal/Barangay/Dashboard" runat="server">DASHBOARD</a></li>
+                         <li runat="server" id="lnkDashboard"><a href="~/Portal/Administrator/Dashboard" runat="server" >DASHBOARD</a></li>
                         <li><a href="#">MY NOTIFICATION</a></li>
                         <li><asp:LinkButton runat="server" Text="LOG OUT" OnClick="btnSignOut" /> </li>
                     </ul>
@@ -135,7 +135,8 @@
             <div class="row">
                 <div class="col-md-3 footer-brand">
                     <h2>
-                        <img class="logofoot" src="~/images/logo3.png" runat="server" /></h2>
+                        <img class="logofoot" src="~/images/logo3.png" runat="server" />
+                    </h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse semper sollicitudin ipsum, eget ultrices dolor elementum ut. Cras cursus elit a ultricies volutpat. </p>
                     <p>© 2020 Smart Concepcion, All rights reserved</p>
                 </div>
@@ -153,7 +154,6 @@
                     </div>
                     <div class="col-md-6 hidden-xs">
                         <ul class="list">
-                         
                             <li><a href="~/Portal/termscondition" runat="server">Terms & Condition</a></li>
                             <li><a href="~/Portal/privacy" runat="server">Privacy Policy</a></li>
                         </ul>
@@ -173,16 +173,9 @@
                 <div class="col-md-3 footer-ns hidden-xs ">
                     <h4>Message Us</h4>
                     <ul>
-
                         <li>Phone: +63999999999999</li>
                         <li>Landline:+ 204606</li>
                     </ul>
-
-
-
-                    <%--<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-    <input type="submit" value="Submit">--%>
                 </div>
             </div>
             <a href="javascript:" id="return-to-top" onclick="return_to_top()"><i class="glyphicon glyphicon-triangle-top"></i></a>
@@ -193,8 +186,6 @@
   
         </footer>
 
-
-        <%--<script src="../Scripts/jquery-3.3.1.min.js"></script>--%>
         <script>$(window).scroll(function() {
             if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
                 $('#return-to-top').fadeIn(200);    // Fade in the arrow
@@ -217,10 +208,6 @@
             $(document).ready(function () {
                 $('[data-toggle="tooltip"]').tooltip();
             });
-
-
-          
-
         </script>
       
 

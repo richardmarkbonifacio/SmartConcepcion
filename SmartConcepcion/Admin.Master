@@ -367,11 +367,11 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#0">
+                    <a href="~/Portal/Announcements/News" runat="server">
                         <svg>
                             <use xlink:href="#media"></use>
                         </svg>
-                        <span>Logout</span>
+                        <span>Back</span>
                     </a>
                 </li>
                 <li>
@@ -426,7 +426,7 @@
                     <asp:ContentPlaceHolder ID="MainContent" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>
-
+                <script src="Scripts/custom/admin.js"></script>
             </form>
         </section>
 
