@@ -171,16 +171,14 @@
                     <div class="container-fluid fast-fact">
                         <h2>FAST FACTS</h2>
                         <hr />
-                        <h4>Country:</h4>
-
-                        <h4>Region:</h4>
-                        <h4>District:</h4>
-                        <h4>Province:</h4>
-                        <h4>Area:</h4>
-                        <h4>Demonym:</h4>
-                        <h4>Founded:</h4>
-                        <h4>Total Population:</h4>
-                        <h4>Zip-code:</h4>
+                        <h4>Country: Philippines</h4>
+                        <h4>Region: Region III</h4>
+                        <h4>District: 2nd District</h4>
+                        <h4>Province: Bulacan</h4>
+                        <h4>Area: 45.05km² (17.39 sq mi)</h4>
+                        <h4>Demonym: Baliwagenya/nya</h4>
+                        <h4>Founded: May 15,1733</h4>
+                        <h4>Zip-code: 3006</h4>
 
 
                     </div>
