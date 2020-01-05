@@ -32,6 +32,10 @@ namespace SmartConcepcion
                     pnlEmergency.Visible = false;
                 }
             }
+            if (inh.isAdmin())
+                lnkDashboard.Visible = true;
+            else
+                lnkDashboard.Visible = false;
         }
 
         protected void btnSignOut(object sender, EventArgs e)
