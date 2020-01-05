@@ -186,7 +186,8 @@ height:90px;
 
                         <hr />
 
-                        <asp:GridView runat="server" ID="gvCommentSection" AutoGenerateColumns="false" CssClass="table table-hover table-responsive table-dark table-comment">
+                        <asp:GridView runat="server" ID="gvCommentSection" AutoGenerateColumns="false" PageSize="20"
+                            CssClass="table-responsive table-comment">
                             <Columns>
                                 <asp:TemplateField HeaderStyle-CssClass="hidden">
                                     <ItemTemplate>
@@ -210,7 +211,7 @@ height:90px;
         <aside>
             <asp:GridView runat="server" ID="gvTopAnnouncement" AutoGenerateColumns="false" CssClass="container-fluid" style="border:transparent">
                     <Columns>
-                        <asp:TemplateField HeaderText="TOP NEWS"  HeaderStyle-BackColor="lightgray" HeaderStyle-CssClass="widget-topnews">
+                        <asp:TemplateField HeaderText="TOP NEWS"  HeaderStyle-BackColor="lightgray" HeaderStyle-CssClass="widget-topnews hidden-xs">
                             <ItemTemplate>
                                 <div class="capsule hidden-xs">
                                     <div class="right-news">

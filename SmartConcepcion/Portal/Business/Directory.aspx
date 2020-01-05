@@ -29,18 +29,19 @@
                 </div>
                 
                 <div class="row filter">
-                    <div class="col-md-3 col-xs-3 col-md-offset-3">
+                    <div class="col-md-3 col-xs-12 col-md-offset-3">
                         <asp:DropDownList runat="server" ID="ddFilterBusinessType" DataValueField="ID" DataTextField="Description" CssClass="form-control" />
                     </div>
-                    <div class="col-md-3 col-xs-3">
-                        <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" />
+                    <div class="col-md-3 col-xs-12">
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" placeholder="Businessname" />
                     </div>
-                    <div class="col-md-3 col-xs-3">
+                    <div class="col-md-3 col-xs-12">
                         <asp:Button runat="server" CssClass="btn btn-send" Text="SEARCH" ID="btnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false" />
                     </div>
                 </div>
                 
                 <hr />
+                <h3 runat="server" id="norecord">No Record Found</h3>
                 <div style="overflow-x: scroll">
                     <asp:GridView runat="server" AutoGenerateColumns="false" 
                     ID="gvBusinessProfiles" CssClass="table table-default table-hover table-responsive table-dark table-striped" PageSize="5" 

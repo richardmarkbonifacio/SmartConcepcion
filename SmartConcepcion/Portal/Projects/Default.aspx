@@ -1,15 +1,26 @@
-﻿<%@ Page Title="Projects" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Portal.Projects.Default" %>
+﻿<%@ Page Title="Projects" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Portal.Projects.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <style>
+    .filter{
+            display:none;
+        }
+    </style>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <div class="header-banner">PROJECTS</div>
     <asp:UpdatePanel ID="upProject" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
+            <div class="row">
+                <div class="col-md-6">
+                    <i class="fa fa-sliders" aria-hidden="true" style="cursor: pointer" onclick="FilterBox()">Filter</i>
+                </div>
+                <div class="col-md-6 text-right">
+                    <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New Project" CausesValidation="false" />
+                </div>
+            </div>
+
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-4">
-                        <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New Project" CausesValidation="false" />
-                    </div>
-                    <div class="col-md-8">
+                <div class="row filter">
+                    <div class="col-md-12">
                         
                         <div class="col-md-3 col-xs-3">
                             <asp:TextBox runat="server" CssClass="form-control" ID="txtdtFrom" TextMode="Date" />
@@ -191,4 +202,9 @@
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
     <script src="../../Scripts/custom/sidenav.js"></script>
     <script src="../../Scripts/custom/jquery-dialog.js"></script>
+    <script>
+        function FilterBox() {
+            $(".filter").toggle(500, "linear");
+        }
+    </script>
 </asp:Content>

@@ -49,13 +49,13 @@ namespace SmartConcepcion.Portal.Budget {
         protected global::System.Web.UI.WebControls.TextBox txtdtTo;
         
         /// <summary>
-        /// btnProject control.
+        /// btnBudget control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnProject;
+        protected global::System.Web.UI.WebControls.Button btnBudget;
         
         /// <summary>
         /// gvBudget control.
@@ -76,15 +76,6 @@ namespace SmartConcepcion.Portal.Budget {
         protected global::System.Web.UI.UpdatePanel upNameSuggestion;
         
         /// <summary>
-        /// header control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl header;
-        
-        /// <summary>
         /// hfFrom control.
         /// </summary>
         /// <remarks>
@@ -94,13 +85,13 @@ namespace SmartConcepcion.Portal.Budget {
         protected global::System.Web.UI.WebControls.HiddenField hfFrom;
         
         /// <summary>
-        /// txtTitle control.
+        /// txtRefNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTitle;
+        protected global::System.Web.UI.WebControls.TextBox txtRefNo;
         
         /// <summary>
         /// txtDesc control.
@@ -112,22 +103,13 @@ namespace SmartConcepcion.Portal.Budget {
         protected global::System.Web.UI.WebControls.TextBox txtDesc;
         
         /// <summary>
-        /// txtStart control.
+        /// chkFlow control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtStart;
-        
-        /// <summary>
-        /// txtEnd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEnd;
+        protected global::System.Web.UI.WebControls.CheckBox chkFlow;
         
         /// <summary>
         /// txtBudget control.

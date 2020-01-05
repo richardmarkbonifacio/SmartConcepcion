@@ -15,7 +15,7 @@ namespace SmartConcepcion.Portal.Budget
         DataTable dttemp;
 
         #region Properties
-        public long? p_ProjectID
+        public long? p_BudgetID
         {
             get
             {
@@ -137,13 +137,11 @@ namespace SmartConcepcion.Portal.Budget
 
         void clearProjectInfo()
         {
-            p_ProjectID = null;
-            txtTitle.Text = "";
+            p_BudgetID = null;
+            txtBudget.Text = "";
             txtDesc.Text = "";
-            txtStart.Text = "";
-            txtEnd.Text = "";
-
-            header.InnerText = "New Project";
+            txtRefNo.Text = "";
+            //header.InnerText = "Add budget entry";
             
         }
         DataTable initLeaderDatatable()
@@ -174,8 +172,7 @@ namespace SmartConcepcion.Portal.Budget
         {
             try
             {
-                //DataTable _dt = csql.setBudget("SmartConcepcion",p_BrgyID, txtDesc.Text, "ptd", Convert.ToDecimal(txtBudget.Text),
-                //    Convert.ToDateTime(txtStart.Text), Convert.ToDateTime(txtEnd.Text), p_dtLeader, p_UserID.Value);
+                DataTable _dt = csql.setBudget("SmartConcepcion", p_BrgyID, txtDesc.Text, chkFlow.Checked, convert_long(txtBudget.Text,true).Value, txtRefNo.Text, p_UserID.Value);
 
                 loadBudget();
                 clearProjectInfo();
@@ -186,20 +183,8 @@ namespace SmartConcepcion.Portal.Budget
             }
 
         }
-
-        protected void Unnamed_Click(object sender, EventArgs e)
-        {
-            LinkButton _lnk = (LinkButton)sender;
-            DataTable _dttemp = csql.getProjectDetails("SmartConcepcion", Convert.ToInt64(_lnk.ToolTip));
-            header.InnerText = "Update Project Info";
-            txtTitle.Text = _dttemp.Rows[0]["title"].ToString();
-            txtDesc.Text = _dttemp.Rows[0]["description"].ToString();
-            txtBudget.Text = _dttemp.Rows[0]["title"].ToString();
-            p_ProjectID = Convert.ToInt64(_dttemp.Rows[0]["ID"].ToString());
-            
-        }
-
-        protected void btnProject_Click(object sender, EventArgs e)
+        
+        protected void btnBudget_Click(object sender, EventArgs e)
         {
             p_PageIndex = 0; //Reset index in searching
             loadBudget();
@@ -207,7 +192,7 @@ namespace SmartConcepcion.Portal.Budget
 
         protected void btnVerify_Click(object sender, EventArgs e)
         {
-            csql.postVerify("SmartConcepcion", p_ProjectID.Value);
+            csql.postVerify("SmartConcepcion", p_BudgetID.Value);
             loadBudget();
         }
 

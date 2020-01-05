@@ -125,7 +125,7 @@ namespace SmartConcepcion.Portal.Announcements
         protected void Page_Load(object sender, EventArgs e)
         {
             string _id = Request.QueryString["ID"];
-            if (_id == "")
+            if (_id == null)
                 Response.Redirect("News");
 
             if (!IsPostBack)
@@ -147,7 +147,13 @@ namespace SmartConcepcion.Portal.Announcements
             txtTitle.InnerText = p_dtAnnouncementInfo.Rows[0]["title"].ToString();
             txtsubtitle.InnerText = p_dtAnnouncementInfo.Rows[0]["subtitle"].ToString();
             string _filepath = "~\\Portal\\Announcements\\Banner\\" + p_dtAnnouncementInfo.Rows[0]["ID"].ToString() + p_dtAnnouncementInfo.Rows[0]["banner_extension"].ToString();
-            imgBanner.ImageUrl = _filepath;
+
+            if (System.IO.File.Exists(Server.MapPath(_filepath)))
+                imgBanner.ImageUrl = _filepath;
+            else
+                imgBanner.ImageUrl = "https://dummyimage.com/400x400";
+
+            //imgBanner.ImageUrl = _filepath;
             lblContent.Text = p_dtAnnouncementInfo.Rows[0]["body_content"].ToString();
         }
         void loadComment()
@@ -160,7 +166,13 @@ namespace SmartConcepcion.Portal.Announcements
             if (p_dtAnnouncementComment.Rows.Count > 0)
             {
                 txtCommentCount.Text = p_dtAnnouncementComment.Rows[0]["commentcount"].ToString();
+                btnLoad.Visible = true;
+                upCommentSection.Update();
+            }
+            else
+            {
                 btnLoad.Visible = false;
+                upCommentSection.Update();
             }
                 
 

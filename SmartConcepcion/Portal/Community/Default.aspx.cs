@@ -97,7 +97,6 @@ namespace SmartConcepcion.Portal.Community
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            isAdmin();
             
             if (!IsPostBack)
             {
