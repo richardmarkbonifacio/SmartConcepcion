@@ -235,6 +235,7 @@
     <Content Include="Portal\Officials\Board.aspx" />
     <Content Include="Portal\Officials\Official.aspx" />
     <Content Include="Portal\privacy.aspx" />
+    <Content Include="Portal\Profile.aspx" />
     <Content Include="Portal\Projects\Projects.aspx" />
     <Content Include="Portal\Projects\Default.aspx" />
     <Content Include="Portal\Reports\RptViewer.aspx" />
@@ -455,6 +456,13 @@
     </Compile>
     <Compile Include="Portal\Community\Household.aspx.designer.cs">
       <DependentUpon>Household.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Projects\Projects.aspx.cs">
       <DependentUpon>Projects.aspx</DependentUpon>
