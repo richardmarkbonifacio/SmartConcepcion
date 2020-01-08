@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Health Records" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="HealthRecord.aspx.cs" Inherits="SmartConcepcion.Portal.Healthcare.HealthRecord" %>
+﻿<%@ Page Title="Health Records" Language="C#" MasterPageFile="~/admin.Master" AutoEventWireup="true" CodeBehind="HealthRecord.aspx.cs" Inherits="SmartConcepcion.Portal.Healthcare.HealthRecord" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <div class="header-banner">HEALTH RECORD</div>
