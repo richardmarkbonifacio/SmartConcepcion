@@ -1,15 +1,32 @@
-﻿<%@ Page Title="Budget" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Portal.Budget.Default" %>
+﻿<%@ Page Title="Budget" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Portal.Budget.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <div class="header-banner">Projects</div>
+    <style>
+        .fa-caret-up{
+            color:green;
+        }
+        .fa-caret-down{
+            color:red;
+        }
+        .filter{
+            display:none;
+        }
+    </style>
+
+    <div class="header-banner">BUDGET</div>
     <asp:UpdatePanel ID="upProject" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-4">
-                        <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New User Profile" CausesValidation="false" />
+                    <div class="col-md-6">
+                        <asp:LinkButton runat="server" OnClientClick="openGeneric()" OnClick="lnkCreate_Click" Text="Add budget" CausesValidation="false" />
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-6 text-right">
+                        <i class="fa fa-sliders" aria-hidden="true" style="cursor:pointer" onclick="FilterBox()" >Filter</i>
+                    </div>
+                </div>
+                <div class="row filter">
+                    <div class="col-md-12">
                         <div class="col-md-3 col-xs-3">
                             <asp:TextBox runat="server" CssClass="form-control" ID="txtProjectname" />
                         </div>
@@ -20,7 +37,7 @@
                             <asp:TextBox runat="server" CssClass="form-control" ID="txtdtTo" TextMode="Date" />
                         </div>
                         <div class="col-md-3 col-xs-3">
-                            <asp:Button runat="server" CssClass="btn btn-warning" Text="search" ID="btnProject" OnClick="btnProject_Click" CausesValidation="false" />
+                            <asp:Button runat="server" CssClass="btn btn-warning" Text="search" ID="btnBudget" OnClick="btnBudget_Click" CausesValidation="false" />
                         </div>
                     </div>
                 </div>
@@ -34,20 +51,17 @@
 
                         <Columns>
                             <asp:BoundField HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden" DataField="ID" />
-                            
-                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Title" DataField="title" />
-                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Description" DataField="description" />
-                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Status" DataField="status" />
-
-                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Start" DataFormatString="{0:MMMM dd yyyy}" DataField="startdate"  />
-                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="End" DataFormatString="{0:MMMM dd yyyy}" DataField="enddate"  />
-
-                            <asp:TemplateField HeaderStyle-CssClass="thead-dark" ItemStyle-CssClass="text-center">
+                            <asp:TemplateField HeaderStyle-CssClass="thead-dark" ItemStyle-CssClass="text-center" HeaderText="Cash flow">
                                 <ItemTemplate>
-                                    <asp:LinkButton runat="server" ToolTip='<%# Eval("ID") %>' CssClass="glyphicon glyphicon-edit" OnClick="Unnamed_Click" OnClientClick="openNav()" CausesValidation="false" />
+                                    <i class='<%# ((bool)Eval("cashflow")) ? "fa fa-caret-up" : "fa fa-caret-down" %>'></i>
                                 </ItemTemplate>
                             </asp:TemplateField>
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Description" DataField="description" />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Reference" DataField="referenceno" />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Filed by" DataFormatString="{0:MMMM dd yyyy}" DataField="createdByName"  />
+                            
                         </Columns>
+
                         <PagerTemplate>
                                 
                             <ul class="pagination pagination-md">
@@ -69,38 +83,32 @@
         </ContentTemplate>
     </asp:UpdatePanel>
 
-    <div id="dlgNameSuggestion" title="Select Project Leader" class="" style="display:none;">
+    <div id="dlgGeneric" title="Budget Details" class="" style="display:none;">
         <asp:UpdatePanel runat="server" ID="upNameSuggestion" UpdateMode="Conditional">
             <ContentTemplate>
                 <div class="container-fluid">
-                        <h2 runat="server" id="header">Create Incident Report</h2>
+                        
                         <asp:HiddenField runat="server" ID="hfFrom" />
                         <div class="container-fluid">
-                            <div class="form-group">
-                                <label class="col-md-4 text-right" for="txtTitle">Title</label>
+                            <div class="container-fluid">
+                                <label class="col-md-4 text-right" for="txtTitle">Reference</label>
                                 <div class="col-md-8 text-center">
-                                    <asp:TextBox runat="server" ID="txtTitle" placeholder="Title" CssClass="form-control sign-up-ctrl" />
+                                    <asp:TextBox runat="server" ID="txtRefNo" placeholder="Reference No." CssClass="form-control sign-up-ctrl" />
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="container-fluid">
                                 <label class="col-md-4 text-right">Description</label>
                                 <div class="col-md-8 text-center">
                                     <asp:TextBox runat="server" ID="txtDesc" placeholder="Description" CssClass="form-control sign-up-ctrl" />
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-4 text-right">Start</label>
+                            <div class="container-fluid">
+                                <label class="col-md-4 text-right">Cashflow</label>
                                 <div class="col-md-8 text-center">
-                                    <asp:TextBox runat="server" ID="txtStart" TextMode="Date" CssClass="form-control sign-up-ctrl" />
+                                    <asp:CheckBox runat="server" ID="chkFlow" />
                                 </div>  
                             </div>
-                            <div class="form-group">
-                                <label class="col-md-4 text-right">End</label>
-                                <div class="col-md-8 text-center">
-                                    <asp:TextBox runat="server" ID="txtEnd" TextMode="Date" CssClass="form-control sign-up-ctrl" />
-                                </div>  
-                            </div>
-                            <div class="form-group">
+                            <div class="container-fluid">
                                 <label class="col-md-4 text-right">Budget</label>
                                 <div class="col-md-8 text-center">
                                     <asp:TextBox runat="server" ID="txtBudget" TextMode="Number" CssClass="form-control sign-up-ctrl" />
@@ -116,6 +124,12 @@
         </asp:UpdatePanel>
         
     </div>
+
+    <script>
+        function FilterBox() {
+            $(".filter").toggle(500, "linear");
+        }
+    </script>
 
     <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>

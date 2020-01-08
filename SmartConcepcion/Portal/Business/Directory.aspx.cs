@@ -116,6 +116,14 @@ namespace SmartConcepcion.Portal.Business
             {
                 gvBusinessProfiles.VirtualItemCount = (int)dttemp.Rows[0]["reccount"];
                 loadGridView(gvBusinessProfiles, dttemp);
+                norecord.Visible = false;
+                gvBusinessProfiles.Visible = true;
+                upBusiness.Update();
+            }
+            else
+            {
+                norecord.Visible = true;
+                gvBusinessProfiles.Visible = false;
                 upBusiness.Update();
             }
             

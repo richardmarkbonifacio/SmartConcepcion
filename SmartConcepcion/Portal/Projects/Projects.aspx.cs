@@ -7,15 +7,15 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SmartConcepcion.Class;
 
-namespace SmartConcepcion.Portal.Budget
+namespace SmartConcepcion.Portal.Projects
 {
-    public partial class Default : clsInherited
+    public partial class Projects : clsInherited
     {
         clsQuery csql = new clsQuery();
         DataTable dttemp;
 
         #region Properties
-        public long? p_BudgetID
+        public long? p_ProjectID
         {
             get
             {
@@ -108,13 +108,14 @@ namespace SmartConcepcion.Portal.Budget
 
         #endregion
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
             isAdmin();
             if (!IsPostBack)
-                loadBudget();
+                loadProjects();
         }
-        void loadBudget()
+        void loadProjects()
         {
             DateTime? dtFrom = null, dtTo = null;
 
@@ -123,26 +124,28 @@ namespace SmartConcepcion.Portal.Budget
             if (txtdtTo.Text != "")
                 dtTo = Convert.ToDateTime(txtdtTo.Text);
 
-            dttemp = csql.getBudgetPaging("SmartConcepcion", gvBudget.PageSize, gvBudget.PageIndex, dtFrom, dtTo, txtProjectname.Text, p_BrgyID);
-            gvBudget.PageIndex = p_PageIndex;
+            dttemp = csql.getProjectPaging("SmartConcepcion", gvProjects.PageSize, gvProjects.PageIndex, dtFrom, dtTo, txtProjectname.Text, p_BrgyID);
+            gvProjects.PageIndex = p_PageIndex;
             if (dttemp.Rows.Count > 0)
             {
-                gvBudget.VirtualItemCount = (int)dttemp.Rows[0]["reccount"];
-                loadGridView(gvBudget, dttemp);
+                gvProjects.VirtualItemCount = (int)dttemp.Rows[0]["reccount"];
+                loadGridView(gvProjects, dttemp);
                 upProject.Update();
             }
 
-            //p_dtLeader = initLeaderDatatable();
+            p_dtLeader = initLeaderDatatable();
         }
 
         void clearProjectInfo()
         {
-            p_BudgetID = null;
-            txtBudget.Text = "";
+            p_ProjectID = null;
+            txtTitle.Text = "";
             txtDesc.Text = "";
-            txtRefNo.Text = "";
-            //header.InnerText = "Add budget entry";
+            txtStart.Text = "";
+            txtEnd.Text = "";
             
+            header.InnerText = "New Project";
+            upProjectInfo.Update();
         }
         DataTable initLeaderDatatable()
         {
@@ -152,13 +155,13 @@ namespace SmartConcepcion.Portal.Budget
             return dttemp;
         }
 
-        protected void gvBudget_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void gvProjects_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             if (IsPostBack)
             {
                 GridView _gvSender = (GridView)sender;
                 p_PageIndex = e.NewPageIndex;
-                loadBudget();
+                loadProjects();
                 clearProjectInfo();
             }
         }
@@ -172,9 +175,10 @@ namespace SmartConcepcion.Portal.Budget
         {
             try
             {
-                DataTable _dt = csql.setBudget("SmartConcepcion", p_BrgyID, txtDesc.Text, chkFlow.Checked, convert_long(txtBudget.Text,true).Value, txtRefNo.Text, p_UserID.Value);
+                DataTable _dt = csql.setProject("SmartConcepcion", p_ProjectID, p_BrgyID, txtTitle.Text,txtDesc.Text, "ptd", Convert.ToDecimal(txtBudget.Text),
+                    Convert.ToDateTime(txtStart.Text),Convert.ToDateTime(txtEnd.Text),  p_dtLeader, p_UserID.Value);
 
-                loadBudget();
+                loadProjects();
                 clearProjectInfo();
             }
             catch (Exception)
@@ -183,23 +187,54 @@ namespace SmartConcepcion.Portal.Budget
             }
 
         }
-        
-        protected void btnBudget_Click(object sender, EventArgs e)
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            LinkButton _lnk = (LinkButton)sender;
+            DataTable _dttemp = csql.getProjectDetails("SmartConcepcion", Convert.ToInt64(_lnk.ToolTip));
+            header.InnerText = "Update Project Info";
+            txtTitle.Text = _dttemp.Rows[0]["title"].ToString();
+            txtDesc.Text = _dttemp.Rows[0]["description"].ToString();
+            txtBudget.Text = _dttemp.Rows[0]["title"].ToString();
+            p_ProjectID = Convert.ToInt64(_dttemp.Rows[0]["ID"].ToString());
+            upProjectInfo.Update();
+        }
+
+        protected void btnProject_Click(object sender, EventArgs e)
         {
             p_PageIndex = 0; //Reset index in searching
-            loadBudget();
+            loadProjects();
         }
 
         protected void btnVerify_Click(object sender, EventArgs e)
         {
-            csql.postVerify("SmartConcepcion", p_BudgetID.Value);
-            loadBudget();
+            csql.postVerify("SmartConcepcion", p_ProjectID.Value);
+            loadProjects();
         }
 
         protected void gvProjectLeader_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
 
         }
-        
+        protected void btnSearchUser_Click(object sender, EventArgs e)
+        {
+            dttemp = csql.getUserPaging("SmartConcepcion", 5, 0, txtUserSearch.Text, p_BrgyID);
+            if (dttemp.Rows.Count > 0)
+            {
+                loadGridView(gvTemplateError, dttemp);
+                upNameSuggestion.Update();
+            }
+        }
+        protected void lnkSelectResident_Click(object sender, EventArgs e)
+        {
+            LinkButton _lnk = (LinkButton)sender;
+            DataRow _dr = p_dtLeader.NewRow();
+            _dr["ID"] = _lnk.ToolTip;
+            _dr["Fullname"] = _lnk.Text;
+
+            p_dtLeader.Rows.Add(_dr);
+            loadGridView(gvProjectLeader, p_dtLeader);
+            upProjectInfo.Update();
+        }
     }
 }

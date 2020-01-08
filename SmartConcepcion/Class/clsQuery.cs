@@ -1422,26 +1422,22 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
-        public DataTable setBudget(string cnstr, long? brgyID, string description, bool cashflow, decimal amount,
-            DateTime startdate, DateTime enddate, DataTable leader, long createdby)
+        public DataTable setBudget(string cnstr, long? brgyID, string description, bool cashflow, decimal amount, 
+            string referenceno, long createdby)
         {
             try
             {
-                result_Dt = new DataTable("Project Paging Get");
+                result_Dt = new DataTable("Budget Set");
                 OpenCn(ref cn, cnstr);
-                cmd = new SqlCommand("[Project_set]", cn);
-
-                DataView _view = leader.AsDataView();
-                DataTable _tt_leader = _view.ToTable(true, "ID");
-
+                cmd = new SqlCommand("[Budget_set]", cn);
+                
                 cmd.CommandType = CommandType.StoredProcedure;
                 
                 cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
-
                 cmd.Parameters.Add("@description", SqlDbType.VarChar).Value = description;
-                cmd.Parameters.Add("@status", SqlDbType.Bit).Value = cashflow;
-                cmd.Parameters.Add("@alloted_budget", SqlDbType.Decimal).Value = amount;
-
+                cmd.Parameters.Add("@cashflow", SqlDbType.Bit).Value = cashflow;
+                cmd.Parameters.Add("@amount", SqlDbType.Decimal).Value = amount;
+                cmd.Parameters.Add("@referenceno", SqlDbType.Decimal).Value = referenceno;
                 cmd.Parameters.Add("@createdby", SqlDbType.BigInt).Value = createdby;
                 da = new SqlDataAdapter(cmd);
                 using (cn)

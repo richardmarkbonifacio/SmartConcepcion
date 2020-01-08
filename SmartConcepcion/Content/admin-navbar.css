@@ -27,7 +27,7 @@
 }
 
 .page-header{
-    margin-top:0px!important;
+    margin:0px!important;
 }
 
 ul {
@@ -80,6 +80,7 @@ body {
     width: var(--page-header-width);
     color: var(--page-header-txtColor);
     background: var(--page-header-bgColor);
+    margin: 0 !important;
 }
 
     /*In case you prefer an absolutely positioned header that covers the full page height, add these styles*/
@@ -449,4 +450,3 @@ body {
     .page-footer span {
         color: var(--red);
     }
-

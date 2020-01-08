@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SmartConcepcion.Portal.Budget {
+namespace SmartConcepcion.Portal.Projects {
     
     
-    public partial class Default {
+    public partial class Projects {
         
         /// <summary>
         /// upProject control.
@@ -20,15 +20,6 @@ namespace SmartConcepcion.Portal.Budget {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel upProject;
-        
-        /// <summary>
-        /// txtProjectname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProjectname;
         
         /// <summary>
         /// txtdtFrom control.
@@ -49,31 +40,49 @@ namespace SmartConcepcion.Portal.Budget {
         protected global::System.Web.UI.WebControls.TextBox txtdtTo;
         
         /// <summary>
-        /// btnBudget control.
+        /// txtProjectname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBudget;
+        protected global::System.Web.UI.WebControls.TextBox txtProjectname;
         
         /// <summary>
-        /// gvBudget control.
+        /// btnProject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvBudget;
+        protected global::System.Web.UI.WebControls.Button btnProject;
         
         /// <summary>
-        /// upNameSuggestion control.
+        /// gvProjects control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upNameSuggestion;
+        protected global::System.Web.UI.WebControls.GridView gvProjects;
+        
+        /// <summary>
+        /// upProjectInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upProjectInfo;
+        
+        /// <summary>
+        /// header control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl header;
         
         /// <summary>
         /// hfFrom control.
@@ -85,13 +94,13 @@ namespace SmartConcepcion.Portal.Budget {
         protected global::System.Web.UI.WebControls.HiddenField hfFrom;
         
         /// <summary>
-        /// txtRefNo control.
+        /// txtTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtRefNo;
+        protected global::System.Web.UI.WebControls.TextBox txtTitle;
         
         /// <summary>
         /// txtDesc control.
@@ -103,13 +112,22 @@ namespace SmartConcepcion.Portal.Budget {
         protected global::System.Web.UI.WebControls.TextBox txtDesc;
         
         /// <summary>
-        /// chkFlow control.
+        /// txtStart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkFlow;
+        protected global::System.Web.UI.WebControls.TextBox txtStart;
+        
+        /// <summary>
+        /// txtEnd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEnd;
         
         /// <summary>
         /// txtBudget control.
@@ -128,5 +146,50 @@ namespace SmartConcepcion.Portal.Budget {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnPostProject;
+        
+        /// <summary>
+        /// gvProjectLeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvProjectLeader;
+        
+        /// <summary>
+        /// upNameSuggestion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel upNameSuggestion;
+        
+        /// <summary>
+        /// txtUserSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtUserSearch;
+        
+        /// <summary>
+        /// btnSearchUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSearchUser;
+        
+        /// <summary>
+        /// gvTemplateError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvTemplateError;
     }
 }

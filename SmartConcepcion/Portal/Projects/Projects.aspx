@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Projects" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SmartConcepcion.Portal.Projects.Default" %>
+﻿<%@ Page Title="Projects" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Projects.aspx.cs" Inherits="SmartConcepcion.Portal.Projects.Projects" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <style>
     .filter{
@@ -10,11 +10,8 @@
     <asp:UpdatePanel ID="upProject" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <i class="fa fa-sliders" aria-hidden="true" style="cursor: pointer" onclick="FilterBox()">Filter</i>
-                </div>
-                <div class="col-md-6 text-right">
-                    <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New Project" CausesValidation="false" />
                 </div>
             </div>
 
@@ -55,11 +52,6 @@
                             <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Start" DataFormatString="{0:MMMM dd yyyy}" DataField="startdate"  />
                             <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="End" DataFormatString="{0:MMMM dd yyyy}" DataField="enddate"  />
 
-                            <asp:TemplateField HeaderStyle-CssClass="thead-dark" ItemStyle-CssClass="text-center">
-                                <ItemTemplate>
-                                    <asp:LinkButton runat="server" ToolTip='<%# Eval("ID") %>' CssClass="glyphicon glyphicon-edit" OnClick="Unnamed_Click" OnClientClick="openNav()" CausesValidation="false" />
-                                </ItemTemplate>
-                            </asp:TemplateField>
                         </Columns>
                         <PagerTemplate>
                                 
