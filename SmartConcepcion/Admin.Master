@@ -24,7 +24,7 @@
 
 <body>
     
-    <svg style="display: none;">
+    <svg>
         <symbol id="down" viewBox="0 0 16 16">
             <polygon points="3.81 4.38 8 8.57 12.19 4.38 13.71 5.91 8 11.62 2.29 5.91 3.81 4.38" />
         </symbol>
@@ -53,7 +53,7 @@
             </svg>
         </symbol>
         <symbol id="officials" viewBox="0 0 512 512">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 496 496" style="enable-background: new 0 0 496 496;" xml:space="preserve" width="512px" height="512px" class="">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_10" x="0px" y="0px" viewBox="0 0 496 496" style="enable-background: new 0 0 496 496;" xml:space="preserve" width="512px" height="512px" class="">
                 <g>
                     <g>
                         <g>
@@ -81,7 +81,7 @@
         </symbol>
 
         <symbol id="community" viewBox="0 0 512 512">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.002 512.002" style="enable-background: new 0 0 512.002 512.002;" xml:space="preserve" width="512px" height="512px" class="">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_12" x="0px" y="0px" viewBox="0 0 512.002 512.002" style="enable-background: new 0 0 512.002 512.002;" xml:space="preserve" width="512px" height="512px" class="">
                 <g>
                     <g>
                         <g>
@@ -115,7 +115,7 @@
                     </g>
                     <g>
                         <g>
-                            <path d="M255.993,0c-5.522,0-10,4.477-10,10v14.963c0,5.523,4.478,10,10,10c5.522,0,10-4.477,10-10V10    C265.993,4.477,261.516,0,255.993,0z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
+                            <path d="M255.993,0c-5.522,0-10,4.477-10,10v14.963c0,5.523,4.478,10,10,10c5.522,0,10-4.477,10-10V10    C265.993,4.477,261.516,0,255.993,0z"  class="active-path" data-old_color="#000000" fill="#FFFFFF" />
                         </g>
                     </g>
                     <g>
@@ -134,7 +134,7 @@
 
 
         <symbol id="project" viewBox="0 0 512 512">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 482.13 482.13" style="enable-background: new 0 0 482.13 482.13;" xml:space="preserve" width="512px" height="512px" class="">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_11" x="0px" y="0px" viewBox="0 0 482.13 482.13" style="enable-background: new 0 0 482.13 482.13;" xml:space="preserve" width="512px" height="512px" class="">
                 <g>
                     <g>
                         <g>
@@ -148,7 +148,7 @@
                     </g>
                     <g>
                         <g>
-                            <rect x="234.112" y="354.059" width="16" height="24" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
+                            <rect x="234.112" y="354.059" width="16" height="24"  class="active-path"  fill="#FFFFFF" />
                         </g>
                     </g>
                     <g>
@@ -158,32 +158,32 @@
                     </g>
                     <g>
                         <g>
-                            <rect x="394.112" y="298.059" width="56" height="16" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
+                            <rect x="394.112" y="298.059" width="56" height="16"  class="active-path"  fill="#FFFFFF" />
                         </g>
                     </g>
                     <g>
                         <g>
-                            <rect x="402.113" y="334.822" transform="matrix(0.6401 -0.7683 0.7683 0.6401 -133.6437 446.8239)" width="16" height="62.48" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
+                            <rect x="402.113" y="334.822" transform="matrix(0.6401 -0.7683 0.7683 0.6401 -133.6437 446.8239)" width="16" height="62.48" class="active-path"fill="#FFFFFF" />
                         </g>
                     </g>
                     <g>
                         <g>
-                            <rect x="346.112" y="362.059" width="16" height="56" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
+                            <rect x="346.112" y="362.059" width="16" height="56" class="active-path"  fill="#FFFFFF" />
                         </g>
                     </g>
                     <g>
                         <g>
-                            <rect x="9.128" y="130.058" transform="matrix(0.9701 -0.2425 0.2425 0.9701 -32.2251 14.3351)" width="65.968" height="15.992" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
+                            <rect x="9.128" y="130.058" transform="matrix(0.9701 -0.2425 0.2425 0.9701 -32.2251 14.3351)" width="65.968" height="15.992" class="active-path"  fill="#FFFFFF" />
                         </g>
                     </g>
                     <g>
                         <g>
-                            <rect x="46.111" y="35.657" transform="matrix(0.5812 -0.8137 0.8137 0.5812 -34.3557 73.3688)" width="15.992" height="68.816" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
+                            <rect x="46.111" y="35.657" transform="matrix(0.5812 -0.8137 0.8137 0.5812 -34.3557 73.3688)" width="15.992" height="68.816"  class="active-path" fill="#FFFFFF" />
                         </g>
                     </g>
                     <g>
                         <g>
-                            <rect x="97.938" y="1.024" transform="matrix(0.9688 -0.2477 0.2477 0.9688 -5.133 27.2971)" width="16" height="66.056" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
+                            <rect x="97.938" y="1.024" transform="matrix(0.9688 -0.2477 0.2477 0.9688 -5.133 27.2971)" width="16" height="66.056"  class="active-path" fill="#FFFFFF" />
                         </g>
                     </g>
                 </g>
@@ -242,7 +242,7 @@
         </symbol>
 
         <symbol id="dash" viewBox="0 0 512 512">
-            <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" enable-background="new 0 0 510.034 510.034" height="512px" viewBox="0 0 510.034 510.034" width="512px" class="">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Capa_10" enable-background="new 0 0 510.034 510.034" height="512px" viewBox="0 0 510.034 510.034" width="512px" class="">
                 <g>
                     <path id="XMLID_751_" d="m0 30.399v365.555h238.928v53.681h-149.914v30h332.006v-30h-152.092v-53.681h241.106v-365.555zm480.034 335.555h-450.034v-39.319h210.034v19.66h30v-19.66h210zm-450.034-69.319v-236.236h450.034v236.236z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
                     <path id="XMLID_759_" d="m142.034 131.226h-15c-39.1 0-70.91 31.81-70.91 70.91 0 39.094 31.81 70.9 70.91 70.9s70.91-31.806 70.91-70.9v-15h-55.91zm23.061 85.909c-5.996 15.153-20.797 25.9-38.061 25.9-22.558 0-40.91-18.348-40.91-40.9 0-17.265 10.751-32.067 25.91-38.062v53.062z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
@@ -266,7 +266,7 @@
                 <img class="logo1" src="/images/Logo2020.png" />
             </a>
             <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
-                <svg width="20" height="20" aria-hidden="true">
+                <svg width="20" height="20">
                     <use xlink:href="#down"></use>
                 </svg>
             </button>
@@ -282,7 +282,7 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li>
+                
                 <li>
                     <a href="~/Portal/Announcements/Create" runat="server">
                         <svg>
@@ -376,9 +376,8 @@
                     </a>
                 </li>
                 <li>
-
                     <button class="collapse-btn" aria-expanded="true" aria-label="collapse menu">
-                        <svg aria-hidden="true">
+                        <svg>
                             <use xlink:href="#collapse"></use>
                         </svg>
 
