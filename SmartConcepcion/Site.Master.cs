@@ -36,6 +36,19 @@ namespace SmartConcepcion
                 lnkDashboard.Visible = true;
             else
                 lnkDashboard.Visible = false;
+
+            loadProfilePicture();
+        }
+        void loadProfilePicture()
+        {
+            DataTable _dt;
+
+            if (inh.p_UserID != null)
+            {
+                _dt = csql.getUser_Details("SmartConcepcion", inh.p_UserID.Value);
+                profilepic.Src = $"/portal/community/ProfilePicture/{inh.p_UserID.Value.ToString()}{_dt.Rows[0]["profile_ext"].ToString()}";
+            }
+
         }
 
         protected void btnSignOut(object sender, EventArgs e)

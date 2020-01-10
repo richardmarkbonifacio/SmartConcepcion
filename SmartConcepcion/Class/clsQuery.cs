@@ -185,6 +185,7 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
+
         public DataTable postVerify(string cnstr, long userid)
         {
             try
@@ -335,6 +336,40 @@ namespace SmartConcepcion.Class
                 cmd = new SqlCommand("[User_detail_get]", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@ID", SqlDbType.BigInt).Value = ID;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
+
+        public DataTable setProfileUpdate(string cnstr, long ID, string profile_ext, string password)
+        {
+            try
+            {
+                result_Dt = new DataTable("Change Password");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[User_profile_update]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@userID", SqlDbType.BigInt).Value = ID;
+                cmd.Parameters.Add("@profile_ext", SqlDbType.VarChar).Value = profile_ext;
+                cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = password;
 
                 da = new SqlDataAdapter(cmd);
                 using (cn)
