@@ -60,7 +60,7 @@ namespace SmartConcepcion.Portal.Report
                     _title = Request.QueryString["title"];
                     this.Title = _title;
                     rpt = new ReportDocument();
-                    rpt.Load(Server.MapPath("~/portal/Reports/barangaycert.rpt"));
+                    rpt.Load(Server.MapPath("~/portal/Reports/barangayclearance.rpt"));
                     rpt.SetParameterValue("@id", recid);
 
                     rptCred = GetConfigSetting("rptbackoffice").Split('$');
