@@ -1,8 +1,14 @@
 ﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="SmartConcepcion.Portal.Administrator.Dashboard" %>
     <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+        <asp:UpdatePanel runat="server" ID="hfContainer" UpdateMode="Conditional" >
+            <ContentTemplate>
+                <asp:HiddenField runat="server" ID="hfTotalPop" />
+            </ContentTemplate>
+        </asp:UpdatePanel>
+
         <section class="grid">
             <article>
-            
+                <h2>Welcome to Baranggay <span runat="server" id="brgyname"></span></h2>
             </article>
             <article>
                 <div id="employment_chart" class="chart"></div>
@@ -69,17 +75,15 @@
 
             google.charts.load('current', { 'packages': ['bar'] });
             google.charts.setOnLoadCallback(draw_age_chart);
-
+            var total_population = $("#MainContent_hfTotalPop").val();
             function draw_age_chart() {
                 var data = google.visualization.arrayToDataTable([
                     ['Year', 'Total', 'Female', 'Male'],
-                    ['Total No. of Population', 1000, 400, 200],
-                    ['Seniors (Ages 50 and up', 1170, 460, 250],
-                    ['Adults (Ages 25-49)', 660, 1120, 300],
-                    ['Youth Ages(0-24)', 1030, 540, 350]
+                    ['Total No. of Population', total_population, 5, 5],
+                    
                 ]);
 
-                var options = {title: 'DISTRIBUTION OF AGE',
+                var options = {title: 'Residents',
                     chart: {
 
                     },

@@ -34,7 +34,7 @@ ul {
     list-style: none;
 }
 
-a,
+.page-header a,
 button {
     color: inherit;
 }
@@ -43,16 +43,16 @@ a {
     text-decoration: none;
 }
 
-button {
+.page-header button {
     background: none;
     cursor: pointer;
 }
 
-input {
+.page-header input {
     -webkit-appearance: none;
 }
 
-button,
+.page-header button,
 input {
     border: none;
 }

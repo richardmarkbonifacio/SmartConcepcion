@@ -392,6 +392,39 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
+
+        public DataTable getDashboardInfo(string cnstr, long brgyID)
+        {
+            try
+            {
+                result_Dt = new DataTable("Dashboard");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Community_dashboard_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
+
         #endregion
 
         #region Announcements
