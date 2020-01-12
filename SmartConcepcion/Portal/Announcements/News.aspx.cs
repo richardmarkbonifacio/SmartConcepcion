@@ -121,7 +121,7 @@ namespace SmartConcepcion.Portal.Announcements
         {
             p_BannerIndex = 0;
             p_dtTopAnnouncement = csql.getTopAnnoucements("SmartConcepcion");
-            p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", p_PageSize, p_PageIndex, p_BrgyID);
+            p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", p_PageSize, p_PageIndex, p_BrgyID,"","");
             loadGridView(gvAnnouncements, p_dtAnnouncement);
             loadGridView(gvTopAnnouncement, p_dtTopAnnouncement);
             upAnnouncements.Update();

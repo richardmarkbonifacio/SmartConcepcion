@@ -106,7 +106,7 @@ namespace SmartConcepcion.Portal.Announcements
         {
             p_BannerIndex = 0;//reset even after postbacks
             p_dtTopAnnouncement = csql.getTopAnnoucements("SmartConcepcion");
-            p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", p_PageSize, 0, p_BrgyID);
+            p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", p_PageSize, 0, p_BrgyID,"", "");
             loadGridView(gvAnnouncements, p_dtAnnouncement);
             loadListview(lvAnnouncement, p_dtTopAnnouncement);
             upAnnouncements.Update();

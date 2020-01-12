@@ -22,15 +22,6 @@ namespace SmartConcepcion.Portal.Community {
         protected global::System.Web.UI.UpdatePanel upHousehold;
         
         /// <summary>
-        /// ddVerified control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddVerified;
-        
-        /// <summary>
         /// txtUserSearch control.
         /// </summary>
         /// <remarks>
@@ -83,6 +74,15 @@ namespace SmartConcepcion.Portal.Community {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvHouseholdMembers;
+        
+        /// <summary>
+        /// btnUpdateRoles control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnUpdateRoles;
         
         /// <summary>
         /// upNameSuggestion control.

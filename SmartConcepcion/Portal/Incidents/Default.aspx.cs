@@ -93,14 +93,11 @@ namespace SmartConcepcion.Portal.Incidents
         protected override void OnPreLoad(EventArgs e)
         {
             base.OnPreLoad(e);
-            if (!isAdmin())
-            {
-                Response.Redirect("~/403");
-            }
+            
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            isAdmin();
+            
             if (!IsPostBack)
             {
                 loadDropDown(ddStatus, csql.GetStatusList("SmartConcepcion"), true);
@@ -153,6 +150,7 @@ namespace SmartConcepcion.Portal.Incidents
             txtConfrontation.Text = "";
             txtRemarks.Text = "";
             txtLocation.Text = "";
+            lblPrevDate.Text = "";
             header.InnerText = "Create new Incident";
             upIncidentInfo.Update();
         }
@@ -204,7 +202,7 @@ namespace SmartConcepcion.Portal.Incidents
             txtComplainant.Text = _dttemp.Rows[0]["complainantName"].ToString();
             txtDetails.Text = _dttemp.Rows[0]["incident_details"].ToString();
             txtRemarks.Text = _dttemp.Rows[0]["remarks"].ToString();
-
+            lblPrevDate.Text = "Previous dates: " + _dttemp.Rows[0]["prevdate"].ToString();
             if (_dttemp.Rows[0]["complainantID"].ToString() != "")
                 p_ComplainantID = Convert.ToInt64(_dttemp.Rows[0]["complainantID"].ToString());
             else

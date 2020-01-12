@@ -22,17 +22,17 @@
                 <div class="row filter">
                     <div class="col-md-12">
                         
-                        <div class="col-md-3 col-xs-3">
+                        <div class="col-md-3 col-xs-12">
                             <asp:TextBox runat="server" CssClass="form-control" ID="txtdtFrom" TextMode="Date" />
                         </div>
-                        <div class="col-md-3 col-xs-3">
+                        <div class="col-md-3 col-xs-12">
                             <asp:TextBox runat="server" CssClass="form-control" ID="txtdtTo" TextMode="Date" />
 
                         </div>
-                        <div class="col-md- col-xs-3">
+                        <div class="col-md- col-xs-12">
                             <asp:TextBox runat="server" CssClass="form-control" placeholder="search..." ID="txtProjectname" />
                         </div>
-                        <div class="col-md-3 col-xs-3">
+                        <div class="col-md-3 col-xs-12">
                             <asp:Button runat="server" CssClass="btn btn-send" Text="SEARCH" ID="btnProject" OnClick="btnProject_Click" CausesValidation="false" />
                         </div>
                     </div>

@@ -94,6 +94,15 @@ namespace SmartConcepcion.Portal.Healthcare {
         protected global::System.Web.UI.WebControls.TextBox txtWeight;
         
         /// <summary>
+        /// txtDeathDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtDeathDate;
+        
+        /// <summary>
         /// btnPostIR control.
         /// </summary>
         /// <remarks>

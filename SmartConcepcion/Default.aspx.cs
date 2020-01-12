@@ -73,16 +73,42 @@ namespace SmartConcepcion
         {
             DataTable _dt = csql.postSignUp("SmartConcepcion", txtEmail.Text, txtFnam.Text, txtMnam.Text, txtLnam.Text, txtSuffix.Text, 
                 txtNationality.Text, ddCivilStatus.SelectedValue, txtContact.Text, txtStbldgno.Text, Convert.ToInt64(ddBrgy.SelectedValue), 
-                    Convert.ToInt64(ddZone.SelectedValue),txtVotersID.Text, txtPreschool.Text, convert_date(txtPreFrom.Text), convert_date(txtPreTo.Text), 
+                    Convert.ToInt64(ddZone.SelectedValue),txtVotersID.Text, ddGender.SelectedValue, txtPreschool.Text, convert_date(txtPreFrom.Text), convert_date(txtPreTo.Text), 
                         txtElem.Text, convert_date(txtElemStart.Text), convert_date(txtElemEnd.Text), txtHS.Text, convert_date(txtHSStart.Text), 
                             convert_date(txtHSStart.Text), txtCollege.Text, convert_date(txtCollegeStart.Text), convert_date(txtCollegeEnd.Text),
                                 txtCourse.Text, Convert.ToDateTime(txtBday.Text), txtRUserpass.Text);
+
+            if(b_hasrow(_dt))
+            {
+                try
+                {
+                    SendEmail(txtEmail.Text, "Account Credential", $"ID:{_dt.Rows[0]["ID"].ToString()}<br/>Password:{txtUserpass.Text}");
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
         }
 
         protected void ddBrgy_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadDropDown(ddZone, csql.getBrgyZone("SmartConcepcion", Convert.ToInt64(ddBrgy.SelectedValue)), false);
             upSignup.Update();
+        }
+
+        protected void lnkForgot_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SendEmail("richardbonifacio1015@gmail.com","Forgot Password","test");
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
     }
 }

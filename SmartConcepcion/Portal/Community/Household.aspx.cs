@@ -101,7 +101,7 @@ namespace SmartConcepcion.Portal.Community
             {
                 LinkButton _lnk = (LinkButton)sender;
                 p_selecteduser = Convert.ToInt64(_lnk.ToolTip);
-                DataTable _dttemp = csql.getHouseholdMember("SmartConcepcion", p_selecteduser);
+                DataTable _dttemp = csql.getHouseholdMember("SmartConcepcion", p_selecteduser, p_BrgyID);
                 DataView view = _dttemp.AsDataView();
 
                 loadGridView(gvHouseholdMembers, _dttemp);
@@ -110,6 +110,9 @@ namespace SmartConcepcion.Portal.Community
                 _dttemp = view.ToTable(true, "ID");
                 p_selectedmember = _dttemp;
                 upHouseholdInfo.Update();
+
+                txtUserSearch.Text = "";
+                LoadSuggestedMember();
                 
             }
             catch (Exception)
@@ -151,12 +154,21 @@ namespace SmartConcepcion.Portal.Community
         }
         protected void btnSearchUser_Click(object sender, EventArgs e)
         {
-            dttemp = csql.getUserPaging("SmartConcepcion", 5, 0, txtMemberSearch.Text, p_BrgyID);
+            LoadSuggestedMember();
+        }
+        void LoadSuggestedMember()
+        {
+            dttemp = csql.getHouseholdSearchForMember("SmartConcepcion", p_selecteduser.Value, 5, 0, txtMemberSearch.Text, p_BrgyID);
             if (dttemp.Rows.Count > 0)
             {
                 loadGridView(gvSearchMember, dttemp);
-                upNameSuggestion.Update();
+                gvSearchMember.Visible = true;
             }
+            else
+            {
+                gvSearchMember.Visible = false;
+            }
+            upNameSuggestion.Update();
         }
 
         protected void gvSearchMember_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -182,8 +194,8 @@ namespace SmartConcepcion.Portal.Community
             try
             {
                 csql.setHousehold("SmartConcepcion", p_selecteduser.Value, p_selectedmember, p_UserID.Value);
-                DataTable _dttemp = csql.getHouseholdMember("SmartConcepcion", p_selecteduser);
-
+                DataTable _dttemp = csql.getHouseholdMember("SmartConcepcion", p_selecteduser, p_BrgyID);
+                LoadHousehold();
                 loadGridView(gvHouseholdMembers, _dttemp);
                 upHouseholdInfo.Update();
             }
@@ -193,6 +205,34 @@ namespace SmartConcepcion.Portal.Community
                 throw;
             }
             
+        }
+
+        protected void btnUpdateRoles_Click(object sender, EventArgs e)
+        {
+            
+            dttemp = new DataTable();
+            dttemp.Columns.Add("ID");
+            dttemp.Columns.Add("role_code");
+            DataRow dr;
+            foreach (GridViewRow viewRow in gvHouseholdMembers.Rows)
+            {
+                dr = dttemp.NewRow();
+                dr["ID"] = convert_long( viewRow.Cells[0].Text,false);
+                DropDownList _ddl = (DropDownList)viewRow.FindControl("ddHouseholdPos");
+                dr["role_code"] = _ddl.SelectedValue;
+                dttemp.Rows.Add(dr);
+            }
+            csql.setHouseholdRoles("SmartConcepcion", dttemp, p_UserID.Value);
+        }
+
+        protected void gvHouseholdMembers_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if ((e.Row.RowType & DataControlRowType.DataRow) != 0)
+            {
+                
+                DropDownList _ddl = (DropDownList)e.Row.FindControl("ddHouseholdPos");
+                _ddl.SelectedValue = e.Row.Cells[3].Text;
+            }
         }
     }
 }

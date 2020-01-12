@@ -121,7 +121,8 @@ namespace SmartConcepcion.Portal.Healthcare
         {
             try
             {
-                //DataTable _dt = csql.setHealth_record("SmartConcepcion", p_UserProfileID, ;
+                DataTable _dt = csql.setHealth_user_info("SmartConcepcion", p_selectedUser.Value,
+                    Convert.ToInt32(txtHeight.Text), Convert.ToInt32(txtWeight.Text), convert_date(txtDeathDate.Text), p_UserID.Value) ;
 
                 loadUserProfile();
                 clearUserInfo();

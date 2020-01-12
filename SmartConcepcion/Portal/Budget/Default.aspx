@@ -19,24 +19,24 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        <asp:LinkButton runat="server" OnClientClick="openGeneric()" OnClick="lnkCreate_Click" Text="Add budget" CausesValidation="false" />
+                        <i class="fa fa-sliders" aria-hidden="true" style="cursor:pointer" onclick="FilterBox()" >Filter</i>
                     </div>
                     <div class="col-md-6 text-right">
-                        <i class="fa fa-sliders" aria-hidden="true" style="cursor:pointer" onclick="FilterBox()" >Filter</i>
+                        <asp:LinkButton runat="server" OnClientClick="openGeneric()" OnClick="lnkCreate_Click" Text="Add budget" CausesValidation="false" />
                     </div>
                 </div>
                 <div class="row filter">
                     <div class="col-md-12">
-                        <div class="col-md-3 col-xs-3">
+                        <div class="col-md-3 col-xs-12">
                             <asp:TextBox runat="server" CssClass="form-control" ID="txtProjectname" />
                         </div>
-                        <div class="col-md-3 col-xs-3">
+                        <div class="col-md-3 col-xs-12">
                             <asp:TextBox runat="server" CssClass="form-control" ID="txtdtFrom" TextMode="Date" />
                         </div>
-                        <div class="col-md-3 col-xs-3">
+                        <div class="col-md-3 col-xs-12">
                             <asp:TextBox runat="server" CssClass="form-control" ID="txtdtTo" TextMode="Date" />
                         </div>
-                        <div class="col-md-3 col-xs-3">
+                        <div class="col-md-3 col-xs-12">
                             <asp:Button runat="server" CssClass="btn btn-warning" Text="search" ID="btnBudget" OnClick="btnBudget_Click" CausesValidation="false" />
                         </div>
                     </div>

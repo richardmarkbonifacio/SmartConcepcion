@@ -166,6 +166,15 @@ namespace SmartConcepcion.Portal.Incidents {
         protected global::System.Web.UI.WebControls.TextBox txtConfrontation;
         
         /// <summary>
+        /// lblPrevDate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPrevDate;
+        
+        /// <summary>
         /// txtRemarks control.
         /// </summary>
         /// <remarks>

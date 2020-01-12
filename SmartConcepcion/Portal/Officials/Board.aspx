@@ -15,7 +15,8 @@
             <h2>COUNCILOR</h2>
             <div class="row">
                 <div class="col-md-12">
-                    <asp:TextBox runat="server" placeholder="Councilor" CssClass="form-control" ReadOnly="true" onclick="openNameSuggestion('coun')" />
+                    <a onclick="openNameSuggestion('coun')">Assign New Councilor</a>
+                    <%--<asp:TextBox runat="server" placeholder="Councilor" CssClass="form-control" ReadOnly="true" onclick="openNameSuggestion('coun')" />--%>
                 </div>
             </div>
             <div class="container-fluid">
@@ -26,7 +27,101 @@
                     </ItemTemplate>
                 </asp:ListView>
             </div>
+            <hr />
+            
+            <h2>SECRETARY</h2>
+            <a onclick="openNameSuggestion('sec')">Assign new Secretary</a>
+            <div class="container-fluid">
+                <div style="overflow-x: scroll">
+                    <asp:GridView runat="server" AutoGenerateColumns="false"
+                        ID="gvSecretary" CssClass="table table-default table-hover table-responsive table-dark" PageSize="20"
+                        AllowPaging="true" AllowCustomPaging="true">
 
+                        <Columns>
+                            <asp:BoundField HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden" DataField="userID" />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Fullname" DataField="officialName" />
+                            <asp:TemplateField HeaderStyle-CssClass="thead-dark"  >
+                                <ItemTemplate>
+                                    <asp:LinkButton runat="server" OnClick="Remove_Click" ToolTip='<%# Eval("userID") %>' CommandName="sec" ><i class="fa fa-trash" aria-hidden="true"></i></asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                        <PagerTemplate>
+
+                            <ul class="pagination pagination-md">
+                                <li class="page-item">
+                                    <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Prev" Text="Previous" CausesValidation="false" /></li>
+                                <li class="page-item">
+                                    <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Next" Text="Next" CausesValidation="false" /></li>
+                            </ul>
+
+                        </PagerTemplate>
+                        <PagerSettings Mode="NextPrevious" Position="Bottom" PreviousPageText="Previous" NextPageText="Next" FirstPageText="First" LastPageText="Last" />
+                        <PagerStyle HorizontalAlign="Right" />
+                    </asp:GridView>
+                    <asp:Label runat="server" ID="norecord" Visible="false" Text="NO RECORD FOUND" />
+                </div>
+            </div>
+
+            <h2>Lingkod sa Lingap ng Nayon</h2>
+            <a onclick="openNameSuggestion('lln')">Assign new LLN</a>
+            <div class="container-fluid">
+                <div style="overflow-x: scroll">
+                    <asp:GridView runat="server" AutoGenerateColumns="false"
+                        ID="gvLLN" CssClass="table table-default table-hover table-responsive table-dark" PageSize="20"
+                        AllowPaging="true" AllowCustomPaging="true">
+
+                        <Columns>
+                            <asp:BoundField HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden" DataField="userID" />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Fullname" DataField="officialName" />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Position" DataField="role_desc" />
+                        </Columns>
+                        <PagerTemplate>
+
+                            <ul class="pagination pagination-md">
+                                <li class="page-item">
+                                    <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Prev" Text="Previous" CausesValidation="false" /></li>
+                                <li class="page-item">
+                                    <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Next" Text="Next" CausesValidation="false" /></li>
+                            </ul>
+
+                        </PagerTemplate>
+                        <PagerSettings Mode="NextPrevious" Position="Bottom" PreviousPageText="Previous" NextPageText="Next" FirstPageText="First" LastPageText="Last" />
+                        <PagerStyle HorizontalAlign="Right" />
+                    </asp:GridView>
+                    <asp:Label runat="server" ID="Label1" Visible="false" Text="NO RECORD FOUND" />
+                </div>
+            </div>
+
+            <h2>HEALTH OFFICER</h2>
+            <a onclick="openNameSuggestion('hlthoffcr')">Assign new Health Officer</a>
+            <div class="container-fluid">
+                <div style="overflow-x: scroll">
+                    <asp:GridView runat="server" AutoGenerateColumns="false"
+                        ID="gvHealthOfficer" CssClass="table table-default table-hover table-responsive table-dark" PageSize="20"
+                        AllowPaging="true" AllowCustomPaging="true">
+
+                        <Columns>
+                            <asp:BoundField HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden" DataField="userID" />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Fullname" DataField="officialName" />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Position" DataField="role_desc" />
+                        </Columns>
+                        <PagerTemplate>
+
+                            <ul class="pagination pagination-md">
+                                <li class="page-item">
+                                    <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Prev" Text="Previous" CausesValidation="false" /></li>
+                                <li class="page-item">
+                                    <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Next" Text="Next" CausesValidation="false" /></li>
+                            </ul>
+
+                        </PagerTemplate>
+                        <PagerSettings Mode="NextPrevious" Position="Bottom" PreviousPageText="Previous" NextPageText="Next" FirstPageText="First" LastPageText="Last" />
+                        <PagerStyle HorizontalAlign="Right" />
+                    </asp:GridView>
+                    <asp:Label runat="server" ID="Label2" Visible="false" Text="NO RECORD FOUND" />
+                </div>
+            </div>
         </ContentTemplate>
     </asp:UpdatePanel>
     
@@ -61,6 +156,8 @@
         </asp:UpdatePanel>
         
     </div>
+
+    
 
     <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
