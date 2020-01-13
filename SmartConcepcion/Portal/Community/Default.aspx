@@ -410,11 +410,11 @@
                         </div>
                         
                         <div class="text-right container-fluid">
-                                    <asp:Button runat="server" CssClass="btn btn-red" Text="Print Certificate" ID="brgyCertificate" OnClick="btnBrgyCert_Click" OnClientClick="closeNav()" />
-                                    <asp:Button runat="server" CssClass="btn btn-red" Text="Print Indigency" OnClientClick="openGeneric()" />
-                                    <asp:Button runat="server" CssClass="btn btn-send" Text="VERIFY" ID="btnVerify" OnClick="btnVerify_Click" OnClientClick="closeNav()" />
-                                    <asp:Button runat="server" CssClass="btn btn-send" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />
-                                </div>
+                                <asp:Button runat="server" CssClass="btn btn-red" Text="Print Certificate" ID="brgyCertificate" OnClick="btnBrgyCert_Click" OnClientClick="closeNav()" />
+                                <asp:Button runat="server" CssClass="btn btn-red" Text="Print Indigency" OnClientClick="openGeneric()" />
+                                <asp:Button runat="server" CssClass="btn btn-send" Text="VERIFY" ID="btnVerify" OnClick="btnVerify_Click" OnClientClick="closeNav()" />
+                                <asp:Button runat="server" CssClass="btn btn-send" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />
+                            </div>
                         
                     </div>
                 </div>
