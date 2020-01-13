@@ -108,17 +108,11 @@ namespace SmartConcepcion
             upSignup.Update();
         }
 
-        protected void lnkForgot_Click(object sender, EventArgs e)
+        protected void btnForgotPass_Click(object sender, EventArgs e)
         {
-            try
-            {
-                SendEmail("richardbonifacio1015@gmail.com","Forgot Password","test");
-            }
-            catch (Exception ex)
-            {
-
-                throw;
-            }
+            string res = csql.getForgotPassword("SmartConcepcion", txtForgotEmail.Text);
+            if(res != "" || res != null)
+                SendEmail(txtForgotEmail.Text, "Forgot Password", res);
         }
     }
 }

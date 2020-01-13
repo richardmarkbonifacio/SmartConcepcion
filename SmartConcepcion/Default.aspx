@@ -157,7 +157,7 @@
 
                                 <div class="row">
                                     <div class="container-fluid text-center">
-                                        <asp:LinkButton runat="server" id="lnkForgot" Text="Forgot Password?" CssClass="forgot" OnClick="lnkForgot_Click" />
+                                        <asp:LinkButton runat="server" id="lnkForgot" Text="Forgot Password?" CssClass="forgot" data-toggle="modal" data-target="#modalPassword" />
                                     </div>
                                     <div class="container-fluid text-center">
                                         <span class="notreg">Not registered?</span> <a class="create" href="#" data-toggle="modal" data-target="#myModal">CREATE ACCOUNT</a>
@@ -426,7 +426,27 @@
 
                 </div>
             </div>
-                                 
+            <div class="modal fade" id="modalPassword">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Sign Up</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <asp:TextBox runat="server" placeholder="Enter your email here" CssClass="form-control" ID="txtForgotEmail" TextMode="Email" />
+                            </div>
+                            <div class="container-fluid">
+                                <asp:Button runat="server" ID="btnForgotPass" CssClass="btn btn-success" OnClick="btnForgotPass_Click" Text="Submit" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
             
         </form>
         <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>

@@ -427,6 +427,35 @@ namespace SmartConcepcion.Class
             return result_Dt;
         }
 
+        public string getForgotPassword(string cnstr, string email)
+        {
+            string result = "";
+            try
+            {
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[User_forgot_password]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = email;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        result = (string) cmd.ExecuteScalar();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result;
+        }
+
         #endregion
 
         #region News and Announcements

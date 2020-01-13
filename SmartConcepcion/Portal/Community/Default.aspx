@@ -42,6 +42,57 @@
         .step.finish {
             background-color: #4CAF50;
         }
+
+        
+.tooltip {
+    display:inline-block;
+    position:relative;
+    border-bottom:1px dotted #666;
+    text-align:left;
+}
+
+.tooltip .bottom {
+    min-width:200px; 
+    top:40px;
+    left:50%;
+    transform:translate(-50%, 0);
+    padding:10px 20px;
+    color:#FFFFFF;
+    background-color:#00CCFF;
+    font-weight:normal;
+    font-size:13px;
+    border-radius:8px;
+    position:absolute;
+    z-index:99999999;
+    box-sizing:border-box;
+    border:1px solid transparent;box-shadow:0 1px 8px transparent;
+    visibility:hidden; opacity:0; transition:opacity 0.8s;
+}
+
+.tooltip:hover .bottom {
+    visibility:visible; opacity:1;
+}
+
+.tooltip .bottom i {
+    position:absolute;
+    bottom:100%;
+    left:50%;
+    margin-left:-12px;
+    width:24px;
+    height:12px;
+    overflow:hidden;
+}
+
+.tooltip .bottom i::after {
+    content:'';
+    position:absolute;
+    width:12px;
+    height:12px;
+    left:50%;
+    transform:translate(-50%,50%) rotate(45deg);
+    background-color:#00CCFF;
+    border:1px solid transparent;box-shadow:0 1px 8px transparent;
+}
     </style>
     
     <div class="header-banner">COMMUNITY</div>
@@ -127,6 +178,13 @@
                         <h2 runat="server" id="header">Create new profile</h2>
                         <asp:HiddenField runat="server" ID="hfFrom" />
                         <h3><asp:Label runat="server" ID="lblAccountNo" /></h3>
+                        <div class="btn btn-primary tooltip">Hover Me to Preview
+                            <div class="bottom">
+                                <h3>Lorem Ipsum</h3>
+                                
+                            </div>
+                        </div>
+
 
                         <div class="container-fluid">
                             <div class="tab">
@@ -352,12 +410,11 @@
                         </div>
                         
                         <div class="text-right container-fluid">
-                            <asp:Button runat="server" CssClass="btn btn-red" Text="Print Certificate" ID="brgyCertificate" OnClick="btnBrgyCert_Click" OnClientClick="closeNav()" />
-                            <asp:Button runat="server" CssClass="btn btn-red" Text="Print Indigency" OnClientClick="openGeneric()" />
-                            <asp:Button runat="server" CssClass="btn btn-send" Text="VERIFY" ID="btnVerify" OnClick="btnVerify_Click" OnClientClick="closeNav()" />
-                            <asp:Button runat="server" CssClass="btn btn-send" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />
-                            
-                        </div>
+                                    <asp:Button runat="server" CssClass="btn btn-red" Text="Print Certificate" ID="brgyCertificate" OnClick="btnBrgyCert_Click" OnClientClick="closeNav()" />
+                                    <asp:Button runat="server" CssClass="btn btn-red" Text="Print Indigency" OnClientClick="openGeneric()" />
+                                    <asp:Button runat="server" CssClass="btn btn-send" Text="VERIFY" ID="btnVerify" OnClick="btnVerify_Click" OnClientClick="closeNav()" />
+                                    <asp:Button runat="server" CssClass="btn btn-send" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />
+                                </div>
                         
                     </div>
                 </div>
