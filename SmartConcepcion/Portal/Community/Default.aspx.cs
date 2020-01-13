@@ -170,7 +170,7 @@ namespace SmartConcepcion.Portal.Community
             try
             {
                 DataTable _dt = csql.UserCreateUpdate("SmartConcepcion", p_selecteduser, txtEmail.Text, txtFnam.Text, txtMnam.Text, txtLnam.Text, txtSuffix.Text,
-                    txtNationality.Text, ddCivilStatus.SelectedValue, txtContact.Text, txtStbldgno.Text, p_BrgyID, Convert.ToInt64(ddZone.SelectedValue), txtVotersID.Text, ddGender.SelectedValue,
+                    txtNationality.Text, ddCivilStatus.SelectedValue, txtContact.Text, txtStbldgno.Text, p_BrgyID, convert_long(ddZone.SelectedValue,true).Value, txtVotersID.Text, ddGender.SelectedValue,
                         txtPreschool.Text, convert_date(txtPreFrom.Text), convert_date(txtPreTo.Text), txtElem.Text, convert_date(txtElemStart.Text), convert_date(txtElemEnd.Text),
                             txtHS.Text, convert_date(txtHSStart.Text), convert_date(txtHSStart.Text), txtCollege.Text, convert_date(txtCollegeStart.Text), convert_date(txtCollegeEnd.Text),
                                 txtCourse.Text, Convert.ToDateTime(txtBday.Text), p_UserID, chkIndigent.Checked, chkSenir.Checked, chkPwd.Checked, chk4ps.Checked);
@@ -209,7 +209,7 @@ namespace SmartConcepcion.Portal.Community
             
             txtStbldgno.Text = _dttemp.Rows[0]["stbldgno"].ToString();
             ddGender.SelectedValue = _dttemp.Rows[0]["middlename"].ToString();
-            ddZone.SelectedValue = _dttemp.Rows[0]["zoneID"].ToString();
+            //ddZone.SelectedValue = _dttemp.Rows[0]["zoneID"].ToString();
             
             //Educational Background
             txtPreschool.Text = _dttemp.Rows[0]["preschool"].ToString();
