@@ -43,7 +43,7 @@
     <div class="container-fluid">
         <div class="col-md-6  col-md-offset-3 ">
             <div class="card-capt">
-                <img src="../../images/user.png" alt="Avatar" style="width: 100%">
+                <img src="../../images/user.png" id="imgcaptain" runat="server" alt="Avatar" style="width: 100%">
                 <div class="container-fluid">
                     <div class="middle">
                     </div>
@@ -61,7 +61,7 @@
             <ItemTemplate>
                 <div class="col-md-3">
                     <div class="card-kagawad">
-                        <img src="../../images/user.png" alt="Avatar" style="width: 100%">
+                        <img src='<%# "../community/ProfilePicture/" + Eval("userID") + Eval("profile_ext") %>' alt="Avatar" style="width: 100%">
                         <div class="container-fluid">
                             <h4><b><%# Eval("officialName") %></b></h4>
                             <p><%# Eval("position") %></p>

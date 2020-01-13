@@ -23,22 +23,22 @@
         <ContentTemplate>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-12">
                         <i class="fa fa-sliders" aria-hidden="true" style="cursor:pointer" onclick="FilterBox()" >Filter</i>
                     </div>
-                    <div class="col-md-6 text-right">
+                    <div class="col-md-6 text-right col-sm-12">
                         <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New Business Profile" CausesValidation="false" />
                     </div>
                 </div>
                 
                 <div class="row filter">
-                    <div class="col-md-3 col-xs-3 col-md-offset-3">
+                    <div class="col-md-3 col-xs-12 col-md-offset-3 ">
                         <asp:DropDownList runat="server" ID="ddFilterBusinessType" DataValueField="ID" DataTextField="Description" CssClass="form-control" />
                     </div>
-                    <div class="col-md-3 col-xs-3">
+                    <div class="col-md-3 col-xs-12 ">
                         <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" />
                     </div>
-                    <div class="col-md-3 col-xs-3">
+                    <div class="col-md-3 col-xs-12 ">
                         <asp:Button runat="server" CssClass="btn btn-send" Text="SEARCH" ID="btnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false" />
                     </div>
                 </div>
@@ -54,6 +54,7 @@
                         <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Email" DataField="email" />
                         <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Business Name" DataField="businessname" />
                         <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Type" DataField="businesstype" />
+                        <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Address" DataField="stnobldg" />
                         <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Owner" DataField="owner" />
                         <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Contact No." DataField="contactno" />
                         

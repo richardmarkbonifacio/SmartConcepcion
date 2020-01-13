@@ -73,9 +73,7 @@
                             <ul class="pagination pagination-md">
                                 <li class="page-item">
                                     <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Prev" Text="Previous" CausesValidation="false" /></li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                
                                 <li class="page-item">
                                     <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Next" Text="Next" CausesValidation="false" /></li>
                             </ul>
@@ -139,8 +137,9 @@
                             <label>Confrontation Date</label>
                             <asp:TextBox ID="txtConfrontation" runat="server" TextMode="DateTimeLocal" CssClass="form-control" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="txtConfrontation" SetFocusOnError="true" ErrorMessage="Confrontation must not be blank" ForeColor="Red" />
+                            <asp:Label runat="server" ID="lblPrevDate" Font-Italic="true" />
                         </div>
-
+                        
                         <div class="form-group">
                             <label>Remarks</label>
                             <asp:TextBox ID="txtRemarks" runat="server" placeholder="Remarks" CssClass="form-control" />

@@ -69,6 +69,9 @@ namespace SmartConcepcion.Portal.Announcements
                         txtTitle.Text = p_dtAnnouncement.Rows[0]["title"].ToString();
                         txtSubtitle.Text = p_dtAnnouncement.Rows[0]["subtitle"].ToString();
                         txtContent.Text = p_dtAnnouncement.Rows[0]["body_content"].ToString();
+                        txtDate.Text = Convert.ToDateTime(p_dtAnnouncement.Rows[0]["publisheddate"].ToString()).ToString("yyyy-MM-ddTHH:mm:ss");
+
+                        ddCategory.SelectedValue = p_dtAnnouncement.Rows[0]["category_code"].ToString();
                     }
 
                 }
@@ -114,15 +117,17 @@ namespace SmartConcepcion.Portal.Announcements
                 {
                     if (p_AnnouncementID != null)
                     {
-                        File.Delete(Server.MapPath("Banner//" + p_AnnouncementID.ToString() + p_dtAnnouncement.Rows[0]["banner_extension"].ToString()));
+                        //File.Delete(Server.MapPath("Banner//" + p_AnnouncementID.ToString() + p_dtAnnouncement.Rows[0]["banner_extension"].ToString()));
+                        p_AnnouncementID = convert_long(_dttemp.Rows[0]["ID"].ToString(), false);
                         fuBanner.SaveAs(Server.MapPath("Banner//" + p_AnnouncementID.ToString() + _file_ext));
+                        Response.Redirect($"~/Portal/Announcements/Create?ID={p_AnnouncementID.ToString()}");
                     }
                     else
                     {
                         fuBanner.SaveAs(Server.MapPath("Banner//" + _dttemp.Rows[0]["ID"].ToString() + _file_ext));
                     }
                 }
-                Response.Redirect("~/Portal/Announcements/News",false);
+                //Response.Redirect("~/Portal/Announcements/News",false);
             }
             catch (Exception ex)
             {

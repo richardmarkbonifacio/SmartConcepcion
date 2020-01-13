@@ -121,7 +121,7 @@ namespace SmartConcepcion.Class
         }
 
         public DataTable postSignUp(string cnstr, string email, string firstname, string middlename, string lastname, string suffix,
-            string nationality, string civil_status, string contactno, string stbldgno, long brgyID, long zoneID, string votersID,
+            string nationality, string civil_status, string contactno, string stbldgno, long brgyID, long zoneID, string votersID, string gender,
                 string preschool, DateTime? preschool_start, DateTime? preschool_end, string elementary, DateTime? elementary_start, DateTime? elementary_end,
                     string highschool, DateTime? highschool_start, DateTime? highschool_end, string college, DateTime? college_start, DateTime? college_end,
                         string course, DateTime birthday, string userpass)
@@ -141,6 +141,8 @@ namespace SmartConcepcion.Class
                 cmd.Parameters.Add("@civil_status", SqlDbType.VarChar).Value = civil_status;
                 cmd.Parameters.Add("@stbldgno", SqlDbType.VarChar).Value = stbldgno;
                 cmd.Parameters.Add("@contactno", SqlDbType.VarChar).Value = contactno;
+                cmd.Parameters.Add("@gender", SqlDbType.VarChar).Value = gender;
+
                 cmd.Parameters.Add("@birthday", SqlDbType.Date).Value = birthday;
                 cmd.Parameters.Add("@zoneID", SqlDbType.BigInt).Value = zoneID;
                 cmd.Parameters.Add("@votersID", SqlDbType.BigInt).Value = votersID;
@@ -155,7 +157,7 @@ namespace SmartConcepcion.Class
                 cmd.Parameters.Add("@elementary_start", SqlDbType.Date).Value = elementary_start;
                 cmd.Parameters.Add("@elementary_end", SqlDbType.Date).Value = elementary_end;
 
-                cmd.Parameters.Add("@preschool", SqlDbType.VarChar).Value = highschool;
+                cmd.Parameters.Add("@highschool", SqlDbType.VarChar).Value = highschool;
                 cmd.Parameters.Add("@highschool_start", SqlDbType.Date).Value = highschool_start;
                 cmd.Parameters.Add("@highschool_end", SqlDbType.Date).Value = highschool_end;
 
@@ -219,7 +221,7 @@ namespace SmartConcepcion.Class
         }
 
         public DataTable UserCreateUpdate(string cnstr, long?ID, string email, string firstname, string middlename, string lastname,
-            string suffix, string nationality, string civil_status, string contactno, string stbldgno, long brgyID, long zoneID, string votersID,
+            string suffix, string nationality, string civil_status, string contactno, string stbldgno, long brgyID, long zoneID, string votersID, string gender,
                 string preschool, DateTime? preschool_start, DateTime? preschool_end, string elementary, DateTime? elementary_start, DateTime? elementary_end,
                     string highschool, DateTime? highschool_start, DateTime? highschool_end, string college, DateTime? college_start, DateTime? college_end,
                          string course, DateTime birthday, long? createdby, bool isIndigent, bool isSenior, bool isPWD, bool is4ps)
@@ -236,6 +238,7 @@ namespace SmartConcepcion.Class
                 cmd.Parameters.Add("@middlename", SqlDbType.VarChar).Value = middlename;
                 cmd.Parameters.Add("@lastname", SqlDbType.VarChar).Value = lastname;
                 cmd.Parameters.Add("@suffix", SqlDbType.VarChar).Value = suffix;
+                cmd.Parameters.Add("@gender", SqlDbType.VarChar).Value = gender;
                 cmd.Parameters.Add("@nationality", SqlDbType.VarChar).Value = nationality;
                 cmd.Parameters.Add("@civil_status", SqlDbType.VarChar).Value = civil_status;
                 cmd.Parameters.Add("@stbldgno", SqlDbType.VarChar).Value = stbldgno;
@@ -265,8 +268,7 @@ namespace SmartConcepcion.Class
                 cmd.Parameters.Add("@college_start", SqlDbType.Date).Value = college_start;
                 cmd.Parameters.Add("@college_end", SqlDbType.Date).Value = college_end;
                 cmd.Parameters.Add("@course", SqlDbType.VarChar).Value = course;
-
-
+                
                 cmd.Parameters.Add("@createdby", SqlDbType.BigInt).Value = createdby;
 
 
@@ -392,9 +394,42 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
+
+        public DataTable getDashboardInfo(string cnstr, long brgyID)
+        {
+            try
+            {
+                result_Dt = new DataTable("Dashboard");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Community_dashboard_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            return result_Dt;
+        }
+
         #endregion
 
-        #region Announcements
+        #region News and Announcements
         public DataTable getTopAnnoucements(string cnstr)
         {
             try
@@ -426,7 +461,7 @@ namespace SmartConcepcion.Class
             return result_Dt;
         }
 
-        public DataTable getAnnouncements(string cnstr, int pagesize, int pageno, long brgyID)
+        public DataTable getAnnouncements(string cnstr, int pagesize, int pageno, long brgyID, string category_code, string search)
         {
             try
             {
@@ -438,6 +473,8 @@ namespace SmartConcepcion.Class
                 cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
                 cmd.Parameters.Add("@PageSize", SqlDbType.Int).Value = pagesize;
                 cmd.Parameters.Add("@PageNumber", SqlDbType.Int).Value = pageno;
+                cmd.Parameters.Add("@category_code", SqlDbType.VarChar).Value = category_code;
+                cmd.Parameters.Add("@search", SqlDbType.VarChar).Value = search;
 
                 da = new SqlDataAdapter(cmd);
                 using (cn)
@@ -855,6 +892,70 @@ namespace SmartConcepcion.Class
         #endregion
 
         #region Barangay
+        public DataTable getBrgyInformation(string cnstr, long brgyID)
+        {
+            try
+            {
+                result_Dt = new DataTable("Brgy Info");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Brgy_info_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return result_Dt;
+        }
+
+        public DataTable setBrgyInformation(string cnstr, long brgyID, string mission, string vision)
+        {
+            try
+            {
+                result_Dt = new DataTable("Brgy Info");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Brgy_info_set]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
+                cmd.Parameters.Add("@mission", SqlDbType.VarChar).Value = mission;
+                cmd.Parameters.Add("@vision", SqlDbType.VarChar).Value = vision;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return result_Dt;
+        }
+
         public DataSet getBrgyOfficial(string cnstr, long brgyID)
         {
             try
@@ -875,6 +976,7 @@ namespace SmartConcepcion.Class
                             da.Fill(result_DS);
                             result_DS.Tables[0].TableName = "dtCapt";
                             result_DS.Tables[1].TableName = "dtCouncilor";
+                            result_DS.Tables[2].TableName = "dtEmployee";
                         }
                     }
                 }
@@ -960,6 +1062,39 @@ namespace SmartConcepcion.Class
                 cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
                 cmd.Parameters.Add("@replaceID", SqlDbType.BigInt).Value = replaceID;
                 cmd.Parameters.Add("@updatedby", SqlDbType.BigInt).Value = updatedby;
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+            return result_Dt;
+        }
+
+        public DataTable setBrgyOfficialRemove(string cnstr, long brgyID, string role_code, long userID)
+        {
+            try
+            {
+                result_Dt = new DataTable("Brgy Official Set");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Brgy_official_remove]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@role_code", SqlDbType.VarChar, 10).Value = role_code;
+                cmd.Parameters.Add("@userID", SqlDbType.BigInt).Value = userID;
+                cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
                 da = new SqlDataAdapter(cmd);
                 using (cn)
                 {
@@ -1299,6 +1434,41 @@ namespace SmartConcepcion.Class
             return result_Dt;
         }
 
+        public DataTable setHealth_user_info(string cnstr, long userID, Int32 height, Int32 weight, DateTime? deathdate, long updatedby)
+        {
+            try
+            {
+                result_Dt = new DataTable("User Details");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Health_user_info_set]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@userID", SqlDbType.BigInt).Value = userID;
+                cmd.Parameters.Add("@height", SqlDbType.VarChar, 150).Value = height;
+                cmd.Parameters.Add("@weight", SqlDbType.VarChar, 150).Value = weight;
+                cmd.Parameters.Add("@deathdate", SqlDbType.DateTime).Value = deathdate;
+                cmd.Parameters.Add("@updatedby", SqlDbType.BigInt).Value = updatedby;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return result_Dt;
+        }
+
         #endregion
 
         #region Projects
@@ -1527,6 +1697,67 @@ namespace SmartConcepcion.Class
 
             return result_Dt;
         }
+
+        public DataTable getNotifList(string cnstr, long? userID, DateTime notifdate)
+        {
+            try
+            {
+                result_Dt = new DataTable("Notif Seen");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Notification_list_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@notifdate", SqlDbType.DateTime).Value = notifdate;
+                cmd.Parameters.Add("@userID", SqlDbType.BigInt).Value = userID;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return result_Dt;
+        }
+
+        public DataTable getNotifSummary(string cnstr, long? userID)
+        {
+            try
+            {
+                result_Dt = new DataTable("Notif Seen");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Notification_summary_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@userID", SqlDbType.BigInt).Value = userID;
+
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return result_Dt;
+        }
         #endregion
 
         #region Location
@@ -1630,7 +1861,7 @@ namespace SmartConcepcion.Class
             return result_Dt;
         }
 
-        public DataTable getHouseholdMember(string cnstr, long? headID)
+        public DataTable getHouseholdMember(string cnstr, long? headID, long brgyID)
         {
             try
             {
@@ -1639,7 +1870,70 @@ namespace SmartConcepcion.Class
                 cmd = new SqlCommand("[Household_member_list_get]", cn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("@headID", SqlDbType.BigInt).Value = headID;
+                cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
+            return result_Dt;
+        }
+
+        public DataTable getHouseholdSearchForMember(string cnstr, long? headID, int pagesize, int pageno, string search, long brgyID)
+        {
+            try
+            {
+                result_Dt = new DataTable("Household Member");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Household_member_excl_get]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@headID", SqlDbType.BigInt).Value = headID;
+                cmd.Parameters.Add("@PageSize", SqlDbType.Int).Value = pagesize;
+                cmd.Parameters.Add("@PageNumber", SqlDbType.Int).Value = pageno;
+                cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
+                cmd.Parameters.Add("@search", SqlDbType.VarChar).Value = search;
+                da = new SqlDataAdapter(cmd);
+                using (cn)
+                {
+                    using (cmd)
+                    {
+                        using (da)
+                        {
+                            da.Fill(result_Dt);
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return result_Dt;
+        }
+
+        public DataTable setHouseholdRoles(string cnstr, DataTable household_role, long updatedby)
+        {
+            try
+            {
+                result_Dt = new DataTable("Household Member Role Set");
+                OpenCn(ref cn, cnstr);
+                cmd = new SqlCommand("[Household_member_role_set]", cn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@updatedby", SqlDbType.BigInt).Value = updatedby;
+                cmd.Parameters.Add("@household_role", SqlDbType.Structured).Value = household_role;
                 da = new SqlDataAdapter(cmd);
                 using (cn)
                 {

@@ -7,36 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SmartConcepcion.Portal.Administrator {
+namespace SmartConcepcion.Portal.Barangay {
     
     
-    public partial class Dashboard {
+    public partial class Default {
         
         /// <summary>
-        /// hfContainer control.
+        /// txtMission control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel hfContainer;
+        protected global::System.Web.UI.WebControls.TextBox txtMission;
         
         /// <summary>
-        /// hfTotalPop control.
+        /// txtVision control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfTotalPop;
+        protected global::System.Web.UI.WebControls.TextBox txtVision;
         
         /// <summary>
-        /// brgyname control.
+        /// btnsave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl brgyname;
+        protected global::System.Web.UI.WebControls.LinkButton btnsave;
     }
 }

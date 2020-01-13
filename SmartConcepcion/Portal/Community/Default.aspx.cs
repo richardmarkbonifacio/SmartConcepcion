@@ -120,7 +120,6 @@ namespace SmartConcepcion.Portal.Community
         void clearUserInfo()
         {
             p_selecteduser = null;
-            p_selecteduser = null;
             txtFnam.Text = "";
             txtLnam.Text = "";
             txtMnam.Text = "";
@@ -171,7 +170,7 @@ namespace SmartConcepcion.Portal.Community
             try
             {
                 DataTable _dt = csql.UserCreateUpdate("SmartConcepcion", p_selecteduser, txtEmail.Text, txtFnam.Text, txtMnam.Text, txtLnam.Text, txtSuffix.Text,
-                    txtNationality.Text, ddCivilStatus.SelectedValue, txtContact.Text, txtStbldgno.Text, p_BrgyID, Convert.ToInt64(ddZone.SelectedValue), txtVotersID.Text,
+                    txtNationality.Text, ddCivilStatus.SelectedValue, txtContact.Text, txtStbldgno.Text, p_BrgyID, Convert.ToInt64(ddZone.SelectedValue), txtVotersID.Text, ddGender.SelectedValue,
                         txtPreschool.Text, convert_date(txtPreFrom.Text), convert_date(txtPreTo.Text), txtElem.Text, convert_date(txtElemStart.Text), convert_date(txtElemEnd.Text),
                             txtHS.Text, convert_date(txtHSStart.Text), convert_date(txtHSStart.Text), txtCollege.Text, convert_date(txtCollegeStart.Text), convert_date(txtCollegeEnd.Text),
                                 txtCourse.Text, Convert.ToDateTime(txtBday.Text), p_UserID, chkIndigent.Checked, chkSenir.Checked, chkPwd.Checked, chk4ps.Checked);

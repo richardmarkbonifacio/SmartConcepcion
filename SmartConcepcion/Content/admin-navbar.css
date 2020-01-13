@@ -34,7 +34,7 @@ ul {
     list-style: none;
 }
 
-a,
+.page-header a,
 button {
     color: inherit;
 }
@@ -43,16 +43,16 @@ a {
     text-decoration: none;
 }
 
-button {
+.page-header button {
     background: none;
     cursor: pointer;
 }
 
-input {
+.page-header input {
     -webkit-appearance: none;
 }
 
-button,
+.page-header button,
 input {
     border: none;
 }
@@ -450,3 +450,98 @@ body {
     .page-footer span {
         color: var(--red);
     }
+
+
+/*CUSTOM VARIABLES HERE*/
+
+@media screen and (min-width: 768px) {
+    .collapsed .page-header {
+        width: 40px;
+    }
+
+        .collapsed .page-header .admin-menu li > * {
+            padding: 10px;
+        }
+
+        .collapsed .page-header .logo,
+        .collapsed .page-header .admin-menu span,
+        .collapsed .page-header .admin-menu .menu-heading {
+            display: none;
+        }
+
+        .collapsed .page-header .admin-menu svg {
+            margin-right: 0;
+        }
+
+        .collapsed .page-header .collapse-btn svg {
+            transform: rotate(180deg);
+        }
+
+    .collapsed .page-content {
+        left: 40px;
+        width: calc(100% - 40px);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .page-header,
+    .page-content {
+        position: static;
+        width: 100%;
+    }
+
+        .page-header nav {
+            flex-direction: row;
+        }
+
+        .page-header .toggle-mob-menu {
+            display: block;
+        }
+
+        .page-header .admin-menu {
+            position: absolute;
+            left: 98px;
+            top: 57px;
+            margin-top: 0;
+            z-index: 2;
+            border-radius: var(--border-radius);
+            background: var(--page-header-bgColor);
+            visibility: hidden;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.2s;
+        }
+
+            .page-header .admin-menu li:last-child,
+            .search-and-user .admin-profile .greeting {
+                display: none;
+            }
+
+    .search-and-user {
+        position: absolute;
+        left: 131px;
+        top: 10px;
+        padding: 0;
+        grid-column-gap: 5px;
+        width: calc(100% - 141px);
+        border-radius: var(--border-radius);
+        background: transparent;
+    }
+}
+.page-header .toggle-mob-menu svg {
+    transition: transform 0.2s;
+}
+
+.page-header .admin-menu {
+    transition: all 0.2s;
+}
+
+.mob-menu-opened .toggle-mob-menu svg {
+    transform: rotate(180deg);
+}
+
+.mob-menu-opened .page-header .admin-menu {
+    transform: scale(1);
+    visibility: visible;
+    opacity: 1;
+}

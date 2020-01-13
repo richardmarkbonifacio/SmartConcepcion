@@ -7,36 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SmartConcepcion.Portal.Administrator {
+namespace SmartConcepcion.Portal.Community {
     
     
-    public partial class Dashboard {
+    public partial class Notifications {
         
         /// <summary>
-        /// hfContainer control.
+        /// upNotif control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel hfContainer;
+        protected global::System.Web.UI.UpdatePanel upNotif;
         
         /// <summary>
-        /// hfTotalPop control.
+        /// gvNotifDates control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hfTotalPop;
-        
-        /// <summary>
-        /// brgyname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl brgyname;
+        protected global::System.Web.UI.WebControls.GridView gvNotifDates;
     }
 }

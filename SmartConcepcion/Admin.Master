@@ -24,7 +24,7 @@
 
 <body>
     
-    <svg>
+    <svg style="display: none;">
         <symbol id="down" viewBox="0 0 16 16">
             <polygon points="3.81 4.38 8 8.57 12.19 4.38 13.71 5.91 8 11.62 2.29 5.91 3.81 4.38" />
         </symbol>
@@ -53,7 +53,7 @@
             </svg>
         </symbol>
         <symbol id="officials" viewBox="0 0 512 512">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_10" x="0px" y="0px" viewBox="0 0 496 496" style="enable-background: new 0 0 496 496;" xml:space="preserve" width="512px" height="512px" class="">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 496 496" style="enable-background: new 0 0 496 496;" xml:space="preserve" width="512px" height="512px" class="">
                 <g>
                     <g>
                         <g>
@@ -79,9 +79,8 @@
             </svg>
 
         </symbol>
-
         <symbol id="community" viewBox="0 0 512 512">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_12" x="0px" y="0px" viewBox="0 0 512.002 512.002" style="enable-background: new 0 0 512.002 512.002;" xml:space="preserve" width="512px" height="512px" class="">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512.002 512.002" style="enable-background: new 0 0 512.002 512.002;" xml:space="preserve" width="512px" height="512px" class="">
                 <g>
                     <g>
                         <g>
@@ -115,7 +114,7 @@
                     </g>
                     <g>
                         <g>
-                            <path d="M255.993,0c-5.522,0-10,4.477-10,10v14.963c0,5.523,4.478,10,10,10c5.522,0,10-4.477,10-10V10    C265.993,4.477,261.516,0,255.993,0z"  class="active-path" data-old_color="#000000" fill="#FFFFFF" />
+                            <path d="M255.993,0c-5.522,0-10,4.477-10,10v14.963c0,5.523,4.478,10,10,10c5.522,0,10-4.477,10-10V10    C265.993,4.477,261.516,0,255.993,0z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
                         </g>
                     </g>
                     <g>
@@ -131,10 +130,8 @@
                 </g>
             </svg>
         </symbol>
-
-
         <symbol id="project" viewBox="0 0 512 512">
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_11" x="0px" y="0px" viewBox="0 0 482.13 482.13" style="enable-background: new 0 0 482.13 482.13;" xml:space="preserve" width="512px" height="512px" class="">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 482.13 482.13" style="enable-background: new 0 0 482.13 482.13;" xml:space="preserve" width="512px" height="512px" class="">
                 <g>
                     <g>
                         <g>
@@ -148,7 +145,7 @@
                     </g>
                     <g>
                         <g>
-                            <rect x="234.112" y="354.059" width="16" height="24"  class="active-path"  fill="#FFFFFF" />
+                            <rect x="234.112" y="354.059" width="16" height="24" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
                         </g>
                     </g>
                     <g>
@@ -158,32 +155,32 @@
                     </g>
                     <g>
                         <g>
-                            <rect x="394.112" y="298.059" width="56" height="16"  class="active-path"  fill="#FFFFFF" />
+                            <rect x="394.112" y="298.059" width="56" height="16" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
                         </g>
                     </g>
                     <g>
                         <g>
-                            <rect x="402.113" y="334.822" transform="matrix(0.6401 -0.7683 0.7683 0.6401 -133.6437 446.8239)" width="16" height="62.48" class="active-path"fill="#FFFFFF" />
+                            <rect x="402.113" y="334.822" transform="matrix(0.6401 -0.7683 0.7683 0.6401 -133.6437 446.8239)" width="16" height="62.48" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
                         </g>
                     </g>
                     <g>
                         <g>
-                            <rect x="346.112" y="362.059" width="16" height="56" class="active-path"  fill="#FFFFFF" />
+                            <rect x="346.112" y="362.059" width="16" height="56" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
                         </g>
                     </g>
                     <g>
                         <g>
-                            <rect x="9.128" y="130.058" transform="matrix(0.9701 -0.2425 0.2425 0.9701 -32.2251 14.3351)" width="65.968" height="15.992" class="active-path"  fill="#FFFFFF" />
+                            <rect x="9.128" y="130.058" transform="matrix(0.9701 -0.2425 0.2425 0.9701 -32.2251 14.3351)" width="65.968" height="15.992" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
                         </g>
                     </g>
                     <g>
                         <g>
-                            <rect x="46.111" y="35.657" transform="matrix(0.5812 -0.8137 0.8137 0.5812 -34.3557 73.3688)" width="15.992" height="68.816"  class="active-path" fill="#FFFFFF" />
+                            <rect x="46.111" y="35.657" transform="matrix(0.5812 -0.8137 0.8137 0.5812 -34.3557 73.3688)" width="15.992" height="68.816" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
                         </g>
                     </g>
                     <g>
                         <g>
-                            <rect x="97.938" y="1.024" transform="matrix(0.9688 -0.2477 0.2477 0.9688 -5.133 27.2971)" width="16" height="66.056"  class="active-path" fill="#FFFFFF" />
+                            <rect x="97.938" y="1.024" transform="matrix(0.9688 -0.2477 0.2477 0.9688 -5.133 27.2971)" width="16" height="66.056" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
                         </g>
                     </g>
                 </g>
@@ -240,9 +237,8 @@
             <path d="M6.57,1A5.57,5.57,0,1,1,1,6.57,5.57,5.57,0,0,1,6.57,1m0-1a6.57,6.57,0,1,0,6.57,6.57A6.57,6.57,0,0,0,6.57,0Z" />
             <rect x="11.84" y="9.87" width="2" height="5.93" transform="translate(-5.32 12.84) rotate(-45)" />
         </symbol>
-
         <symbol id="dash" viewBox="0 0 512 512">
-            <svg xmlns="http://www.w3.org/2000/svg" id="Capa_10" enable-background="new 0 0 510.034 510.034" height="512px" viewBox="0 0 510.034 510.034" width="512px" class="">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" enable-background="new 0 0 510.034 510.034" height="512px" viewBox="0 0 510.034 510.034" width="512px" class="">
                 <g>
                     <path id="XMLID_751_" d="m0 30.399v365.555h238.928v53.681h-149.914v30h332.006v-30h-152.092v-53.681h241.106v-365.555zm480.034 335.555h-450.034v-39.319h210.034v19.66h30v-19.66h210zm-450.034-69.319v-236.236h450.034v236.236z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
                     <path id="XMLID_759_" d="m142.034 131.226h-15c-39.1 0-70.91 31.81-70.91 70.91 0 39.094 31.81 70.9 70.91 70.9s70.91-31.806 70.91-70.9v-15h-55.91zm23.061 85.909c-5.996 15.153-20.797 25.9-38.061 25.9-22.558 0-40.91-18.348-40.91-40.9 0-17.265 10.751-32.067 25.91-38.062v53.062z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
@@ -256,7 +252,6 @@
                     <path id="XMLID_784_" d="m430.769 200.468-42.334 30.375-35.279-20.09-54.859 33.032 15.474 25.701 39.808-23.969 36.721 20.911 57.958-41.585z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#FFFFFF" />
                 </g>
             </svg>
-
         </symbol>
     </svg>
 
@@ -266,7 +261,7 @@
                 <img class="logo1" src="/images/Logo2020.png" />
             </a>
             <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
-                <svg width="20" height="20">
+                <svg width="20" height="20" aria-hidden="true">
                     <use xlink:href="#down"></use>
                 </svg>
             </button>
@@ -274,6 +269,7 @@
                 <li class="menu-heading">
                     <h3>Admin Setting</h3>
                 </li>
+
                 <li>
                     <a href="~/Portal/Administrator/Dashboard" runat="server">
                         <svg>
@@ -282,15 +278,16 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                
+
                 <li>
-                    <a href="~/Portal/Announcements/Create" runat="server">
+                    <a href="~/Portal/Announcements/Manage" runat="server">
                         <svg>
                             <use xlink:href="#pages"></use>
                         </svg>
                         <span>News & Announcements</span>
                     </a>
                 </li>
+
                 <li>
                     <a href="~/Portal/Community/Household" runat="server">
                         <svg>
@@ -299,6 +296,7 @@
                         <span>Household</span>
                     </a>
                 </li>
+
                 <li>
                     <a href="~/Portal/Business" runat="server">
                         <svg>
@@ -307,6 +305,7 @@
                         <span>Business</span>
                     </a>
                 </li>
+
                 <li>
                     <a href="~/Portal/Healthcare/HealthRecord" runat="server">
                         <svg>
@@ -315,6 +314,7 @@
                         <span>Healthcare</span>
                     </a>
                 </li>
+
                 <li>
                     <a href="~/Portal/Incidents/" runat="server">
                         <svg>
@@ -323,6 +323,7 @@
                         <span>Incident Report</span>
                     </a>
                 </li>
+
                 <li>
                     <a href="~/Portal/Community/" runat="server">
                         <svg>
@@ -375,9 +376,10 @@
                         <span>Back</span>
                     </a>
                 </li>
+
                 <li>
                     <button class="collapse-btn" aria-expanded="true" aria-label="collapse menu">
-                        <svg>
+                        <svg aria-hidden="true">
                             <use xlink:href="#collapse"></use>
                         </svg>
 
@@ -388,9 +390,9 @@
         </nav>
     </header>
     <section class="page-content">
-        <section class="search-and-user">
+       <%-- <section class="search-and-user">
 
-            <%-- <div class="admin-profile">
+             <div class="admin-profile">
                     <span class="greeting">Hello admin</span>
                     <div class="notifications">
                         <span class="badge">1</span>
@@ -398,8 +400,8 @@
                             <use xlink:href="#users"></use>
                         </svg>
                     </div>
-                </div>--%>
-        </section>
+                </div>
+        </section>--%>
         <section>
             <form id="FormAdmin" runat="server">
                 <asp:ScriptManager runat="server">
@@ -409,7 +411,6 @@
                         <asp:ScriptReference Name="MsAjaxBundle" />
                         <asp:ScriptReference Name="jquery" />
                         <asp:ScriptReference Name="bootstrap" />
-                        <asp:ScriptReference Path="~/Scripts/menumaker.js" />
                         <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
                         <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
                         <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
@@ -419,7 +420,7 @@
                         <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                         <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                         <asp:ScriptReference Name="WebFormsBundle" />
-                        <asp:ScriptReference Path="~/Scripts/admin.js" />
+                        <%--<asp:ScriptReference Path="~/Scripts/admin.js" />--%>
                         <%--Site Scripts--%>
                     </Scripts>
                 </asp:ScriptManager>
@@ -432,6 +433,32 @@
         </section>
 
     </section>
+    <script>
+        const body = document.body;
+        const collapseBtn = document.querySelector(".admin-menu button");
+        const collapsedClass = "collapsed";
 
+        collapseBtn.addEventListener("click", function () {
+            this.getAttribute("aria-expanded") == "true"
+                ? this.setAttribute("aria-expanded", "false")
+                : this.setAttribute("aria-expanded", "true");
+            this.getAttribute("aria-label") == "collapse menu"
+                ? this.setAttribute("aria-label", "expand menu")
+                : this.setAttribute("aria-label", "collapse menu");
+            body.classList.toggle(collapsedClass);
+        });
+        
+        const toggleMobileMenu = document.querySelector(".toggle-mob-menu");
+
+        toggleMobileMenu.addEventListener("click", function () {
+            this.getAttribute("aria-expanded") == "true"
+                ? this.setAttribute("aria-expanded", "false")
+                : this.setAttribute("aria-expanded", "true");
+            this.getAttribute("aria-label") == "open menu"
+                ? this.setAttribute("aria-label", "close menu")
+                : this.setAttribute("aria-label", "open menu");
+            body.classList.toggle("mob-menu-opened");
+        });
+    </script>
 </body>
 </html>

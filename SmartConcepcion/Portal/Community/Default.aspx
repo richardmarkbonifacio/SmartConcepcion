@@ -43,35 +43,31 @@
             background-color: #4CAF50;
         }
     </style>
-    <script>
-        function FilterBox() {
-            $(".filter").toggle(500, "linear");
-        }
-    </script>
+    
     <div class="header-banner">COMMUNITY</div>
     <asp:UpdatePanel ID="upIncidentReport" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New User Profile" CausesValidation="false" />
+                        <i class="fa fa-sliders" aria-hidden="true" style="cursor:pointer" onclick="FilterBox()" >Filter</i>
                     </div>
                     <div class="col-md-6 text-right">
-                        <i class="fa fa-sliders" aria-hidden="true" style="cursor:pointer" onclick="FilterBox()" >Filter</i>
+                        <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New User Profile" CausesValidation="false" />
                     </div>
                 </div>
                 <div class="row filter">
-                    <div class="col-md-3 col-xs-3 col-md-offset-3">
+                    <div class="col-md-3 col-xs-12 col-md-offset-3">
                         <asp:DropDownList runat="server" ID="ddVerified" CssClass="form-control">
                             <asp:ListItem Text="Select One" Value="-1" />
                             <asp:ListItem Text="Verified" Value="1" />
                             <asp:ListItem Text="Not Verified" Value="0" />
                         </asp:DropDownList>
                     </div>
-                    <div class="col-md-3 col-xs-3">
+                    <div class="col-md-3 col-xs-12">
                         <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" autocomplete="false" placeholder="Search for name" />
                     </div>
-                    <div class="col-md-3 col-xs-3">
+                    <div class="col-md-3 col-xs-12">
                         <asp:Button runat="server" CssClass="btn btn-send" Text="SEARCH" ID="btnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false" />
                     </div>
                 </div>
@@ -106,12 +102,11 @@
 
                             <ul class="pagination pagination-md">
                                 <li class="page-item">
-                                    <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Prev" Text="Previous" CausesValidation="false" /></li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Prev" Text="Previous" CausesValidation="false" />
+                                </li>
                                 <li class="page-item">
-                                    <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Next" Text="Next" CausesValidation="false" /></li>
+                                    <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Next" Text="Next" CausesValidation="false" />
+                                </li>
                             </ul>
 
                         </PagerTemplate>
@@ -362,8 +357,6 @@
                             <asp:Button runat="server" CssClass="btn btn-send" Text="VERIFY" ID="btnVerify" OnClick="btnVerify_Click" OnClientClick="closeNav()" />
                             <asp:Button runat="server" CssClass="btn btn-send" Text="SAVE" ID="btnPostIR" OnClick="btnPostIR_Click" OnClientClick="closeNav()" />
                             
-                            
-                            
                         </div>
                         
                     </div>
@@ -397,6 +390,11 @@
     
     <script src="../../Scripts/custom/sidenav.js"></script>
     <script src="../../Scripts/custom/jquery-dialog.js"></script>
+    <script>
+        function FilterBox() {
+            $(".filter").toggle(500, "linear");
+        }
+    </script>
     <script>
         function pageLoad(){ showTab(0); }  
     </script>

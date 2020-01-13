@@ -367,5 +367,28 @@ namespace SmartConcepcion.Class
                 }
             }
         }
+
+        public void SendEmail(string mailto, string subject, string body)
+        {
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+
+            smtpClient.Credentials = new System.Net.NetworkCredential("baliwaginformationsystem@gmail.com", "12QWaszx");
+            //smtpClient.UseDefaultCredentials = true;
+            //smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtpClient.EnableSsl = true;
+            MailMessage mail = new MailMessage("baliwaginformationsystem@gmail.com",mailto);
+
+            //Setting From , To and CC
+            //mail.From = new MailAddress("baliwaginformationsystem@gmail.com", "Baliwag Information System");
+            //mail.To.Add(mailto);
+            //mail.CC.Add(new MailAddress("MyEmailID@gmail.com"));
+            mail.Subject = subject;
+            mail.SubjectEncoding = System.Text.Encoding.UTF8;
+            mail.Body = body;
+            mail.BodyEncoding = System.Text.Encoding.UTF8;
+            mail.IsBodyHtml = true;
+            mail.Priority = MailPriority.High;
+            smtpClient.Send(mail);
+        }
     }
 }

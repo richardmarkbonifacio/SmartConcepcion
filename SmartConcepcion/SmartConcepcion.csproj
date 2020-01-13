@@ -118,7 +118,9 @@
     <Content Include="403.aspx" />
     <Content Include="About.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Content\admin-navbar-v2.css" />
     <Content Include="Content\admin-navbar.css" />
+    <Content Include="Content\all.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -175,9 +177,12 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="Portal\Administrator\Dashboard.aspx" />
+    <Content Include="Portal\Announcements\Manage.aspx" />
+    <Content Include="Portal\Barangay\Default.aspx" />
     <Content Include="Portal\Beta\multi-step-form.aspx" />
     <Content Include="Portal\Business\Directory.aspx" />
     <Content Include="Portal\Community\Household.aspx" />
+    <Content Include="Portal\Community\Notifications.aspx" />
     <Content Include="Portal\Community\ProfilePicture\12345.png" />
     <Content Include="Portal\Media\17-0001.pdf" />
     <Content Include="Portal\Media\A.-LETTER.pdf" />
@@ -360,6 +365,13 @@
     <Compile Include="Portal\Announcements\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Portal\Announcements\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Announcements\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Portal\Announcements\News.aspx.cs">
       <DependentUpon>News.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -380,6 +392,13 @@
     </Compile>
     <Compile Include="Portal\Barangay\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Barangay\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Barangay\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Barangay\Missionvission.aspx.cs">
       <DependentUpon>Missionvission.aspx</DependentUpon>
@@ -457,6 +476,13 @@
     </Compile>
     <Compile Include="Portal\Community\Household.aspx.designer.cs">
       <DependentUpon>Household.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Portal\Community\Notifications.aspx.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Portal\Community\Notifications.aspx.designer.cs">
+      <DependentUpon>Notifications.aspx</DependentUpon>
     </Compile>
     <Compile Include="Portal\Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>

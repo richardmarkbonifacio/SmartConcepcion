@@ -36,6 +36,7 @@ namespace SmartConcepcion.Portal.Officials
         {
             p_dsOfficial = csql.getBrgyOfficial("SmartConcepcion", p_BrgyID);
             lblCaptain.Text = p_dsOfficial.Tables["dtCapt"].Rows[0]["officialName"].ToString();
+            imgcaptain.Src = $"../community/ProfilePicture/{p_dsOfficial.Tables["dtCapt"].Rows[0]["userID"].ToString()}{p_dsOfficial.Tables["dtCapt"].Rows[0]["profile_ext"].ToString()}{'"'}";
             loadListview(lvCouncilor, p_dsOfficial.Tables["dtCouncilor"]);
         }
     }

@@ -196,6 +196,8 @@ namespace SmartConcepcion.Portal.Projects
             txtTitle.Text = _dttemp.Rows[0]["title"].ToString();
             txtDesc.Text = _dttemp.Rows[0]["description"].ToString();
             txtBudget.Text = _dttemp.Rows[0]["title"].ToString();
+            txtStart.Text = Convert.ToDateTime(_dttemp.Rows[0]["startdate"].ToString()).ToString("yyyy-MM-dd");
+            txtEnd.Text = Convert.ToDateTime(_dttemp.Rows[0]["enddate"].ToString()).ToString("yyyy-MM-dd");
             p_ProjectID = Convert.ToInt64(_dttemp.Rows[0]["ID"].ToString());
             upProjectInfo.Update();
         }

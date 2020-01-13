@@ -1,19 +1,30 @@
 ﻿<%@ Page Title="Health Records" Language="C#" MasterPageFile="~/admin.Master" AutoEventWireup="true" CodeBehind="HealthRecord.aspx.cs" Inherits="SmartConcepcion.Portal.Healthcare.HealthRecord" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        .filter{
+            display:none;
+        }
+    </style>
     <div class="header-banner">HEALTH RECORD</div>
     <asp:UpdatePanel ID="upIncidentReport" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
         <ContentTemplate>
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        <%--<asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New User Profile" CausesValidation="false" />--%>
+                        <i class="fa fa-sliders" aria-hidden="true" style="cursor:pointer" onclick="FilterBox()" >Filter</i>
                     </div>
+                    <div class="col-md-6 text-right">
+                        
+                    </div>
+                </div>
+                <div class="row filter">
+                    
                     <div class="col-md-6">
-                        <div class="col-md-9 col-xs-9">
-                        <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" />
+                        <div class="col-md-9 col-xs-12">
+                        <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" placeholder="Search"/>
                     </div>
-                        <div class="col-md-3 col-xs-3">
+                        <div class="col-md-3 col-xs-12">
                             <asp:Button runat="server" CssClass="btn btn-send" Text="SEARCH" ID="healthbtnSearchUser" OnClick="btnSearchUser_Click" CausesValidation="false" />
                         </div>
                     </div>
@@ -85,6 +96,12 @@
                                 <label class="col-md-4 text-right" >Weight</label>
                                 <div class="col-md-8 text-center">
                                     <asp:TextBox runat="server" ID="txtWeight" TextMode="Number" placeholder="Weight" CssClass="form-control sign-up-ctrl" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 text-right" >Death date</label>
+                                <div class="col-md-8 text-center">
+                                    <asp:TextBox runat="server" ID="txtDeathDate" TextMode="Date"  CssClass="form-control sign-up-ctrl" />
                                 </div>
                             </div>
                         </div>
@@ -193,4 +210,9 @@
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
     <script src="../../Scripts/custom/sidenav.js"></script>
     <script src="../../Scripts/custom/jquery-dialog.js"></script>
+     <script>
+        function FilterBox() {
+            $(".filter").toggle(500, "linear");
+        }
+    </script>
 </asp:Content>

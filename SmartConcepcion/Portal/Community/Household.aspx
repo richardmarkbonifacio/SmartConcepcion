@@ -13,19 +13,15 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        
+                        <i class="fa fa-sliders" aria-hidden="true" style="cursor:pointer" onclick="FilterBox()" >Filter</i>
                     </div>
                     <div class="col-md-6 text-right">
-                        <i class="fa fa-sliders" aria-hidden="true" style="cursor:pointer" onclick="FilterBox()" >Filter</i>
+                        
                     </div>
                 </div>
                 <div class="row filter">
                     <div class="col-md-3 col-xs-3 col-md-offset-3">
-                        <asp:DropDownList runat="server" ID="ddVerified" CssClass="form-control">
-                            <asp:ListItem Text="Select One" Value="-1" />
-                            <asp:ListItem Text="Verified" Value="1" />
-                            <asp:ListItem Text="Not Verified" Value="0" />
-                        </asp:DropDownList>
+                        
                     </div>
                     <div class="col-md-3 col-xs-3">
                         <asp:TextBox runat="server" CssClass="form-control" ID="txtUserSearch" autocomplete="false" placeholder="Search for name" />
@@ -75,23 +71,27 @@
                         <h2 runat="server" id="header">Household Members</h2>
                         <%--<asp:LinkButton runat="server" OnClientClick="openGeneric()" Text="Add Member" CausesValidation="false" />--%>
                         <a onclick="openGeneric()">Add Member</a>
-                        <asp:GridView runat="server" ID="gvHouseholdMembers" AutoGenerateColumns="false"
+                        <asp:GridView runat="server" ID="gvHouseholdMembers" AutoGenerateColumns="false" OnRowDataBound="gvHouseholdMembers_RowDataBound"
                             CssClass="table table-default table-hover table-responsive table-dark table-striped" PageSize="20">
                             <Columns>
+                                <asp:BoundField HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden" DataField="ID" />
                                 <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Fullname" DataField="fullname" />
-                                <asp:TemplateField HeaderStyle-CssClass="thead-dark"  HeaderText="">
+                                <asp:TemplateField HeaderStyle-CssClass="thead-dark" HeaderText="Household Position">
                                     <ItemTemplate>
                                         <asp:DropDownList runat="server" ID="ddHouseholdPos" CssClass="form-control">
-                                            
+                                            <asp:ListItem Value="Children" Text="Children" />
+                                            <asp:ListItem Value="Parent" Text="Parent" />
+                                            <asp:ListItem Value="Sibling" Text="Sibling" />
                                         </asp:DropDownList>
                                     </ItemTemplate>
                                 </asp:TemplateField>
+                                <asp:BoundField HeaderStyle-CssClass="hidden" ItemStyle-CssClass="hidden" DataField="household_pos" />
                             </Columns>
+
                         </asp:GridView>
+                        <asp:LinkButton runat="server" ID="btnUpdateRoles" OnClick="btnUpdateRoles_Click" CssClass="btn btnload pull-right">UPDATE ROLES <i class="fa fa-check" aria-hidden="true"></i> </asp:LinkButton>
                     </div>
-                    </div>
-                        
-                    
+                </div>
             </ContentTemplate>
         </asp:UpdatePanel>
         
