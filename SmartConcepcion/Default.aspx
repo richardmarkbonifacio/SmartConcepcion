@@ -169,7 +169,7 @@
                 </div>
             </div>
 
-
+            
             <div class="modal fade" id="myModal">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -375,6 +375,8 @@
                                         </div>
 
                                         <div class="tab">
+                                            
+                                            <asp:FileUpload runat="server" accept="image/*" multiple="false" ID="fuBanner" ClientIDMode="Static"  CssClass="form-control-file" onchange="readURL(this)" />
                                             <div class="form-group">
                                                 <label class="col-md-4 text-right">Password</label>
                                                 <div class="col-md-8">
@@ -389,8 +391,9 @@
 
                                         <div class="container-fluid">
                                             <div style="float: right;">
-                                                <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                                                <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                                                <button type="button" id="prevBtn" class="btn btn-acct" onclick="nextPrev(-1)">Previous</button>
+                                                <button type="button" id="nextBtn" class="btn btn-acct" onclick="nextPrev(1)">Next</button>
+                                                <%--<asp:Button runat="server" ID="nextBtn" CssClass="btn btn-acct" Text="Next" OnClick="SignUp" OnClientClick="nextPrev(1)" />--%>
                                             </div>
                                         </div>
 
@@ -402,24 +405,28 @@
                                             <span class="step"></span>
                                         </div>
                                     </div>
-                                </ContentTemplate>
+                                
+                               </ContentTemplate>
+                                <%--<Triggers>
+                                    <asp:PostBackTrigger ControlID="nextBtn" />
+                                </Triggers>--%>
                             </asp:UpdatePanel>
-                            
                         </div>
 
                         <!-- Modal footer -->
                         <div class="modal-footer">
                             <div class="form-group">
                                 <div class="col-md-12 text-center">
-                                    <asp:Button runat="server" CssClass="btn btn-acct" Text="Sign Up" OnClick="btnSignUp" />
+                                    <asp:Button runat="server" ID="btnSignUp" CssClass="btn btn-acct" Text="Sign Up" OnClick="SignUp" />
                                 </div>
                             </div>
                         </div>
 
                     </div>
+
                 </div>
             </div>
-
+                                 
             
         </form>
         <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
@@ -432,6 +439,19 @@
             }
 
             function pageLoad() { showTab(current_tab); }
+
+            function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imgpreview').css('background-image', 'url(' + e.target.result + ')');
+                        //.attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
         </script>
 </body>
 </html>

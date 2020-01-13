@@ -145,7 +145,7 @@ namespace SmartConcepcion.Portal.Community
             txtCourse.Text = "";
 
 
-            header.InnerText = "Create new Incident";
+            header.InnerText = "Create new Profile";
             upIncidentInfo.Update();
         }
         protected void gvUserProfiles_PageIndexChanging(object sender, GridViewPageEventArgs e)

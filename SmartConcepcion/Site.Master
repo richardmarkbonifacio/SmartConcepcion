@@ -80,7 +80,6 @@
                     <a href="#">RESIDENCE</a>
                     <ul>
                         <li><a href="~/Portal/Announcements/News" runat="server">NEWS & ANNOUNCEMENTS</a></li>
-                        <li><a href="#">HOUSEHOLD</a></li>
                     </ul>
                 </li>
 
@@ -100,16 +99,14 @@
                     </ul>
                 </li>
 
-                <li><a href="#" runat="server">MEDIA</a></li>
 
                 <li>
                     <a href="#">
                         <img class="profile-pic" id="profilepic" src="~/images/boy.png" runat="server"/>
                     </a>
                     <ul class="nav-dropdown">
-                        <li><a href="#"><asp:Label runat="server" ID="lblFullname" Text="Howdy admin" style="text-transform:uppercase" Font-Bold="TRUE" ForeColor="Yellow"/></a></li>
+                        <li><a href="~/Portal/Profile" runat="server"><asp:Label runat="server" ID="lblFullname" Text="Howdy admin" style="text-transform:uppercase" Font-Bold="TRUE" ForeColor="Yellow"/></a></li>
                          <li runat="server" id="lnkDashboard"><a href="~/Portal/Administrator/Dashboard" runat="server" >DASHBOARD</a></li>
-                        <li><a href="#">MY NOTIFICATION</a></li>
                         <li><asp:LinkButton runat="server" Text="LOG OUT" OnClick="btnSignOut" /> </li>
                     </ul>
                 </li>

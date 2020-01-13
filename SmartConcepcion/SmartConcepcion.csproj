@@ -184,6 +184,7 @@
     <Content Include="Portal\Community\Household.aspx" />
     <Content Include="Portal\Community\Notifications.aspx" />
     <Content Include="Portal\Community\ProfilePicture\12345.png" />
+    <Content Include="Portal\Community\ProfilePicture\default.png" />
     <Content Include="Portal\Media\17-0001.pdf" />
     <Content Include="Portal\Media\A.-LETTER.pdf" />
     <Content Include="Portal\Media\Application-Form-Ginoo-at-Binibining-Baliwag-2017.docx" />

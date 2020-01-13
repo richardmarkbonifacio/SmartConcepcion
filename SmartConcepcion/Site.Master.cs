@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
@@ -46,7 +47,9 @@ namespace SmartConcepcion
             if (inh.p_UserID != null)
             {
                 _dt = csql.getUser_Details("SmartConcepcion", inh.p_UserID.Value);
-                profilepic.Src = $"/portal/community/ProfilePicture/{inh.p_UserID.Value.ToString()}{_dt.Rows[0]["profile_ext"].ToString()}";
+                string _dp = $"/portal/community/ProfilePicture/{inh.p_UserID.Value.ToString()}{_dt.Rows[0]["profile_ext"].ToString()}";
+                
+                profilepic.Src = File.Exists(Server.MapPath(_dp)) ? _dp : $"/portal/community/ProfilePicture/default.png";
             }
 
         }

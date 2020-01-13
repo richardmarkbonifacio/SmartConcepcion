@@ -187,7 +187,7 @@ height:90px;
                         <hr />
 
                         <asp:GridView runat="server" ID="gvCommentSection" AutoGenerateColumns="false" PageSize="20"
-                            CssClass="table-responsive table-comment">
+                            CssClass="table-responsive table-comment" style="width:100%">
                             <Columns>
                                 <asp:TemplateField HeaderStyle-CssClass="hidden">
                                     <ItemTemplate>

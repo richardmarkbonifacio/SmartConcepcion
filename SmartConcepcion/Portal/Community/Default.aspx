@@ -124,7 +124,7 @@
             <ContentTemplate>
                 <div class="col-md-6 col-md-offset-3" style="min-height: 100vh; background: white;">
                     <div class="container-fluid">
-                        <h2 runat="server" id="header">Create Incident Report</h2>
+                        <h2 runat="server" id="header">Create new profile</h2>
                         <asp:HiddenField runat="server" ID="hfFrom" />
                         <h3><asp:Label runat="server" ID="lblAccountNo" /></h3>
 
@@ -140,7 +140,7 @@
                                 <div class="form-group">
                                     <label class="col-md-4 text-right">Middlename</label>
                                     <div class="col-md-8">
-                                        <asp:TextBox runat="server" ID="txtMnam" placeholder="Middlename" CssClass="form-control sign-up-ctrl required" />
+                                        <asp:TextBox runat="server" ID="txtMnam" placeholder="Middlename" CssClass="form-control sign-up-ctrl" />
                                     </div>
                                 </div>
                                 <div class="form-group">
