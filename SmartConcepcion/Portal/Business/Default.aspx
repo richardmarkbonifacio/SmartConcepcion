@@ -24,10 +24,10 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
-                        <i class="fa fa-sliders" aria-hidden="true" style="cursor:pointer" onclick="FilterBox()" >Filter</i>
+                        <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New Business Profile" CausesValidation="false" />
                     </div>
                     <div class="col-md-6 text-right col-sm-12">
-                        <asp:LinkButton runat="server" OnClientClick="openNav()" OnClick="lnkCreate_Click" Text="New Business Profile" CausesValidation="false" />
+                        <i class="fa fa-sliders" aria-hidden="true" style="cursor:pointer" onclick="FilterBox()" >Filter</i>
                     </div>
                 </div>
                 

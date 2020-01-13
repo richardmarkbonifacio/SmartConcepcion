@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
@@ -24,7 +25,9 @@ namespace SmartConcepcion
 
         protected void btnSignIn(object sender, EventArgs e)
         {
-            DataTable _dt = csql.postSignIn("SmartConcepcion", Convert.ToInt64(txtUserid.Text), txtUserpass.Text);
+            
+
+                DataTable _dt = csql.postSignIn("SmartConcepcion", convert_long(txtUserid.Text, true).Value, txtUserpass.Text);
             if(_dt.Rows.Count > 0)
             {
                 if(Convert.ToBoolean(_dt.Rows[0]["verified"].ToString()))
@@ -69,8 +72,15 @@ namespace SmartConcepcion
             }
         }
 
-        protected void btnSignUp(object sender, EventArgs e)
+        protected void SignUp(object sender, EventArgs e)
         {
+            
+
+            if (fuBanner.HasFile && fuBanner.PostedFile != null)
+            {
+                string _file_ext = Path.GetExtension(fuBanner.PostedFile.FileName);
+                fuBanner.SaveAs(Server.MapPath("Community//ProfilePicture//" + p_UserID.ToString() + _file_ext));
+            }
             DataTable _dt = csql.postSignUp("SmartConcepcion", txtEmail.Text, txtFnam.Text, txtMnam.Text, txtLnam.Text, txtSuffix.Text, 
                 txtNationality.Text, ddCivilStatus.SelectedValue, txtContact.Text, txtStbldgno.Text, Convert.ToInt64(ddBrgy.SelectedValue), 
                     Convert.ToInt64(ddZone.SelectedValue),txtVotersID.Text, ddGender.SelectedValue, txtPreschool.Text, convert_date(txtPreFrom.Text), convert_date(txtPreTo.Text), 
