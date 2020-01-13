@@ -102,8 +102,36 @@
                 draw_age_chart();
             });
         </script>
-        
+        <script>const body = document.body;
+const toggleMobileMenu = document.querySelector(".toggle-mob-menu");
+ 
+toggleMobileMenu.addEventListener("click", function() {
+  this.getAttribute("aria-expanded") == "true"
+    ? this.setAttribute("aria-expanded", "false")
+    : this.setAttribute("aria-expanded", "true");
+  this.getAttribute("aria-label") == "open menu"
+    ? this.setAttribute("aria-label", "close menu")
+    : this.setAttribute("aria-label", "open menu");
+  body.classList.toggle("mob-menu-opened");
+});</script>
             <style>
+                .page-header .toggle-mob-menu svg {
+  transition: transform 0.2s;
+}
+ 
+.page-header .admin-menu {
+  transition: all 0.2s;
+}
+ 
+.mob-menu-opened .toggle-mob-menu svg {
+  transform: rotate(180deg);
+}
+ 
+.mob-menu-opened .page-header .admin-menu {
+  transform: scale(1);
+  visibility: visible;
+  opacity: 1;
+}
                 .chart {
                     width: 100%; 
                     min-height: 300px;
