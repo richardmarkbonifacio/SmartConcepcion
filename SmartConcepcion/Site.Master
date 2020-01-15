@@ -103,7 +103,7 @@
 
                 <li>
                     <a href="#">
-                        <img class="profile-pic" id="profilepic" src="~/images/boy.png" runat="server"/>
+                        <img class="profile-pic" id="profilepic" src="~/images/boy.png" runat="server" />
                     </a>
                     <ul class="nav-dropdown">
                         <li><a href="~/Portal/Profile" runat="server"><asp:Label runat="server" ID="lblFullname" Text="Howdy admin" style="text-transform:uppercase" Font-Bold="TRUE" ForeColor="Yellow"/></a></li>
