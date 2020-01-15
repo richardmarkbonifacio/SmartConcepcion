@@ -31,15 +31,6 @@ namespace SmartConcepcion.Portal.Announcements {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtTitle;
         
         /// <summary>
-        /// txtsubtitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl txtsubtitle;
-        
-        /// <summary>
         /// lblContent control.
         /// </summary>
         /// <remarks>
@@ -65,6 +56,15 @@ namespace SmartConcepcion.Portal.Announcements {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label txtCommentCount;
+        
+        /// <summary>
+        /// profilepic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlImage profilepic;
         
         /// <summary>
         /// txtComment control.

@@ -159,7 +159,7 @@ height:90px;
                 <asp:Image runat="server" AlternateText="Default" ID="imgBanner" CssClass="newsimg" />
                 <%--<img src="../../images/BANNER.jpg" alt="Nature" class="newsimg">--%>
                 <h2 runat="server" id="txtTitle">Title</h2>
-                <h4 runat="server" id="txtsubtitle"><i>Subtitle</i></h4>
+                                     
                 <asp:Label runat="server" ID="lblContent" CssClass="text-justify" />
 
             </article>
@@ -174,7 +174,8 @@ height:90px;
                         </h3>
                         <div class="form-inline">
                             <div class="col-md-1">
-                                <img src="../../images/boy.png" class="profile-pic" />
+                               
+                                            <img class="profile-pic" id="profilepic" src="~/images/boy.png" runat="server"/>
                             </div>
                             <div class="col-md-10">
                                 <asp:TextBox runat="server" ID="txtComment" placeholder="Write your comment.." CssClass="form-control form-control-sm" TextMode="MultiLine" Columns="1" />
@@ -216,7 +217,10 @@ height:90px;
                                 <div class="capsule hidden-xs">
                                     <div class="right-news">
                                         <h3><a href='View?ID=<%# Eval("ID") %>'><%# Eval("title") %></a></h3>
-                                        <i><%# Eval("datecreated", "{0:MMMM dd yyyy}") %></i>
+                                       <b> <i><%# Eval("datecreated", "{0:MMMM dd yyyy}") %></i></b>
+                                         
+                                                   <p><%# Eval("sneak_peak") %></p>
+                                      
                                     </div>
                                 </div>
                             </ItemTemplate>

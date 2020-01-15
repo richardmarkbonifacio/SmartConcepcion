@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -119,8 +120,20 @@ namespace SmartConcepcion.Portal.Announcements
                 ViewState["PageIndex"] = value;
             }
         }
+        void loadProfilePicture()
+        {
+            DataTable _dt;
 
-       
+            if (p_UserID != null)
+            {
+                _dt = csql.getUser_Details("SmartConcepcion", p_UserID.Value);
+                string _dp = $"/portal/community/ProfilePicture/{p_UserID.Value.ToString()}{_dt.Rows[0]["profile_ext"].ToString()}";
+
+                profilepic.Src = File.Exists(Server.MapPath(_dp)) ? _dp : $"/portal/community/ProfilePicture/default.png";
+            }
+
+        }
+
         clsQuery csql = new clsQuery();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -137,7 +150,7 @@ namespace SmartConcepcion.Portal.Announcements
                 p_dtTopAnnouncement = csql.getTopAnnoucements("SmartConcepcion");
                 
                 loadGridView(gvTopAnnouncement, p_dtTopAnnouncement);
-
+                loadProfilePicture();
                 loadInfo();
                 loadComment();
             }
@@ -145,7 +158,7 @@ namespace SmartConcepcion.Portal.Announcements
         void loadInfo()
         {
             txtTitle.InnerText = p_dtAnnouncementInfo.Rows[0]["title"].ToString();
-            txtsubtitle.InnerText = p_dtAnnouncementInfo.Rows[0]["subtitle"].ToString();
+      
             string _filepath = "~\\Portal\\Announcements\\Banner\\" + p_dtAnnouncementInfo.Rows[0]["ID"].ToString() + p_dtAnnouncementInfo.Rows[0]["banner_extension"].ToString();
 
             if (System.IO.File.Exists(Server.MapPath(_filepath)))

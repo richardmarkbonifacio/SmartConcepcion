@@ -160,7 +160,7 @@ namespace SmartConcepcion.Portal.Announcements
             }
                 
         }
-
+  
         protected void btnNext_Click(object sender, EventArgs e)
         {
             p_PageIndex++;
