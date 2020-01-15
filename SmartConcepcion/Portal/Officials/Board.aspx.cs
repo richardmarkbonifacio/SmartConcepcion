@@ -79,7 +79,7 @@ namespace SmartConcepcion.Portal.Officials
         }
         protected void btnSearchUser_Click(object sender, EventArgs e)
         {
-            dttemp = csql.getUserPaging("SmartConcepcion", 5, 0, txtUserSearch.Text, p_BrgyID);
+            dttemp = csql.getUserPaging("SmartConcepcion", 5, 0, txtUserSearch.Text, p_BrgyID, true);
             if (dttemp.Rows.Count > 0)
             {
                 loadGridView(gvTemplateError, dttemp);
@@ -118,9 +118,14 @@ namespace SmartConcepcion.Portal.Officials
         void loadOfficial()
         {
             p_dsOfficial = csql.getBrgyOfficial("SmartConcepcion", p_BrgyID);
-            txtChairman.Text = p_dsOfficial.Tables["dtCapt"].Rows[0]["officialName"].ToString();
-            loadListview(lvCouncilor, p_dsOfficial.Tables["dtCouncilor"]);
-            loadGridView(gvSecretary, p_dsOfficial.Tables["dtEmployee"]);
+            if(b_hasrow(p_dsOfficial.Tables["dtCapt"]))
+                txtChairman.Text = p_dsOfficial.Tables["dtCapt"].Rows[0]["officialName"].ToString();
+            if(b_hasrow(p_dsOfficial.Tables["dtEmployee"]))
+                loadListview(lvCouncilor, p_dsOfficial.Tables["dtCouncilor"]);
+
+            if (b_hasrow(p_dsOfficial.Tables["dtEmployee"]))
+                loadGridView(gvSecretary, p_dsOfficial.Tables["dtEmployee"]);
+
             upBoard.Update();
         }
 

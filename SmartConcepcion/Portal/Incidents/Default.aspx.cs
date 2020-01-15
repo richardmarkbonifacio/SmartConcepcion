@@ -93,7 +93,8 @@ namespace SmartConcepcion.Portal.Incidents
         protected override void OnPreLoad(EventArgs e)
         {
             base.OnPreLoad(e);
-            
+            if (!isAdmin() || !isBlotterOfficer() )
+                Response.Redirect("~/403");
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -219,7 +220,7 @@ namespace SmartConcepcion.Portal.Incidents
 
         protected void btnSearchUser_Click(object sender, EventArgs e)
         {
-            dttemp = csql.getUserPaging("SmartConcepcion", 5, 0, txtUserSearch.Text, p_BrgyID);
+            dttemp = csql.getUserPaging("SmartConcepcion", 5, 0, txtUserSearch.Text, p_BrgyID,true);
             if(dttemp.Rows.Count >0)
             {
                 loadGridView(gvTemplateError, dttemp);

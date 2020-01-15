@@ -56,7 +56,7 @@ namespace SmartConcepcion.Portal.Healthcare
         protected override void OnPreLoad(EventArgs e)
         {
             base.OnPreLoad(e);
-            if (!isAdmin())
+            if (!isAdmin() || !isHealthOfficer())
             {
                 Response.Redirect("~/403");
             }
@@ -69,14 +69,22 @@ namespace SmartConcepcion.Portal.Healthcare
         }
         void loadUserProfile()
         {
-            dttemp = csql.getUserPaging("SmartConcepcion", gvUserProfiles.PageSize, p_PageIndex, txtUserSearch.Text, p_BrgyID);
+            dttemp = csql.getUserPaging("SmartConcepcion", gvUserProfiles.PageSize, p_PageIndex, txtUserSearch.Text, p_BrgyID, true);
             gvUserProfiles.PageIndex = p_PageIndex;
             if (dttemp.Rows.Count > 0)
             {
+                norecord.Visible = false;
+                gvUserProfiles.Visible = true;
+
                 gvUserProfiles.VirtualItemCount = (int)dttemp.Rows[0]["reccount"];
                 loadGridView(gvUserProfiles, dttemp);
-                upIncidentReport.Update();
             }
+            else
+            {
+                norecord.Visible = true;
+                gvUserProfiles.Visible = false;
+            }
+            upIncidentReport.Update();
         }
         void loadHealthRecord()
         {

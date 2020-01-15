@@ -108,10 +108,6 @@ namespace SmartConcepcion.Portal.Announcements
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!isAdmin())
-            {
-                //btnOpenAnnouncementDlg.Attributes["disabled"] = "disabled";
-            }
             if (!IsPostBack)
             {
                 initData();
@@ -124,6 +120,18 @@ namespace SmartConcepcion.Portal.Announcements
             p_dtAnnouncement = csql.getAnnouncements("SmartConcepcion", p_PageSize, p_PageIndex, p_BrgyID,"","");
             loadGridView(gvAnnouncements, p_dtAnnouncement);
             loadGridView(gvTopAnnouncement, p_dtTopAnnouncement);
+
+            if(p_dtAnnouncement.Rows.Count < gvAnnouncements.PageSize)
+            {
+                btnNext.Visible = false;
+                btnPrev.Visible = false;
+                
+            }
+            else
+            {
+                btnNext.Visible = true;
+                btnPrev.Visible = true;
+            }
             upAnnouncements.Update();
         }
         protected void gvAnnouncements_RowDataBound(object sender, GridViewRowEventArgs e)

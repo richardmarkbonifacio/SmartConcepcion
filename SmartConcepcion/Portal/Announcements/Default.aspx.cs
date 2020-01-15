@@ -90,11 +90,6 @@ namespace SmartConcepcion.Portal.Announcements
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (!isAdmin())
-            {
-                //btnOpenAnnouncementDlg.Attributes["disabled"] = "disabled";
-            }
             if (!IsPostBack)
             {
                 initData();
@@ -129,7 +124,7 @@ namespace SmartConcepcion.Portal.Announcements
                     _img.ImageUrl = _filepath;
                 else
                     _img.ImageUrl = "https://dummyimage.com/400x400";
-                //_img.ImageUrl = 
+                
                 
             }
         }

@@ -294,7 +294,7 @@ namespace SmartConcepcion.Class
             return result_Dt;
         }
 
-        public DataTable getUserPaging(string cnstr, int pagesize, int pageno,string search, long? brgyID)
+        public DataTable getUserPaging(string cnstr, int pagesize, int pageno,string search, long? brgyID, bool? verified)
         {
             try
             {
@@ -306,6 +306,7 @@ namespace SmartConcepcion.Class
                 cmd.Parameters.Add("@PageNumber", SqlDbType.Int).Value = pageno;
                 cmd.Parameters.Add("@brgyID", SqlDbType.BigInt).Value = brgyID;
                 cmd.Parameters.Add("@search", SqlDbType.VarChar).Value = search;
+                cmd.Parameters.Add("@verified", SqlDbType.Bit).Value = verified;
 
                 da = new SqlDataAdapter(cmd);
                 using (cn)

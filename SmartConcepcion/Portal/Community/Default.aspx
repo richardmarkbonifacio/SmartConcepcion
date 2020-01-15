@@ -164,6 +164,7 @@
                         <PagerSettings Mode="NextPrevious" Position="Bottom" PreviousPageText="Previous" NextPageText="Next" FirstPageText="First" LastPageText="Last" />
                         <PagerStyle HorizontalAlign="Right" />
                     </asp:GridView>
+                    <asp:Label runat="server" ID="norecord" Visible="false" Text="NO RECORD FOUND" />
                 </div>
             </div>
         </ContentTemplate>

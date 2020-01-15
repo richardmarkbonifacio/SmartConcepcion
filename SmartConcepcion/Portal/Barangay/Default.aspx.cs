@@ -12,6 +12,12 @@ namespace SmartConcepcion.Portal.Barangay
     public partial class Default : clsInherited
     {
         clsQuery csql = new clsQuery();
+        protected override void OnPreLoad(EventArgs e)
+        {
+            base.OnPreLoad(e);
+            if (!isAdmin())
+                Response.Redirect("~/403");
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

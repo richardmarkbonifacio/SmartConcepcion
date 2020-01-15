@@ -66,9 +66,9 @@
                             <ul class="pagination pagination-md">
                                 <li class="page-item">
                                     <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Prev" Text="Previous" CausesValidation="false" /></li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                
+                                
+                                
                                 <li class="page-item">
                                     <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Next" Text="Next" CausesValidation="false" /></li>
                             </ul>
@@ -77,6 +77,7 @@
                         <PagerSettings Mode="NextPrevious" Position="Bottom" PreviousPageText="Previous" NextPageText="Next" FirstPageText="First" LastPageText="Last" />
                         <PagerStyle HorizontalAlign="Right" />
                     </asp:GridView>
+                    <asp:Label runat="server" ID="norecord" Visible="false" Text="NO RECORD FOUND" />
                 </div>
             </div>
         </ContentTemplate>
@@ -146,9 +147,9 @@
                                         <ul class="pagination pagination-md">
                                             <li class="page-item">
                                                 <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Prev" Text="Previous" CausesValidation="false" /></li>
-                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            
+                                            
+                                            
                                             <li class="page-item">
                                                 <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Next" Text="Next" CausesValidation="false" /></li>
                                         </ul>

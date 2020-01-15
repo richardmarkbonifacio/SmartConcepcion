@@ -128,11 +128,18 @@ namespace SmartConcepcion.Portal.Projects
             gvProjects.PageIndex = p_PageIndex;
             if (dttemp.Rows.Count > 0)
             {
+                norecord.Visible = false;
+                gvProjects.Visible = true;
+
                 gvProjects.VirtualItemCount = (int)dttemp.Rows[0]["reccount"];
                 loadGridView(gvProjects, dttemp);
-                upProject.Update();
             }
-
+            else
+            {
+                norecord.Visible = true;
+                gvProjects.Visible = false;
+            }
+            upProject.Update();
             p_dtLeader = initLeaderDatatable();
         }
 
@@ -218,7 +225,7 @@ namespace SmartConcepcion.Portal.Projects
         }
         protected void btnSearchUser_Click(object sender, EventArgs e)
         {
-            dttemp = csql.getUserPaging("SmartConcepcion", 5, 0, txtUserSearch.Text, p_BrgyID);
+            dttemp = csql.getUserPaging("SmartConcepcion", 5, 0, txtUserSearch.Text, p_BrgyID, true);
             if (dttemp.Rows.Count > 0)
             {
                 loadGridView(gvTemplateError, dttemp);

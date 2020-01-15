@@ -95,7 +95,8 @@
                     <a href="#">BARANGAY</a>
                     <ul class="nav-dropdown">
                         <li><a href="~/Portal/Officials/Official" runat="server">OFFICIALS</a></li>
-                        <li><a href="~/Portal/Projects" runat="server">PROJECTS</a></li>
+                        <li><a href="~/Portal/Projects/Projects" runat="server">PROJECTS</a></li>
+                        <li><a href="~/Portal/Barangay/Missionvission" runat="server">MISSION AND VISION</a></li>
                     </ul>
                 </li>
 

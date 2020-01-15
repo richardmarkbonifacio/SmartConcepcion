@@ -27,14 +27,15 @@
                 </div>
                 <div class="row filter">
                     <div class="col-md-12">
-                        <div class="col-md-3 col-xs-12">
-                            <asp:TextBox runat="server" CssClass="form-control" ID="txtProjectname" />
-                        </div>
+                        
                         <div class="col-md-3 col-xs-12">
                             <asp:TextBox runat="server" CssClass="form-control" ID="txtdtFrom" TextMode="Date" />
                         </div>
                         <div class="col-md-3 col-xs-12">
                             <asp:TextBox runat="server" CssClass="form-control" ID="txtdtTo" TextMode="Date" />
+                        </div>
+                        <div class="col-md-3 col-xs-12">
+                            <asp:TextBox runat="server" CssClass="form-control" ID="txtProjectname" placeholder="Desciption" />
                         </div>
                         <div class="col-md-3 col-xs-12">
                             <asp:Button runat="server" CssClass="btn btn-warning" Text="search" ID="btnBudget" OnClick="btnBudget_Click" CausesValidation="false" />
@@ -58,7 +59,8 @@
                             </asp:TemplateField>
                             <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Description" DataField="description" />
                             <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Reference" DataField="referenceno" />
-                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Filed by" DataFormatString="{0:MMMM dd yyyy}" DataField="createdByName"  />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Date" DataFormatString="{0:MMMM dd yyyy}" DataField="datecreated"  />
+                            <asp:BoundField HeaderStyle-CssClass="thead-dark" HeaderText="Filed by" DataField="createdByName"  />
                             
                         </Columns>
 
@@ -67,9 +69,7 @@
                             <ul class="pagination pagination-md">
                                 <li class="page-item">
                                     <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Prev" Text="Previous" CausesValidation="false" /></li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                
                                 <li class="page-item">
                                     <asp:LinkButton runat="server" CssClass="page-item" CommandName="Page" CommandArgument="Next" Text="Next" CausesValidation="false" /></li>
                             </ul>
@@ -78,6 +78,7 @@
                         <PagerSettings Mode="NextPrevious" Position="Bottom" PreviousPageText="Previous" NextPageText="Next" FirstPageText="First" LastPageText="Last" />
                         <PagerStyle HorizontalAlign="Right" />
                     </asp:GridView>
+                    <asp:Label runat="server" ID="norecord" Visible="false" Text="NO RECORD FOUND" />
                 </div>
             </div>
         </ContentTemplate>

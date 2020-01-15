@@ -92,7 +92,8 @@ namespace SmartConcepcion.Portal.Community
         protected override void OnPreLoad(EventArgs e)
         {
             base.OnPreLoad(e);
-            
+            if (!isAdmin() || !isLLN())
+                Response.Redirect("~/403");
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -107,15 +108,29 @@ namespace SmartConcepcion.Portal.Community
         }
         void loadUserProfile()
         {
-            dttemp = csql.getUserPaging("SmartConcepcion", gvUserProfiles.PageSize, p_PageIndex,txtUserSearch.Text,p_BrgyID);
+            Boolean? verified = null;
+            if(ddVerified.SelectedValue != "-1")
+                verified = Convert.ToBoolean(ddVerified.SelectedValue);
+            dttemp = csql.getUserPaging("SmartConcepcion", gvUserProfiles.PageSize, p_PageIndex,txtUserSearch.Text, 
+                p_BrgyID, verified );
+
             gvUserProfiles.PageIndex = p_PageIndex;
             if(dttemp.Rows.Count > 0)
             {
+                norecord.Visible = false;
+                gvUserProfiles.Visible = true;
+
                 gvUserProfiles.VirtualItemCount = (int)dttemp.Rows[0]["reccount"];
                 loadGridView(gvUserProfiles, dttemp);
-                upIncidentReport.Update();
             }
-            
+            else
+            {
+                norecord.Visible = true;
+                gvUserProfiles.Visible = false;
+            }
+            upIncidentReport.Update();
+
+
         }
         void clearUserInfo()
         {

@@ -147,7 +147,38 @@ namespace SmartConcepcion.Class
 
         public bool isAdmin()
         {
-            if (p_roleLevel == "admin")
+            if (p_roleLevel == "admin" || p_roleLevel == "capt" || p_roleLevel == "coun" || p_roleLevel == "sec")
+                return true;
+            else
+                return false;
+        }
+
+        
+
+        public bool isBlotterOfficer()
+        {
+            if (p_roleLevel == "bltr")
+                return true;
+            else
+                return false;
+        }
+        public bool isHealthOfficer()
+        {
+            if (p_roleLevel == "hlthoffcr")
+                return true;
+            else
+                return false;
+        }
+        public bool isLLN()
+        {
+            if (p_roleLevel == "lln")
+                return true;
+            else
+                return false;
+        }
+        public bool isTreasurer()
+        {
+            if (p_roleLevel == "trsr")
                 return true;
             else
                 return false;

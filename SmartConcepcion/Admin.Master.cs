@@ -13,10 +13,7 @@ namespace SmartConcepcion
         clsInherited _inh = new clsInherited();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!_inh.isAdmin())
-            {
-                Response.Redirect("~/403");
-            }
+            
         }
         protected void btnSignOut(object sender, EventArgs e)
         {

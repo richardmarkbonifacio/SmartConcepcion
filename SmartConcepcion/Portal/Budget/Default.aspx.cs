@@ -108,9 +108,15 @@ namespace SmartConcepcion.Portal.Budget
 
         #endregion
 
+        protected override void OnPreLoad(EventArgs e)
+        {
+            base.OnPreLoad(e);
+            if (!isAdmin() || !isTreasurer() )
+                Response.Redirect("~/403");
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
-            isAdmin();
+            
             if (!IsPostBack)
                 loadBudget();
         }
@@ -127,11 +133,19 @@ namespace SmartConcepcion.Portal.Budget
             gvBudget.PageIndex = p_PageIndex;
             if (dttemp.Rows.Count > 0)
             {
+                norecord.Visible = false;
+                gvBudget.Visible = true;
+
                 gvBudget.VirtualItemCount = (int)dttemp.Rows[0]["reccount"];
                 loadGridView(gvBudget, dttemp);
-                upProject.Update();
+                
             }
-
+            else
+            {
+                norecord.Visible = true;
+                gvBudget.Visible = false;
+            }
+            upProject.Update();
             //p_dtLeader = initLeaderDatatable();
         }
 
