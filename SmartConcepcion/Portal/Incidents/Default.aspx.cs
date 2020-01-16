@@ -93,7 +93,7 @@ namespace SmartConcepcion.Portal.Incidents
         protected override void OnPreLoad(EventArgs e)
         {
             base.OnPreLoad(e);
-            if (!isAdmin() || !isBlotterOfficer() )
+            if (!(isAdmin() || isBlotterOfficer() ))
                 Response.Redirect("~/403");
         }
         protected void Page_Load(object sender, EventArgs e)

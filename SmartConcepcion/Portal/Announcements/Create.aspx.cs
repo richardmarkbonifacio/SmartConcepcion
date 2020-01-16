@@ -53,7 +53,7 @@ namespace SmartConcepcion.Portal.Announcements
         protected override void OnPreLoad(EventArgs e)
         {
             base.OnPreLoad(e);
-            if (!isAdmin() ||  !isHealthOfficer())
+            if (!(isAdmin() || isHealthOfficer()))
                 Response.Redirect("~/403");
         }
 

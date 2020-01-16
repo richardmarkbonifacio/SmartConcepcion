@@ -92,7 +92,7 @@ namespace SmartConcepcion.Portal.Community
         protected override void OnPreLoad(EventArgs e)
         {
             base.OnPreLoad(e);
-            if (!isAdmin() || !isLLN())
+            if (!(isAdmin() || isLLN()))
                 Response.Redirect("~/403");
         }
 

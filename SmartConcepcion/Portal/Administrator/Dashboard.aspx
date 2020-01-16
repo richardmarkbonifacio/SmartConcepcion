@@ -5,27 +5,50 @@
                 <asp:HiddenField runat="server" ID="hfTotalPop" />
             </ContentTemplate>
         </asp:UpdatePanel>
-
-        <section class="grid">
-            <article>
-                <h2>Welcome to Baranggay <span runat="server" id="brgyname"></span></h2>
-            </article>
-            <article>
-                <div id="employment_chart" class="chart"></div>
-            </article>
-            <article>
-                <div id="voter_chart" class="chart"></div>
-            </article>
-            <article>
-                <div id="age_chart" class="chart"></div>
-            </article>
-            <article></article>
-            <article></article>
-            <article></article>
-            <article></article>
-
+        <div class="jumbotron">
+          <h1 runat="server" id="brgyname">Bootstrap Tutorial</h1>
+        </div>
         
-        </section>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-danger">
+                    <div class="panel-heading"><i class="fa fa-users" aria-hidden="true"></i> Total Number of Registered User</div>
+                    <div class="panel-body text-center">
+                        <asp:Label runat="server" Text="0" Font-Bold="true" ID="lblTotalUsers"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel panel-success">
+                    <div class="panel-heading"><i class="fa fa-briefcase" aria-hidden="true"></i> Total Number of Registered Business</div>
+                    <div class="panel-body text-center">
+                        <asp:Label runat="server" Text="0" Font-Bold="true" ID="lblTotalBusiness" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel panel-danger">
+                    <div class="panel-heading"><i class="fa fa-flag" aria-hidden="true"></i> Total number of incidents</div>
+                    <div class="panel-body text-center">
+                        <asp:Label runat="server" Text="0" Font-Bold="true" ID="lblTotalIncident" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row hidden">
+            <div id="employment_chart" class="chart"></div>
+        </div>
+        <div class="row hidden">
+            <div id="voter_chart" class="chart"></div>
+        </div>
+        <div class="row hidden">
+            <div id="age_chart" class="chart"></div>
+        </div>
+
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
             // Load google charts

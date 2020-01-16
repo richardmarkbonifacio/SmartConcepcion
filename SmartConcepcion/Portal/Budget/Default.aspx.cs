@@ -111,7 +111,7 @@ namespace SmartConcepcion.Portal.Budget
         protected override void OnPreLoad(EventArgs e)
         {
             base.OnPreLoad(e);
-            if (!isAdmin() || !isTreasurer() )
+            if (!(isAdmin() || isTreasurer() ))
                 Response.Redirect("~/403");
         }
         protected void Page_Load(object sender, EventArgs e)

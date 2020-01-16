@@ -15,7 +15,7 @@ namespace SmartConcepcion.Portal.Administrator
         protected override void OnPreLoad(EventArgs e)
         {
             base.OnPreLoad(e);
-            if (!isAdmin() || !isBlotterOfficer() || !isHealthOfficer() || !isTreasurer() || !isLLN())
+            if (!(isAdmin() || isBlotterOfficer() || isHealthOfficer() || isTreasurer() || isLLN()))
                 Response.Redirect("~/403");
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -24,6 +24,9 @@ namespace SmartConcepcion.Portal.Administrator
             hfTotalPop.Value = _dt.Rows[0]["total_population"].ToString();
 
             brgyname.InnerText = _dt.Rows[0]["brgy_name"].ToString();
+            lblTotalUsers.Text = _dt.Rows[0]["total_population"].ToString();
+            lblTotalBusiness.Text = _dt.Rows[0]["total_business"].ToString();
+            lblTotalIncident.Text = _dt.Rows[0]["total_blotter"].ToString();
         }
     }
 }
